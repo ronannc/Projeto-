@@ -2,11 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Biceps;
+use App\Http\Requests\BicepsStoreRequest;
+use App\Http\Requests\BicepsUpdateRequest;
+use App\Models\Biceps;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\BicepsRepository;
+use App\Services\BicepsService;
 
 class BicepsController extends Controller
 {
+
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param BicepsRepository $repository
+     * @param BicepsService $service
+     */
+    public function __construct(BicepsRepository $repository, BicepsService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
