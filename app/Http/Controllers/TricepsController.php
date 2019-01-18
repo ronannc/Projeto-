@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Triceps;
+//use App\Http\Requests\TricepsStoreRequest;
+//use App\Http\Requests\TricepsUpdateRequest;
+use App\Models\Triceps;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\TricepsRepository;
+use App\Services\TricepsService;
 
 class TricepsController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param TricepsRepository $repository
+     * @param TricepsService $service
+     */
+    public function __construct(TricepsRepository $repository, TricepsService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      *

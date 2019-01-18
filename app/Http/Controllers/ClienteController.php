@@ -2,11 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+//use App\Http\Requests\ClienteStoreRequest;
+//use App\Http\Requests\ClienteUpdateRequest;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\ClienteRepository;
+use App\Services\ClienteService;
 
 class ClienteController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param ClienteRepository $repository
+     * @param ClienteService $service
+     */
+    public function __construct(ClienteRepository $repository, ClienteService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *

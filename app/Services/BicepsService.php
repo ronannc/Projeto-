@@ -49,8 +49,8 @@ class BicepsService
     public function delete(Biceps $station)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($station);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

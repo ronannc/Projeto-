@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\MembroInferior;
+//use App\Http\Requests\MembroInferiorStoreRequest;
+//use App\Http\Requests\MembroInferiorUpdateRequest;
+use App\Models\MembroInferior;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\MembroInferiorRepository;
+use App\Services\MembroInferiorService;
 
 class MembroInferiorController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param MembroInferiorRepository $repository
+     * @param MembroInferiorService $service
+     */
+    public function __construct(MembroInferiorRepository $repository, MembroInferiorService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      *

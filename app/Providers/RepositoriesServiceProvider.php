@@ -31,7 +31,7 @@ use App\Repositories\EloquentTricepsRepository;
 use App\Repositories\EloquentOmbroRepository;
 use App\Repositories\EloquentUserRepository;
 
-class RepositoryServiceProvider extends ServiceProvider
+class RepositoriesServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.

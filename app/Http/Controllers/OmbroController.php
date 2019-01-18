@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Ombro;
+//use App\Http\Requests\OmbroStoreRequest;
+//use App\Http\Requests\OmbroUpdateRequest;
+use App\Models\Ombro;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\OmbroRepository;
+use App\Services\OmbroService;
 
 class OmbroController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param CostaRepository $repository
+     * @param CostaService $service
+     */
+    public function __construct(OmbroRepository $repository, OmbroService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      *

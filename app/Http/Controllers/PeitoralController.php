@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Peitoral;
+//use App\Http\Requests\PeitoralStoreRequest;
+//use App\Http\Requests\PeitoralUpdateRequest;
+use App\Models\Peitoral;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\PeitoralRepository;
+use App\Services\PeitoralService;
 
 class PeitoralController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param PeitoralRepository $repository
+     * @param PeitoralService $service
+     */
+    public function __construct(PeitoralRepository $repository, PeitoralService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      *

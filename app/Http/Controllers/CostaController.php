@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Costa;
+//use App\Http\Requests\CostaStoreRequest;
+//use App\Http\Requests\CostaUpdateRequest;
+use App\Models\Costa;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\CostaRepository;
+use App\Services\CostaService;
 
 class CostaController extends Controller
 {
+    protected $repository;
+    protected $service;
+
+
+    /**
+     * BillingController constructor.
+     * @param CostaRepository $repository
+     * @param CostaService $service
+     */
+    public function __construct(CostaRepository $repository, CostaService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      *

@@ -34,7 +34,8 @@ class BicepsController extends Controller
      */
     public function index()
     {
-        //
+        $biceps = Biceps::all();
+        return view('layouts.biceps.index', compact('biceps'));
     }
 
     /**
@@ -44,7 +45,8 @@ class BicepsController extends Controller
      */
     public function create()
     {
-        //
+        dd('create');
+
     }
 
     /**

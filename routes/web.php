@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'middleware' => [
+        'auth',
+    ]
+],
+    function () {
+        Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/biceps', 'BicepsController');
+        Route::resource('membro_inferioor', 'MembroInferiorController');
+        Route::resource('peitoral', 'PeitoralController');
+        Route::resource('biceps', 'BicepsController');
+        Route::resource('triceps', 'TricepsController');
+        Route::resource('costa', 'CostaController');
+        Route::resource('ombro', 'OmbroController');
+    });
+
+
+

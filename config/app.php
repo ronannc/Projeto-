@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost/Projeto/public'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        App\Providers\RepositoriesServiceProvider::class,
 
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
