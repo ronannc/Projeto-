@@ -14,7 +14,12 @@ class CreateTreinosTable extends Migration
     public function up()
     {
         Schema::create('treinos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
+            $table->date('inicio');
+            $table->string('descricao');
+            $table->string('objetivo');
+            $table->string('intervalo');
+            $table->string('metodo');
             $table->timestamps();
         });
     }

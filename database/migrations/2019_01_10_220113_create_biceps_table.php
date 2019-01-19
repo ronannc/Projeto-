@@ -14,7 +14,9 @@ class CreateBicepsTable extends Migration
     public function up()
     {
         Schema::create('biceps', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
+            $table->string('exercicios');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
