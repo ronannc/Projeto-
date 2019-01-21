@@ -17,7 +17,7 @@ class BicepsController extends Controller
 
 
     /**
-     * BillingController constructor.
+     * BicepsController constructor.
      * @param BicepsRepository $repository
      * @param BicepsService $service
      */
@@ -65,7 +65,7 @@ class BicepsController extends Controller
             return back()->withInput();
         }
 
-        session()->flash('status', 'Faturamento adicionado com sucesso !');
+        session()->flash('status', 'Biceps adicionado com sucesso !');
         return redirect(route('biceps.index'));
     }
 
@@ -78,7 +78,7 @@ class BicepsController extends Controller
     public function show(Biceps $biceps)
     {
         $extraData = $this->repository->getExtraData();
-        return view('layouts.billings.show', compact('extraData'), compact('billing'));
+        return view('layouts.biceps.show', compact('extraData'), compact('biceps'));
     }
 
     /**
@@ -90,7 +90,7 @@ class BicepsController extends Controller
     public function edit(Biceps $biceps)
     {
         $extraData = $this->repository->getExtraData();
-        return view('layouts.billings.edit', compact('extraData'), compact('billing'));
+        return view('layouts.biceps.edit', compact('extraData'), compact('biceps'));
     }
 
     /**
@@ -103,12 +103,12 @@ class BicepsController extends Controller
     public function update(Request $request, Biceps $biceps)
     {
         $data = $request->all();
-        $resultFromUpdateBilling = $this->service->update($data, $billing);
-        if (!empty($resultFromUpdateBilling['error'])) {
-            session()->flash('error', $resultFromUpdateBilling['message']);
+        $resultFromUpdateBiceps = $this->service->update($data, $biceps);
+        if (!empty($resultFromUpdateBiceps['error'])) {
+            session()->flash('error', $resultFromUpdateBiceps['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Faturamento atualizado com sucesso!');
+        session()->flash('success', 'Biceps atualizado com sucesso!');
 
         return back();
     }
@@ -121,12 +121,12 @@ class BicepsController extends Controller
      */
     public function destroy(Biceps $biceps)
     {
-        $resultFromDeleteBilling = $this->service->delete($billing);
-        if (!empty($resultFromDeleteBilling['error'])) {
-            session()->flash('error', $resultFromDeleteBilling['message']);
+        $resultFromDeleteBiceps = $this->service->delete($biceps);
+        if (!empty($resultFromDeleteBiceps['error'])) {
+            session()->flash('error', $resultFromDeleteBiceps['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Faturamento deletado com sucesso!');
-        return redirect(route('billings.index'));
+        session()->flash('success', 'Biceps deletado com sucesso!');
+        return redirect(route('biceps.index'));
     }
 }

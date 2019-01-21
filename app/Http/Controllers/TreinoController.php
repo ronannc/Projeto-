@@ -11,12 +11,13 @@ use App\Services\TreinoService;
 
 class TreinoController extends Controller
 {
+
     protected $repository;
     protected $service;
 
 
     /**
-     * BillingController constructor.
+     * TreinoController constructor.
      * @param TreinoRepository $repository
      * @param TreinoService $service
      */
@@ -25,6 +26,7 @@ class TreinoController extends Controller
         $this->repository = $repository;
         $this->service = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +34,8 @@ class TreinoController extends Controller
      */
     public function index()
     {
-        //
+        $treino = Treino::all();
+        return view('layouts.treino.index', compact('treino'));
     }
 
     /**
@@ -42,7 +45,7 @@ class TreinoController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.treino.create');
     }
 
     /**
@@ -53,7 +56,17 @@ class TreinoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStoreTreino = $this->service->store($data);
+
+        if (!empty($resultFromStoreTreino['error'])) {
+            session()->flash('error', $resultFromStoreTreino['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Treino adicionado com sucesso !');
+        return redirect(route('treino.index'));
     }
 
     /**
@@ -64,7 +77,8 @@ class TreinoController extends Controller
      */
     public function show(Treino $treino)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.treinos.show', compact('extraData'), compact('treino'));
     }
 
     /**
@@ -75,7 +89,8 @@ class TreinoController extends Controller
      */
     public function edit(Treino $treino)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.treinos.edit', compact('extraData'), compact('treino'));
     }
 
     /**
@@ -87,7 +102,15 @@ class TreinoController extends Controller
      */
     public function update(Request $request, Treino $treino)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdateTreino = $this->service->update($data, $treino);
+        if (!empty($resultFromUpdateTreino['error'])) {
+            session()->flash('error', $resultFromUpdateTreino['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Treino atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -98,6 +121,12 @@ class TreinoController extends Controller
      */
     public function destroy(Treino $treino)
     {
-        //
+        $resultFromDeleteTreino = $this->service->delete($treino);
+        if (!empty($resultFromDeleteTreino['error'])) {
+            session()->flash('error', $resultFromDeleteTreino['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Treino deletado com sucesso!');
+        return redirect(route('treinos.index'));
     }
 }

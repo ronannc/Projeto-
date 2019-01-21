@@ -11,12 +11,13 @@ use App\Services\PeitoralService;
 
 class PeitoralController extends Controller
 {
+
     protected $repository;
     protected $service;
 
 
     /**
-     * BillingController constructor.
+     * PeitoralController constructor.
      * @param PeitoralRepository $repository
      * @param PeitoralService $service
      */
@@ -25,6 +26,7 @@ class PeitoralController extends Controller
         $this->repository = $repository;
         $this->service = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +34,8 @@ class PeitoralController extends Controller
      */
     public function index()
     {
-        //
+        $peitoral = Peitoral::all();
+        return view('layouts.peitoral.index', compact('peitoral'));
     }
 
     /**
@@ -42,7 +45,7 @@ class PeitoralController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.peitoral.create');
     }
 
     /**
@@ -53,7 +56,17 @@ class PeitoralController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStorePeitoral = $this->service->store($data);
+
+        if (!empty($resultFromStorePeitoral['error'])) {
+            session()->flash('error', $resultFromStorePeitoral['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Peitoral adicionado com sucesso !');
+        return redirect(route('peitoral.index'));
     }
 
     /**
@@ -64,7 +77,8 @@ class PeitoralController extends Controller
      */
     public function show(Peitoral $peitoral)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.peitoral.show', compact('extraData'), compact('peitoral'));
     }
 
     /**
@@ -75,7 +89,8 @@ class PeitoralController extends Controller
      */
     public function edit(Peitoral $peitoral)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.peitoral.edit', compact('extraData'), compact('peitoral'));
     }
 
     /**
@@ -87,7 +102,15 @@ class PeitoralController extends Controller
      */
     public function update(Request $request, Peitoral $peitoral)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdatePeitoral = $this->service->update($data, $peitoral);
+        if (!empty($resultFromUpdatePeitoral['error'])) {
+            session()->flash('error', $resultFromUpdatePeitoral['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Peitoral atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -98,6 +121,12 @@ class PeitoralController extends Controller
      */
     public function destroy(Peitoral $peitoral)
     {
-        //
+        $resultFromDeletePeitoral = $this->service->delete($peitoral);
+        if (!empty($resultFromDeletePeitoral['error'])) {
+            session()->flash('error', $resultFromDeletePeitoral['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Peitoral deletado com sucesso!');
+        return redirect(route('peitoral.index'));
     }
 }

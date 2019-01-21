@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Treino extends Model
 {
-    //
+    protected $fillable = [
+        'inicio',
+        'descricao',
+        'objetivo',
+        'intervalo',
+        'metodo',
+
+    ];
 }

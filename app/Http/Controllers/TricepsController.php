@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\TricepsStoreRequest;
-//use App\Http\Requests\TricepsUpdateRequest;
+use App\Http\Requests\TricepsStoreRequest;
+use App\Http\Requests\TricepsUpdateRequest;
 use App\Models\Triceps;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TricepsRepository;
@@ -11,12 +11,13 @@ use App\Services\TricepsService;
 
 class TricepsController extends Controller
 {
+
     protected $repository;
     protected $service;
 
 
     /**
-     * BillingController constructor.
+     * TtricepsController constructor.
      * @param TricepsRepository $repository
      * @param TricepsService $service
      */
@@ -25,6 +26,7 @@ class TricepsController extends Controller
         $this->repository = $repository;
         $this->service = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +34,8 @@ class TricepsController extends Controller
      */
     public function index()
     {
-        //
+        $triceps = Triceps::all();
+        return view('layouts.triceps.index', compact('triceps'));
     }
 
     /**
@@ -42,7 +45,7 @@ class TricepsController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.triceps.create');
     }
 
     /**
@@ -53,7 +56,17 @@ class TricepsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStoreTriceps = $this->service->store($data);
+
+        if (!empty($resultFromStoreTriceps['error'])) {
+            session()->flash('error', $resultFromStoreTriceps['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Triceps adicionado com sucesso !');
+        return redirect(route('triceps.index'));
     }
 
     /**
@@ -64,7 +77,8 @@ class TricepsController extends Controller
      */
     public function show(Triceps $triceps)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.triceps.show', compact('extraData'), compact('triceps'));
     }
 
     /**
@@ -75,7 +89,8 @@ class TricepsController extends Controller
      */
     public function edit(Triceps $triceps)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.triceps.edit', compact('extraData'), compact('triceps'));
     }
 
     /**
@@ -87,7 +102,15 @@ class TricepsController extends Controller
      */
     public function update(Request $request, Triceps $triceps)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdateTtriceps = $this->service->update($data, $triceps);
+        if (!empty($resultFromUpdateTtriceps['error'])) {
+            session()->flash('error', $resultFromUpdateTtriceps['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Triceps atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -98,6 +121,12 @@ class TricepsController extends Controller
      */
     public function destroy(Triceps $triceps)
     {
-        //
+        $resultFromDeleteTtriceps = $this->service->delete($triceps);
+        if (!empty($resultFromDeleteTtriceps['error'])) {
+            session()->flash('error', $resultFromDeleteTtriceps['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Triceps deletado com sucesso!');
+        return redirect(route('triceps.index'));
     }
 }

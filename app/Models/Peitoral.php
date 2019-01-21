@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peitoral extends Model
 {
-    //
-}
+    protected $fillable = [
+        'exercicio',
+        'descricao',
+    ];}

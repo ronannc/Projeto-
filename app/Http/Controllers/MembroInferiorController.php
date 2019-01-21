@@ -11,6 +11,7 @@ use App\Services\MembroInferiorService;
 
 class MembroInferiorController extends Controller
 {
+
     protected $repository;
     protected $service;
 
@@ -25,6 +26,7 @@ class MembroInferiorController extends Controller
         $this->repository = $repository;
         $this->service = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +34,8 @@ class MembroInferiorController extends Controller
      */
     public function index()
     {
-        //
+        $membroInferior = MembroInferior::all();
+        return view('layouts.membroInferior.index', compact('membroInferior'));
     }
 
     /**
@@ -42,7 +45,7 @@ class MembroInferiorController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.membroInferior.create');
     }
 
     /**
@@ -53,7 +56,17 @@ class MembroInferiorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStoreMembroInferior = $this->service->store($data);
+
+        if (!empty($resultFromStoreMembroInferior['error'])) {
+            session()->flash('error', $resultFromStoreMembroInferior['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Membro Inferior adicionado com sucesso !');
+        return redirect(route('membroInferior.index'));
     }
 
     /**
@@ -64,7 +77,8 @@ class MembroInferiorController extends Controller
      */
     public function show(MembroInferior $membroInferior)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.membroInferior.show', compact('extraData'), compact('membroInferior'));
     }
 
     /**
@@ -75,7 +89,8 @@ class MembroInferiorController extends Controller
      */
     public function edit(MembroInferior $membroInferior)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.membroInferior.edit', compact('extraData'), compact('membroInferior'));
     }
 
     /**
@@ -87,7 +102,15 @@ class MembroInferiorController extends Controller
      */
     public function update(Request $request, MembroInferior $membroInferior)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdateBilling = $this->service->update($data, $membroInferior);
+        if (!empty($resultFromUpdateBilling['error'])) {
+            session()->flash('error', $resultFromUpdateBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Membro Inferior atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -98,6 +121,12 @@ class MembroInferiorController extends Controller
      */
     public function destroy(MembroInferior $membroInferior)
     {
-        //
+        $resultFromDeleteBilling = $this->service->delete($membroInferior);
+        if (!empty($resultFromDeleteBilling['error'])) {
+            session()->flash('error', $resultFromDeleteBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Membro Inferior deletado com sucesso!');
+        return redirect(route('membroInferior.index'));
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\ClienteStoreRequest;
-//use App\Http\Requests\ClienteUpdateRequest;
+use App\Http\Requests\ClienteStoreRequest;
+use App\Http\Requests\ClienteUpdateRequest;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\ClienteRepository;
@@ -11,6 +11,7 @@ use App\Services\ClienteService;
 
 class ClienteController extends Controller
 {
+
     protected $repository;
     protected $service;
 
@@ -33,7 +34,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $cliente = Cliente::all();
+        return view('layouts.cliente.index', compact('cliente'));
     }
 
     /**
@@ -43,7 +45,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.cliente.create');
     }
 
     /**
@@ -54,7 +56,17 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStoreCliente = $this->service->store($data);
+
+        if (!empty($resultFromStoreCliente['error'])) {
+            session()->flash('error', $resultFromStoreCliente['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Cliente adicionado com sucesso !');
+        return redirect(route('cliente.index'));
     }
 
     /**
@@ -65,7 +77,8 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.cliente.show', compact('extraData'), compact('cliente'));
     }
 
     /**
@@ -76,7 +89,8 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.cliente.edit', compact('extraData'), compact('cliente'));
     }
 
     /**
@@ -88,7 +102,15 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdateBilling = $this->service->update($data, $cliente);
+        if (!empty($resultFromUpdateBilling['error'])) {
+            session()->flash('error', $resultFromUpdateBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Cliente atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -99,6 +121,12 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        $resultFromDeleteBilling = $this->service->delete($cliente);
+        if (!empty($resultFromDeleteBilling['error'])) {
+            session()->flash('error', $resultFromDeleteBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Cliente deletado com sucesso!');
+        return redirect(route('cliente.index'));
     }
 }

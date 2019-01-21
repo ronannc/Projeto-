@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Triceps extends Model
 {
-    //
+    protected $fillable = [
+        'exercicio',
+        'descricao',
+    ];
 }
