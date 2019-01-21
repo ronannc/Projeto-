@@ -15,7 +15,7 @@ class CreateMambrosInferioresTable extends Migration
     {
         Schema::create('membros_inferiores', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('exercicios');
+            $table->string('exercicio');
             $table->string('descricao');
             $table->timestamps();
         });

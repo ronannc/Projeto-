@@ -56,7 +56,17 @@ class BicepsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+//        dd($data);
+        $resultFromStoreBiceps = $this->service->store($data);
+
+        if (!empty($resultFromStoreBiceps['error'])) {
+            session()->flash('error', $resultFromStoreBiceps['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Faturamento adicionado com sucesso !');
+        return redirect(route('biceps.index'));
     }
 
     /**
@@ -67,7 +77,8 @@ class BicepsController extends Controller
      */
     public function show(Biceps $biceps)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.billings.show', compact('extraData'), compact('billing'));
     }
 
     /**
@@ -78,7 +89,8 @@ class BicepsController extends Controller
      */
     public function edit(Biceps $biceps)
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.billings.edit', compact('extraData'), compact('billing'));
     }
 
     /**
@@ -90,7 +102,15 @@ class BicepsController extends Controller
      */
     public function update(Request $request, Biceps $biceps)
     {
-        //
+        $data = $request->all();
+        $resultFromUpdateBilling = $this->service->update($data, $billing);
+        if (!empty($resultFromUpdateBilling['error'])) {
+            session()->flash('error', $resultFromUpdateBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Faturamento atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -101,6 +121,12 @@ class BicepsController extends Controller
      */
     public function destroy(Biceps $biceps)
     {
-        //
+        $resultFromDeleteBilling = $this->service->delete($billing);
+        if (!empty($resultFromDeleteBilling['error'])) {
+            session()->flash('error', $resultFromDeleteBilling['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Faturamento deletado com sucesso!');
+        return redirect(route('billings.index'));
     }
 }

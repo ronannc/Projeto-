@@ -15,8 +15,8 @@
         <!-- form start -->
         <form>
             <div class="box-body">
-                @include('layouts.coponents.input_exercicio')
-                @include('layouts.coponents.input_descricao')
+                @include('layouts.components.input_exercicio')
+                @include('layouts.components.input_descricao')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

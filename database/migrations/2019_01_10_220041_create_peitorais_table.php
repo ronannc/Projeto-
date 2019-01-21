@@ -15,7 +15,7 @@ class CreatePeitoraisTable extends Migration
     {
         Schema::create('peitorais', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('exercicios');
+            $table->string('exercicio');
             $table->string('descricao');
             $table->timestamps();
         });

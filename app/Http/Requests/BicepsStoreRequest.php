@@ -24,7 +24,16 @@ class BicepsStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'exercicios' => 'Required',
+            'descricao' => 'Required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'exercicios.required' => 'O campo Rede é obrigatório.',
+            'descricao.required' => "O campo Posto é obrigatório.",
         ];
     }
 }

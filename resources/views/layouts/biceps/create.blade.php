@@ -7,21 +7,25 @@
 @stop
 
 @section('content')
+
+    @include('layouts.components.menssagens')
+
     <div class="box box-primary">
         <div class="box-header with-border">
             <h3 class="box-title">Cadastro de Exercicios - Biceps</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form>
+        <form action="{{route('biceps.store')}}" method="post">
+            @csrf
             <div class="box-body">
-                @include('layouts.coponents.input_exercicio')
-                @include('layouts.coponents.input_descricao')
+                @include('layouts.components.input_exercicio')
+                @include('layouts.components.input_descricao')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                <button  class="btn btn-default">Cancelar</button>
+                <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
             </div>
             <!-- /.box-footer -->
         </form>

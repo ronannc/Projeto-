@@ -15,7 +15,7 @@ class CreateCostasTable extends Migration
     {
         Schema::create('costa', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('exercicios');
+            $table->string('exercicio');
             $table->string('descricao');
             $table->timestamps();
         });
