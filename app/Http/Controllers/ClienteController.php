@@ -17,7 +17,7 @@ class ClienteController extends Controller
 
 
     /**
-     * BillingController constructor.
+     * ClienteController constructor.
      * @param ClienteRepository $repository
      * @param ClienteService $service
      */
@@ -103,9 +103,9 @@ class ClienteController extends Controller
     public function update(Request $request, Cliente $cliente)
     {
         $data = $request->all();
-        $resultFromUpdateBilling = $this->service->update($data, $cliente);
-        if (!empty($resultFromUpdateBilling['error'])) {
-            session()->flash('error', $resultFromUpdateBilling['message']);
+        $resultFromUpdateCliente = $this->service->update($data, $cliente);
+        if (!empty($resultFromUpdateCliente['error'])) {
+            session()->flash('error', $resultFromUpdateCliente['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Cliente atualizado com sucesso!');
@@ -121,9 +121,9 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        $resultFromDeleteBilling = $this->service->delete($cliente);
-        if (!empty($resultFromDeleteBilling['error'])) {
-            session()->flash('error', $resultFromDeleteBilling['message']);
+        $resultFromDeleteCliente = $this->service->delete($cliente);
+        if (!empty($resultFromDeleteCliente['error'])) {
+            session()->flash('error', $resultFromDeleteCliente['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Cliente deletado com sucesso!');

@@ -17,7 +17,7 @@ class MembroInferiorController extends Controller
 
 
     /**
-     * BillingController constructor.
+     * MembroInferiorController constructor.
      * @param MembroInferiorRepository $repository
      * @param MembroInferiorService $service
      */
@@ -103,9 +103,9 @@ class MembroInferiorController extends Controller
     public function update(Request $request, MembroInferior $membroInferior)
     {
         $data = $request->all();
-        $resultFromUpdateBilling = $this->service->update($data, $membroInferior);
-        if (!empty($resultFromUpdateBilling['error'])) {
-            session()->flash('error', $resultFromUpdateBilling['message']);
+        $resultFromUpdateMembroInferior = $this->service->update($data, $membroInferior);
+        if (!empty($resultFromUpdateMembroInferior['error'])) {
+            session()->flash('error', $resultFromUpdateMembroInferior['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Membro Inferior atualizado com sucesso!');
@@ -121,9 +121,9 @@ class MembroInferiorController extends Controller
      */
     public function destroy(MembroInferior $membroInferior)
     {
-        $resultFromDeleteBilling = $this->service->delete($membroInferior);
-        if (!empty($resultFromDeleteBilling['error'])) {
-            session()->flash('error', $resultFromDeleteBilling['message']);
+        $resultFromDeleteMembroInferior = $this->service->delete($membroInferior);
+        if (!empty($resultFromDeleteMembroInferior['error'])) {
+            session()->flash('error', $resultFromDeleteMembroInferior['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Membro Inferior deletado com sucesso!');

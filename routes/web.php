@@ -26,7 +26,7 @@ Route::group([
     function () {
         Route::get('/home', 'HomeController@index')->name('home');
 
-        Route::resource('membro_inferioor', 'MembroInferiorController');
+        Route::resource('membroInferioor', 'MembroInferiorController');
         Route::resource('peitoral', 'PeitoralController');
         Route::resource('biceps', 'BicepsController');
         Route::resource('triceps', 'TricepsController');
