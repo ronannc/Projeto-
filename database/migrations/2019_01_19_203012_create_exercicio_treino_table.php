@@ -31,7 +31,7 @@ class CreateExercicioTreinoTable extends Migration
             $table->foreign('id_triceps')->references('id')->on('triceps');
 
             $table->integer('id_costa');
-            $table->foreign('id_costa')->references('id')->on('costa');
+            $table->foreign('id_costa')->references('id')->on('costas');
 
             $table->integer('id_ombro');
             $table->foreign('id_ombro')->references('id')->on('ombros');

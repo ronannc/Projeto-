@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\MembroInferiorStoreRequest;
-//use App\Http\Requests\MembroInferiorUpdateRequest;
+
+use App\DataTables\MembroInferiorDataTable;
 use App\Models\MembroInferior;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\MembroInferiorRepository;
@@ -32,10 +32,10 @@ class MembroInferiorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(MembroInferiorDataTable $dataTable)
     {
-        $membroInferior = MembroInferior::all();
-        return view('layouts.membroInferior.index', compact('membroInferior'));
+        return $dataTable->render('layouts.membroInferior.index');
+
     }
 
     /**
@@ -57,7 +57,6 @@ class MembroInferiorController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreMembroInferior = $this->service->store($data);
 
         if (!empty($resultFromStoreMembroInferior['error'])) {
@@ -65,7 +64,7 @@ class MembroInferiorController extends Controller
             return back()->withInput();
         }
 
-        session()->flash('status', 'Membro Inferior adicionado com sucesso !');
+        session()->flash('status', 'MembroInferior adicionado com sucesso !');
         return redirect(route('membroInferior.index'));
     }
 
@@ -77,8 +76,7 @@ class MembroInferiorController extends Controller
      */
     public function show(MembroInferior $membroInferior)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.membroInferior.show', compact('extraData'), compact('membroInferior'));
+        return view('layouts.membroInferior.show', compact('membroInferior'));
     }
 
     /**
@@ -87,10 +85,11 @@ class MembroInferiorController extends Controller
      * @param  \App\MembroInferior  $membroInferior
      * @return \Illuminate\Http\Response
      */
-    public function edit(MembroInferior $membroInferior)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.membroInferior.edit', compact('extraData'), compact('membroInferior'));
+        $membroInferior = MembroInferior::find($id);
+//        dd($membroInferior);
+        return view('layouts.membroInferior.edit', compact('membroInferior'));
     }
 
     /**
@@ -100,17 +99,19 @@ class MembroInferiorController extends Controller
      * @param  \App\MembroInferior  $membroInferior
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MembroInferior $membroInferior)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $membroInferior = MembroInferior::find($id);
+
         $resultFromUpdateMembroInferior = $this->service->update($data, $membroInferior);
         if (!empty($resultFromUpdateMembroInferior['error'])) {
             session()->flash('error', $resultFromUpdateMembroInferior['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Membro Inferior atualizado com sucesso!');
+        session()->flash('success', 'MembroInferior atualizado com sucesso!');
 
-        return back();
+        return redirect(route('membroInferior.index'));
     }
 
     /**
@@ -119,14 +120,17 @@ class MembroInferiorController extends Controller
      * @param  \App\MembroInferior  $membroInferior
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MembroInferior $membroInferior)
+    public function destroy($id)
     {
+//        dd($id);
+        $membroInferior = MembroInferior::find($id);
+
         $resultFromDeleteMembroInferior = $this->service->delete($membroInferior);
         if (!empty($resultFromDeleteMembroInferior['error'])) {
             session()->flash('error', $resultFromDeleteMembroInferior['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Membro Inferior deletado com sucesso!');
+        session()->flash('success', 'MembroInferior deletado com sucesso!');
         return redirect(route('membroInferior.index'));
     }
 }

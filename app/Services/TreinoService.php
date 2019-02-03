@@ -32,11 +32,11 @@ class TreinoService
         }
     }
 
-    public function update(array $data, Treino $station)
+    public function update(array $data, Treino $treino)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($treino, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class TreinoService
         }
     }
 
-    public function delete(Treino $station)
+    public function delete(Treino $treino)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($treino);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

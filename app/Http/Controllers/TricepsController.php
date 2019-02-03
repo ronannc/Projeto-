@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TricepsStoreRequest;
-use App\Http\Requests\TricepsUpdateRequest;
+
+use App\DataTables\TricepsDataTable;
 use App\Models\Triceps;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TricepsRepository;
@@ -17,7 +17,7 @@ class TricepsController extends Controller
 
 
     /**
-     * TtricepsController constructor.
+     * TricepsController constructor.
      * @param TricepsRepository $repository
      * @param TricepsService $service
      */
@@ -32,10 +32,10 @@ class TricepsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TricepsDataTable $dataTable)
     {
-        $triceps = Triceps::all();
-        return view('layouts.triceps.index', compact('triceps'));
+        return $dataTable->render('layouts.triceps.index');
+
     }
 
     /**
@@ -57,7 +57,6 @@ class TricepsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreTriceps = $this->service->store($data);
 
         if (!empty($resultFromStoreTriceps['error'])) {
@@ -77,8 +76,7 @@ class TricepsController extends Controller
      */
     public function show(Triceps $triceps)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.triceps.show', compact('extraData'), compact('triceps'));
+        return view('layouts.triceps.show', compact('triceps'));
     }
 
     /**
@@ -87,10 +85,11 @@ class TricepsController extends Controller
      * @param  \App\Triceps  $triceps
      * @return \Illuminate\Http\Response
      */
-    public function edit(Triceps $triceps)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.triceps.edit', compact('extraData'), compact('triceps'));
+        $triceps = Triceps::find($id);
+//        dd($triceps);
+        return view('layouts.triceps.edit', compact('triceps'));
     }
 
     /**
@@ -100,17 +99,19 @@ class TricepsController extends Controller
      * @param  \App\Triceps  $triceps
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Triceps $triceps)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
-        $resultFromUpdateTtriceps = $this->service->update($data, $triceps);
-        if (!empty($resultFromUpdateTtriceps['error'])) {
-            session()->flash('error', $resultFromUpdateTtriceps['message']);
+        $triceps = Triceps::find($id);
+
+        $resultFromUpdateTriceps = $this->service->update($data, $triceps);
+        if (!empty($resultFromUpdateTriceps['error'])) {
+            session()->flash('error', $resultFromUpdateTriceps['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Triceps atualizado com sucesso!');
 
-        return back();
+        return redirect(route('triceps.index'));
     }
 
     /**
@@ -119,11 +120,14 @@ class TricepsController extends Controller
      * @param  \App\Triceps  $triceps
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Triceps $triceps)
+    public function destroy($id)
     {
-        $resultFromDeleteTtriceps = $this->service->delete($triceps);
-        if (!empty($resultFromDeleteTtriceps['error'])) {
-            session()->flash('error', $resultFromDeleteTtriceps['message']);
+//        dd($id);
+        $triceps = Triceps::find($id);
+
+        $resultFromDeleteTriceps = $this->service->delete($triceps);
+        if (!empty($resultFromDeleteTriceps['error'])) {
+            session()->flash('error', $resultFromDeleteTriceps['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Triceps deletado com sucesso!');

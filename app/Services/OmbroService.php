@@ -32,11 +32,11 @@ class OmbroService
         }
     }
 
-    public function update(array $data, Ombro $station)
+    public function update(array $data, Ombro $ombro)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($ombro, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class OmbroService
         }
     }
 
-    public function delete(Ombro $station)
+    public function delete(Ombro $ombro)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($ombro);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

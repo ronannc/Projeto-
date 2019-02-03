@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="cpf">CPF</label>
-    <input type="text" class="form-control" name="cpf" id="input_cpf" placeholder="CPF">
+    <input type="text" class="form-control" name="cpf" id="input_cpf" placeholder="CPF" value ="{{ old('cpf') ?? $data['cpf'] ?? null }}">
 </div>
 
 @push('scripts')

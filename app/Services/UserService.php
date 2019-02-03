@@ -32,11 +32,11 @@ class UserService
         }
     }
 
-    public function update(array $data, User $station)
+    public function update(array $data, User $user)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($user, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class UserService
         }
     }
 
-    public function delete(User $station)
+    public function delete(User $user)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($user);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

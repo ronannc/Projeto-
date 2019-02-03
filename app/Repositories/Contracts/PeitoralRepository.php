@@ -11,7 +11,5 @@ interface PeitoralRepository
 
     public function update(Model $model, array $data);
 
-    public function getExtraData($id = null): array;
-
     public function delete(Model $model);
 }

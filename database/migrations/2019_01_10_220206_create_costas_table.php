@@ -13,7 +13,7 @@ class CreateCostasTable extends Migration
      */
     public function up()
     {
-        Schema::create('costa', function (Blueprint $table) {
+        Schema::create('costas', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('exercicio');
             $table->string('descricao');
@@ -28,6 +28,6 @@ class CreateCostasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('costa');
+        Schema::dropIfExists('costas');
     }
 }

@@ -32,11 +32,11 @@ class ClienteService
         }
     }
 
-    public function update(array $data, Cliente $station)
+    public function update(array $data, Cliente $cliente)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($cliente, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class ClienteService
         }
     }
 
-    public function delete(Cliente $station)
+    public function delete(Cliente $cliente)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($cliente);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

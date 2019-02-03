@@ -32,11 +32,11 @@ class MembroInferiorService
         }
     }
 
-    public function update(array $data, MembroInferior $station)
+    public function update(array $data, MembroInferior $membroInferior)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($membroInferior, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class MembroInferiorService
         }
     }
 
-    public function delete(MembroInferior $station)
+    public function delete(MembroInferior $membroInferior)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($membroInferior);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

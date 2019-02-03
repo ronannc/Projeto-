@@ -32,11 +32,11 @@ class CostaService
         }
     }
 
-    public function update(array $data, Costa $station)
+    public function update(array $data, Costa $costa)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($costa, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class CostaService
         }
     }
 
-    public function delete(Costa $station)
+    public function delete(Costa $costa)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($costa);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

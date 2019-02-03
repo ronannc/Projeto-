@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\CostaStoreRequest;
-//use App\Http\Requests\CostaUpdateRequest;
+use App\DataTables\CostaDataTable;
 use App\Models\Costa;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\CostaRepository;
@@ -32,10 +31,10 @@ class CostaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CostaDataTable $dataTable)
     {
-        $costa = Costa::all();
-        return view('layouts.costa.index', compact('costa'));
+        return $dataTable->render('layouts.costa.index');
+
     }
 
     /**
@@ -57,15 +56,15 @@ class CostaController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreCosta = $this->service->store($data);
+//        dd($resultFromStoreCosta);
 
         if (!empty($resultFromStoreCosta['error'])) {
             session()->flash('error', $resultFromStoreCosta['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Faturamento adicionado com sucesso !');
+        session()->flash('status', 'Costa adicionado com sucesso !');
         return redirect(route('costa.index'));
     }
 
@@ -77,8 +76,7 @@ class CostaController extends Controller
      */
     public function show(Costa $costa)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.costa.show', compact('extraData'), compact('costa'));
+        return view('layouts.costa.show', compact('costa'));
     }
 
     /**
@@ -87,10 +85,11 @@ class CostaController extends Controller
      * @param  \App\Costa  $costa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Costa $costa)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.costa.edit', compact('extraData'), compact('costa'));
+        $costa = Costa::find($id);
+//        dd($costa);
+        return view('layouts.costa.edit', compact('costa'));
     }
 
     /**
@@ -100,17 +99,19 @@ class CostaController extends Controller
      * @param  \App\Costa  $costa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Costa $costa)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $costa = Costa::find($id);
+
         $resultFromUpdateCosta = $this->service->update($data, $costa);
         if (!empty($resultFromUpdateCosta['error'])) {
             session()->flash('error', $resultFromUpdateCosta['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Faturamento atualizado com sucesso!');
+        session()->flash('success', 'Costa atualizado com sucesso!');
 
-        return back();
+        return redirect(route('costa.index'));
     }
 
     /**
@@ -119,14 +120,17 @@ class CostaController extends Controller
      * @param  \App\Costa  $costa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Costa $costa)
+    public function destroy($id)
     {
+//        dd($id);
+        $costa = Costa::find($id);
+
         $resultFromDeleteCosta = $this->service->delete($costa);
         if (!empty($resultFromDeleteCosta['error'])) {
             session()->flash('error', $resultFromDeleteCosta['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Faturamento deletado com sucesso!');
+        session()->flash('success', 'Costa deletado com sucesso!');
         return redirect(route('costa.index'));
     }
 }

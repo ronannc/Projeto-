@@ -973,7 +973,7 @@
     <table id="244" parent="7" name="clientes">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="245" parent="7" name="costas">
+    <table id="245" parent="7" name="costa">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="246" parent="7" name="exercicios_treino">
@@ -1010,7 +1010,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="243" name="exercicios">
+    <column id="256" parent="243" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1090,7 +1090,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="245" name="exercicios">
+    <column id="270" parent="245" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1230,7 +1230,7 @@
     <foreign-key id="296" parent="246" name="exercicios_treino_id_costa_foreign">
       <ColNames>id_costa</ColNames>
       <RefSchemaName>projeto</RefSchemaName>
-      <RefTableName>costas</RefTableName>
+      <RefTableName>costa</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="297" parent="246" name="exercicios_treino_id_ombro_foreign">
@@ -1246,7 +1246,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="247" name="exercicios">
+    <column id="299" parent="247" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1304,7 +1304,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="249" name="exercicios">
+    <column id="309" parent="249" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1359,7 +1359,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="251" name="exercicios">
+    <column id="319" parent="251" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1445,7 +1445,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="253" name="exercicios">
+    <column id="334" parent="253" name="exercicio">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>

@@ -32,11 +32,11 @@ class PeitoralService
         }
     }
 
-    public function update(array $data, Peitoral $station)
+    public function update(array $data, Peitoral $peitoral)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($peitoral, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class PeitoralService
         }
     }
 
-    public function delete(Peitoral $station)
+    public function delete(Peitoral $peitoral)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($peitoral);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

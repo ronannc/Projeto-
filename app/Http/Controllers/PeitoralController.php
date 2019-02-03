@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\PeitoralStoreRequest;
-//use App\Http\Requests\PeitoralUpdateRequest;
+
+use App\DataTables\PeitoralDataTable;
 use App\Models\Peitoral;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\PeitoralRepository;
@@ -32,10 +32,10 @@ class PeitoralController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PeitoralDataTable $dataTable)
     {
-        $peitoral = Peitoral::all();
-        return view('layouts.peitoral.index', compact('peitoral'));
+        return $dataTable->render('layouts.peitoral.index');
+
     }
 
     /**
@@ -57,7 +57,6 @@ class PeitoralController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStorePeitoral = $this->service->store($data);
 
         if (!empty($resultFromStorePeitoral['error'])) {
@@ -77,8 +76,7 @@ class PeitoralController extends Controller
      */
     public function show(Peitoral $peitoral)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.peitoral.show', compact('extraData'), compact('peitoral'));
+        return view('layouts.peitoral.show', compact('peitoral'));
     }
 
     /**
@@ -87,10 +85,11 @@ class PeitoralController extends Controller
      * @param  \App\Peitoral  $peitoral
      * @return \Illuminate\Http\Response
      */
-    public function edit(Peitoral $peitoral)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.peitoral.edit', compact('extraData'), compact('peitoral'));
+        $peitoral = Peitoral::find($id);
+//        dd($peitoral);
+        return view('layouts.peitoral.edit', compact('peitoral'));
     }
 
     /**
@@ -100,9 +99,11 @@ class PeitoralController extends Controller
      * @param  \App\Peitoral  $peitoral
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Peitoral $peitoral)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $peitoral = Peitoral::find($id);
+
         $resultFromUpdatePeitoral = $this->service->update($data, $peitoral);
         if (!empty($resultFromUpdatePeitoral['error'])) {
             session()->flash('error', $resultFromUpdatePeitoral['message']);
@@ -110,7 +111,7 @@ class PeitoralController extends Controller
         }
         session()->flash('success', 'Peitoral atualizado com sucesso!');
 
-        return back();
+        return redirect(route('peitoral.index'));
     }
 
     /**
@@ -119,8 +120,11 @@ class PeitoralController extends Controller
      * @param  \App\Peitoral  $peitoral
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peitoral $peitoral)
+    public function destroy($id)
     {
+//        dd($id);
+        $peitoral = Peitoral::find($id);
+
         $resultFromDeletePeitoral = $this->service->delete($peitoral);
         if (!empty($resultFromDeletePeitoral['error'])) {
             session()->flash('error', $resultFromDeletePeitoral['message']);

@@ -10,4 +10,6 @@ class Biceps extends Model
         'exercicio',
         'descricao',
     ];
+
+
 }

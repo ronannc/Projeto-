@@ -32,11 +32,11 @@ class TricepsService
         }
     }
 
-    public function update(array $data, Triceps $station)
+    public function update(array $data, Triceps $triceps)
     {
 
         try {
-            $update = $this->repository->update($station, $data);
+            $update = $this->repository->update($triceps, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,11 +46,11 @@ class TricepsService
         }
     }
 
-    public function delete(Triceps $station)
+    public function delete(Triceps $triceps)
     {
         try {
-            $update = $this->repository->delete($station);
-            return $update;
+            $delete = $this->repository->delete($triceps);
+            return $delete;
         } catch (\Exception $exception) {
             return [
                 'error' => true,

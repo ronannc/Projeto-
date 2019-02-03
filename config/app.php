@@ -179,7 +179,9 @@ return [
 
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
-        Yajra\DataTables\DataTablesServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Yajra\Datatables\ButtonsServiceProvider::class,
+
 
     ],
 
@@ -229,7 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
 
     ],

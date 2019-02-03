@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BicepsStoreRequest;
-use App\Http\Requests\BicepsUpdateRequest;
+use App\DataTables\BicepsDataTable;
 use App\Models\Biceps;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\BicepsRepository;
@@ -32,10 +31,10 @@ class BicepsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(BicepsDataTable $dataTable)
     {
-        $biceps = Biceps::all();
-        return view('layouts.biceps.index', compact('biceps'));
+        return $dataTable->render('layouts.biceps.index');
+
     }
 
     /**
@@ -57,7 +56,6 @@ class BicepsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreBiceps = $this->service->store($data);
 
         if (!empty($resultFromStoreBiceps['error'])) {
@@ -77,8 +75,7 @@ class BicepsController extends Controller
      */
     public function show(Biceps $biceps)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.biceps.show', compact('extraData'), compact('biceps'));
+        return view('layouts.biceps.show', compact('biceps'));
     }
 
     /**
@@ -87,10 +84,11 @@ class BicepsController extends Controller
      * @param  \App\Biceps  $biceps
      * @return \Illuminate\Http\Response
      */
-    public function edit(Biceps $biceps)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.biceps.edit', compact('extraData'), compact('biceps'));
+        $biceps = Biceps::find($id);
+//        dd($biceps);
+        return view('layouts.biceps.edit', compact('biceps'));
     }
 
     /**
@@ -100,9 +98,11 @@ class BicepsController extends Controller
      * @param  \App\Biceps  $biceps
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Biceps $biceps)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $biceps = Biceps::find($id);
+
         $resultFromUpdateBiceps = $this->service->update($data, $biceps);
         if (!empty($resultFromUpdateBiceps['error'])) {
             session()->flash('error', $resultFromUpdateBiceps['message']);
@@ -110,7 +110,7 @@ class BicepsController extends Controller
         }
         session()->flash('success', 'Biceps atualizado com sucesso!');
 
-        return back();
+        return redirect(route('biceps.index'));
     }
 
     /**
@@ -119,8 +119,11 @@ class BicepsController extends Controller
      * @param  \App\Biceps  $biceps
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Biceps $biceps)
+    public function destroy($id)
     {
+//        dd($id);
+        $biceps = Biceps::find($id);
+
         $resultFromDeleteBiceps = $this->service->delete($biceps);
         if (!empty($resultFromDeleteBiceps['error'])) {
             session()->flash('error', $resultFromDeleteBiceps['message']);

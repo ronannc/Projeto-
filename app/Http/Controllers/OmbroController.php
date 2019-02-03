@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\OmbroStoreRequest;
-//use App\Http\Requests\OmbroUpdateRequest;
+
+use App\DataTables\OmbroDataTable;
 use App\Models\Ombro;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\OmbroRepository;
@@ -32,10 +32,10 @@ class OmbroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(OmbroDataTable $dataTable)
     {
-        $ombro = Ombro::all();
-        return view('layouts.ombro.index', compact('ombro'));
+        return $dataTable->render('layouts.ombro.index');
+
     }
 
     /**
@@ -57,7 +57,6 @@ class OmbroController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreOmbro = $this->service->store($data);
 
         if (!empty($resultFromStoreOmbro['error'])) {
@@ -77,8 +76,7 @@ class OmbroController extends Controller
      */
     public function show(Ombro $ombro)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.ombro.show', compact('extraData'), compact('ombro'));
+        return view('layouts.ombro.show', compact('ombro'));
     }
 
     /**
@@ -87,10 +85,11 @@ class OmbroController extends Controller
      * @param  \App\Ombro  $ombro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ombro $ombro)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.ombro.edit', compact('extraData'), compact('ombro'));
+        $ombro = Ombro::find($id);
+//        dd($ombro);
+        return view('layouts.ombro.edit', compact('ombro'));
     }
 
     /**
@@ -100,9 +99,11 @@ class OmbroController extends Controller
      * @param  \App\Ombro  $ombro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ombro $ombro)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $ombro = Ombro::find($id);
+
         $resultFromUpdateOmbro = $this->service->update($data, $ombro);
         if (!empty($resultFromUpdateOmbro['error'])) {
             session()->flash('error', $resultFromUpdateOmbro['message']);
@@ -110,7 +111,7 @@ class OmbroController extends Controller
         }
         session()->flash('success', 'Ombro atualizado com sucesso!');
 
-        return back();
+        return redirect(route('ombro.index'));
     }
 
     /**
@@ -119,8 +120,11 @@ class OmbroController extends Controller
      * @param  \App\Ombro  $ombro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ombro $ombro)
+    public function destroy($id)
     {
+//        dd($id);
+        $ombro = Ombro::find($id);
+
         $resultFromDeleteOmbro = $this->service->delete($ombro);
         if (!empty($resultFromDeleteOmbro['error'])) {
             session()->flash('error', $resultFromDeleteOmbro['message']);
