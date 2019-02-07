@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\TreinoStoreRequest;
-//use App\Http\Requests\TreinoUpdateRequest;
 use App\Models\Treino;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TreinoRepository;
@@ -75,9 +73,9 @@ class TreinoController extends Controller
      * @param  \App\Treino  $treino
      * @return \Illuminate\Http\Response
      */
-    public function show(Treino $treino)
+    public function show($id)
     {
-        $extraData = $this->repository->getExtraData();
+        $treino = Treino::find($id);
         return view('layouts.treinos.show', compact('extraData'), compact('treino'));
     }
 
@@ -87,9 +85,9 @@ class TreinoController extends Controller
      * @param  \App\Treino  $treino
      * @return \Illuminate\Http\Response
      */
-    public function edit(Treino $treino)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
+        $treino = Treino::find($id);
         return view('layouts.treinos.edit', compact('extraData'), compact('treino'));
     }
 

@@ -63,7 +63,6 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentCostaRepository(new Costa());
         });
 
-
         $this->app->bind(MembroInferiorRepository::class, function () {
             return new EloquentMembroInferiorRepository(new MembroInferior());
         });
@@ -87,12 +86,6 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(TricepsRepository::class, function () {
             return new EloquentTricepsRepository(new Triceps());
         });
-
-
-
-
-
-
 
     }
 

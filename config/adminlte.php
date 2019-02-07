@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Virtual Training',
 
-    'title_prefix' => '',
+    'title_prefix' => 'VT',
 
     'title_postfix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Virtual</b>Training',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>V</b>T',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'Cadastro de Exercicios',
+        'Exercicios',
         [
             'text'    => 'Biceps',
             'submenu' => [
@@ -189,6 +189,38 @@ return [
                 [
                     'text' => 'Cadastrar',
                     'route'  => 'triceps.create',
+                ],
+            ],
+        ],
+
+        'Clientes',
+
+        [
+            'text'    => 'Clientes',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'route'  => 'cliente.index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'route'  => 'cliente.create',
+                ],
+            ],
+        ],
+
+        'Treinos',
+
+        [
+            'text'    => 'Configurando Treinos',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'route'  => 'treino.index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'route'  => 'treino.create',
                 ],
             ],
         ],

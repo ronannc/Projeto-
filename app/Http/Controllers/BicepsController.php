@@ -87,7 +87,6 @@ class BicepsController extends Controller
     public function edit($id)
     {
         $biceps = Biceps::find($id);
-//        dd($biceps);
         return view('layouts.biceps.edit', compact('biceps'));
     }
 

@@ -2,93 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/DataTables/CostaDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DataTables/OmbroDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DataTables/PeitoralDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DataTables/TricepsDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/BicepsFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CostaFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/MembroInferiorFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/OmbroFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PeitoralFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/TricepsFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CostaTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/MembroInferiorTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/OmbroTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PeitoralTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/biceps/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/costa/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/costa/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/costa/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/membroInferior/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/membroInferior/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/membroInferior/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/ombro/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/ombro/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/ombro/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/peitoral/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/peitoral/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/peitoral/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projeto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projeto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DataTables/BicepsDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DataTables/TreinoDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/debug-server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/tinker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/trustedproxy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ClienteFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ClienteTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ExercicioTreinoTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TreinoTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_telefone.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_treino.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/treino/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BicepsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BicepsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CostaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CostaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MembroInferiorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MembroInferiorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OmbroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OmbroController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PeitoralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PeitoralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TricepsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TricepsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Biceps.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Biceps.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/BicepsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/BicepsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/CostaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/CostaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Costa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Costa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MembroInferior.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MembroInferior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Ombro.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ombro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Peitoral.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Peitoral.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Treino.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Treino.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Triceps.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Triceps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/MembroInferiorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/MembroInferiorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/OmbroRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/OmbroRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/PeitoralRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/PeitoralRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/TricepsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/TricepsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentBicepsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentBicepsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentCostaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentCostaRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentOmbroRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentOmbroRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentPeitoralRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentPeitoralRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentTricepsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentTricepsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentUserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentUserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/BicepsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/BicepsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ClienteService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ClienteService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CostaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CostaService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/MembroInferiorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/MembroInferiorService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/OmbroService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/OmbroService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/PeitoralService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PeitoralService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/TreinoService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TreinoService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/TricepsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TricepsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_mambros_inferiores_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/biceps/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/biceps/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_descricao.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_descricao.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_exercicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_exercicio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_nome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_nome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/triceps/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/triceps/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/triceps/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/triceps/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,13 +90,6 @@
         <item name="projeto@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="projeto: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="biceps: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projeto@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projeto: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="treinos: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -148,7 +99,7 @@
     <session id="355246925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -158,8 +109,10 @@
           <entry key="project.open.time.32" value="3" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -172,18 +125,18 @@
           <entry key="js" value="1" />
           <entry key="json" value="2" />
           <entry key="lock" value="5" />
-          <entry key="php" value="527" />
+          <entry key="php" value="635" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="91" />
+          <entry key="Blade" value="109" />
           <entry key="Database Element" value="4" />
           <entry key="JSON" value="7" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="436" />
+          <entry key="PHP" value="526" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -192,16 +145,16 @@
         <counts>
           <entry key="dummy" value="21" />
           <entry key="env" value="11" />
-          <entry key="php" value="4737" />
-          <entry key="txt" value="152" />
+          <entry key="php" value="5715" />
+          <entry key="txt" value="183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="11" />
-          <entry key="Blade" value="722" />
-          <entry key="PHP" value="4015" />
-          <entry key="PLAIN_TEXT" value="173" />
+          <entry key="Blade" value="957" />
+          <entry key="PHP" value="4758" />
+          <entry key="PLAIN_TEXT" value="204" />
         </counts>
       </usages-collector>
     </session>
@@ -209,94 +162,93 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_table.php">
+        <entry file="file://$PROJECT_DIR$/config/adminlte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="566">
+              <caret line="222" column="39" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/factories/ClienteFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
+                <element signature="e#7#36#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/factories/MembroInferiorFactory.php">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            <state relative-caret-position="440">
+              <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/MembroInferiorService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-              <folding>
-                <element signature="e#37#76#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/AbstractEloquentRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/BaseRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/MembroInferior.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MembroInferiorController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="59" column="59" lean-forward="true" selection-start-line="59" selection-start-column="59" selection-end-line="59" selection-end-column="59" />
-              <folding>
-                <element signature="e#41#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="138" selection-start-line="2" selection-start-column="138" selection-end-line="2" selection-end-column="138" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="148" selection-start-line="2" selection-start-column="148" selection-end-line="2" selection-end-column="148" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="153" selection-start-line="2" selection-start-column="153" selection-end-line="2" selection-end-column="153" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/DataTables/BicepsDataTable.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/TreinoTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -314,8 +266,17 @@
       <find>MembroInferirorService</find>
       <find>MembroInferirorRepository</find>
       <find>MembroInferiror</find>
-      <find>biceps</find>
+      <find>mem</find>
+      <find>bice</find>
+      <find>bi</find>
+      <find>Bi</find>
+      <find>$biceps</find>
+      <find>iceps</find>
+      <find>peitoral</find>
       <find>Biceps</find>
+      <find>biceps</find>
+      <find>intervalo</find>
+      <find>Intervalo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -324,43 +285,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentCostaRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentOmbroRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentPeitoralRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentTricepsRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentUserRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TricepsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PeitoralController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/OmbroController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MembroInferiorController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BicepsController.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/CostaDataTable.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/OmbroDataTable.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/PeitoralDataTable.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/TricepsDataTable.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/costa/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/costa/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/costa/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/membroInferior/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/membroInferior/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/membroInferior/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/ombro/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/ombro/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/ombro/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/peitoral/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/peitoral/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/peitoral/index.blade.php" />
-        <option value="$PROJECT_DIR$/config/adminlte.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/MembroInferiorTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CostaTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/OmbroTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/PeitoralTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" />
@@ -373,8 +297,45 @@
         <option value="$PROJECT_DIR$/database/factories/PeitoralFactory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CostaController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_mambros_inferiores_table.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Contracts/MembroInferiorRepository.php" />
+        <option value="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/triceps/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/triceps/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/triceps/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Biceps.php" />
+        <option value="$PROJECT_DIR$/app/Models/MembroInferior.php" />
+        <option value="$PROJECT_DIR$/app/Models/Cliente.php" />
+        <option value="$PROJECT_DIR$/app/Models/Peitoral.php" />
+        <option value="$PROJECT_DIR$/app/Models/Triceps.php" />
+        <option value="$PROJECT_DIR$/app/Models/Treino.php" />
+        <option value="$PROJECT_DIR$/app/Models/Ombro.php" />
+        <option value="$PROJECT_DIR$/app/Models/Costa.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ClienteTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/TreinoTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ExercicioTreinoTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_telefone.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_treino.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" />
+        <option value="$PROJECT_DIR$/database/factories/ClienteFactory.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BicepsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
+        <option value="$PROJECT_DIR$/app/DataTables/TreinoDataTable.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" />
+        <option value="$PROJECT_DIR$/app/Services/TreinoService.php" />
+        <option value="$PROJECT_DIR$/config/adminlte.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php" />
       </list>
     </option>
   </component>
@@ -511,50 +472,36 @@
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="DataTables" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="treino" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -570,14 +517,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DOM_Sistema" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Projeto\database\factories" />
-      <recent name="C:\xampp\htdocs\Projeto\database\seeds" />
+      <recent name="C:\xampp\htdocs\Projeto\resources\views\layouts\components" />
       <recent name="C:\xampp\htdocs\Projeto\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\Projeto\app\DataTables" />
-      <recent name="C:\xampp\htdocs\Projeto\resources\views\layouts\biceps" />
+      <recent name="C:\xampp\htdocs\Projeto\database\factories" />
+      <recent name="C:\xampp\htdocs\Projeto\database\seeds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Projeto\resources\views" />
@@ -621,7 +569,9 @@
       <workItem from="1548591764218" duration="12769000" />
       <workItem from="1548619333557" duration="460000" />
       <workItem from="1549120932319" duration="2592000" />
-      <workItem from="1549199142859" duration="4981000" />
+      <workItem from="1549199142859" duration="5151000" />
+      <workItem from="1549321491991" duration="4744000" />
+      <workItem from="1549492732654" duration="6027000" />
     </task>
     <task id="LOCAL-00001" summary="Resources, Migrations, Controller, Requests">
       <created>1547160537617</created>
@@ -679,16 +629,24 @@
       <option name="project" value="LOCAL" />
       <updated>1548115686859</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="criando crud para os exercicios">
+      <created>1549206188656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549206188657</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67028000" />
+    <option name="totallyTimeSpent" value="77969000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21108742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -701,7 +659,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -723,251 +681,55 @@
     <MESSAGE value="components e views" />
     <MESSAGE value="insert biceps" />
     <MESSAGE value="Controller arruados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller arruados" />
+    <MESSAGE value="criando crud para os exercicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="criando crud para os exercicios" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/triceps/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/costa/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/MembroInferior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="176">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/costa/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Ombro.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        <state relative-caret-position="176">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/ombro/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Peitoral.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        <state relative-caret-position="176">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/ombro/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Triceps.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        <state relative-caret-position="176">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/peitoral/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/peitoral/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/membroInferior/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/membroInferior/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/ombro/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/peitoral/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/adminlte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2084">
-          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/CostaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCostaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="110">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Costa.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/membroInferior/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="176">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/costa/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/CostaService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220644_create_treinos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/PeitoralTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/OmbroTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CostaTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/TricepsFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#7#36#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/PeitoralFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/OmbroFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
+        <state relative-caret-position="-198" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CostaFactory.php">
@@ -977,120 +739,280 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/BicepsFactory.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#7#36#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="418">
+          <caret line="21" column="63" selection-start-line="21" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CostaController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/ExercicioTreinoTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/MembroInferiorRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="32" column="49" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/MembroInferiorTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="352">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_table.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="638">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ClienteService.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_nome.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_telefone.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="148" selection-start-line="2" selection-start-column="148" selection-end-line="2" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_treino.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="119" selection-start-line="2" selection-start-column="119" selection-end-line="2" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/CostaTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
+            <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/MembroInferiorFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/MembroInferiorService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <element signature="e#37#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/AbstractEloquentRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/BaseRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/MembroInferior.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MembroInferiorController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/ClienteTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="59" column="59" lean-forward="true" selection-start-line="59" selection-start-column="59" selection-end-line="59" selection-end-column="59" />
+        <state relative-caret-position="66">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/BicepsService.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCostaRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentBicepsRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Biceps.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="17" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/ClienteDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/BicepsDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BicepsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="86" column="28" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="94" column="7" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
           <folding>
-            <element signature="e#41#84#0#PHP" expanded="true" />
+            <element signature="e#40#76#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/BicepsDataTable.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220644_create_treinos_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/TreinoDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-394">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PeitoralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="87" column="28" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+          <folding>
+            <element signature="e#129#151#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/TreinoService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/tinker.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/adminlte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="222" column="39" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ClienteFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/TreinoTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="138" selection-start-line="2" selection-start-column="138" selection-end-line="2" selection-end-column="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="148" selection-start-line="2" selection-start-column="148" selection-end-line="2" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="153" selection-start-line="2" selection-start-column="153" selection-end-line="2" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

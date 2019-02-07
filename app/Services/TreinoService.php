@@ -34,7 +34,6 @@ class TreinoService
 
     public function update(array $data, Treino $treino)
     {
-
         try {
             $update = $this->repository->update($treino, $data);
             return $update;

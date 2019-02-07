@@ -973,7 +973,7 @@
     <table id="244" parent="7" name="clientes">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="245" parent="7" name="costa">
+    <table id="245" parent="7" name="costas">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="246" parent="7" name="exercicios_treino">
@@ -1230,7 +1230,7 @@
     <foreign-key id="296" parent="246" name="exercicios_treino_id_costa_foreign">
       <ColNames>id_costa</ColNames>
       <RefSchemaName>projeto</RefSchemaName>
-      <RefTableName>costa</RefTableName>
+      <RefTableName>costas</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="297" parent="246" name="exercicios_treino_id_ombro_foreign">

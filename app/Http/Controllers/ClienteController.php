@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ClienteStoreRequest;
-use App\Http\Requests\ClienteUpdateRequest;
+use App\DataTables\ClienteDataTable;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\ClienteRepository;
@@ -32,10 +31,10 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ClienteDataTable $dataTable)
     {
-        $cliente = Cliente::all();
-        return view('layouts.cliente.index', compact('cliente'));
+        return $dataTable->render('layouts.cliente.index');
+
     }
 
     /**
@@ -87,9 +86,9 @@ class ClienteController extends Controller
      * @param  \App\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-        $extraData = $this->repository->getExtraData();
+        $cliente = Cliente::find($id);
         return view('layouts.cliente.edit', compact('extraData'), compact('cliente'));
     }
 

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\MembroinferiorRepository;
+use App\Repositories\Contracts\MembroInferiorRepository;
 
 class EloquentMembroInferiorRepository extends AbstractEloquentRepository implements MembroInferiorRepository
 {
