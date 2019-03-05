@@ -3,7 +3,7 @@
     <input type="text" class="form-control" name="cpf" id="input_cpf" placeholder="CPF" value ="{{ old('cpf') ?? $data['cpf'] ?? null }}">
 </div>
 
-@push('scripts')
+@section('js')
     <script src="{{ asset('js/jquery.mask.js') }}"></script>
     <script>
         let options = {
@@ -15,4 +15,4 @@
 
         $('#input_cpf').mask('000.000.000-00', options);
     </script>
-@endpush
+@stop

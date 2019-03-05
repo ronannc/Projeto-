@@ -212,7 +212,7 @@ return [
         'Treinos',
 
         [
-            'text'    => 'Configurando Treinos',
+            'text'    => 'Treinos',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -224,6 +224,20 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Exercicio Treino',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'route'  => 'exercicioTreino.index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'route'  => 'exercicioTreino.create',
+                ],
+            ],
+        ]
 
 
     ],

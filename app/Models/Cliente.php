@@ -13,6 +13,7 @@ class Cliente extends Model
         'nome',
         'cpf',
         'telefone',
+        'nascimento',
         'treino'
     ];
 }

@@ -21,8 +21,9 @@
             <div class="box-body">
                 @include('layouts.components.input_nome')
                 @include('layouts.components.input_cpf')
+                @include('layouts.components.input_nascimento')
                 @include('layouts.components.input_telefone')
-                @include('layouts.components.input_treino')
+                @include('layouts.components.select_treino')
 
             </div>
             <!-- /.box-body -->

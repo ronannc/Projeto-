@@ -10,10 +10,13 @@ class Treino extends Model
 
     protected $fillable = [
         'inicio',
+        'prox_ficha',
         'descricao',
         'objetivo',
         'intervalo',
         'metodo',
-
+        'frequencia',
+        'aerob_ini',
+        'aerob_fim'
     ];
 }

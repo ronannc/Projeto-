@@ -19,9 +19,3 @@
 @section('js')
     <script> console.log('Hi!'); </script>
 @stop
-
-{{-- resources/views/admin/dashboard.blade.php --}}
-
-@push('css')
-
-@push('js')

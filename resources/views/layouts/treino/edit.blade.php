@@ -12,16 +12,26 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar de Exercicio - Biceps</h3>
+            <h3 class="box-title">Editar Treino</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('biceps.update', $biceps)}}" method="post">
+        <form action="{{route('treino.update', $treino)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $biceps])
-                @include('layouts.components.input_descricao', ['data' => $biceps])
+                @include('layouts.components.input_inicio', ['data' => $treino])
+                @include('layouts.components.input_prox_ficha', ['data' => $treino])
+                @include('layouts.components.input_descricao', ['data' => $treino])
+                @include('layouts.components.input_objetivo', ['data' => $treino])
+                @include('layouts.components.input_intervalo', ['data' => $treino])
+                @include('layouts.components.input_metodo', ['data' => $treino])
+                @include('layouts.components.select_triceps', ['data' => $treino])
+                @include('layouts.components.select_biceps', ['data' => $treino])
+                @include('layouts.components.select_costa', ['data' => $treino])
+                @include('layouts.components.select_ombro', ['data' => $treino])
+                @include('layouts.components.select_peitoral', ['data' => $treino])
+                @include('layouts.components.select_membro_inferior', ['data' => $treino])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

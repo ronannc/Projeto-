@@ -44,7 +44,8 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('layouts.cliente.create');
+        $extraData = $this->repository->getTreino();
+        return view('layouts.cliente.create', compact('extraData'));
     }
 
     /**
@@ -76,8 +77,8 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        $extraData = $this->repository->getExtraData();
-        return view('layouts.cliente.show', compact('extraData'), compact('cliente'));
+        $treino = $this->repository->getExerciciosTreino($cliente['treino']);
+        return view('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
     /**

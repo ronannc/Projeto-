@@ -18,8 +18,9 @@ class ClienteDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Cliente $cliente){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('cliente.edit', $cliente) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
+                return '<a title="Visualisar"  style="color: #000000" href="' . route('cliente.show', $cliente) . '"><i class="fa  fa-eye"></i></a>
+                        <a title="Editar"  style="color: #000000" href="' . route('cliente.edit', $cliente) . '"><i class="fa fa-edit"></i></a>
+                        <a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$cliente['id'].'\').submit();}">Excluir</a>
         <form id="form-delete'.$cliente['id'].'" style="display:none" action="'.route('cliente.destroy', $cliente).'" method="post">'.
             csrf_field().
@@ -37,7 +38,7 @@ class ClienteDataTable extends DataTable
      */
     public function query(Cliente $model)
     {
-        return $model->newQuery()->select('id', 'nome', 'cpf', 'telefone', 'treino');
+        return $model->newQuery()->select('id', 'nome', 'cpf', 'telefone', 'nascimento', 'treino');
     }
 
     /**
@@ -71,6 +72,7 @@ class ClienteDataTable extends DataTable
             'nome',
             'cpf',
             'telefone',
+            'nascimento',
             'treino',
             'acoes'
         ];

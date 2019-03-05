@@ -17,9 +17,10 @@ use App\Models\Cliente;
 $factory->define(Cliente::class, function (Faker $faker) {
     return [
         'nome' => $faker->name,
-        'cpf' => $faker->numberBetween([10000000000], [99999999999]),
-        'telefone' => $faker->numberBetween([10000000], [99999999]),
-        'treino' => $faker->name
+        'cpf' => rand(10000000, 99999999),
+        'telefone' => rand(10000000, 99999999),
+        'nascimento' => $faker->date(),
+        'treino' => null
 
     ];
 });

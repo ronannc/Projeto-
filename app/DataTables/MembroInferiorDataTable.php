@@ -18,8 +18,8 @@ class MembroInferiorDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (MembroInferior $membroInferior){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit', $membroInferior) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
+                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit', $membroInferior) . '"><i class="fa fa-edit"></i></a>
+                        <a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$membroInferior['id'].'\').submit();}">Excluir</a>
         <form id="form-delete'.$membroInferior['id'].'" style="display:none" action="'.route('membroInferior.destroy', $membroInferior).'" method="post">'.
             csrf_field().

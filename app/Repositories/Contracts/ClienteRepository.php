@@ -12,4 +12,8 @@ interface ClienteRepository
     public function update(Model $model, array $data);
 
     public function delete(Model $model);
+
+    public function getTreino();
+
+    public function getExerciciosTreino($id);
 }

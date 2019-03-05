@@ -20,11 +20,20 @@
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_inicio')
+                @include('layouts.components.input_prox_ficha')
                 @include('layouts.components.input_descricao')
                 @include('layouts.components.input_objetivo')
                 @include('layouts.components.input_intervalo')
                 @include('layouts.components.input_metodo')
-
+                @include('layouts.components.input_frequencia')
+                @include('layouts.components.input_aerob_ini')
+                @include('layouts.components.input_aerob_fim')
+                @include('layouts.components.select_triceps')
+                @include('layouts.components.select_biceps')
+                @include('layouts.components.select_costa')
+                @include('layouts.components.select_ombro')
+                @include('layouts.components.select_peitoral')
+                @include('layouts.components.select_membro_inferior')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
@@ -33,5 +42,16 @@
             </div>
             <!-- /.box-footer -->
         </form>
+
     </div>
 @stop
+
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('.multiple').select2();
+        });
+    </script>
+@stop
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\TreinoDataTable;
 use App\Models\Treino;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TreinoRepository;
@@ -12,7 +13,6 @@ class TreinoController extends Controller
 
     protected $repository;
     protected $service;
-
 
     /**
      * TreinoController constructor.
@@ -30,10 +30,9 @@ class TreinoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TreinoDataTable $dataTable)
     {
-        $treino = Treino::all();
-        return view('layouts.treino.index', compact('treino'));
+        return $dataTable->render('layouts.treino.index');
     }
 
     /**
@@ -43,7 +42,8 @@ class TreinoController extends Controller
      */
     public function create()
     {
-        return view('layouts.treino.create');
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.treino.create', compact('extraData') );
     }
 
     /**
@@ -55,12 +55,36 @@ class TreinoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreTreino = $this->service->store($data);
 
         if (!empty($resultFromStoreTreino['error'])) {
             session()->flash('error', $resultFromStoreTreino['message']);
             return back()->withInput();
+        }
+
+        foreach ($data['triceps'] as $triceps){
+            $this->repository->save_triceps_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_triceps' => $triceps]);
+        }
+
+        foreach ($data['biceps'] as $biceps){
+            $this->repository->save_biceps_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_biceps' => $biceps]);
+        }
+
+        foreach ($data['costa'] as $costa){
+            $this->repository->save_costa_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_costa' => $costa]);
+        }
+
+        foreach ($data['ombro'] as $ombro){
+            $this->repository->save_ombro_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_ombro' => $ombro]);
+        }
+//        dd($data);
+
+        foreach ($data['peitoral'] as $peitoral){
+            $this->repository->save_peitoral_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_peitoral' => $peitoral]);
+        }
+
+        foreach ($data['membro_inferior'] as $membro_inferior){
+            $this->repository->save_membro_inferior_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_membro_inferior' => $membro_inferior]);
         }
 
         session()->flash('status', 'Treino adicionado com sucesso !');
@@ -88,7 +112,7 @@ class TreinoController extends Controller
     public function edit($id)
     {
         $treino = Treino::find($id);
-        return view('layouts.treinos.edit', compact('extraData'), compact('treino'));
+        return view('layouts.treino.edit', compact('extraData'), compact('treino'));
     }
 
     /**
@@ -125,6 +149,6 @@ class TreinoController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Treino deletado com sucesso!');
-        return redirect(route('treinos.index'));
+        return redirect(route('treino.index'));
     }
 }

@@ -2,8 +2,16 @@
 
 namespace App\Repositories;
 
-
+use App\Models\BicepsTreino;
 use App\Models\Cliente;
+use App\Models\CostaTreino;
+use App\Models\ExercicioTreino;
+use App\Models\MembroInferiorTreino;
+use App\Models\OmbroTreino;
+use App\Models\PeitoralTreino;
+use App\Models\Treino;
+use App\Models\Triceps;
+use App\Models\TricepsTreino;
 use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\ClienteRepository;
 
@@ -23,5 +31,24 @@ class EloquentClienteRepository extends AbstractEloquentRepository implements Cl
     public function delete(Model $model)
     {
         return parent::delete($model);
+    }
+
+    public function getTreino(){
+        $data = Treino::all();
+        return $data;
+    }
+
+
+    public function getExerciciosTreino($id)
+    {
+        $data = Treino::find($id);
+        $data['triceps_treino'] = TricepsTreino::where('id_treino', $id)->get();
+        $data['biceps_treino'] = BicepsTreino::where('id_treino', $id)->get();
+        $data['costa_treino'] = CostaTreino::where('id_treino', $id)->get();
+        $data['ombro_treino'] = OmbroTreino::where('id_treino', $id)->get();
+        $data['peitoral_treino'] = PeitoralTreino::where('id_treino', $id)->get();
+        $data['membro_inferior_treino'] = MembroInferiorTreino::where('id_treino', $id)->get();
+
+        return $data;
     }
 }

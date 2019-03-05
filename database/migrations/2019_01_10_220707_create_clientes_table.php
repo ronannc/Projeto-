@@ -18,9 +18,9 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('cpf');
             $table->string('telefone');
+            $table->date('nascimento');
             $table->integer('treino')->nullable();
             $table->foreign('treino')->references('id')->on('treinos');
-
             $table->timestamps();
         });
     }
