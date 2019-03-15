@@ -48,7 +48,6 @@ class EloquentClienteRepository extends AbstractEloquentRepository implements Cl
         $data['ombro_treino'] = OmbroTreino::where('id_treino', $id)->get();
         $data['peitoral_treino'] = PeitoralTreino::where('id_treino', $id)->get();
         $data['membro_inferior_treino'] = MembroInferiorTreino::where('id_treino', $id)->get();
-
         return $data;
     }
 }

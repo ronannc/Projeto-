@@ -13,6 +13,7 @@ use App\Models\Ombro;
 use App\Models\OmbroTreino;
 use App\Models\Peitoral;
 use App\Models\PeitoralTreino;
+use App\Models\Treino;
 use App\Models\Triceps;
 use App\Models\TricepsTreino;
 use Illuminate\Database\Eloquent\Model;
@@ -36,6 +37,18 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         return parent::delete($model);
     }
 
+    public function getExerciciosTreino($id)
+    {
+        $data = Treino::find($id);
+        $data['triceps_treino'] = TricepsTreino::where('id_treino', $data['id'])->get();
+        $data['biceps_treino'] = BicepsTreino::where('id_treino', $data['id'])->get();
+        $data['costa_treino'] = CostaTreino::where('id_treino', $data['id'])->get();
+        $data['ombro_treino'] = OmbroTreino::where('id_treino', $data['id'])->get();
+        $data['peitoral_treino'] = PeitoralTreino::where('id_treino', $data['id'])->get();
+        $data['membro_inferior_treino'] = MembroInferiorTreino::where('id_treino', $data['id'])->get();
+        return $data;
+    }
+
     public function getExtraData()
     {
         return [
@@ -56,12 +69,28 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         ]);
     }
 
+    public function update_triceps_treino($data)
+    {
+        TricepsTreino::
+            where('id_treino' , $data['id_treino'])
+            ->where('id_triceps', $data['id_triceps'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+    }
+
     public function save_biceps_treino($data)
     {
         BicepsTreino::create([
             'id_treino' => $data['id_treino'],
             'id_biceps' => $data['id_biceps']
         ]);
+    }
+
+    public function update_biceps_treino($data)
+    {
+        BicepsTreino::
+        where('id_treino' , $data['id_treino'])
+            ->where('id_biceps', $data['id_biceps'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
     }
 
     public function save_costa_treino($data)
@@ -72,12 +101,28 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         ]);
     }
 
+    public function update_costa_treino($data)
+    {
+        CostaTreino::
+        where('id_treino' , $data['id_treino'])
+            ->where('id_costa', $data['id_costa'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+    }
+
     public function save_peitoral_treino($data)
     {
         PeitoralTreino::create([
             'id_treino' => $data['id_treino'],
             'id_peitoral' => $data['id_peitoral']
         ]);
+    }
+
+    public function update_peitoral_treino($data)
+    {
+        PeitoralTreino::
+        where('id_treino' , $data['id_treino'])
+            ->where('id_peitoral', $data['id_peitoral'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
     }
 
     public function save_ombro_treino($data)
@@ -88,12 +133,39 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         ]);
     }
 
+    public function update_ombro_treino($data)
+    {
+        OmbroTreino::
+        where('id_treino' , $data['id_treino'])
+            ->where('id_ombro', $data['id_ombro'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+    }
+
     public function save_membro_inferior_treino($data)
     {
         MembroInferiorTreino::create([
             'id_treino' => $data['id_treino'],
             'id_membro_inferior' => $data['id_membro_inferior']
         ]);
+    }
+
+    public function update_membro_inferior_treino($data)
+    {
+        MembroInferiorTreino::
+        where('id_treino' , $data['id_treino'])
+            ->where('id_membro_inferior', $data['id_membro_inferior'])
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+    }
+
+    public function process_data($data){
+        $collect = array();
+        foreach ($data as $key => $aux ){
+            $aux_key = explode('_', $key);
+            if(count($aux_key) == 3)
+                $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
+        }
+
+        return $collect;
     }
 
 }

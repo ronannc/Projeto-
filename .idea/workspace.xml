@@ -5,96 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BicepsTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CostaTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ExercicioTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MembroInferiorTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OmbroTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PeitoralTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TricepsTreinoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/BicepsTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/CostaTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/MembroInferiorTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/OmbroTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/PeitoralTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/TricepsTreino.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/BicepsTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/CostaTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ExercicioTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/MembroInferiorTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/OmbroTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/PeitoralTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/TricepsTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentBicepsTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentCostaTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentExercicioTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentMembroInferiorTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentOmbroTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentPeitoralTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentTricepsTreinoRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/BicepsTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/CostaTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/ExercicioTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/MembroInferiorTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/OmbroTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/PeitoralTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/TricepsTreinoService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_frequencia.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_biceps.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_costa.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_membros_inferiores.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_ombro.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_peitorais.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_treino.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_triceps.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_nascimento.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_prox_ficha.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_biceps.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_costa.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_membro_inferior.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_ombro.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_peitoral.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_triceps.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cliente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Treino.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Treino.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/TreinoService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TreinoService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClienteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClienteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220644_create_treinos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_19_203012_create_exercicio_treino_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/exercicioTreino/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,13 +62,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="projeto: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projeto@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projeto: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="treinos: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -146,16 +69,17 @@
     <session id="355246925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="4" />
           <entry key="project.open.time.34" value="2" />
@@ -163,8 +87,10 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.open.time.76" value="1" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -184,41 +110,43 @@
           <entry key="membros_inferiores" value="2" />
           <entry key="membros_inferiores_treino" value="2" />
           <entry key="ombros_treino" value="2" />
-          <entry key="peitorais_treino" value="1" />
-          <entry key="php" value="1002" />
+          <entry key="peitorais_treino" value="3" />
+          <entry key="php" value="1051" />
           <entry key="sql" value="1" />
           <entry key="treinos" value="4" />
           <entry key="triceps" value="2" />
-          <entry key="triceps_treino" value="4" />
+          <entry key="triceps_treino" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="5" />
-          <entry key="Blade" value="187" />
-          <entry key="Database Element" value="33" />
+          <entry key="Blade" value="201" />
+          <entry key="Database Element" value="36" />
           <entry key="JSON" value="9" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="815" />
+          <entry key="PHP" value="850" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="cell" value="9" />
           <entry key="dummy" value="26" />
           <entry key="env" value="11" />
-          <entry key="php" value="10800" />
+          <entry key="php" value="12172" />
           <entry key="txt" value="409" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="11" />
-          <entry key="Blade" value="2854" />
+          <entry key="Blade" value="3179" />
           <entry key="HTML" value="7" />
-          <entry key="PHP" value="7939" />
+          <entry key="PHP" value="8986" />
           <entry key="PLAIN_TEXT" value="435" />
+          <entry key="Scratch" value="9" />
         </counts>
       </usages-collector>
     </session>
@@ -228,81 +156,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="49" column="8" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="8" />
+            <state relative-caret-position="412">
+              <caret line="33" column="59" lean-forward="true" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_frequencia.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="107" selection-start-line="2" selection-start-column="107" selection-end-line="2" selection-end-column="107" />
+            <state relative-caret-position="508">
+              <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+              <folding>
+                <element signature="e#40#75#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="677">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_triceps.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_peitoral.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="153" selection-start-line="2" selection-start-column="153" selection-end-line="2" selection-end-column="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="90" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+            <state relative-caret-position="390">
+              <caret line="147" column="63" lean-forward="true" selection-start-line="147" selection-start-column="63" selection-end-line="147" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -311,10 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bice</find>
-      <find>bi</find>
-      <find>Bi</find>
-      <find>iceps</find>
       <find>intervalo</find>
       <find>Intervalo</find>
       <find>$biceps</find>
@@ -341,6 +222,10 @@
       <find>ini</find>
       <find>Inicio</find>
       <find>descricao</find>
+      <find>$treino</find>
+      <find>$exercicioTreino</find>
+      <find>['treino']</find>
+      <find>$extraData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -349,33 +234,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TricepsTreinoController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PeitoralTreinoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MembroInferiorTreinoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BicepsTreinoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CostaTreinoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OmbroTreinoController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/app/Services/TreinoService.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_triceps.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_biceps.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_costa.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_ombro.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_peitoral.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/select_membro_inferior.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" />
         <option value="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" />
         <option value="$PROJECT_DIR$/database/factories/ClienteFactory.php" />
@@ -389,17 +260,31 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_nascimento.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_prox_ficha.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Treino.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/components/input_frequencia.blade.php" />
+        <option value="$PROJECT_DIR$/config/adminlte.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/components/input_rep.blade.php" />
+        <option value="$PROJECT_DIR$/app/Services/TreinoService.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" />
       </list>
     </option>
   </component>
@@ -543,7 +428,25 @@
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
@@ -562,14 +465,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
@@ -578,14 +473,6 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="treino" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -663,7 +550,11 @@
       <workItem from="1551186791698" duration="6252000" />
       <workItem from="1551535666194" duration="5029000" />
       <workItem from="1551722955526" duration="7730000" />
-      <workItem from="1551797266255" duration="13938000" />
+      <workItem from="1551797266255" duration="16198000" />
+      <workItem from="1552347477043" duration="4423000" />
+      <workItem from="1552434966864" duration="8628000" />
+      <workItem from="1552515484863" duration="3689000" />
+      <workItem from="1552603082861" duration="6868000" />
     </task>
     <task id="LOCAL-00001" summary="Resources, Migrations, Controller, Requests">
       <created>1547160537617</created>
@@ -735,17 +626,24 @@
       <option name="project" value="LOCAL" />
       <updated>1549498871843</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="cadastro e listagem de treinos por cliente - versao com bug, falta colocar no cadastro o insert de kg, serie e repeticoes">
+      <created>1551815882878</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551815882878</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128735000" />
+    <option name="totallyTimeSpent" value="154603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23614073" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -764,7 +662,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14765458" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.14765458" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -786,126 +684,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="cadastro e listagem de treinos por cliente - versao com bug, falta colocar no cadastro o insert de kg, serie e repeticoes" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/ClienteDataTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="40" column="86" selection-start-line="40" selection-start-column="86" selection-end-line="40" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ClienteFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/MembroInferiorDataTable.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/OmbroDataTable.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/PeitoralDataTable.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/TreinoDataTable.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://bf1fe6f3-ff44-490d-8d6a-48f39dcb0406/schema/projeto/table/biceps_treino">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ExercicioTreino.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ExercicioTreino.php" />
     <entry file="file://$PROJECT_DIR$/app/Models/CostaTreino.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -976,82 +755,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_id_biceps.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="153" selection-start-line="2" selection-start-column="153" selection-end-line="2" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_prox_ficha.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="155" selection-start-line="2" selection-start-column="155" selection-end-line="2" selection-end-column="155" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="90" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_triceps.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_peitoral.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1062,10 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="8" />
+        <state relative-caret-position="44">
+          <caret line="2" column="153" selection-start-line="2" selection-start-column="153" selection-end-line="2" selection-end-column="153" />
         </state>
       </provider>
     </entry>
@@ -1073,6 +783,224 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="107" selection-start-line="2" selection-start-column="107" selection-end-line="2" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/adminlte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_215911_create_membros_inferiores_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="50" selection-start-line="25" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_peitoral.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="129" selection-start-line="11" selection-start-column="129" selection-end-line="11" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="229" column="10" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="229" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="93" column="14" selection-start-line="93" selection-start-column="14" selection-end-line="93" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://bf1fe6f3-ff44-490d-8d6a-48f39dcb0406/schema/projeto/table/peitorais_treino">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_rep.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_id_triceps.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_triceps.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/AbstractEloquentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="131" column="50" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/BaseRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="207" column="93" selection-start-line="207" selection-start-column="93" selection-end-line="207" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://bf1fe6f3-ff44-490d-8d6a-48f39dcb0406/schema/projeto/table/triceps_treino">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/TreinoService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <element signature="e#33#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="33" column="59" lean-forward="true" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Contracts/TreinoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="147" column="63" lean-forward="true" selection-start-line="147" selection-start-column="63" selection-end-line="147" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#75#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

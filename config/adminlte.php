@@ -225,21 +225,6 @@ return [
             ],
         ],
 
-        [
-            'text'    => 'Exercicio Treino',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'exercicioTreino.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'exercicioTreino.create',
-                ],
-            ],
-        ]
-
-
     ],
 
     /*

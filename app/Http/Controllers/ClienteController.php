@@ -90,6 +90,8 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);
+        $extraData = $this->repository->getTreino();
+        $extraData['treino'] = $this->repository->getExerciciosTreino($cliente['treino']);
         return view('layouts.cliente.edit', compact('extraData'), compact('cliente'));
     }
 

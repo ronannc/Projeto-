@@ -19,9 +19,9 @@ class CreateOmbrosTreinoTable extends Migration
             $table->foreign('id_ombro')->references('id')->on('ombros');
             $table->integer('id_treino');
             $table->foreign('id_treino')->references('id')->on('treinos');
-            $table->string('kg');
-            $table->string('serie');
-            $table->string('rep');
+            $table->string('kg')->nullable();
+            $table->string('serie')->nullable();
+            $table->string('rep')->nullable();
             $table->timestamps();
         });
     }

@@ -18,9 +18,9 @@ class CreateCostasTreinoTable extends Migration
             $table->integer('id_costa');
             $table->integer('id_treino');
             $table->foreign('id_treino')->references('id')->on('treinos');
-            $table->string('kg');
-            $table->string('serie');
-            $table->string('rep');
+            $table->string('kg')->nullable();
+            $table->string('serie')->nullable();
+            $table->string('rep')->nullable();
             $table->timestamps();
         });
     }

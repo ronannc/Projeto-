@@ -55,9 +55,28 @@
                     <h3 class="box-title">Triceps</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['triceps_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</p>
+
+                            <tr>
+                                <td>{{$exercicioTreino['id_triceps']}}</td>
+                                <td>{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</td>
+                                <td>{{$exercicioTreino['rep']}}</td>
+                                <td>{{$exercicioTreino['serie']}}</td>
+                                <td>{{$exercicioTreino['kg']}}</td>
+                            </tr>
+
                     @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -68,9 +87,25 @@
                     <h3 class="box-title">Biceps</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['biceps_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\Biceps::find($exercicioTreino['id_biceps'])['exercicio']}}</p>
-                    @endforeach
+                        <tr>
+                            <td>{{$exercicioTreino['id_biceps']}}</td>
+                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_biceps'])['exercicio']}}</td>
+                            <td>{{$exercicioTreino['rep']}}</td>
+                            <td>{{$exercicioTreino['serie']}}</td>
+                            <td>{{$exercicioTreino['kg']}}</td>
+                        </tr>                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -81,9 +116,25 @@
                     <h3 class="box-title">Peitoral</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['peitoral_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\Peitoral::find($exercicioTreino['id_peitoral'])['exercicio']}}</p>
-                    @endforeach
+                        <tr>
+                            <td>{{$exercicioTreino['id_peitoral']}}</td>
+                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_peitoral'])['exercicio']}}</td>
+                            <td>{{$exercicioTreino['rep']}}</td>
+                            <td>{{$exercicioTreino['serie']}}</td>
+                            <td>{{$exercicioTreino['kg']}}</td>
+                        </tr>                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -96,9 +147,25 @@
                     <h3 class="box-title">Costa</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['costa_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\Costa::find($exercicioTreino['id_costa'])['exercicio']}}</p>
-                    @endforeach
+                        <tr>
+                            <td>{{$exercicioTreino['id_costa']}}</td>
+                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_costa'])['exercicio']}}</td>
+                            <td>{{$exercicioTreino['rep']}}</td>
+                            <td>{{$exercicioTreino['serie']}}</td>
+                            <td>{{$exercicioTreino['kg']}}</td>
+                        </tr>                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -109,9 +176,25 @@
                     <h3 class="box-title">Ombro</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['ombro_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\Ombro::find($exercicioTreino['id_ombro'])['exercicio']}}</p>
-                    @endforeach
+                        <tr>
+                            <td>{{$exercicioTreino['id_ombro']}}</td>
+                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_ombro'])['exercicio']}}</td>
+                            <td>{{$exercicioTreino['rep']}}</td>
+                            <td>{{$exercicioTreino['serie']}}</td>
+                            <td>{{$exercicioTreino['kg']}}</td>
+                        </tr>                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -122,9 +205,25 @@
                     <h3 class="box-title">Membro Inferior</h3>
                 </div>
                 <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Exercicio</th>
+                            <th>Rep</th>
+                            <th>Serie</th>
+                            <th>Kg</th>
+                        </tr>
                     @foreach($treino['membro_inferior_treino'] as $exercicioTreino)
-                        <p>{{ \App\Models\MembroInferior::find($exercicioTreino['id_membro_inferior'])['exercicio']}}</p>
-                    @endforeach
+                        <tr>
+                            <td>{{$exercicioTreino['id_membro_inferior']}}</td>
+                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_membro_inferior'])['exercicio']}}</td>
+                            <td>{{$exercicioTreino['rep']}}</td>
+                            <td>{{$exercicioTreino['serie']}}</td>
+                            <td>{{$exercicioTreino['kg']}}</td>
+                        </tr>                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

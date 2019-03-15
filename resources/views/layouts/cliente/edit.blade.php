@@ -23,7 +23,11 @@
                 @include('layouts.components.input_nome', ['data' => $cliente])
                 @include('layouts.components.input_cpf', ['data' => $cliente])
                 @include('layouts.components.input_telefone', ['data' => $cliente])
-                @include('layouts.components.input_treino', ['data' => $cliente])
+                @include('layouts.components.select_treino')
+
+
+
+{{--                @include('layouts.components.input_treino', ['data' => $cliente])--}}
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
