@@ -16,6 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles','RoleController');
+    Route::resource('users','UserController');
+});
+
 Auth::routes();
 
 Route::group([
@@ -42,3 +47,7 @@ Route::group([
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
