@@ -108,87 +108,91 @@ return [
     */
 
     'menu' => [
-        'Exercicios',
         [
-            'text'    => 'Biceps',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'biceps.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'biceps.create',
+            'header' => 'Exercicios',
+            'can' => 'admin',
+
+            [
+                'text'    => 'Biceps',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'biceps.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'biceps.create',
+                    ],
                 ],
             ],
-        ],
 
-        [
-            'text'    => 'Costa',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'costa.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'costa.create',
+            [
+                'text'    => 'Costa',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'costa.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'costa.create',
+                    ],
                 ],
             ],
-        ],
 
-        [
-            'text'    => 'Membros Inferiores',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'membroInferior.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'membroInferior.create',
+            [
+                'text'    => 'Membros Inferiores',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'membroInferior.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'membroInferior.create',
+                    ],
                 ],
             ],
-        ],
 
-        [
-            'text'    => 'Ombros',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'ombro.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'ombro.create',
+            [
+                'text'    => 'Ombros',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'ombro.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'ombro.create',
+                    ],
                 ],
             ],
-        ],
 
-        [
-            'text'    => 'Peitoral',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'peitoral.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'peitoral.create',
+            [
+                'text'    => 'Peitoral',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'peitoral.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'peitoral.create',
+                    ],
                 ],
             ],
-        ],
 
-        [
-            'text'    => 'Triceps',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'route'  => 'triceps.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'route'  => 'triceps.create',
+            [
+                'text'    => 'Triceps',
+                'submenu' => [
+                    [
+                        'text' => 'Listar',
+                        'route'  => 'triceps.index',
+                    ],
+                    [
+                        'text' => 'Cadastrar',
+                        'route'  => 'triceps.create',
+                    ],
                 ],
             ],
         ],

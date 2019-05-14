@@ -20,7 +20,7 @@ $factory->define(Cliente::class, function (Faker $faker) {
         'cpf' => rand(10000000, 99999999),
         'telefone' => rand(10000000, 99999999),
         'nascimento' => $faker->date(),
-        'treino' => null
+        'id_treino' => null
 
     ];
 });

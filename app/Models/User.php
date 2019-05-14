@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return Auth::check() && Auth::user()->hasRole(self::CLIENTE);
     }
+
+    public static function cliente()
+    {
+        return Auth::user()->hasone(Cliente::class, 'id', 'id_cliente');
+    }
 }

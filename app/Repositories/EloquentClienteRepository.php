@@ -3,14 +3,11 @@
 namespace App\Repositories;
 
 use App\Models\BicepsTreino;
-use App\Models\Cliente;
 use App\Models\CostaTreino;
-use App\Models\ExercicioTreino;
 use App\Models\MembroInferiorTreino;
 use App\Models\OmbroTreino;
 use App\Models\PeitoralTreino;
 use App\Models\Treino;
-use App\Models\Triceps;
 use App\Models\TricepsTreino;
 use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\ClienteRepository;
@@ -34,8 +31,8 @@ class EloquentClienteRepository extends AbstractEloquentRepository implements Cl
     }
 
     public function getTreino(){
-        $data = Treino::all();
-        return $data;
+
+        return Treino::all();
     }
 
 

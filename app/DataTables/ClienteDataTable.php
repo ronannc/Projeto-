@@ -38,7 +38,7 @@ class ClienteDataTable extends DataTable
      */
     public function query(Cliente $model)
     {
-        return $model->newQuery()->select('id', 'nome', 'cpf', 'telefone', 'nascimento', 'treino');
+        return $model->newQuery()->select('id', 'nome', 'cpf', 'telefone', 'nascimento', 'id_treino');
     }
 
     /**
@@ -74,7 +74,7 @@ class ClienteDataTable extends DataTable
             'cpf',
             'telefone',
             'nascimento',
-            'treino',
+            'id_treino' => ['title' => 'treino'],
             'acoes' => ['searchable' => false, 'orderable' => false]
         ];
     }

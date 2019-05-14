@@ -44,7 +44,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $extraData = $this->repository->getTreino();
+        $extraData['treino'] = $this->repository->getTreino();
         return view('layouts.cliente.create', compact('extraData'));
     }
 
@@ -57,7 +57,6 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-//        dd($data);
         $resultFromStoreCliente = $this->service->store($data);
 
         if (!empty($resultFromStoreCliente['error'])) {
@@ -77,7 +76,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        $treino = $this->repository->getExerciciosTreino($cliente['treino']);
+        $treino = $this->repository->getExerciciosTreino($cliente['id_treino']);
         return view('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
@@ -91,7 +90,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         $extraData['treino'] = $this->repository->getTreino();
-        $extraData['exercicioTreino'] = $this->repository->getExerciciosTreino($cliente['treino']);
+        $extraData['exercicioTreino'] = $this->repository->getExerciciosTreino($cliente['id_treino']);
         return view('layouts.cliente.edit', compact('extraData'), compact('cliente'));
     }
 
