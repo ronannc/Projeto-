@@ -24,6 +24,8 @@ class CreateTreinosTable extends Migration
             $table->string('frequencia');
             $table->string('aerob_ini');
             $table->string('aerob_fim');
+            $table->integer('id_cliente')->nullable();
+            $table->foreign('id_cliente')->references('id')->on('clientes');
             $table->timestamps();
         });
     }

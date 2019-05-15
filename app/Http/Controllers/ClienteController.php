@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ClienteDataTable;
+use App\DataTables\TreinoDataTable;
 use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\ClienteRepository;
 use App\Services\ClienteService;
@@ -33,8 +35,12 @@ class ClienteController extends Controller
      */
     public function index(ClienteDataTable $dataTable)
     {
-        return $dataTable->render('layouts.cliente.index');
+        if(User::isCliente()){
+            $cliente = User::cliente()->first();
 
+            return redirect(route('cliente.edit', $cliente));
+        }
+        return $dataTable->render('layouts.cliente.index');
     }
 
     /**
@@ -44,8 +50,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $extraData['treino'] = $this->repository->getTreino();
-        return view('layouts.cliente.create', compact('extraData'));
+        return view('layouts.cliente.create');
     }
 
     /**
@@ -74,10 +79,10 @@ class ClienteController extends Controller
      * @param  \App\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente $cliente)
+    public function show(Cliente $cliente , TreinoDataTable $dataTable)
     {
-        $treino = $this->repository->getExerciciosTreino($cliente['id_treino']);
-        return view('layouts.cliente.show', compact('treino'), compact('cliente'));
+        $treino = $cliente->treino();
+        return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
     /**
@@ -88,10 +93,8 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente = Cliente::find($id);
-        $extraData['treino'] = $this->repository->getTreino();
-        $extraData['exercicioTreino'] = $this->repository->getExerciciosTreino($cliente['id_treino']);
-        return view('layouts.cliente.edit', compact('extraData'), compact('cliente'));
+        $extraData = Cliente::find($id);
+        return view('layouts.cliente.edit', compact('extraData'));
     }
 
     /**

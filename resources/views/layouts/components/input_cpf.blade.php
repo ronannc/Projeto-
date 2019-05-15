@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="cpf">CPF</label>
-    <input type="text" class="form-control" name="cpf" id="input_cpf" placeholder="CPF" value ="{{ old('cpf') ?? $data['cpf'] ?? null }}">
+    <input type="text" class="form-control" name="cpf" id="input_cpf" placeholder="CPF" value ="{{ old('cpf') ?? $extraData['cpf'] ?? null }}">
 </div>
 
 @section('js')

@@ -28,6 +28,7 @@
                 @include('layouts.components.input_frequencia')
                 @include('layouts.components.input_aerob_ini')
                 @include('layouts.components.input_aerob_fim')
+                @include('layouts.components.select_cliente')
                 @include('layouts.components.select_triceps')
                 @include('layouts.components.select_biceps')
                 @include('layouts.components.select_costa')

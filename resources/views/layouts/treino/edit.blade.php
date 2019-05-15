@@ -16,20 +16,21 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('treino.update', $treino)}}" method="post">
+        <form action="{{route('treino.update', $data)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
 
-                @include('layouts.components.input_inicio', ['data' => $treino])
-                @include('layouts.components.input_prox_ficha', ['data' => $treino])
-                @include('layouts.components.input_descricao', ['data' => $treino])
-                @include('layouts.components.input_objetivo', ['data' => $treino])
-                @include('layouts.components.input_intervalo', ['data' => $treino])
-                @include('layouts.components.input_metodo', ['data' => $treino])
-                @include('layouts.components.input_frequencia', ['data' => $treino])
-                @include('layouts.components.input_aerob_ini', ['data' => $treino])
-                @include('layouts.components.input_aerob_fim', ['data' => $treino])
+                @include('layouts.components.input_inicio', ['extraData' => $data])
+                @include('layouts.components.input_prox_ficha', ['extraData' => $data])
+                @include('layouts.components.input_descricao', ['extraData' => $data])
+                @include('layouts.components.input_objetivo', ['extraData' => $data])
+                @include('layouts.components.input_intervalo', ['extraData' => $data])
+                @include('layouts.components.input_metodo', ['extraData' => $data])
+                @include('layouts.components.input_frequencia', ['extraData' => $data])
+                @include('layouts.components.input_aerob_ini', ['extraData' => $data])
+                @include('layouts.components.input_aerob_fim', ['extraData' => $data])
+                @include('layouts.components.select_cliente')
 
                 <div class="row">
                     <div class="col-sm-4">
@@ -47,7 +48,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['triceps_treino'] as $exercicioTreino)
+                                    @foreach($data['triceps_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_triceps']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</td>
@@ -77,7 +78,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['biceps_treino'] as $exercicioTreino)
+                                    @foreach($data['biceps_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_biceps']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_biceps'])['exercicio']}}</td>
@@ -107,7 +108,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['peitoral_treino'] as $exercicioTreino)
+                                    @foreach($data['peitoral_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_peitoral']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_peitoral'])['exercicio']}}</td>
@@ -139,7 +140,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['costa_treino'] as $exercicioTreino)
+                                    @foreach($data['costa_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_costa']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_costa'])['exercicio']}}</td>
@@ -169,7 +170,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['ombro_treino'] as $exercicioTreino)
+                                    @foreach($data['ombro_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_ombro']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_ombro'])['exercicio']}}</td>
@@ -199,7 +200,7 @@
                                         <th>Serie</th>
                                         <th>Kg</th>
                                     </tr>
-                                    @foreach($treino['membro_inferior_treino'] as $exercicioTreino)
+                                    @foreach($data['membro_inferior_treino'] as $exercicioTreino)
                                         <tr>
                                             <td>{{$exercicioTreino['id_membro_inferior']}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_membro_inferior'])['exercicio']}}</td>

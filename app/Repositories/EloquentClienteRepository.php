@@ -30,12 +30,6 @@ class EloquentClienteRepository extends AbstractEloquentRepository implements Cl
         return parent::delete($model);
     }
 
-    public function getTreino(){
-
-        return Treino::all();
-    }
-
-
     public function getExerciciosTreino($id)
     {
         $data = Treino::find($id);

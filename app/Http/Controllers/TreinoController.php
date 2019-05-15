@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\TreinoDataTable;
 use App\Models\Treino;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TreinoRepository;
 use App\Services\TreinoService;
@@ -32,7 +33,14 @@ class TreinoController extends Controller
      */
     public function index(TreinoDataTable $dataTable)
     {
-        return $dataTable->render('layouts.treino.index');
+        if(User::isCliente()){
+            $cliente = User::cliente()->first();
+            $treino = $cliente->treino();
+
+            return $dataTable->with('data', $treino)->render('layouts.treino.index');
+        }
+        $treino = Treino::all();
+        return $dataTable->with('data', $treino)->render('layouts.treino.index');
     }
 
     /**
@@ -85,7 +93,6 @@ class TreinoController extends Controller
         foreach ($data['membro_inferior'] as $membro_inferior){
             $this->repository->save_membro_inferior_treino(['id_treino' => $resultFromStoreTreino['id'], 'id_membro_inferior' => $membro_inferior]);
         }
-
         session()->flash('status', 'Treino adicionado com sucesso !');
         return redirect(route('treino.edit', $resultFromStoreTreino));
     }
@@ -111,8 +118,8 @@ class TreinoController extends Controller
     public function edit($id)
     {
         $extraData = $this->repository->getExtraData();
-        $treino = $this->repository->getExerciciosTreino($id);
-        return view('layouts.treino.edit', compact('extraData'), compact('treino'));
+        $data = $this->repository->getExerciciosTreino($id);
+        return view('layouts.treino.edit', compact('extraData'), compact('data'));
     }
 
     /**

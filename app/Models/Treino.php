@@ -17,6 +17,7 @@ class Treino extends Model
         'metodo',
         'frequencia',
         'aerob_ini',
-        'aerob_fim'
+        'aerob_fim',
+        'id_cliente'
     ];
 }

@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 use App\Models\Biceps;
 use App\Models\BicepsTreino;
+use App\Models\Cliente;
 use App\Models\Costa;
 use App\Models\CostaTreino;
 use App\Models\MembroInferior;
@@ -52,6 +53,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
     public function getExtraData()
     {
         return [
+            'cliente' => Cliente::all(),
             'biceps' => Biceps::all(),
             'triceps' => Triceps::all(),
             'costa' => Costa::all(),

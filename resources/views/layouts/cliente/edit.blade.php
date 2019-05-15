@@ -16,18 +16,14 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('cliente.update', $cliente)}}" method="post">
+        <form action="{{route('cliente.update', $extraData)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_nome', ['data' => $cliente])
-                @include('layouts.components.input_cpf', ['data' => $cliente])
-                @include('layouts.components.input_telefone', ['data' => $cliente])
-                @include('layouts.components.select_treino')
-
-
-
-{{--                @include('layouts.components.input_treino', ['data' => $cliente])--}}
+                @include('layouts.components.input_nome')
+                @include('layouts.components.input_cpf')
+                @include('layouts.components.input_nascimento')
+                @include('layouts.components.input_telefone')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

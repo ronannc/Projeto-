@@ -5,5 +5,5 @@
            name="exercicio"
            id="input_exercicio"
            placeholder="Nome do Exercicio"
-           value ="{{ old('exercicio') ?? $data['exercicio'] ?? null }}">
+           value ="{{ old('exercicio') ?? $extraData['exercicio'] ?? null }}">
 </div>

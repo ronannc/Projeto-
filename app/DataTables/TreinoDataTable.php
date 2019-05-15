@@ -35,16 +35,9 @@ class TreinoDataTable extends DataTable
      * @param \App\User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Treino $model)
+    public function query()
     {
-        return $model->newQuery()->select(
-            'id',
-            'inicio',
-            'descricao',
-            'objetivo',
-            'intervalo',
-            'metodo'
-        );
+        return $this->data;
     }
 
     /**
@@ -81,6 +74,7 @@ class TreinoDataTable extends DataTable
             'objetivo',
             'intervalo',
             'metodo',
+            'id_cliente',
             'acoes'
         ];
     }

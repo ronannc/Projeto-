@@ -13,7 +13,5 @@ interface ClienteRepository
 
     public function delete(Model $model);
 
-    public function getTreino();
-
     public function getExerciciosTreino($id);
 }

@@ -14,11 +14,10 @@ class Cliente extends Model
         'cpf',
         'telefone',
         'nascimento',
-        'id_treino'
     ];
 
     public function treino(){
-        return $this->hasone(Treino::class, 'id', 'treino');
+        return Treino::where('id_cliente', $this->id)->get();
     }
 }
 
