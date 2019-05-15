@@ -18,7 +18,8 @@ class TreinoDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Treino $treino){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('treino.edit', $treino) . '"><i class="fa fa-edit"></i></a>'.
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('treino.show', $treino) . '"><i class="fa fa-eye"></i></a>'.
+                        '<a title="Editar"  style="color: #000000" href="' . route('treino.edit', $treino) . '"><i class="fa fa-edit"></i></a>'.
                         '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$treino['id'].'\').submit();}">Excluir</a>
         <form id="form-delete'.$treino['id'].'" style="display:none" action="'.route('treino.destroy', $treino).'" method="post">'.

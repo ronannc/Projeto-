@@ -105,8 +105,8 @@ class TreinoController extends Controller
      */
     public function show($id)
     {
-        $treino = Treino::find($id);
-        return view('layouts.treinos.show', compact('extraData'), compact('treino'));
+        $data = $this->repository->getExerciciosTreino($id);
+        return view('layouts.treino.show', compact('data'));
     }
 
     /**

@@ -36,9 +36,7 @@ Route::group([
         Route::resource('triceps', 'TricepsController');
         Route::resource('costa', 'CostaController');
         Route::resource('ombro', 'OmbroController');
-
         Route::resource('exercicioTreino', 'ExercicioTreinoController');
-
         Route::resource('treino', 'TreinoController');
         Route::resource('cliente', 'ClienteController');
 

@@ -263,7 +263,6 @@ return [
             'route'  => 'treino.index',
             'can' => 'cliente',
         ],
-
     ],
 
     /*
