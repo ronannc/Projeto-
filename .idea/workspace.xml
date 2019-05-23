@@ -5,51 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="controle de uduario cliente e admin parcial">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/components/select_cliente.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf1fe6f3-ff44-490d-8d6a-48f39dcb0406.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/ClienteDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/TreinoDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/TreinoDataTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreinoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cliente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Treino.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Treino.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ClienteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentClienteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentTreinoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClienteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClienteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_14_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_200000_create_treinos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_220707_create_clientes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_10_100000_create_clientes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_13_223524_add_cliente_id_to_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_descricao.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_descricao.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_exercicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_exercicio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_frequencia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_frequencia.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_biceps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_biceps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_costa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_costa.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_membros_inferiores.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_membros_inferiores.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_ombro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_ombro.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_peitorais.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_peitorais.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_treino.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_treino.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_id_triceps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_id_triceps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_inicio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_intervalo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_metodo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_nascimento.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_nascimento.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_nome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_nome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_objetivo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_prox_ficha.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_prox_ficha.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_telefone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_telefone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/components/input_treino.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/components/input_treino.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/treino/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,9 +17,6 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -103,19 +58,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="41" column="81" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="81" />
+            <state relative-caret-position="705">
+              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -123,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/DataTables/TreinoDataTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -132,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="300">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -141,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+            <state relative-caret-position="675">
+              <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -150,17 +96,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Cliente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="90">
               <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/adminlte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="262" column="37" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="37" />
+            <state relative-caret-position="373">
+              <caret line="290" column="28" selection-start-line="290" selection-start-column="28" selection-end-line="290" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#7#38#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/factories/TricepsFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+              <folding>
+                <element signature="e#7#36#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/factories/BicepsFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding>
+                <element signature="e#7#36#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-end-line="17" />
+              <folding>
+                <element signature="e#7#38#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_13_223524_add_cliente_id_to_users_table.php" />
@@ -263,6 +256,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/cliente/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -385,7 +379,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -396,12 +389,25 @@
             <path>
               <item name="Projeto-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto-" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto-" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto-" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,6 +422,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -489,6 +496,7 @@
       <workItem from="1557784282456" duration="1238000" />
       <workItem from="1557785540650" duration="10552000" />
       <workItem from="1557870959400" duration="9080000" />
+      <workItem from="1558652490601" duration="151000" />
     </task>
     <task id="LOCAL-00001" summary="Resources, Migrations, Controller, Requests">
       <created>1547160537617</created>
@@ -599,7 +607,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184999000" />
+    <option name="totallyTimeSpent" value="185150000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -611,10 +619,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2621212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -657,34 +665,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="controle de uduario cliente e admin parcial" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/select_treino.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="127" selection-start-line="11" selection-start-column="127" selection-end-line="11" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_fim.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="146" selection-start-line="2" selection-start-column="136" selection-end-line="2" selection-end-column="146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_aerob_ini.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="147" selection-start-line="2" selection-start-column="147" selection-end-line="2" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_cpf.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="123" selection-start-line="2" selection-start-column="123" selection-end-line="2" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/components/input_descricao.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -885,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/treino/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -903,13 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/TreinoDataTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -951,30 +917,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="41" column="81" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Cliente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://bf1fe6f3-ff44-490d-8d6a-48f39dcb0406/schema/virtual_training/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="532b6f74-10f0-40c4-b1a5-1ea3906feaaf">
+        <state>
           <filtering>
             <filter text="" />
           </filtering>
@@ -983,15 +928,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="48" />
+        <state relative-caret-position="420">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TreinoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/TreinoDataTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Treino.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/adminlte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="262" column="37" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="37" />
+        <state relative-caret-position="373">
+          <caret line="290" column="28" selection-start-line="290" selection-start-column="28" selection-end-line="290" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/TricepsFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/BicepsFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/BicepsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-end-line="17" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
