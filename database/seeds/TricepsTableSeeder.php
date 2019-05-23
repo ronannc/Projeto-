@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Biceps;
+use App\Models\Triceps;
 
-class BicepsTableSeeder extends Seeder
+class TricepsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,7 @@ class BicepsTableSeeder extends Seeder
      */
     public function run(){
 
-        factory(Biceps::class, 10)->create();
+        factory(Triceps::class, 10)->create();
+
     }
 }
