@@ -30,14 +30,14 @@ Route::group([
     function () {
         Route::get('/home', 'HomeController@index')->name('home');
 
-        Route::resource('membroInferior', 'MembroInferiorController');
-        Route::resource('peitoral', 'PeitoralController');
-        Route::resource('biceps', 'BicepsController');
-        Route::resource('triceps', 'TricepsController');
-        Route::resource('costa', 'CostaController');
+        Route::resource('membroInferior', 'MembroInferiorController')->middleware('can:admin');
+        Route::resource('peitoral', 'PeitoralController')->middleware('can:admin');
+        Route::resource('biceps', 'BicepsController')->middleware('can:admin');
+        Route::resource('triceps', 'TricepsController')->middleware('can:admin');
+        Route::resource('costa', 'CostaController')->middleware('can:admin');
         Route::resource('ombro', 'OmbroController');
-        Route::resource('exercicioTreino', 'ExercicioTreinoController');
-        Route::resource('treino', 'TreinoController');
-        Route::resource('cliente', 'ClienteController');
+        Route::resource('exercicioTreino', 'ExercicioTreinoController')->middleware('can:admin');
+        Route::resource('treino', 'TreinoController')->middleware('can:admin');
+        Route::resource('cliente', 'ClienteController')->middleware('can:admin');
 
     });
