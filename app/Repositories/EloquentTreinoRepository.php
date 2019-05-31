@@ -76,7 +76,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         TricepsTreino::
             where('id_treino' , $data['id_treino'])
             ->where('id_triceps', $data['id_triceps'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
     public function save_biceps_treino($data)
@@ -92,7 +92,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         BicepsTreino::
         where('id_treino' , $data['id_treino'])
             ->where('id_biceps', $data['id_biceps'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
     public function save_costa_treino($data)
@@ -108,7 +108,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         CostaTreino::
         where('id_treino' , $data['id_treino'])
             ->where('id_costa', $data['id_costa'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
     public function save_peitoral_treino($data)
@@ -124,7 +124,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         PeitoralTreino::
         where('id_treino' , $data['id_treino'])
             ->where('id_peitoral', $data['id_peitoral'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
     public function save_ombro_treino($data)
@@ -140,7 +140,7 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         OmbroTreino::
         where('id_treino' , $data['id_treino'])
             ->where('id_ombro', $data['id_ombro'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
     public function save_membro_inferior_treino($data)
@@ -156,18 +156,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
         MembroInferiorTreino::
         where('id_treino' , $data['id_treino'])
             ->where('id_membro_inferior', $data['id_membro_inferior'])
-            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['serie']]);
+            ->update(['kg' => $data['kg'], 'serie' => $data['serie'], 'rep' => $data['rep']]);
     }
 
-    public function process_data($data){
-        $collect = array();
-        foreach ($data as $key => $aux ){
-            $aux_key = explode('_', $key);
-            if(count($aux_key) == 3)
-                $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
-        }
 
-        return $collect;
-    }
 
 }

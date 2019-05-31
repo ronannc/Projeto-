@@ -57,4 +57,24 @@ class TreinoService
             ];
         }
     }
+
+    public function process_data($data, $formula_treino = false, $porcentagem = 1){
+        //tem que receber o peso do cliente para calcular a carga segundo a formula
+        $collect = array();
+        foreach ($data as $key => $aux ){
+            $aux_key = explode('_', $key);
+            if(count($aux_key) == 3) {
+                $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
+                if ($formula_treino) {
+                    if($aux_key[0] == "kg"){
+                        $kg = $collect[$aux_key[1]][$aux_key[2]]['kg'];
+                        $collect[$aux_key[1]][$aux_key[2]]['kg'] = $kg * 2;
+                    }
+                }
+            }
+        }
+
+        return $collect;
+    }
+
 }

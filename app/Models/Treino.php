@@ -20,4 +20,8 @@ class Treino extends Model
         'aerob_fim',
         'id_cliente'
     ];
+
+    public function usa_formula(){
+        return ConfiguracaoCliente::where('id_cliente', $this->id_cliente)->first();
+    }
 }

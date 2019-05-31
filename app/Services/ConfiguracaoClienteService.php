@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-use App\Models\Cliente;
-use App\Repositories\Contracts\ClienteRepository;
+use App\Models\ConfiguracaoCliente;
+use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 
-class ClienteService
+class ConfiguracaoClienteService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class ClienteService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(ClienteRepository $repository)
+    public function __construct(ConfiguracaoClienteRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -32,11 +32,11 @@ class ClienteService
         }
     }
 
-    public function update(array $data, Cliente $cliente)
+    public function update(array $data, ConfiguracaoCliente $configuracaoCliente)
     {
 
         try {
-            $update = $this->repository->update($cliente, $data);
+            $update = $this->repository->update($configuracaoCliente, $data);
             return $update;
         } catch (\Exception $exception) {
             return [
@@ -46,10 +46,10 @@ class ClienteService
         }
     }
 
-    public function delete(Cliente $cliente)
+    public function delete(ConfiguracaoCliente $configuracaoCliente)
     {
         try {
-            $delete = $this->repository->delete($cliente);
+            $delete = $this->repository->delete($configuracaoCliente);
             return $delete;
         } catch (\Exception $exception) {
             return [
@@ -59,17 +59,5 @@ class ClienteService
         }
     }
 
-    public function storeConfiguracaoCliente(array $data)
-    {
-        try {
-            $store = $this->repository->saveConfiguracaoCliente($data);
-            return $store;
-        } catch (\Exception $exception) {
-            return [
-                'error' => true,
-                'message' => $exception->getMessage()
-            ];
-        }
-    }
 
 }

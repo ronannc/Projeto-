@@ -37,5 +37,4 @@ interface TreinoRepository
     public function save_membro_inferior_treino( $data);
     public function update_membro_inferior_treino( $data);
 
-    public function process_data($data);
 }

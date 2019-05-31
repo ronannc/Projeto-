@@ -21,6 +21,8 @@ class CreateCostasTreinoTable extends Migration
             $table->string('kg')->nullable();
             $table->string('serie')->nullable();
             $table->string('rep')->nullable();
+            $table->string('grupo')->nullable();
+
             $table->timestamps();
         });
     }

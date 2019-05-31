@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\DataTables\ClienteDataTable;
 use App\DataTables\TreinoDataTable;
 use App\Models\Cliente;
+use App\Models\ConfiguracaoCliente;
 use App\Models\User;
+use App\Services\ConfiguracaoClienteService;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\ClienteRepository;
 use App\Services\ClienteService;
@@ -66,6 +68,21 @@ class ClienteController extends Controller
 
         if (!empty($resultFromStoreCliente['error'])) {
             session()->flash('error', $resultFromStoreCliente['message']);
+            return back()->withInput();
+        }
+
+        if(isset($data['formula'])){
+            $configuracaoCliente['formula'] = 1;
+        }else{
+            $configuracaoCliente['formula'] = 0;
+        }
+        $configuracaoCliente['porcentagem'] = $data['porcentagem'];
+        $configuracaoCliente['id_cliente'] = $resultFromStoreCliente['id'];
+
+        $resultFromStoreConfiguracaoCliente = $this->service->storeConfiguracaoCliente($configuracaoCliente);
+
+        if (!empty($resultFromStoreConfiguracaoCliente['error'])) {
+            session()->flash('error', $resultFromStoreConfiguracaoCliente['message']);
             return back()->withInput();
         }
 

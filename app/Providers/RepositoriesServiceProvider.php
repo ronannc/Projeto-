@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\ConfiguracaoCliente;
+use App\Repositories\Contracts\ConfiguracaoClienteRepository;
+use App\Repositories\EloquentConfiguracaoClienteRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Biceps;
 use App\Models\BicepsTreino;
@@ -15,7 +18,6 @@ use App\Models\OmbroTreino;
 use App\Models\Peitoral;
 use App\Models\PeitoralTreino;
 use App\Models\Treino;
-use App\Models\ExercicioTreino;
 use App\Models\Triceps;
 use App\Models\TricepsTreino;
 use App\Models\User;
@@ -84,6 +86,11 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentClienteRepository(new Cliente());
         });
 
+        $this->app->bind(ConfiguracaoClienteRepository::class, function () {
+            return new EloquentConfiguracaoClienteRepository(new ConfiguracaoCliente());
+        });
+
+
         $this->app->bind(CostaRepository::class, function () {
             return new EloquentCostaRepository(new Costa());
         });
@@ -120,10 +127,6 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentTreinoRepository(new Treino());
         });
 
-        $this->app->bind(ExercicioTreinoRepository::class, function () {
-            return new EloquentExercicioTreinoRepository(new ExercicioTreino());
-        });
-
         $this->app->bind(UserRepository::class, function () {
             return new EloquentUserRepository(new User());
         });
@@ -151,6 +154,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             BicepsRepository::class,
             BicepsTreinoRepository::class,
             ClienteRepository::class,
+            ConfiguracaoClienteRepository::class,
             CostaRepository::class,
             CostaTreinoRepository::class,
             MembroInferiorRepository::class,

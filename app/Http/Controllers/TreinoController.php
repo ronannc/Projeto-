@@ -132,8 +132,16 @@ class TreinoController extends Controller
     public function update(Request $request, Treino $treino)
     {
         $data = $request->all();
-        $process_data = $this->repository->process_data($data);
-//        dd($treino);
+
+        $data['formula_treino'] = $treino->usa_formula()['formula'];
+
+        if($data['formula_treino']){
+            unset($data['formula']);
+            $process_data = $this->service->process_data($data, true, $treino->usa_formula()['porcentagem']);
+        }else{
+            $process_data = $this->service->process_data($data);
+        }
+
         foreach ($process_data['triceps'] as $key => $triceps){
             $triceps['id_triceps'] = $key;
             $triceps['id_treino'] = $treino['id'];
