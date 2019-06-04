@@ -33,10 +33,9 @@ class TreinoController extends Controller
      */
     public function index(TreinoDataTable $dataTable)
     {
-        if(User::isCliente()){
+        if(User::isCliente() && User::cliente()->first() != null){
             $cliente = User::cliente()->first();
             $treino = $cliente->treino();
-
             return $dataTable->with('data', $treino)->render('layouts.treino.index');
         }
         $treino = Treino::all();

@@ -8,6 +8,7 @@ class Cliente extends Model
 {
     protected $table = "clientes";
 
+    public const NAO_VERIFICADO = 0;
 
     protected $fillable = [
         'nome',

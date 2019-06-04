@@ -37,7 +37,7 @@ class ClienteController extends Controller
      */
     public function index(ClienteDataTable $dataTable)
     {
-        if(User::isCliente()){
+        if(User::isCliente() && User::cliente()->first() != null){
             $cliente = User::cliente()->first();
 
             return redirect(route('cliente.edit', $cliente));
