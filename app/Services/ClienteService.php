@@ -72,4 +72,17 @@ class ClienteService
         }
     }
 
+    public function updateConfiguracaoCliente(array $data)
+    {
+        try {
+            $update = $this->repository->updateConfiguracaoCliente($data);
+            return $update;
+        } catch (\Exception $exception) {
+            return [
+                'error' => true,
+                'message' => $exception->getMessage()
+            ];
+        }
+    }
+
 }

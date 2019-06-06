@@ -102,6 +102,13 @@ class ClienteController extends Controller
         return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
+    public function myAcount(Request $request , TreinoDataTable $dataTable)
+    {
+        $cliente = Cliente::find($request->id);
+        $treino = $cliente->treino();
+        return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -110,7 +117,10 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $extraData = Cliente::find($id);
+        $cliente = Cliente::find($id);
+        $extraData = $cliente;
+        $extraData['configuracao'] = $cliente->configuracao();
+//        dd($extraData, $cliente);
         return view('layouts.cliente.edit', compact('extraData'));
     }
 
@@ -125,11 +135,28 @@ class ClienteController extends Controller
     {
         $data = $request->all();
         $resultFromUpdateCliente = $this->service->update($data, $cliente);
+
         if (!empty($resultFromUpdateCliente['error'])) {
             session()->flash('error', $resultFromUpdateCliente['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Cliente atualizado com sucesso!');
+
+        if(isset($data['formula'])){
+            $configuracaoCliente['formula'] = 1;
+        }else{
+            $configuracaoCliente['formula'] = 0;
+        }
+        $configuracaoCliente['porcentagem'] = $data['porcentagem'];
+        $configuracaoCliente['id_cliente'] = $resultFromUpdateCliente['id'];
+
+        $resultFromUpdateConfiguracaoCliente = $this->service->updateConfiguracaoCliente($configuracaoCliente);
+
+        if (!empty($resultFromUpdateConfiguracaoCliente['error'])) {
+            session()->flash('error', $resultFromUpdateConfiguracaoCliente['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Cliente atualizado com sucesso !');
 
         return back();
     }

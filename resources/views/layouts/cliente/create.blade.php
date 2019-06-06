@@ -26,6 +26,8 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Configuracao de treino</h3>
                 </div>
+                @include('layouts.components.input_peso')
+
                 @include('layouts.components.checkbox_treino')
                 @include('layouts.components.input_porcentagem')
 

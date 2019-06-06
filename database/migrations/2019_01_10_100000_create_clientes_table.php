@@ -18,6 +18,7 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('cpf')->nullable();
             $table->string('telefone');
+            $table->string('peso');
             $table->date('nascimento')->nullable();
             $table->timestamps();
         });

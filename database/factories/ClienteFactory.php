@@ -19,6 +19,7 @@ $factory->define(Cliente::class, function (Faker $faker) {
         'nome' => $faker->name,
         'cpf' => rand(10000000, 99999999),
         'telefone' => rand(10000000, 99999999),
-        'nascimento' => $faker->date()
+        'nascimento' => $faker->date(),
+        'peso' => rand(50, 110)
     ];
 });

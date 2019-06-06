@@ -3,6 +3,7 @@
 
 namespace App\Services;
 
+use App\Models\Cliente;
 use App\Models\Treino;
 use App\Repositories\Contracts\TreinoRepository;
 
@@ -58,7 +59,10 @@ class TreinoService
         }
     }
 
-    public function process_data($data, $formula_treino = false, $porcentagem = 1){
+    public function process_data($data, $formula_treino = false){
+        if($formula_treino){
+            $cliente = Cliente::find($data['formula_treino']['id_cliente']);
+        }
         //tem que receber o peso do cliente para calcular a carga segundo a formula
         $collect = array();
         foreach ($data as $key => $aux ){
@@ -67,14 +71,20 @@ class TreinoService
                 $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
                 if ($formula_treino) {
                     if($aux_key[0] == "kg"){
+//                        dd($data);
+                        $rep = $collect[$aux_key[1]][$aux_key[2]]['rep'];
                         $kg = $collect[$aux_key[1]][$aux_key[2]]['kg'];
-                        $collect[$aux_key[1]][$aux_key[2]]['kg'] = $kg * 2;
+                        $collect[$aux_key[1]][$aux_key[2]]['kg'] = $this->formula($kg, $rep, $cliente['peso'], $data['formula_treino']['porcentagem']);
                     }
                 }
             }
         }
 
         return $collect;
+    }
+
+    public function formula($carga, $repeticceos, $pesoCliente, $porcentagem){
+        return ((((($carga * 100) / 102.78) - (2.78 * $repeticceos)) / $pesoCliente) * ($porcentagem/100)) * $pesoCliente;
     }
 
 }

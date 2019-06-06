@@ -132,11 +132,9 @@ class TreinoController extends Controller
     {
         $data = $request->all();
 
-        $data['formula_treino'] = $treino->usa_formula()['formula'];
-
-        if($data['formula_treino']){
-            unset($data['formula']);
-            $process_data = $this->service->process_data($data, true, $treino->usa_formula()['porcentagem']);
+        $data['formula_treino'] = $treino->usa_formula();
+        if($data['formula_treino']['formula']){
+            $process_data = $this->service->process_data($data, true);
         }else{
             $process_data = $this->service->process_data($data);
         }

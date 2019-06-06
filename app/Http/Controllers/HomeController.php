@@ -30,7 +30,7 @@ class HomeController extends Controller
         }else{
             $cliente = User::cliente()->first();
 
-            return redirect(route('cliente.show', $cliente));
+            return redirect(route('myAcount', ['id' => $cliente['id']]));
         }
     }
 }

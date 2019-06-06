@@ -36,9 +36,11 @@ Route::group([
         Route::resource('biceps', 'BicepsController')->middleware('can:admin');
         Route::resource('triceps', 'TricepsController')->middleware('can:admin');
         Route::resource('costa', 'CostaController')->middleware('can:admin');
-        Route::resource('ombro', 'OmbroController');
+        Route::resource('ombro', 'OmbroController')->middleware('can:admin');
         Route::resource('exercicioTreino', 'ExercicioTreinoController')->middleware('can:admin');
         Route::resource('treino', 'TreinoController')->middleware('can:admin');
         Route::resource('cliente', 'ClienteController')->middleware('can:admin');
+
+        Route::get('myAcount', 'ClienteController@myAcount')->name('myAcount')->middleware('can:cliente');
 
     });

@@ -11,6 +11,8 @@ interface ClienteRepository
 
     public function saveConfiguracaoCliente(array $data);
 
+    public function updateConfiguracaoCliente(array $data);
+
     public function update(Model $model, array $data);
 
     public function delete(Model $model);
