@@ -20,5 +20,7 @@ return [
     'reset_password'              => 'Recuperar senha',
     'send_password_reset_link'    => 'Enviar link de recuperação de senha',
 
-    'phone'                       => 'Telefone'
+    'phone'                       => 'Telefone',
+    'cpf'                         => 'CPF',
+    'peso'                        => 'Peso'
 ];

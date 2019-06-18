@@ -83,6 +83,7 @@
                 <div class="title m-b-md">
                     Virtual Training
                 </div>
+                @include('layouts.components.menssagens')
 
 {{--                <div class="links">--}}
 {{--                    <a href="https://laravel.com/docs">Documentation</a>--}}

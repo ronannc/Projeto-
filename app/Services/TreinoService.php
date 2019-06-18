@@ -71,7 +71,6 @@ class TreinoService
                 $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
                 if ($formula_treino) {
                     if($aux_key[0] == "kg"){
-//                        dd($data);
                         $rep = $collect[$aux_key[1]][$aux_key[2]]['rep'];
                         $kg = $collect[$aux_key[1]][$aux_key[2]]['kg'];
                         $collect[$aux_key[1]][$aux_key[2]]['kg'] = $this->formula($kg, $rep, $cliente['peso'], $data['formula_treino']['porcentagem']);

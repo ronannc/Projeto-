@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\TreinoDataTable;
+use App\Models\Cliente;
 use App\Models\Treino;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TreinoRepository;
 use App\Services\TreinoService;
+use Illuminate\Support\Facades\Auth;
 
 class TreinoController extends Controller
 {
@@ -62,6 +64,7 @@ class TreinoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['status'] = 0;
         $resultFromStoreTreino = $this->service->store($data);
 
         if (!empty($resultFromStoreTreino['error'])) {
@@ -175,6 +178,12 @@ class TreinoController extends Controller
             $this->repository->update_membro_inferior_treino($inferior);
         }
 
+        if(User::isCliente()){
+            $data['status'] = 1;
+        }else{
+            $data['status'] = 0;
+        }
+
         $resultFromUpdateTreino = $this->service->update($data, $treino);
 
         if (!empty($resultFromUpdateTreino['error'])) {
@@ -201,5 +210,16 @@ class TreinoController extends Controller
         }
         session()->flash('success', 'Treino deletado com sucesso!');
         return redirect(route('treino.index'));
+    }
+
+    public function myCurrentTraining(){
+        $cliente = User::cliente()->first();
+        $treino = $cliente->treino()->where('inicio', '<=', date('Y-m-d'))
+                                    ->where('prox_ficha', '>=', date('Y-m-d'))
+                                    ->first();
+
+        $data = $this->repository->getExerciciosTreino($treino['id']);
+//        dd($data);
+        return view('layouts.treino.show', compact('data'));
     }
 }

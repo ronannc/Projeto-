@@ -39,8 +39,9 @@ Route::group([
         Route::resource('ombro', 'OmbroController')->middleware('can:admin');
         Route::resource('exercicioTreino', 'ExercicioTreinoController')->middleware('can:admin');
         Route::resource('treino', 'TreinoController')->middleware('can:admin');
+        Route::resource('treino', 'TreinoController')->middleware('can:cliente')->only('update');
         Route::resource('cliente', 'ClienteController')->middleware('can:admin');
 
         Route::get('myAcount', 'ClienteController@myAcount')->name('myAcount')->middleware('can:cliente');
-
-    });
+        Route::get('myCurrentTraining', 'TreinoController@myCurrentTraining')->name('myCurrentTraining')->middleware('can:cliente');
+ });

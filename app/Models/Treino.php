@@ -18,7 +18,8 @@ class Treino extends Model
         'frequencia',
         'aerob_ini',
         'aerob_fim',
-        'id_cliente'
+        'id_cliente',
+        'status'
     ];
 
     public function usa_formula(){

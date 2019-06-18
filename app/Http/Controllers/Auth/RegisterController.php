@@ -67,7 +67,9 @@ class RegisterController extends Controller
         $cliente = Cliente::create([
             'nome'      => $data['name'],
             'telefone'  => $data['telefone'],
-            'status'    => Cliente::NAO_VERIFICADO
+//            'status'    => Cliente::NAO_VERIFICADO,
+            'peso'      => $data['peso'],
+            'cpf'       => $data['cpf'],
         ]);
 
         $user = User::create([
@@ -79,7 +81,5 @@ class RegisterController extends Controller
         $user->assignRole(User::CLIENTE);
 
         return $user;
-
-
     }
 }

@@ -102,9 +102,9 @@ class ClienteController extends Controller
         return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
-    public function myAcount(Request $request , TreinoDataTable $dataTable)
+    public function myAcount(TreinoDataTable $dataTable)
     {
-        $cliente = Cliente::find($request->id);
+        $cliente = User::cliente()->first();
         $treino = $cliente->treino();
         return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
     }

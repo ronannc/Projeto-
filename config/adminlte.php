@@ -250,7 +250,7 @@ return [
         ],
         [
             'text' => 'Editar/Visualizar',
-            'route'  => 'cliente.index',
+            'route'  => 'myAcount',
             'can' => 'cliente',
         ],
 
