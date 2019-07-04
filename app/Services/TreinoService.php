@@ -83,7 +83,7 @@ class TreinoService
     }
 
     public function formula($carga, $repeticceos, $pesoCliente, $porcentagem){
-        return ((((($carga * 100) / 102.78) - (2.78 * $repeticceos)) / $pesoCliente) * ($porcentagem/100)) * $pesoCliente;
+        return (((($carga * 100) / abs(102.78 - (2.78 * $repeticceos))) / $pesoCliente) * ($porcentagem/100)) * $pesoCliente;
     }
 
 }
