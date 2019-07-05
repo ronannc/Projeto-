@@ -245,22 +245,29 @@ return [
         ],
 
         [
-            'header' => 'Dados Pessoais',
-            'can' => 'cliente',
-        ],
-        [
-            'text' => 'Editar/Visualizar',
-            'route'  => 'myAcount',
+            'header' => 'Meu Treino',
             'can' => 'cliente',
         ],
 
         [
-            'header' => 'Meus Treinos',
+            'text' => 'Visualizar',
+            'route'  => 'home',
+            'can' => 'cliente',
+        ],
+
+        [
+            'header' => 'Dados Pessoais',
+            'can' => 'cliente',
+        ],
+
+        [
+            'text' => 'Editar',
+            'route'  => 'editMyAcount',
             'can' => 'cliente',
         ],
         [
             'text' => 'Visualizar',
-            'route'  => 'treino.index',
+            'route'  => 'myAcount',
             'can' => 'cliente',
         ],
     ],

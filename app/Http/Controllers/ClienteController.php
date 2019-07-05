@@ -109,6 +109,12 @@ class ClienteController extends Controller
         return $dataTable->with('data', $treino)->render('layouts.cliente.show', compact('treino'), compact('cliente'));
     }
 
+    public function editMyAcount(TreinoDataTable $dataTable)
+    {
+        $extraData = User::cliente()->first();
+        return view('layouts.cliente.editClient', compact('extraData'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -117,10 +123,11 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente = Cliente::find($id);
-        $extraData = $cliente;
-        $extraData['configuracao'] = $cliente->configuracao();
-//        dd($extraData, $cliente);
+        $extraData = Cliente::find($id);
+        $configuracaoCliente = $extraData->configuracao();
+        $extraData['configuracao'] = $extraData->configuracao();
+        $extraData['formula'] = $configuracaoCliente['formula'] == 1 ? 'checked' : '';
+        $extraData['porcentagem'] = $configuracaoCliente['porcentagem'];
         return view('layouts.cliente.edit', compact('extraData'));
     }
 
@@ -141,19 +148,21 @@ class ClienteController extends Controller
             return back()->withInput();
         }
 
-        if(isset($data['formula'])){
-            $configuracaoCliente['formula'] = 1;
-        }else{
-            $configuracaoCliente['formula'] = 0;
-        }
-        $configuracaoCliente['porcentagem'] = $data['porcentagem'];
-        $configuracaoCliente['id_cliente'] = $resultFromUpdateCliente['id'];
+        if(!isset($data['cliente'])){
+            if(isset($data['formula'])){
+                $configuracaoCliente['formula'] = 1;
+            }else{
+                $configuracaoCliente['formula'] = 0;
+            }
+            $configuracaoCliente['porcentagem'] = $data['porcentagem'];
+            $configuracaoCliente['id_cliente'] = $resultFromUpdateCliente['id'];
 
-        $resultFromUpdateConfiguracaoCliente = $this->service->updateConfiguracaoCliente($configuracaoCliente);
+            $resultFromUpdateConfiguracaoCliente = $this->service->updateConfiguracaoCliente($configuracaoCliente);
 
-        if (!empty($resultFromUpdateConfiguracaoCliente['error'])) {
-            session()->flash('error', $resultFromUpdateConfiguracaoCliente['message']);
-            return back()->withInput();
+            if (!empty($resultFromUpdateConfiguracaoCliente['error'])) {
+                session()->flash('error', $resultFromUpdateConfiguracaoCliente['message']);
+                return back()->withInput();
+            }
         }
 
         session()->flash('status', 'Cliente atualizado com sucesso !');
