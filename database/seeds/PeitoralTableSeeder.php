@@ -12,7 +12,49 @@ class PeitoralTableSeeder extends Seeder
      */
     public function run(){
 
-        factory(Peitoral::class, 10)->create();
-
+        Peitoral::create([
+            'exercicio' => 'Supino reto',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Supino inclinado',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Peck deck',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Crucifixo',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Fly 45',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Pullouver',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Cross chest',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Flexao de braco',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Supino com halter',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Supino 45 com halter',
+            'descricao' => '',
+        ]);
+        Peitoral::create([
+            'exercicio' => 'Supino declinado',
+            'descricao' => '',
+        ]);
     }
 }

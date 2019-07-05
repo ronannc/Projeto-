@@ -12,7 +12,42 @@ class OmbroTableSeeder extends Seeder
      */
     public function run(){
 
-        factory(Ombro::class, 10)->create();
+        Ombro::create([
+            'exercicio' => 'Elevacao lateral',
+            'descricao' => 'Elevacao lateral',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Elevacao frontal',
+            'descricao' => 'Elevacao frontal',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Elevacao diagonal',
+            'descricao' => 'Elevacao diagonal',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Desenvolvimento',
+            'descricao' => 'Desenvolvimento',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Encolhimento',
+            'descricao' => 'Encolhimento',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Remada alta',
+            'descricao' => 'Remada alta',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Crucifixo invertido',
+            'descricao' => 'Crucifixo invertido',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Rotacao externa',
+            'descricao' => 'Rotacao externa',
+        ]);
+        Ombro::create([
+            'exercicio' => 'Rotacao interna',
+            'descricao' => 'Rotacao interna',
+        ]);
 
     }
 }
