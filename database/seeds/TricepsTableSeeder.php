@@ -12,7 +12,50 @@ class TricepsTableSeeder extends Seeder
      */
     public function run(){
 
-        factory(Triceps::class, 10)->create();
+        Triceps::create([
+            'exercicio' => 'Puley triceps',
+            'descricao' => 'Puley triceps',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Puley invertido',
+            'descricao' => 'Puley invertido',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Frances',
+            'descricao' => 'Frances',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Frances isolado',
+            'descricao' => 'Frances isolado',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps banco',
+            'descricao' => 'Triceps banco',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps testa',
+            'descricao' => 'Triceps testa',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps supino',
+            'descricao' => 'Triceps supino',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps up',
+            'descricao' => 'Triceps up',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps corda',
+            'descricao' => 'Triceps corda',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps cross isolado',
+            'descricao' => 'Triceps cross isolad',
+        ]);
+        Triceps::create([
+            'exercicio' => 'Triceps coice',
+            'descricao' => 'Triceps coice',
+        ]);
 
     }
 }
