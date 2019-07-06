@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/layouts/treino/show.blade.php" line="70" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="Seed com nomes reais">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="Seed com nomes reais" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +57,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="59" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="59" />
+              <caret line="2" column="59" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="877" column="28" lean-forward="true" selection-start-line="877" selection-start-column="28" selection-end-line="877" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-494">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -280,10 +296,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/csanquer/pdo-service-provider" />
-      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
-      <path value="$PROJECT_DIR$/vendor/silex/silex" />
-      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -414,7 +426,7 @@
       <workItem from="1562202462643" duration="5000" />
       <workItem from="1562278297171" duration="6755000" />
       <workItem from="1562417067652" duration="606000" />
-      <workItem from="1562418362423" duration="7113000" />
+      <workItem from="1562418362423" duration="7368000" />
     </task>
     <task id="LOCAL-00001" summary="Resources, Migrations, Controller, Requests">
       <created>1547160537617</created>
@@ -581,7 +593,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245092000" />
+    <option name="totallyTimeSpent" value="245347000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -593,7 +605,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25906184" />
@@ -955,24 +967,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="44">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="877" column="41" selection-start-line="877" selection-start-column="41" selection-end-line="877" selection-end-column="41" />
+          <caret line="877" column="28" lean-forward="true" selection-start-line="877" selection-start-column="28" selection-end-line="877" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="59" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="-494">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
