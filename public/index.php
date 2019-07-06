@@ -58,17 +58,3 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
-
-$dbopts = parse_url(getenv('postgres://jpkibzquyndvqy:13027cc2ad0643cdb3f85994014cd577e759f54bd694a1575f4b01525664c9f1@ec2-23-21-160-38.compute-1.amazonaws.com:5432/d7nq9ieid1s74c'));
-$app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
-    array(
-        'pdo.server' => array(
-            'driver'   => 'pgsql',
-            'user' => $dbopts["user"],
-            'password' => $dbopts["pass"],
-            'host' => $dbopts["host"],
-            'port' => $dbopts["port"],
-            'dbname' => ltrim($dbopts["path"],'/')
-        )
-    )
-);
