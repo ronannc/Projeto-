@@ -5,7 +5,17 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/layouts/treino/show.blade.php" line="70" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="" />
+    <list default="true" id="0a559dc0-c025-48ae-817d-b67fe8cb9bd9" name="Default Changelist" comment="Seed com nomes reais">
+      <change beforePath="$PROJECT_DIR$/$dbopts[host]" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/$dbopts[pass]" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/$dbopts[port]" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/$dbopts[user]" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/'pgsql'" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ltrim($dbopts[path]" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register(new" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +68,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.lock">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
@@ -75,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="242">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -87,8 +88,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="286">
+              <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1276">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -98,7 +108,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/artisan">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -179,8 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220041_create_peitorais_treino_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220113_create_biceps_treino_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220136_create_triceps_treino_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220206_create_costas_treino_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_10_220232_create_ombros_treino_table.php" />
@@ -228,8 +236,10 @@
         <option value="$PROJECT_DIR$/database/seeds/PeitoralTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/TricepsTableSeeder.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -368,6 +378,11 @@
               <item name="Projeto-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto-" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Projeto-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto-" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -477,7 +492,7 @@
       <workItem from="1562202462643" duration="5000" />
       <workItem from="1562278297171" duration="6755000" />
       <workItem from="1562417067652" duration="606000" />
-      <workItem from="1562418362423" duration="5165000" />
+      <workItem from="1562418362423" duration="6549000" />
     </task>
     <task id="LOCAL-00001" summary="Resources, Migrations, Controller, Requests">
       <created>1547160537617</created>
@@ -644,7 +659,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243144000" />
+    <option name="totallyTimeSpent" value="244528000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -710,13 +725,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Seed com nomes reais" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExercicioTreinoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
@@ -1002,18 +1010,8 @@
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1022,12 +1020,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/artisan">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="286">
+          <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
@@ -1036,8 +1047,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/artisan">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
