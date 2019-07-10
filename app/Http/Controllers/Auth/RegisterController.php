@@ -67,9 +67,9 @@ class RegisterController extends Controller
         $cliente = Cliente::create([
             'nome'      => $data['name'],
             'telefone'  => $data['telefone'],
-//            'status'    => Cliente::NAO_VERIFICADO,
             'peso'      => $data['peso'],
             'cpf'       => $data['cpf'],
+            'nascimento'=> $data['nascimento']
         ]);
 
         $user = User::create([

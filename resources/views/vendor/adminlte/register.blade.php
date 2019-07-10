@@ -29,7 +29,7 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('phone') ? 'has-error' : '' }}">
-                    <input type="text" name="telefone" class="form-control" value="{{ old('telefone') }}"
+                    <input type="text" name="telefone" class="form-control phone_with_ddd" value="{{ old('telefone') }}"
                            placeholder="{{ trans('adminlte::adminlte.phone') }}">
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                     @if ($errors->has('telefone'))
@@ -39,19 +39,29 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('cpf') ? 'has-error' : '' }}">
-                    <input type="text" name="cpf" class="form-control" value="{{ old('cpf') }}"
+                    <input type="text" name="cpf" class="form-control cpf" value="{{ old('cpf') }}"
                            placeholder="{{ trans('adminlte::adminlte.cpf') }}">
-                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                     @if ($errors->has('cpf'))
                         <span class="help-block">
                             <strong>{{ $errors->first('cpf') }}</strong>
                         </span>
                     @endif
                 </div>
+                <div class="form-group has-feedback {{ $errors->has('nascimento') ? 'has-error' : '' }}">
+                    <input type="date" name="nascimento" class="form-control date" value="{{ old('nascimento') }}"
+                           placeholder="{{ trans('adminlte::adminlte.nascimento') }}">
+                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                    @if ($errors->has('nascimento'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('nascimento') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 <div class="form-group has-feedback {{ $errors->has('peso') ? 'has-error' : '' }}">
-                    <input type="text" name="peso" class="form-control" value="{{ old('peso') }}"
+                    <input type="number" name="peso" class="form-control" value="{{ old('peso') }}"
                            placeholder="{{ trans('adminlte::adminlte.peso') }}">
-                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                     @if ($errors->has('peso'))
                         <span class="help-block">
                             <strong>{{ $errors->first('peso') }}</strong>
@@ -103,4 +113,8 @@
 
 @section('adminlte_js')
     @yield('js')
+    <script>
+        $('.phone_with_ddd').mask('(00) 0 0000-0000');
+        $('.cpf').mask('000.000.000-00', {reverse: true});
+    </script>
 @stop
