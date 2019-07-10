@@ -57,6 +57,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -64,6 +65,7 @@
                                     </tr>
                                     @foreach($data['triceps_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>
@@ -91,6 +93,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -98,6 +101,7 @@
                                     </tr>
                                     @foreach($data['biceps_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Biceps::find($exercicioTreino['id_biceps'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>
@@ -125,6 +129,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -132,6 +137,7 @@
                                     </tr>
                                     @foreach($data['peitoral_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_peitoral'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>
@@ -161,6 +167,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -168,6 +175,7 @@
                                     </tr>
                                     @foreach($data['costa_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_costa'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>
@@ -195,6 +203,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -202,6 +211,7 @@
                                     </tr>
                                     @foreach($data['ombro_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_ombro'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>
@@ -229,6 +239,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -236,6 +247,7 @@
                                     </tr>
                                     @foreach($data['membro_inferior_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
                                             <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['id_membro_inferior'])['exercicio']}}</td>
                                             @if($data['status'])
                                                 <td>{{$exercicioTreino['rep'] ?? ''}}</td>

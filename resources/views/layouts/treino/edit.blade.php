@@ -42,6 +42,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -49,6 +50,7 @@
                                     </tr>
                                     @foreach($data['triceps_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_triceps_{{$exercicioTreino['id_triceps']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_triceps_{{$exercicioTreino['id_triceps']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_triceps_{{$exercicioTreino['id_triceps']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
@@ -70,6 +72,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -77,6 +80,7 @@
                                     </tr>
                                     @foreach($data['biceps_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_biceps_{{$exercicioTreino['id_biceps']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\Biceps::find($exercicioTreino['id_biceps'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_biceps_{{$exercicioTreino['id_biceps']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_biceps_{{$exercicioTreino['id_biceps']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
@@ -98,6 +102,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -105,6 +110,7 @@
                                     </tr>
                                     @foreach($data['peitoral_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_peitoral_{{$exercicioTreino['id_peitoral']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\Peitoral::find($exercicioTreino['id_peitoral'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_peitoral_{{$exercicioTreino['id_peitoral']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_peitoral_{{$exercicioTreino['id_peitoral']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
@@ -128,6 +134,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -135,6 +142,7 @@
                                     </tr>
                                     @foreach($data['costa_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_costa_{{$exercicioTreino['id_costa']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\Costa::find($exercicioTreino['id_costa'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_costa_{{$exercicioTreino['id_costa']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_costa_{{$exercicioTreino['id_costa']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
@@ -156,6 +164,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -163,6 +172,7 @@
                                     </tr>
                                     @foreach($data['ombro_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_ombro_{{$exercicioTreino['id_ombro']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\Ombro::find($exercicioTreino['id_ombro'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_ombro_{{$exercicioTreino['id_ombro']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_ombro_{{$exercicioTreino['id_ombro']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
@@ -184,6 +194,7 @@
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
+                                        <th>Grupo</th>
                                         <th>Exercicio</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
@@ -191,6 +202,7 @@
                                     </tr>
                                     @foreach($data['membro_inferior_treino'] as $exercicioTreino)
                                         <tr>
+                                            <td><input class="form-control" name="grupo_inferior_{{$exercicioTreino['id_membro_inferior']}}" type="text" value="{{$exercicioTreino['grupo'] ?? ''}}"></td>
                                             <td style="width: 180px">{{ \App\Models\MembroInferior::find($exercicioTreino['id_membro_inferior'])['exercicio']}}</td>
                                             <td><input class="form-control" name="rep_inferior_{{$exercicioTreino['id_membro_inferior']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>
                                             <td><input class="form-control" name="serie_inferior_{{$exercicioTreino['id_membro_inferior']}}" type="text" value="{{$exercicioTreino['serie'] ?? ''}}"></td>
