@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\TreinoDataTable;
-use App\Models\Cliente;
 use App\Models\Treino;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\TreinoRepository;
 use App\Services\TreinoService;
-use Illuminate\Support\Facades\Auth;
 
 class TreinoController extends Controller
 {
@@ -24,6 +22,7 @@ class TreinoController extends Controller
      */
     public function __construct(TreinoRepository $repository, TreinoService $service)
     {
+        $this->middleware('can:admin', ['except' => ['update', 'myCurrentTraining']]);
         $this->repository = $repository;
         $this->service = $service;
     }
@@ -219,7 +218,6 @@ class TreinoController extends Controller
                                     ->first();
 
         $data = $this->repository->getExerciciosTreino($treino['id']);
-//        dd($data);
         return view('layouts.treino.show', compact('data'));
     }
 }

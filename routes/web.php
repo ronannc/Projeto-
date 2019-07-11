@@ -38,11 +38,10 @@ Route::group([
         Route::resource('costa', 'CostaController')->middleware('can:admin');
         Route::resource('ombro', 'OmbroController')->middleware('can:admin');
         Route::resource('exercicioTreino', 'ExercicioTreinoController')->middleware('can:admin');
-        Route::resource('treino', 'TreinoController')->middleware('can:admin');
-        Route::resource('cliente', 'ClienteController')->middleware('can:admin');
+        Route::resource('treino', 'TreinoController');
+        Route::resource('cliente', 'ClienteController');
 
-
-        Route::get('editMyAcount', 'ClienteController@editMyAcount')->name('editMyAcount')->middleware('can:cliente');
-        Route::get('myAcount', 'ClienteController@myAcount')->name('myAcount')->middleware('can:cliente');
-        Route::get('myCurrentTraining', 'TreinoController@myCurrentTraining')->name('myCurrentTraining')->middleware('can:cliente');
+        Route::get('editMyAcount', 'ClienteController@editMyAcount')->name('editMyAcount');
+        Route::get('myAcount', 'ClienteController@myAcount')->name('myAcount');
+        Route::get('myCurrentTraining', 'TreinoController@myCurrentTraining')->name('myCurrentTraining');
  });
