@@ -112,11 +112,9 @@ return [
 
         [
             'header' => 'Exercicios',
-            'can' => 'admin',
         ],
         [
             'text'    => 'Biceps',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -131,7 +129,6 @@ return [
 
         [
             'text'    => 'Costa',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -146,7 +143,6 @@ return [
 
         [
             'text'    => 'Membros Inferiores',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -161,7 +157,6 @@ return [
 
         [
             'text'    => 'Ombros',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -176,7 +171,6 @@ return [
 
         [
             'text'    => 'Peitoral',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -191,7 +185,6 @@ return [
 
         [
             'text'    => 'Triceps',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -206,12 +199,10 @@ return [
 
         [
             'header' => 'Clientes',
-            'can' => 'admin',
         ],
 
         [
             'text'    => 'Clientes',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -226,12 +217,10 @@ return [
 
         [
             'header' => 'Treinos',
-            'can' => 'admin',
         ],
 
         [
             'text'    => 'Treinos',
-            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -242,33 +231,6 @@ return [
                     'route'  => 'treino.create',
                 ],
             ],
-        ],
-
-        [
-            'header' => 'Meu Treino',
-            'can' => 'cliente',
-        ],
-
-        [
-            'text' => 'Visualizar',
-            'route'  => 'home',
-            'can' => 'cliente',
-        ],
-
-        [
-            'header' => 'Dados Pessoais',
-            'can' => 'cliente',
-        ],
-
-        [
-            'text' => 'Editar',
-            'route'  => 'editMyAcount',
-            'can' => 'cliente',
-        ],
-        [
-            'text' => 'Visualizar',
-            'route'  => 'myAcount',
-            'can' => 'cliente',
         ],
     ],
 

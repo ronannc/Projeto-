@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Laravel\Passport\Passport;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -28,6 +29,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Passport::routes();
 
         $permissoes = Role::all();
         foreach ($permissoes as $permissao){

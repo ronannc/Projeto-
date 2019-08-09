@@ -13,6 +13,7 @@
         "fzaninotto/faker": "^1.4",
         "jeroennoten/laravel-adminlte": "^1.24",
         "laravel/framework": "^5.7.0",
+        "laravel/passport": "^7.3",
         "laravel/tinker": "^1.0",
         "spatie/laravel-permission": "^2.37",
         "yajra/laravel-datatables-buttons": "^4.5",

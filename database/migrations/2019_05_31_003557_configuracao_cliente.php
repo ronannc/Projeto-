@@ -16,7 +16,7 @@ class ConfiguracaoCliente extends Migration
         Schema::create('configuracao_cliente', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('formula');
-            $table->integer('porcentagem');
+            $table->integer('porcentagem')->nullable();
             $table->integer('id_cliente')->nullable();
             $table->foreign('id_cliente')->references('id')->on('clientes');
             $table->timestamps();

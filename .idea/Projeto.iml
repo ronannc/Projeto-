@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
@@ -15,11 +16,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fideloper/proxy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/firebase/php-jwt" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/igorescobar/jquery-mask-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jeroennoten/laravel-adminlte" />
@@ -27,11 +30,14 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kylekatarnls/update-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/nexmo-notification-channel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/passport" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/slack-notification-channel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/event" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/oauth2-server" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/excel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/complex" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
@@ -53,6 +59,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
@@ -100,6 +107,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />

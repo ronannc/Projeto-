@@ -13,5 +13,6 @@ class PeitoralTreino extends Model
         'id_treino',
         'kg',
         'serie',
-        'rep'
+        'rep',
+        'grupo'
     ];}

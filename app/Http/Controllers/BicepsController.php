@@ -120,7 +120,6 @@ class BicepsController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
         $biceps = Biceps::find($id);
 
         $resultFromDeleteBiceps = $this->service->delete($biceps);

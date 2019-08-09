@@ -78,9 +78,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_triceps', $data['id_triceps'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 
@@ -99,9 +99,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_biceps', $data['id_biceps'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 
@@ -120,9 +120,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_costa', $data['id_costa'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 
@@ -141,9 +141,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_peitoral', $data['id_peitoral'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 
@@ -162,9 +162,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_ombro', $data['id_ombro'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 
@@ -183,9 +183,9 @@ class EloquentTreinoRepository extends AbstractEloquentRepository implements Tre
             ->where('id_membro_inferior', $data['id_membro_inferior'])
             ->update([
                 'kg' => $data['kg'],
-//                'serie' => $data['serie'],
+                'serie' => $data['serie'],
                 'rep' => $data['rep'],
-//                'grupo' => $data['grupo']
+                'grupo' => $data['grupo']
             ]);
     }
 

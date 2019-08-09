@@ -7,11 +7,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Auth;
-
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     use HasRoles;
     const ADMIN = 'admin';
     const CLIENTE = 'cliente';
