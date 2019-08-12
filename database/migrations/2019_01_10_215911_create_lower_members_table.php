@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeitoraisTable extends Migration
+class CreateLowerMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePeitoraisTable extends Migration
      */
     public function up()
     {
-        Schema::create('peitorais', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('exercicio');
-            $table->string('descricao');
+        Schema::create('lower_members', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('exercise');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePeitoraisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peitorais');
+        Schema::dropIfExists('lower_members');
     }
 }

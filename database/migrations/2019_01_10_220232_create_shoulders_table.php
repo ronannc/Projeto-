@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOmbrosTable extends Migration
+class CreateShouldersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateOmbrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ombros', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('exercicio');
-            $table->string('descricao');
+        Schema::create('shoulders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('exercise');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateOmbrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ombros');
+        Schema::dropIfExists('shoulders');
     }
 }

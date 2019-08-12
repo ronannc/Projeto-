@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembrosInferioresTable extends Migration
+class CreateMethodTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateMembrosInferioresTable extends Migration
      */
     public function up()
     {
-        Schema::create('membros_inferiores', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('exercicio');
-            $table->string('descricao');
+        Schema::create('method', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('description');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateMembrosInferioresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('membros_inferiores');
+        Schema::dropIfExists('method');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTricepsTable extends Migration
+class CreateBackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTricepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('triceps', function (Blueprint $table) {
+        Schema::create('back', function (Blueprint $table) {
             $table->increments('id');
             $table->string('exercise');
             $table->string('description');
@@ -28,6 +28,6 @@ class CreateTricepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('triceps');
+        Schema::dropIfExists('back');
     }
 }

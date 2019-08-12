@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBackWorkoutTable extends Migration
+class CreateShouldersWorkoutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateBackWorkoutTable extends Migration
      */
     public function up()
     {
-        Schema::create('back_workout', function (Blueprint $table) {
+        Schema::create('shoulders_workout', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_costa');
+            $table->integer('id_shoulders');
+            $table->foreign('id_shoulders')->references('id')->on('shoulders');
             $table->integer('id_training');
             $table->foreign('id_training')->references('id')->on('training');
             $table->string('load')->nullable();
@@ -34,6 +35,6 @@ class CreateBackWorkoutTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('back_workout');
+        Schema::dropIfExists('shoulders_workout');
     }
 }
