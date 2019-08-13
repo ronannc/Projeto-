@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Costa extends Model
+class LowerMembers extends Model
 {
-    protected $table = "costas";
-
     protected $fillable = [
-        'exercicio',
-        'descricao',
+        'exercise',
+        'description',
     ];
 }
