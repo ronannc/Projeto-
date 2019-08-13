@@ -1,0 +1,80 @@
+version: '3.4'
+services:
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: virtual-training-app
+    ports:
+      - 80:8080
+    volumes:
+      - .:/var/www/app
+    depends_on:
+      - mariadb
+      - mariadb-tests
+      - redis
+    networks:
+      - virtual-training
+
+  mariadb:
+    image: mariadb:10.3
+    container_name: virtual-training-mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: virtual-training
+      MYSQL_DATABASE: virtual-training
+      MYSQL_USER: virtual-training
+      MYSQL_PASSWORD: virtual-training
+    volumes:
+      - virtual-training-mariadb:/var/lib/mariadb
+    networks:
+      - virtual-training
+
+  mariadb-tests:
+    image: mariadb:10.3
+    container_name: virtual-training-mariadb-tests
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: virtual-training_tests
+      MYSQL_DATABASE: virtual-training_tests
+      MYSQL_USER: virtual-training_tests
+      MYSQL_PASSWORD: virtual-training_tests
+    volumes:
+      - virtual-training-mariadb-tests:/var/lib/mariadb
+    networks:
+      - virtual-training
+
+  redis:
+    image: redis:4.0.11-alpine
+    container_name: virtual-training-redis
+    volumes:
+      - virtual-training-redis:/data
+    ports:
+      - 6379:6379
+    networks:
+      - virtual-training
+
+  horizon:
+    image: ambientum/php:7.2
+    container_name: virtual-training-horizon
+    command: bash -c "sleep 10 && php artisan horizon"
+    volumes:
+      - .:/var/www/app
+    depends_on:
+      - redis
+    links:
+      - mariadb
+      - redis
+    networks:
+      - virtual-training
+
+networks:
+  virtual-training:
+    driver: bridge
+volumes:
+  virtual-training-mariadb:
+    driver: local
+  virtual-training-mariadb-tests:
+    driver: local
+  virtual-training-redis:
+    driver: local
