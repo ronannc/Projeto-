@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'ronannc1@yahoo.com.br',
             'password' => bcrypt('secretxxx'),
         ]);
-        $user->assignRole(User::ADMIN);
+//        $user->assignRole(User::ADMIN);
 
 //        $user = User::create([
 //            'name' => 'Cliente',

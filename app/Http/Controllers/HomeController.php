@@ -25,22 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(User::isAdmin()){
+//        if(User::isAdmin()){
             return view('home');
-        }else{
-            $cliente = User::cliente()->first();
-
-            if($cliente->configuracao() == null){
-
-                auth()->logout();
-                session()->flash('success', 'Sua conta foi criada com sucesso !!! Aguarde os instrutores entrar em contato para liberar seu acesso');
-
-                return view('welcome');
-            }else {
-
-//                return redirect(route('myAcount', ['id' => $cliente['id']]));
-                return redirect(route('myCurrentTraining', ['id' => $cliente['id']]));
-            }
-        }
+//        }else{
+//            $cliente = User::cliente()->first();
+//
+//            if($cliente->configuracao() == null){
+//
+//                auth()->logout();
+//                session()->flash('success', 'Sua conta foi criada com sucesso !!! Aguarde os instrutores entrar em contato para liberar seu acesso');
+//
+//                return view('welcome');
+//            }else {
+//
+////                return redirect(route('myAcount', ['id' => $cliente['id']]));
+//                return redirect(route('myCurrentTraining', ['id' => $cliente['id']]));
+//            }
+//        }
     }
 }
