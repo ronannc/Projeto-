@@ -13,48 +13,48 @@ class TricepsTableSeeder extends Seeder
     public function run(){
 
         Triceps::create([
-            'exercicio' => 'Puley triceps',
-            'descricao' => 'Puley triceps',
+            'exercise' => 'Puley triceps',
+            'description' => 'Puley triceps',
         ]);
         Triceps::create([
-            'exercicio' => 'Puley invertido',
-            'descricao' => 'Puley invertido',
+            'exercise' => 'Puley invertido',
+            'description' => 'Puley invertido',
         ]);
         Triceps::create([
-            'exercicio' => 'Frances',
-            'descricao' => 'Frances',
+            'exercise' => 'Frances',
+            'description' => 'Frances',
         ]);
         Triceps::create([
-            'exercicio' => 'Frances isolado',
-            'descricao' => 'Frances isolado',
+            'exercise' => 'Frances isolado',
+            'description' => 'Frances isolado',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps banco',
-            'descricao' => 'Triceps banco',
+            'exercise' => 'Triceps banco',
+            'description' => 'Triceps banco',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps testa',
-            'descricao' => 'Triceps testa',
+            'exercise' => 'Triceps testa',
+            'description' => 'Triceps testa',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps supino',
-            'descricao' => 'Triceps supino',
+            'exercise' => 'Triceps supino',
+            'description' => 'Triceps supino',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps up',
-            'descricao' => 'Triceps up',
+            'exercise' => 'Triceps up',
+            'description' => 'Triceps up',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps corda',
-            'descricao' => 'Triceps corda',
+            'exercise' => 'Triceps corda',
+            'description' => 'Triceps corda',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps cross isolado',
-            'descricao' => 'Triceps cross isolad',
+            'exercise' => 'Triceps cross isolado',
+            'description' => 'Triceps cross isolad',
         ]);
         Triceps::create([
-            'exercicio' => 'Triceps coice',
-            'descricao' => 'Triceps coice',
+            'exercise' => 'Triceps coice',
+            'description' => 'Triceps coice',
         ]);
 
     }

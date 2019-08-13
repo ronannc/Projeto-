@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
-//        $this->call(BicepsTableSeeder::class);
-//        $this->call(TricepsTableSeeder::class);
-//        $this->call(OmbroTableSeeder::class);
-//        $this->call(CostaTableSeeder::class);
-//        $this->call(PeitoralTableSeeder::class);
-//        $this->call(MembroInferiorTableSeeder::class);
+        $this->call(BicepsTableSeeder::class);
+        $this->call(TricepsTableSeeder::class);
+        $this->call(ShouldersTableSeeder::class);
+        $this->call(BackTableSeeder::class);
+        $this->call(BreastsTableSeeder::class);
+        $this->call(LowerMembersTableSeeder::class);
 //        $this->call(ClienteTableSeeder::class);
 //        $this->call(TreinoTableSeeder::class);
 //        $this->call(ExercicioTreinoTableSeeder::class);

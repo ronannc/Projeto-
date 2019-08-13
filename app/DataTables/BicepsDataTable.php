@@ -3,6 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\Biceps;
+use App\User;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
 class BicepsDataTable extends DataTable
@@ -11,19 +14,19 @@ class BicepsDataTable extends DataTable
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Biceps $biceps){
+            ->editColumn('action', function (Biceps $biceps) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('biceps.edit', $biceps) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$biceps['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$biceps['id'].'" style="display:none" action="'.route('biceps.destroy', $biceps).'" method="post">'.
-            csrf_field().
-            method_field('DELETE').'
+                return '<a title="Editar"  style="color: #000000" href="' . route('biceps.edit', $biceps) . '"><i class="fa fa-edit"></i></a>' .
+                    '<a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $biceps['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $biceps['id'] . '" style="display:none" action="' . route('biceps.destroy', $biceps) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -32,18 +35,18 @@ class BicepsDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Biceps $model)
     {
-        return $model->newQuery()->select('id', 'exercicio', 'descricao');
+        return $model->newQuery();
     }
 
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {
@@ -56,7 +59,7 @@ class BicepsDataTable extends DataTable
                 'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
-                'language'   => ['url' => 'datatable/portuguese-brasil.json'],
+                'language' => ['url' => 'datatable/portuguese-brasil.json'],
             ]);
     }
 
@@ -68,10 +71,10 @@ class BicepsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'exercicio',
-            'descricao',
-            'acoes' => ['searchable' => false, 'orderable' => false]
+            'id' => ['title' => 'ID'],
+            'exercise' => ['title' => 'Exercicio'],
+            'description' => ['title' => 'Descricao'],
+            'action' => ['title' => 'Acoes', 'searchable' => false, 'orderable' => false]
         ];
     }
 
