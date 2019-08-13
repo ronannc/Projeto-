@@ -12,6 +12,7 @@
         "fideloper/proxy": "~4.0",
         "jeroennoten/laravel-adminlte": "^1.24",
         "laravel/framework": "5.7.*",
+        "laravel/horizon": "^2.2",
         "laravel/passport": "^7.3",
         "laravel/tinker": "^1.0",
         "spatie/laravel-permission": "^2.37",
@@ -68,7 +69,7 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan route:xche",
+            "php artisan route:cache",
             "php artisan config:cache"
         ],
         "post-autoload-dump": [
