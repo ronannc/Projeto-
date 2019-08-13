@@ -14,7 +14,7 @@ class CreateMethodTable extends Migration
     public function up()
     {
         Schema::create('method', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->string('description');
             $table->string('name');
             $table->timestamps();

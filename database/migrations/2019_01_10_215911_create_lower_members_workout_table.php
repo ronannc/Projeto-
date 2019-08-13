@@ -14,7 +14,7 @@ class CreateLowerMembersWorkoutTable extends Migration
     public function up()
     {
         Schema::create('lower_members_workout', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->integer('id_lower_members');
             $table->foreign('id_lower_members')->references('id')->on('lower_members');
             $table->integer('id_training');

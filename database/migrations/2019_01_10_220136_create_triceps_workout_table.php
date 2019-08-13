@@ -14,7 +14,7 @@ class CreateTricepsWorkoutTable extends Migration
     public function up()
     {
         Schema::create('triceps_workout', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->integer('id_triceps');
             $table->foreign('id_triceps')->references('id')->on('triceps');
             $table->integer('id_training');

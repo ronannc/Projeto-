@@ -11,9 +11,9 @@ class Cliente extends Model
     public const NAO_VERIFICADO = 0;
 
     protected $fillable = [
-        'nome',
+        'name',
         'cpf',
-        'telefone',
+        'phone',
         'nascimento',
         'peso'
     ];

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ConfiguracaoCliente extends Migration
+class CreateCompanyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class ConfiguracaoCliente extends Migration
      */
     public function up()
     {
-        Schema::create('configuracao_cliente', function (Blueprint $table) {
-            $table->increments('id');
-            $table->boolean('formula');
-            $table->integer('porcentagem')->nullable();
-            $table->integer('id_cliente')->nullable();
-            $table->foreign('id_cliente')->references('id')->on('clientes');
+        Schema::create('company', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
+            $table->string('name');
+            $table->string('cnpj');
+            $table->string('phone');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class ConfiguracaoCliente extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('company');
     }
 }

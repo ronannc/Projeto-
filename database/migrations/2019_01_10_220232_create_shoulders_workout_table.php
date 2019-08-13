@@ -14,7 +14,7 @@ class CreateShouldersWorkoutTable extends Migration
     public function up()
     {
         Schema::create('shoulders_workout', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->integer('id_shoulders');
             $table->foreign('id_shoulders')->references('id')->on('shoulders');
             $table->integer('id_training');
