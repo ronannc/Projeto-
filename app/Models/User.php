@@ -14,7 +14,7 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
     use HasRoles;
     const ADMIN = 'admin';
-    const CLIENTE = 'cliente';
+    const CLIENTE = 'client';
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'id_cliente'
+        'name', 'email', 'password', 'id_client', 'id_company'
     ];
 
     /**
@@ -34,19 +34,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function isAdmin()
-    {
-        return Auth::check() && Auth::user()->hasRole(self::ADMIN);
-    }
+//    public static function isAdmin()
+//    {
+//        return Auth::check() && Auth::user()->hasRole(self::ADMIN);
+//    }
+//
+//    public static function isCliente()
+//    {
+//        return Auth::check() && Auth::user()->hasRole(self::CLIENTE);
+//    }
 
-    public static function isCliente()
+    public static function client()
     {
-        return Auth::check() && Auth::user()->hasRole(self::CLIENTE);
-    }
-
-    public static function cliente()
-    {
-        return Auth::user()->hasone(Cliente::class, 'id', 'id_cliente');
+        return Auth::user()->hasone(Client::class, 'id', 'id_client');
     }
 
     /**

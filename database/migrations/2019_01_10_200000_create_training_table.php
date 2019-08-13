@@ -14,7 +14,7 @@ class CreateTrainingTable extends Migration
     public function up()
     {
         Schema::create('training', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->date('start');
             $table->date('next_workout');
             $table->string('note');

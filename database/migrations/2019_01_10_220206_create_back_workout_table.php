@@ -14,8 +14,9 @@ class CreateBackWorkoutTable extends Migration
     public function up()
     {
         Schema::create('back_workout', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_costa');
+            $table->integer('id')->autoIncrement();
+            $table->integer('id_back');
+            $table->foreign('id_back')->references('id')->on('back');
             $table->integer('id_training');
             $table->foreign('id_training')->references('id')->on('training');
             $table->string('load')->nullable();

@@ -14,7 +14,7 @@ class CreateBicepsWorkoutTable extends Migration
     public function up()
     {
         Schema::create('biceps_workout', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->integer('id_biceps');
             $table->foreign('id_biceps')->references('id')->on('biceps');
             $table->integer('id_training');

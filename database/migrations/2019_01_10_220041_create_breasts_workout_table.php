@@ -14,7 +14,7 @@ class CreateBreastsWorkoutTable extends Migration
     public function up()
     {
         Schema::create('breasts_workout', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->integer('id_breasts');
             $table->foreign('id_breasts')->references('id')->on('breasts');
             $table->integer('id_training');
