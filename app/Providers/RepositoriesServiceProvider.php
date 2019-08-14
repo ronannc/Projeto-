@@ -38,7 +38,7 @@ use App\Repositories\EloquentBackWorkoutRepository;
 use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsWorkoutRepository;
 use App\Repositories\EloquentBreastRepository;
-use App\Repositories\EloquentBreastTreinoRepository;
+use App\Repositories\EloquentBreastWorkoutRepository;
 use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentLowerMemberRepository;
@@ -117,7 +117,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(BreastWorkoutRepository::class, function () {
-            return new EloquentBreastTreinoRepository(new BreastWorkout());
+            return new EloquentBreastWorkoutRepository(new BreastWorkout());
         });
 
         $this->app->bind(WorkoutRepository::class, function () {

@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 
-use App\Models\Peitoral;
 use App\Repositories\Contracts\BreastRepository;
 use Illuminate\Database\Eloquent\Model;
 

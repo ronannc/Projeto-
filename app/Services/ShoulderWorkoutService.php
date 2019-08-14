@@ -3,7 +3,7 @@
 
 namespace App\Services;
 
-use App\Models\OmbroTreino;
+use App\Models\ShoulderWorkout;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use Exception;
 
@@ -34,7 +34,7 @@ class ShoulderWorkoutService
         }
     }
 
-    public function update(array $data, OmbroTreino $ombro_treino)
+    public function update(array $data, ShoulderWorkout $ombro_treino)
     {
 
         try {
@@ -48,7 +48,7 @@ class ShoulderWorkoutService
         }
     }
 
-    public function delete(OmbroTreino $ombro_treino)
+    public function delete(ShoulderWorkout $ombro_treino)
     {
         try {
             $delete = $this->repository->delete($ombro_treino);

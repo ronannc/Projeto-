@@ -3,7 +3,6 @@
 
 namespace App\Services;
 
-use App\Models\BicepsTreino;
 use App\Repositories\Contracts\BicepsWorkoutRepository;
 use Exception;
 

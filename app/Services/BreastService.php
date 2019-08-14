@@ -3,7 +3,7 @@
 
 namespace App\Services;
 
-use App\Models\Peitoral;
+use App\Models\Breast;
 use App\Repositories\Contracts\BreastRepository;
 use Exception;
 
@@ -34,11 +34,11 @@ class BreastService
         }
     }
 
-    public function update(array $data, Peitoral $peitoral)
+    public function update(array $data, Breast $Breast)
     {
 
         try {
-            $update = $this->repository->update($peitoral, $data);
+            $update = $this->repository->update($Breast, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class BreastService
         }
     }
 
-    public function delete(Peitoral $peitoral)
+    public function delete(Breast $Breast)
     {
         try {
-            $delete = $this->repository->delete($peitoral);
+            $delete = $this->repository->delete($Breast);
             return $delete;
         } catch (Exception $exception) {
             return [

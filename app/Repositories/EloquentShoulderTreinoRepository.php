@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 
-use App\Models\Ombro;
 use App\Repositories\Contracts\ShoulderRepository;
 use Illuminate\Database\Eloquent\Model;
 

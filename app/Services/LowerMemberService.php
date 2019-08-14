@@ -3,7 +3,7 @@
 
 namespace App\Services;
 
-use App\Models\MembroInferior;
+use App\Models\LowerMember;
 use App\Repositories\Contracts\LowerMemberRepository;
 use Exception;
 
@@ -34,7 +34,7 @@ class LowerMemberService
         }
     }
 
-    public function update(array $data, MembroInferior $membroInferior)
+    public function update(array $data, LowerMember $membroInferior)
     {
 
         try {
@@ -48,7 +48,7 @@ class LowerMemberService
         }
     }
 
-    public function delete(MembroInferior $membroInferior)
+    public function delete(LowerMember $membroInferior)
     {
         try {
             $delete = $this->repository->delete($membroInferior);

@@ -3,9 +3,8 @@
 namespace App\Repositories;
 
 
-use App\Models\Biceps;
-use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\BicepsRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class EloquentBicepsRepository extends AbstractEloquentRepository implements BicepsRepository
 {

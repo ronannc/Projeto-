@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class EloquentConfiguracaoClienteRepository extends AbstractEloquentRepository implements ConfiguracaoClienteRepository
 {

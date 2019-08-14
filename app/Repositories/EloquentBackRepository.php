@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 
-use App\Models\Costa;
 use App\Repositories\Contracts\BackRepository;
 use Illuminate\Database\Eloquent\Model;
 

@@ -3,9 +3,8 @@
 namespace App\Repositories;
 
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\UserRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class EloquentUserRepository extends AbstractEloquentRepository implements UserRepository
 {

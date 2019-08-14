@@ -3,7 +3,7 @@
 
 namespace App\Services;
 
-use App\Models\Cliente;
+use App\Models\Client;
 use App\Repositories\Contracts\ClientRepository;
 use Exception;
 
@@ -34,11 +34,11 @@ class ClientService
         }
     }
 
-    public function update(array $data, Cliente $cliente)
+    public function update(array $data, Client $client)
     {
 
         try {
-            $update = $this->repository->update($cliente, $data);
+            $update = $this->repository->update($client, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class ClientService
         }
     }
 
-    public function delete(Cliente $cliente)
+    public function delete(Client $client)
     {
         try {
-            $delete = $this->repository->delete($cliente);
+            $delete = $this->repository->delete($client);
             return $delete;
         } catch (Exception $exception) {
             return [
@@ -61,10 +61,10 @@ class ClientService
         }
     }
 
-    public function storeConfiguracaoCliente(array $data)
+    public function storeConfiguracaoClient(array $data)
     {
         try {
-            $store = $this->repository->saveConfiguracaoCliente($data);
+            $store = $this->repository->saveConfiguracaoClient($data);
             return $store;
         } catch (Exception $exception) {
             return [
@@ -74,10 +74,10 @@ class ClientService
         }
     }
 
-    public function updateConfiguracaoCliente(array $data)
+    public function updateConfiguracaoClient(array $data)
     {
         try {
-            $update = $this->repository->updateConfiguracaoCliente($data);
+            $update = $this->repository->updateConfiguracaoClient($data);
             return $update;
         } catch (Exception $exception) {
             return [

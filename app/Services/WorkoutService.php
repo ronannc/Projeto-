@@ -3,8 +3,8 @@
 
 namespace App\Services;
 
-use App\Models\Cliente;
-use App\Models\Treino;
+use App\Models\Client;
+use App\Models\Workout;
 use App\Repositories\Contracts\WorkoutRepository;
 use Exception;
 
@@ -35,7 +35,7 @@ class WorkoutService
         }
     }
 
-    public function update(array $data, Treino $treino)
+    public function update(array $data, Workout $treino)
     {
         try {
             $update = $this->repository->update($treino, $data);
@@ -48,7 +48,7 @@ class WorkoutService
         }
     }
 
-    public function delete(Treino $treino)
+    public function delete(Workout $treino)
     {
         try {
             $delete = $this->repository->delete($treino);
@@ -64,7 +64,7 @@ class WorkoutService
     public function process_data($data, $formula_treino = false)
     {
         if ($formula_treino) {
-            $cliente = Cliente::find($data['formula_treino']['id_cliente']);
+            $cliente = Client::find($data['formula_treino']['id_cliente']);
         }
         //tem que receber o peso do cliente para calcular a carga segundo a formula
         $collect = array();
@@ -86,9 +86,9 @@ class WorkoutService
         return $collect;
     }
 
-    public function formula($carga, $repeticceos, $pesoCliente, $porcentagem)
+    public function formula($carga, $repeticceos, $pesoClient, $porcentagem)
     {
-        return (((($carga * 100) / abs(102.78 - (2.78 * $repeticceos))) / $pesoCliente) * ($porcentagem / 100)) * $pesoCliente;
+        return (((($carga * 100) / abs(102.78 - (2.78 * $repeticceos))) / $pesoClient) * ($porcentagem / 100)) * $pesoClient;
     }
 
 }
