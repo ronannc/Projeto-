@@ -77,7 +77,7 @@ class LowerMemberDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'action' => [
+            'acoes' => [
                 'searchable' => false,
                 'orderable'  => false
             ]
