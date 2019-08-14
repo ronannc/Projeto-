@@ -38,7 +38,7 @@ class ShoulderController extends Controller
      */
     public function index(ShoulderDataTable $dataTable)
     {
-        return $dataTable->render('layouts.Shoulder.index');
+        return $dataTable->render('layouts.shoulder.index');
 
     }
 
@@ -49,7 +49,7 @@ class ShoulderController extends Controller
      */
     public function create()
     {
-        return view('layouts.Shoulder.create');
+        return view('layouts.shoulder.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class ShoulderController extends Controller
      */
     public function show(Shoulder $Shoulder)
     {
-        return view('layouts.Shoulder.show', compact('Shoulder'));
+        return view('layouts.shoulder.show', compact('Shoulder'));
     }
 
     /**
@@ -96,7 +96,7 @@ class ShoulderController extends Controller
     {
         $Shoulder = Shoulder::find($id);
 //        dd($Shoulder);
-        return view('layouts.Shoulder.edit', compact('Shoulder'));
+        return view('layouts.shoulder.edit', compact('Shoulder'));
     }
 
     /**

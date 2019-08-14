@@ -21,11 +21,11 @@ class ShoulderDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Shoulder $Shoulder) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('Shoulder.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('shoulder.edit',
                         $Shoulder) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Shoulder['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Shoulder['id'] . '" style="display:none" action="' . route('Shoulder.destroy',
+        <form id="form-delete' . $Shoulder['id'] . '" style="display:none" action="' . route('shoulder.destroy',
                         $Shoulder) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -43,7 +43,7 @@ class ShoulderDataTable extends DataTable
      */
     public function query(Shoulder $model)
     {
-        return $model->newQuery()->select('id', 'exercicio', 'descricao');
+        return $model->newQuery()->select('id', 'exercise', 'description');
     }
 
     /**
@@ -75,8 +75,8 @@ class ShoulderDataTable extends DataTable
     {
         return [
             'id',
-            'exercicio',
-            'descricao',
+            'exercise',
+            'description',
             'acoes' => [
                 'searchable' => false,
                 'orderable'  => false
