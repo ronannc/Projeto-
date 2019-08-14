@@ -5,7 +5,7 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface ClienteRepository
+interface ClientRepository
 {
     public function save(array $data);
 

@@ -2,13 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\ConfiguracaoCliente;
-use App\Repositories\Contracts\ConfiguracaoClienteRepository;
-use App\Repositories\EloquentConfiguracaoClienteRepository;
-use Illuminate\Support\ServiceProvider;
 use App\Models\Biceps;
 use App\Models\BicepsTreino;
 use App\Models\Cliente;
+use App\Models\ConfiguracaoCliente;
 use App\Models\Costa;
 use App\Models\CostaTreino;
 use App\Models\MembroInferior;
@@ -23,9 +20,11 @@ use App\Models\TricepsTreino;
 use App\Models\User;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BicepsTreinoRepository;
-use App\Repositories\Contracts\ClienteRepository;
+use App\Repositories\Contracts\ClientRepository;
+use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\CostaRepository;
 use App\Repositories\Contracts\CostaTreinoRepository;
+use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\MembroInferiorRepository;
 use App\Repositories\Contracts\MembroInferiorTreinoRepository;
 use App\Repositories\Contracts\OmbroRepository;
@@ -33,26 +32,26 @@ use App\Repositories\Contracts\OmbroTreinoRepository;
 use App\Repositories\Contracts\PeitoralRepository;
 use App\Repositories\Contracts\PeitoralTreinoRepository;
 use App\Repositories\Contracts\TreinoRepository;
-use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Repositories\Contracts\TricepsTreinoRepository;
 use App\Repositories\Contracts\UserRepository;
 use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsTreinoRepository;
-use App\Repositories\EloquentClienteRepository;
+use App\Repositories\EloquentClientRepository;
+use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentCostaRepository;
 use App\Repositories\EloquentCostaTreinoRepository;
 use App\Repositories\EloquentMembroInferiorRepository;
 use App\Repositories\EloquentMembroInferiorTreinoRepository;
+use App\Repositories\EloquentOmbroRepository;
+use App\Repositories\EloquentOmbroTreinoRepository;
 use App\Repositories\EloquentPeitoralRepository;
 use App\Repositories\EloquentPeitoralTreinoRepository;
 use App\Repositories\EloquentTreinoRepository;
-use App\Repositories\EloquentExercicioTreinoRepository;
 use App\Repositories\EloquentTricepsRepository;
 use App\Repositories\EloquentTricepsTreinoRepository;
-use App\Repositories\EloquentOmbroRepository;
-use App\Repositories\EloquentOmbroTreinoRepository;
 use App\Repositories\EloquentUserRepository;
+use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
 {
@@ -82,8 +81,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentBicepstreinoRepository(new BicepsTreino());
         });
 
-        $this->app->bind(ClienteRepository::class, function () {
-            return new EloquentClienteRepository(new Cliente());
+        $this->app->bind(ClientRepository::class, function () {
+            return new EloquentClientRepository(new Cliente());
         });
 
         $this->app->bind(ConfiguracaoClienteRepository::class, function () {
@@ -153,7 +152,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         return [
             BicepsRepository::class,
             BicepsTreinoRepository::class,
-            ClienteRepository::class,
+            ClientRepository::class,
             ConfiguracaoClienteRepository::class,
             CostaRepository::class,
             CostaTreinoRepository::class,

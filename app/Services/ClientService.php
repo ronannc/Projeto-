@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\Cliente;
-use App\Repositories\Contracts\ClienteRepository;
+use App\Repositories\Contracts\ClientRepository;
 
-class ClienteService
+class ClientService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class ClienteService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(ClienteRepository $repository)
+    public function __construct(ClientRepository $repository)
     {
         $this->repository = $repository;
     }

@@ -1,6 +1,8 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,9 +42,9 @@ Route::group([
         Route::resource('ombro', 'OmbroController');
         Route::resource('exercicioTreino', 'ExercicioTreinoController');
         Route::resource('treino', 'TreinoController');
-        Route::resource('cliente', 'ClienteController');
+        Route::resource('cliente', 'ClientController');
 
-//        Route::get('editMyAcount', 'ClienteController@editMyAcount')->name('editMyAcount');
-//        Route::get('myAcount', 'ClienteController@myAcount')->name('myAcount');
+//        Route::get('editMyAcount', 'ClientController@editMyAcount')->name('editMyAcount');
+//        Route::get('myAcount', 'ClientController@myAcount')->name('myAcount');
 //        Route::get('myCurrentTraining', 'TreinoController@myCurrentTraining')->name('myCurrentTraining');
  });

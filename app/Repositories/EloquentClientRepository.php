@@ -10,10 +10,10 @@ use App\Models\OmbroTreino;
 use App\Models\PeitoralTreino;
 use App\Models\Treino;
 use App\Models\TricepsTreino;
+use App\Repositories\Contracts\ClientRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\ClienteRepository;
 
-class EloquentClienteRepository extends AbstractEloquentRepository implements ClienteRepository
+class EloquentClientRepository extends AbstractEloquentRepository implements ClientRepository
 {
 
     public function save(array $data)
