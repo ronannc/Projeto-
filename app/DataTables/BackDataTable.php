@@ -3,6 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Back;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
 class BackDataTable extends DataTable
@@ -11,7 +13,8 @@ class BackDataTable extends DataTable
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     *
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
@@ -32,7 +35,8 @@ class BackDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param Back $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Back $model)
@@ -43,7 +47,7 @@ class BackDataTable extends DataTable
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {

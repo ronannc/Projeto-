@@ -35,7 +35,7 @@ Route::group([
 
 //        Route::resource('membroInferior', 'LowerMemberController')->middleware('can:admin');
         Route::resource('membroInferior', 'LowerMemberController');
-        Route::resource('peitoral', 'PeitoralController');
+        Route::resource('peitoral', 'BreastController');
         Route::resource('biceps', 'BicepsController');
         Route::resource('triceps', 'TricepsController');
         Route::resource('costa', 'BackController');

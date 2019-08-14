@@ -4,10 +4,10 @@ namespace App\Repositories;
 
 
 use App\Models\Peitoral;
+use App\Repositories\Contracts\BreastRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\PeitoralRepository;
 
-class EloquentPeitoralRepository extends AbstractEloquentRepository implements PeitoralRepository
+class EloquentBreastTreinoRepository extends AbstractEloquentRepository implements BreastRepository
 {
 
     public function save(array $data)

@@ -2,28 +2,33 @@
 
 namespace App\DataTables;
 
-use App\Models\Peitoral;
+use App\Models\Breast;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class PeitoralDataTable extends DataTable
+class BreastDataTable extends DataTable
 {
     /**
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     *
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Peitoral $peitoral){
+            ->editColumn('acoes', function (Breast $Breast) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('peitoral.edit', $peitoral) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$peitoral['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$peitoral['id'].'" style="display:none" action="'.route('peitoral.destroy', $peitoral).'" method="post">'.
-            csrf_field().
-            method_field('DELETE').'
+                return '<a title="Editar"  style="color: #000000" href="' . route('Breast.edit',
+                        $Breast) . '"><i class="fa fa-edit"></i></a>' .
+                    '<a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Breast['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('Breast.destroy',
+                        $Breast) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -32,10 +37,11 @@ class PeitoralDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param Breast $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Peitoral $model)
+    public function query(Breast $model)
     {
         return $model->newQuery()->select('id', 'exercicio', 'descricao');
     }
@@ -43,7 +49,7 @@ class PeitoralDataTable extends DataTable
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {
@@ -53,7 +59,7 @@ class PeitoralDataTable extends DataTable
                 'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
@@ -71,7 +77,10 @@ class PeitoralDataTable extends DataTable
             'id',
             'exercicio',
             'descricao',
-            'acoes' => ['searchable' => false, 'orderable' => false]
+            'acoes' => [
+                'searchable' => false,
+                'orderable'  => false
+            ]
         ];
     }
 
@@ -82,6 +91,6 @@ class PeitoralDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Peitoral_' . date('YmdHis');
+        return 'Breast_' . date('YmdHis');
     }
 }

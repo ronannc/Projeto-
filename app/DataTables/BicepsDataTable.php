@@ -34,7 +34,8 @@ class BicepsDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param User $model
+     * @param Biceps $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Biceps $model)

@@ -22,12 +22,12 @@ use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BicepsTreinoRepository;
+use App\Repositories\Contracts\BreastRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
-use App\Repositories\Contracts\PeitoralRepository;
 use App\Repositories\Contracts\PeitoralTreinoRepository;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
@@ -39,12 +39,12 @@ use App\Repositories\EloquentBackRepository;
 use App\Repositories\EloquentBackWorkoutRepository;
 use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsTreinoRepository;
+use App\Repositories\EloquentBreastRepository;
+use App\Repositories\EloquentBreastTreinoRepository;
 use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
-use App\Repositories\EloquentPeitoralRepository;
-use App\Repositories\EloquentPeitoralTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
 use App\Repositories\EloquentShoulderTreinoRepository;
 use App\Repositories\EloquentTreinoRepository;
@@ -114,12 +114,12 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentShoulderTreinoRepository(new OmbroTreino());
         });
 
-        $this->app->bind(PeitoralRepository::class, function () {
-            return new EloquentPeitoralRepository(new Peitoral());
+        $this->app->bind(BreastRepository::class, function () {
+            return new EloquentBreastRepository(new Peitoral());
         });
 
         $this->app->bind(PeitoralTreinoRepository::class, function () {
-            return new EloquentPeitoralTreinoRepository(new PeitoralTreino());
+            return new EloquentBreastTreinoRepository(new PeitoralTreino());
         });
 
         $this->app->bind(TreinoRepository::class, function () {
@@ -160,7 +160,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             LowerMemberWorkoutRepository::class,
             ShoulderRepository::class,
             ShoulderWorkoutRepository::class,
-            PeitoralRepository::class,
+            BreastRepository::class,
             PeitoralTreinoRepository::class,
             TreinoRepository::class,
             ExercicioTreinoRepository::class,

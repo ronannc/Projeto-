@@ -2,29 +2,35 @@
 
 namespace App\DataTables;
 
-use App\Models\Treino;
+use App\Models\Workout;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class TreinoDataTable extends DataTable
+class WorkoutDataTable extends DataTable
 {
     /**
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     *
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Treino $treino){
+            ->editColumn('acoes', function (Workout $Workout) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('treino.show', $treino) . '"><i class="fa fa-eye"></i></a>'.
-                        '<a title="Editar"  style="color: #000000" href="' . route('treino.edit', $treino) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$treino['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$treino['id'].'" style="display:none" action="'.route('treino.destroy', $treino).'" method="post">'.
-            csrf_field().
-            method_field('DELETE').'
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('Workout.show',
+                        $Workout) . '"><i class="fa fa-eye"></i></a>' .
+                    '<a title="Editar"  style="color: #000000" href="' . route('Workout.edit',
+                        $Workout) . '"><i class="fa fa-edit"></i></a>' .
+                    '<a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Workout['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('Workout.destroy',
+                        $Workout) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -33,18 +39,19 @@ class TreinoDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param Workout $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query()
+    public function query(Workout $model)
     {
-        return $this->data;
+        return $model->newQuery();
     }
 
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {
@@ -54,7 +61,7 @@ class TreinoDataTable extends DataTable
                 'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
@@ -87,6 +94,6 @@ class TreinoDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Treino_' . date('YmdHis');
+        return 'Workout_' . date('YmdHis');
     }
 }

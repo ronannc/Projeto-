@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use App\Models\LowerMember;
-use App\Models\User;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
@@ -38,7 +37,7 @@ class LowerMemberDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param User $model
+     * @param LowerMember $model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

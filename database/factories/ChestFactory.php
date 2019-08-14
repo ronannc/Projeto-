@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Breasts;
+use App\Models\Breast;
 use Faker\Generator as Faker;
 
 /*
@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Breasts::class, function (Faker $faker) {
+$factory->define(Breast::class, function (Faker $faker) {
     return [
         'exercise'    => $faker->name,
         'description' => $faker->text(15)

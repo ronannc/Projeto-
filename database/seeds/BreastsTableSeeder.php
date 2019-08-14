@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Breasts;
+use App\Models\Breast;
 use Illuminate\Database\Seeder;
 
 class BreastsTableSeeder extends Seeder
@@ -13,47 +13,47 @@ class BreastsTableSeeder extends Seeder
     public function run()
     {
 
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Supino reto',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Supino inclinado',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Peck deck',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Crucifixo',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Fly 45',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Pullouver',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Cross chest',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Flexao de braco',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Supino com halter',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Supino 45 com halter',
             'description' => '',
         ]);
-        Breasts::create([
+        Breast::create([
             'exercise'    => 'Supino declinado',
             'description' => '',
         ]);

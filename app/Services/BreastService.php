@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\Peitoral;
-use App\Repositories\Contracts\PeitoralRepository;
+use App\Repositories\Contracts\BreastRepository;
 
-class PeitoralService
+class BreastService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class PeitoralService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(PeitoralRepository $repository)
+    public function __construct(BreastRepository $repository)
     {
         $this->repository = $repository;
     }
