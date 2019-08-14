@@ -10,11 +10,12 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         $user = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@email.com',
+            'name'     => 'Admin',
+            'email'    => 'admin@email.com',
             'password' => bcrypt('secretxxx'),
         ]);
 //        $user->assignRole(User::ADMIN);

@@ -10,58 +10,59 @@ class BackTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         Back::create([
-            'exercise' => 'Puley costas',
+            'exercise'    => 'Puley costas',
             'description' => 'Puley costas',
         ]);
         Back::create([
-            'exercise' => 'Puley frente',
+            'exercise'    => 'Puley frente',
             'description' => 'Puley frente',
         ]);
         Back::create([
-            'exercise' => 'Remada baixa',
+            'exercise'    => 'Remada baixa',
             'description' => 'Remada baixa',
         ]);
         Back::create([
-            'exercise' => 'Remada curvada',
+            'exercise'    => 'Remada curvada',
             'description' => 'Remada curvada',
         ]);
         Back::create([
-            'exercise' => 'Costas peck deck',
+            'exercise'    => 'Costas peck deck',
             'description' => 'Costas peck deck',
         ]);
         Back::create([
-            'exercise' => 'Puxador',
+            'exercise'    => 'Puxador',
             'description' => 'Puxador',
         ]);
         Back::create([
-            'exercise' => 'Remada Cavalinho',
+            'exercise'    => 'Remada Cavalinho',
             'description' => 'Remada Cavalinho',
         ]);
         Back::create([
-            'exercise' => 'Extensao Tronco',
+            'exercise'    => 'Extensao Tronco',
             'description' => 'Extensao Tronco',
         ]);
         Back::create([
-            'exercise' => 'Extensao de braco',
+            'exercise'    => 'Extensao de braco',
             'description' => 'Extensao de braco',
         ]);
         Back::create([
-            'exercise' => 'Puley frente pegada supinada',
+            'exercise'    => 'Puley frente pegada supinada',
             'description' => 'Puley frente pegada supinada',
         ]);
         Back::create([
-            'exercise' => 'Remada uni-lateral',
+            'exercise'    => 'Remada uni-lateral',
             'description' => 'Remada uni-lateral',
         ]);
         Back::create([
-            'exercise' => 'Barra fixa',
+            'exercise'    => 'Barra fixa',
             'description' => 'Barra fixa',
         ]);
         Back::create([
-            'exercise' => 'Levantamento terra',
+            'exercise'    => 'Levantamento terra',
             'description' => 'Levantamento terra',
         ]);
 

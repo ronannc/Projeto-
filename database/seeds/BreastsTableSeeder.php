@@ -10,50 +10,51 @@ class BreastsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         Breasts::create([
-            'exercise' => 'Supino reto',
+            'exercise'    => 'Supino reto',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Supino inclinado',
+            'exercise'    => 'Supino inclinado',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Peck deck',
+            'exercise'    => 'Peck deck',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Crucifixo',
+            'exercise'    => 'Crucifixo',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Fly 45',
+            'exercise'    => 'Fly 45',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Pullouver',
+            'exercise'    => 'Pullouver',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Cross chest',
+            'exercise'    => 'Cross chest',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Flexao de braco',
+            'exercise'    => 'Flexao de braco',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Supino com halter',
+            'exercise'    => 'Supino com halter',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Supino 45 com halter',
+            'exercise'    => 'Supino 45 com halter',
             'description' => '',
         ]);
         Breasts::create([
-            'exercise' => 'Supino declinado',
+            'exercise'    => 'Supino declinado',
             'description' => '',
         ]);
     }

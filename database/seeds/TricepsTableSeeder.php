@@ -10,50 +10,51 @@ class TricepsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         Triceps::create([
-            'exercise' => 'Puley triceps',
+            'exercise'    => 'Puley triceps',
             'description' => 'Puley triceps',
         ]);
         Triceps::create([
-            'exercise' => 'Puley invertido',
+            'exercise'    => 'Puley invertido',
             'description' => 'Puley invertido',
         ]);
         Triceps::create([
-            'exercise' => 'Frances',
+            'exercise'    => 'Frances',
             'description' => 'Frances',
         ]);
         Triceps::create([
-            'exercise' => 'Frances isolado',
+            'exercise'    => 'Frances isolado',
             'description' => 'Frances isolado',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps banco',
+            'exercise'    => 'Triceps banco',
             'description' => 'Triceps banco',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps testa',
+            'exercise'    => 'Triceps testa',
             'description' => 'Triceps testa',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps supino',
+            'exercise'    => 'Triceps supino',
             'description' => 'Triceps supino',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps up',
+            'exercise'    => 'Triceps up',
             'description' => 'Triceps up',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps corda',
+            'exercise'    => 'Triceps corda',
             'description' => 'Triceps corda',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps cross isolado',
+            'exercise'    => 'Triceps cross isolado',
             'description' => 'Triceps cross isolad',
         ]);
         Triceps::create([
-            'exercise' => 'Triceps coice',
+            'exercise'    => 'Triceps coice',
             'description' => 'Triceps coice',
         ]);
 

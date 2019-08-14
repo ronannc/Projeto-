@@ -10,62 +10,63 @@ class LowerMembersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         LowerMembers::create([
-            'exercise' => 'Agachamento',
+            'exercise'    => 'Agachamento',
             'description' => 'Agachamento',
         ]);
         LowerMembers::create([
-            'exercise' => 'Leg-Press',
+            'exercise'    => 'Leg-Press',
             'description' => 'Leg-Press',
         ]);
         LowerMembers::create([
-            'exercise' => 'Extensao de joelho',
+            'exercise'    => 'Extensao de joelho',
             'description' => 'Extensao de joelho',
         ]);
         LowerMembers::create([
-            'exercise' => 'Flexao de joelho',
+            'exercise'    => 'Flexao de joelho',
             'description' => 'Flexao de joelho',
         ]);
         LowerMembers::create([
-            'exercise' => 'Aducao',
+            'exercise'    => 'Aducao',
             'description' => 'Aducao',
         ]);
         LowerMembers::create([
-            'exercise' => 'Abducao',
+            'exercise'    => 'Abducao',
             'description' => 'Abducao',
         ]);
         LowerMembers::create([
-            'exercise' => 'Gluteo',
+            'exercise'    => 'Gluteo',
             'description' => 'Gluteo',
         ]);
         LowerMembers::create([
-            'exercise' => 'Hack',
+            'exercise'    => 'Hack',
             'description' => 'Hack',
         ]);
         LowerMembers::create([
-            'exercise' => 'Extensao de quadril',
+            'exercise'    => 'Extensao de quadril',
             'description' => 'Extensao de quadril',
         ]);
         LowerMembers::create([
-            'exercise' => 'Flexao de quadril',
+            'exercise'    => 'Flexao de quadril',
             'description' => 'Flexao de quadril',
         ]);
         LowerMembers::create([
-            'exercise' => 'Panturrilha',
+            'exercise'    => 'Panturrilha',
             'description' => 'Panturrilha',
         ]);
         LowerMembers::create([
-            'exercise' => 'Stiff',
+            'exercise'    => 'Stiff',
             'description' => 'Stiff',
         ]);
         LowerMembers::create([
-            'exercise' => 'Afundo',
+            'exercise'    => 'Afundo',
             'description' => 'Afundo',
         ]);
         LowerMembers::create([
-            'exercise' => 'Subida no banco',
+            'exercise'    => 'Subida no banco',
             'description' => 'Subida no banco',
         ]);
 

@@ -10,42 +10,43 @@ class ShouldersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         Shoulders::create([
-            'exercise' => 'Elevacao lateral',
+            'exercise'    => 'Elevacao lateral',
             'description' => 'Elevacao lateral',
         ]);
         Shoulders::create([
-            'exercise' => 'Elevacao frontal',
+            'exercise'    => 'Elevacao frontal',
             'description' => 'Elevacao frontal',
         ]);
         Shoulders::create([
-            'exercise' => 'Elevacao diagonal',
+            'exercise'    => 'Elevacao diagonal',
             'description' => 'Elevacao diagonal',
         ]);
         Shoulders::create([
-            'exercise' => 'Desenvolvimento',
+            'exercise'    => 'Desenvolvimento',
             'description' => 'Desenvolvimento',
         ]);
         Shoulders::create([
-            'exercise' => 'Encolhimento',
+            'exercise'    => 'Encolhimento',
             'description' => 'Encolhimento',
         ]);
         Shoulders::create([
-            'exercise' => 'Remada alta',
+            'exercise'    => 'Remada alta',
             'description' => 'Remada alta',
         ]);
         Shoulders::create([
-            'exercise' => 'Crucifixo invertido',
+            'exercise'    => 'Crucifixo invertido',
             'description' => 'Crucifixo invertido',
         ]);
         Shoulders::create([
-            'exercise' => 'Rotacao externa',
+            'exercise'    => 'Rotacao externa',
             'description' => 'Rotacao externa',
         ]);
         Shoulders::create([
-            'exercise' => 'Rotacao interna',
+            'exercise'    => 'Rotacao interna',
             'description' => 'Rotacao interna',
         ]);
 

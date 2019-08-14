@@ -10,7 +10,8 @@ class ExercicioTreinoTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         factory(ExercicioTreino::class, 10)->create();
     }

@@ -10,7 +10,8 @@ class ClientTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         factory(Client::class, 10)->create();
     }

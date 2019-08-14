@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Peitoral;
+use App\Models\Back;
 use Faker\Generator as Faker;
 
 /*
@@ -14,9 +14,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Peitoral::class, function (Faker $faker) {
+$factory->define(Back::class, function (Faker $faker) {
     return [
-        'exercicio' => $faker->name,
-        'descricao' => $faker->text(15)
+        'exercise'    => $faker->name,
+        'description' => $faker->text(15)
     ];
 });

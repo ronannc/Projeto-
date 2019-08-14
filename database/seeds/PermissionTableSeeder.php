@@ -15,7 +15,13 @@ class PermissionTableSeeder extends Seeder
         exec('php artisan cache:forget spatie.permission.cache');
 
         # Users
-        Permission::create(['id' => 1, 'name' => 'admin']);
-        Permission::create(['id' => 2,'name' => 'cliente']);
+        Permission::create([
+            'id'   => 1,
+            'name' => 'admin'
+        ]);
+        Permission::create([
+            'id'   => 2,
+            'name' => 'cliente'
+        ]);
     }
 }

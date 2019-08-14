@@ -16,7 +16,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Biceps::class, function (Faker $faker) {
     return [
-        'exercicio' => $faker->name,
-        'descricao' => $faker->text(15)
+        'exercise'    => $faker->name,
+        'description' => $faker->text(15)
     ];
 });

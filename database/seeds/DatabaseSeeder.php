@@ -23,7 +23,5 @@ class DatabaseSeeder extends Seeder
 //        $this->call(ExercicioTreinoTableSeeder::class);
 
 
-
-
     }
 }

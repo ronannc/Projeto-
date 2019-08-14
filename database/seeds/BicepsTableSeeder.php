@@ -10,58 +10,59 @@ class BicepsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
 
         Biceps::create([
-            'exercise' => 'Rosca direta',
+            'exercise'    => 'Rosca direta',
             'description' => 'Rosca direta',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca alternada',
+            'exercise'    => 'Rosca alternada',
             'description' => 'Rosca alternada',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca simultaneo',
+            'exercise'    => 'Rosca simultaneo',
             'description' => 'Rosca simultaneo',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca concentrada',
+            'exercise'    => 'Rosca concentrada',
             'description' => 'Rosca concentrada',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca invertida',
+            'exercise'    => 'Rosca invertida',
             'description' => 'Rosca invertida',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca na polia',
+            'exercise'    => 'Rosca na polia',
             'description' => 'Rosca na polia',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca martelo',
+            'exercise'    => 'Rosca martelo',
             'description' => 'Rosca martelo',
         ]);
         Biceps::create([
-            'exercise' => 'Extensao punho',
+            'exercise'    => 'Extensao punho',
             'description' => 'Extensao punho',
         ]);
         Biceps::create([
-            'exercise' => 'Flexao punho',
+            'exercise'    => 'Flexao punho',
             'description' => 'Flexao punho',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca scoth',
+            'exercise'    => 'Rosca scoth',
             'description' => 'Rosca scoth',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca no banco inclinado',
+            'exercise'    => 'Rosca no banco inclinado',
             'description' => 'Rosca no banco inclinado',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca martelo com rotacao',
+            'exercise'    => 'Rosca martelo com rotacao',
             'description' => 'Rosca martelo com rotacao',
         ]);
         Biceps::create([
-            'exercise' => 'Rosca 21',
+            'exercise'    => 'Rosca 21',
             'description' => 'Rosca 21',
         ]);
 
