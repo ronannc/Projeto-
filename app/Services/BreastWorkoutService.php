@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\BreastWorkout;
 use App\Repositories\Contracts\BreastWorkoutRepository;
+use Exception;
 
 class BreastWorkoutService
 {
@@ -12,6 +13,7 @@ class BreastWorkoutService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(BreastWorkoutRepository $repository)
@@ -24,9 +26,9 @@ class BreastWorkoutService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class BreastWorkoutService
         try {
             $update = $this->repository->update($peitoral_treino, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class BreastWorkoutService
         try {
             $delete = $this->repository->delete($peitoral_treino);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

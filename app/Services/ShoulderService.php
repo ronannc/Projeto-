@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\Ombro;
 use App\Repositories\Contracts\ShoulderRepository;
+use Exception;
 
 class ShoulderService
 {
@@ -12,6 +13,7 @@ class ShoulderService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(ShoulderRepository $repository)
@@ -24,9 +26,9 @@ class ShoulderService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class ShoulderService
         try {
             $update = $this->repository->update($ombro, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class ShoulderService
         try {
             $delete = $this->repository->delete($ombro);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

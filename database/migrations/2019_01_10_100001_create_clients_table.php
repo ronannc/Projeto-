@@ -18,7 +18,6 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('cpf')->nullable();
             $table->string('phone');
-            $table->string('weight');
             $table->date('birthday')->nullable();
             $table->integer('id_company')->nullable();
             $table->foreign('id_company')->references('id')->on('company');

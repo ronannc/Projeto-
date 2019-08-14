@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\OmbroTreino;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
+use Exception;
 
 class ShoulderWorkoutService
 {
@@ -12,6 +13,7 @@ class ShoulderWorkoutService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(ShoulderWorkoutRepository $repository)
@@ -24,9 +26,9 @@ class ShoulderWorkoutService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class ShoulderWorkoutService
         try {
             $update = $this->repository->update($ombro_treino, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class ShoulderWorkoutService
         try {
             $delete = $this->repository->delete($ombro_treino);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

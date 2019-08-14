@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\Costa;
 use App\Repositories\Contracts\BackRepository;
+use Exception;
 
 class BackService
 {
@@ -12,6 +13,7 @@ class BackService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(BackRepository $repository)
@@ -24,9 +26,9 @@ class BackService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class BackService
         try {
             $update = $this->repository->update($costa, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class BackService
         try {
             $delete = $this->repository->delete($costa);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

@@ -3,8 +3,9 @@
 
 namespace App\Services;
 
-use App\Models\CostaTreino;
+use App\Models\BackWorkout;
 use App\Repositories\Contracts\BackWorkoutRepository;
+use Exception;
 
 class BackWorkoutService
 {
@@ -12,6 +13,7 @@ class BackWorkoutService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(BackWorkoutRepository $repository)
@@ -24,36 +26,36 @@ class BackWorkoutService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
     }
 
-    public function update(array $data, CostaTreino $costa_treino)
+    public function update(array $data, BackWorkout $costa_treino)
     {
 
         try {
             $update = $this->repository->update($costa_treino, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
     }
 
-    public function delete(CostaTreino $costa_treino)
+    public function delete(BackWorkout $costa_treino)
     {
         try {
             $delete = $this->repository->delete($costa_treino);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

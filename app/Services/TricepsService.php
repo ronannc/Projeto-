@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\Triceps;
 use App\Repositories\Contracts\TricepsRepository;
+use Exception;
 
 class TricepsService
 {
@@ -12,6 +13,7 @@ class TricepsService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(TricepsRepository $repository)
@@ -24,9 +26,9 @@ class TricepsService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class TricepsService
         try {
             $update = $this->repository->update($triceps, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class TricepsService
         try {
             $delete = $this->repository->delete($triceps);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

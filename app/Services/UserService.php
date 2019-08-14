@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
+use Exception;
 
 class UserService
 {
@@ -12,6 +13,7 @@ class UserService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(UserRepository $repository)
@@ -24,9 +26,9 @@ class UserService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class UserService
         try {
             $update = $this->repository->update($user, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class UserService
         try {
             $delete = $this->repository->delete($user);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\ConfiguracaoCliente;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
+use Exception;
 
 class ConfiguracaoClienteService
 {
@@ -12,6 +13,7 @@ class ConfiguracaoClienteService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(ConfiguracaoClienteRepository $repository)
@@ -24,9 +26,9 @@ class ConfiguracaoClienteService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class ConfiguracaoClienteService
         try {
             $update = $this->repository->update($configuracaoCliente, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class ConfiguracaoClienteService
         try {
             $delete = $this->repository->delete($configuracaoCliente);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

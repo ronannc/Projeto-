@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\LowerMemberWorkout;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
+use Exception;
 
 class LowerMemberWorkoutService
 {
@@ -12,6 +13,7 @@ class LowerMemberWorkoutService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(LowerMemberWorkoutRepository $repository)
@@ -24,9 +26,9 @@ class LowerMemberWorkoutService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class LowerMemberWorkoutService
         try {
             $update = $this->repository->update($membro_inferior_treino, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class LowerMemberWorkoutService
         try {
             $delete = $this->repository->delete($membro_inferior_treino);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

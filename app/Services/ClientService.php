@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\Cliente;
 use App\Repositories\Contracts\ClientRepository;
+use Exception;
 
 class ClientService
 {
@@ -12,6 +13,7 @@ class ClientService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(ClientRepository $repository)
@@ -24,9 +26,9 @@ class ClientService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class ClientService
         try {
             $update = $this->repository->update($cliente, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class ClientService
         try {
             $delete = $this->repository->delete($cliente);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -64,9 +66,9 @@ class ClientService
         try {
             $store = $this->repository->saveConfiguracaoCliente($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -77,9 +79,9 @@ class ClientService
         try {
             $update = $this->repository->updateConfiguracaoCliente($data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

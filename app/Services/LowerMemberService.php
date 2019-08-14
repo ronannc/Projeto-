@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\MembroInferior;
 use App\Repositories\Contracts\LowerMemberRepository;
+use Exception;
 
 class LowerMemberService
 {
@@ -12,6 +13,7 @@ class LowerMemberService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(LowerMemberRepository $repository)
@@ -24,9 +26,9 @@ class LowerMemberService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -38,9 +40,9 @@ class LowerMemberService
         try {
             $update = $this->repository->update($membroInferior, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class LowerMemberService
         try {
             $delete = $this->repository->delete($membroInferior);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }

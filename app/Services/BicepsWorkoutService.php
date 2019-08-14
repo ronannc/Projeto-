@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\BicepsTreino;
 use App\Repositories\Contracts\BicepsWorkoutRepository;
+use Exception;
 
 class BicepsWorkoutService
 {
@@ -12,6 +13,7 @@ class BicepsWorkoutService
 
     /**
      * StationService constructor.
+     *
      * @param $repository
      */
     public function __construct(BicepsWorkoutRepository $repository)
@@ -24,23 +26,23 @@ class BicepsWorkoutService
         try {
             $store = $this->repository->save($data);
             return $store;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
     }
 
-    public function update(array $data,  $biceps_treino)
+    public function update(array $data, $biceps_treino)
     {
 
         try {
             $update = $this->repository->update($biceps_treino, $data);
             return $update;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
@@ -51,9 +53,9 @@ class BicepsWorkoutService
         try {
             $delete = $this->repository->delete($biceps_treino);
             return $delete;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return [
-                'error' => true,
+                'error'   => true,
                 'message' => $exception->getMessage()
             ];
         }
