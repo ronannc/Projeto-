@@ -2,28 +2,34 @@
 
 namespace App\DataTables;
 
-use App\Models\LowerMembers;
+use App\Models\LowerMember;
+use App\Models\User;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class LowerMembersDataTable extends DataTable
+class LowerMemberDataTable extends DataTable
 {
     /**
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     *
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (LowerMembers $lower_members){
+            ->editColumn('acoes', function (LowerMember $lower_members) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit', $lower_members) . '"><i class="fa fa-edit"></i></a>
+                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit',
+                        $lower_members) . '"><i class="fa fa-edit"></i></a>
                         <a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$lower_members['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$lower_members['id'].'" style="display:none" action="'.route('membroInferior.destroy', $lower_members).'" method="post">'.
-            csrf_field().
-            method_field('DELETE').'
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $lower_members['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $lower_members['id'] . '" style="display:none" action="' . route('membroInferior.destroy',
+                        $lower_members) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -32,10 +38,11 @@ class LowerMembersDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param User $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(LowerMembers $model)
+    public function query(LowerMember $model)
     {
         return $model->newQuery();
     }
@@ -43,7 +50,7 @@ class LowerMembersDataTable extends DataTable
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {
@@ -53,7 +60,7 @@ class LowerMembersDataTable extends DataTable
                 'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
@@ -71,7 +78,10 @@ class LowerMembersDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'action' => ['searchable' => false, 'orderable' => false]
+            'action' => [
+                'searchable' => false,
+                'orderable'  => false
+            ]
         ];
     }
 
@@ -82,6 +92,6 @@ class LowerMembersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'LowerMembers' . date('YmdHis');
+        return 'LowerMember' . date('YmdHis');
     }
 }

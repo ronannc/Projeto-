@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\MembroInferior;
-use App\Repositories\Contracts\MembroInferiorRepository;
+use App\Repositories\Contracts\LowerMemberRepository;
 
-class MembroInferiorService
+class LowerMemberService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class MembroInferiorService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(MembroInferiorRepository $repository)
+    public function __construct(LowerMemberRepository $repository)
     {
         $this->repository = $repository;
     }

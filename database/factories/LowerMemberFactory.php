@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\LowerMembers;
+use App\Models\LowerMember;
 use Faker\Generator as Faker;
 
 /*
@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(LowerMembers::class, function (Faker $faker) {
+$factory->define(LowerMember::class, function (Faker $faker) {
     return [
         'exercise'    => $faker->name,
         'description' => $faker->text(15)

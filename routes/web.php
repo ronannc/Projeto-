@@ -33,8 +33,8 @@ Route::group([
     function () {
         Route::get('/home', 'HomeController@index')->name('home');
 
-//        Route::resource('membroInferior', 'MembroInferiorController')->middleware('can:admin');
-        Route::resource('membroInferior', 'MembroInferiorController');
+//        Route::resource('membroInferior', 'LowerMemberController')->middleware('can:admin');
+        Route::resource('membroInferior', 'LowerMemberController');
         Route::resource('peitoral', 'PeitoralController');
         Route::resource('biceps', 'BicepsController');
         Route::resource('triceps', 'TricepsController');

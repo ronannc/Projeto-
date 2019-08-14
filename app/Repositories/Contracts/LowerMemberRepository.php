@@ -4,7 +4,7 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface MembroInferiorRepository
+interface LowerMemberRepository
 {
     public function save(array $data);
 

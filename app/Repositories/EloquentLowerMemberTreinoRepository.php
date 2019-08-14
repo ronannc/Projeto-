@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 
+use App\Repositories\Contracts\LowerMemberRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\MembroInferiorRepository;
 
-class EloquentMembroInferiorRepository extends AbstractEloquentRepository implements MembroInferiorRepository
+class EloquentLowerMemberTreinoRepository extends AbstractEloquentRepository implements LowerMemberRepository
 {
 
     public function save(array $data)

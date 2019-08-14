@@ -25,7 +25,7 @@ use App\Repositories\Contracts\BicepsTreinoRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
-use App\Repositories\Contracts\MembroInferiorRepository;
+use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\MembroInferiorTreinoRepository;
 use App\Repositories\Contracts\OmbroTreinoRepository;
 use App\Repositories\Contracts\PeitoralRepository;
@@ -41,8 +41,8 @@ use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsTreinoRepository;
 use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentConfiguracaoClienteRepository;
-use App\Repositories\EloquentMembroInferiorRepository;
-use App\Repositories\EloquentMembroInferiorTreinoRepository;
+use App\Repositories\EloquentLowerMemberRepository;
+use App\Repositories\EloquentLowerMemberTreinoRepository;
 use App\Repositories\EloquentPeitoralRepository;
 use App\Repositories\EloquentPeitoralTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
@@ -98,12 +98,12 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentBackWorkoutRepository(new CostaTreino());
         });
 
-        $this->app->bind(MembroInferiorRepository::class, function () {
-            return new EloquentMembroInferiorRepository(new MembroInferior());
+        $this->app->bind(LowerMemberRepository::class, function () {
+            return new EloquentLowerMemberRepository(new MembroInferior());
         });
 
         $this->app->bind(MembroInferiortreinoRepository::class, function () {
-            return new EloquentMembroInferiorTreinoRepository(new MembroInferiorTreino());
+            return new EloquentLowerMemberTreinoRepository(new MembroInferiorTreino());
         });
 
         $this->app->bind(ShoulderRepository::class, function () {
@@ -156,7 +156,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             ConfiguracaoClienteRepository::class,
             BackRepository::class,
             BackWorkoutRepository::class,
-            MembroInferiorRepository::class,
+            LowerMemberRepository::class,
             MembroInferiorTreinoRepository::class,
             ShoulderRepository::class,
             OmbroTreinoRepository::class,
