@@ -3,11 +3,10 @@
 namespace App\Repositories;
 
 
-use App\Models\Costa;
 use App\Repositories\Contracts\BackRepository;
 use Illuminate\Database\Eloquent\Model;
 
-class EloquentBackTreinoRepository extends AbstractEloquentRepository implements BackRepository
+class EloquentBackWorkoutRepository extends AbstractEloquentRepository implements BackRepository
 {
 
     public function save(array $data)

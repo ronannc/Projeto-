@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\CostaTreino;
-use App\Repositories\Contracts\CostaTreinoRepository;
+use App\Repositories\Contracts\BackWorkoutRepository;
 
-class CostaTreinoService
+class BackWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class CostaTreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(CostaTreinoRepository $repository)
+    public function __construct(BackWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }

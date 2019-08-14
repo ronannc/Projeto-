@@ -19,11 +19,11 @@ use App\Models\Triceps;
 use App\Models\TricepsTreino;
 use App\Models\User;
 use App\Repositories\Contracts\BackRepository;
+use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BicepsTreinoRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
-use App\Repositories\Contracts\CostaTreinoRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\MembroInferiorRepository;
 use App\Repositories\Contracts\MembroInferiorTreinoRepository;
@@ -36,7 +36,7 @@ use App\Repositories\Contracts\TricepsRepository;
 use App\Repositories\Contracts\TricepsTreinoRepository;
 use App\Repositories\Contracts\UserRepository;
 use App\Repositories\EloquentBackRepository;
-use App\Repositories\EloquentBackTreinoRepository;
+use App\Repositories\EloquentBackWorkoutRepository;
 use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsTreinoRepository;
 use App\Repositories\EloquentClientRepository;
@@ -94,8 +94,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentBackRepository(new Costa());
         });
 
-        $this->app->bind(CostaTreinoRepository::class, function () {
-            return new EloquentBackTreinoRepository(new CostaTreino());
+        $this->app->bind(BackWorkoutRepository::class, function () {
+            return new EloquentBackWorkoutRepository(new CostaTreino());
         });
 
         $this->app->bind(MembroInferiorRepository::class, function () {
@@ -155,7 +155,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             ClientRepository::class,
             ConfiguracaoClienteRepository::class,
             BackRepository::class,
-            CostaTreinoRepository::class,
+            BackWorkoutRepository::class,
             MembroInferiorRepository::class,
             MembroInferiorTreinoRepository::class,
             ShoulderRepository::class,
