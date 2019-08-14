@@ -9,12 +9,12 @@ use App\Models\BicepsWorkout;
 use App\Models\Breast;
 use App\Models\BreastWorkout;
 use App\Models\Client;
-use App\Models\ConfiguracaoCliente;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
 use App\Models\Shoulder;
 use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
+use App\Models\TricepsWorkout;
 use App\Models\User;
 use App\Models\Workout;
 use App\Repositories\Contracts\BackRepository;
@@ -30,7 +30,7 @@ use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use App\Repositories\Contracts\TricepsRepository;
-use App\Repositories\Contracts\TricepsTreinoRepository;
+use App\Repositories\Contracts\TricepsWorkoutRepository;
 use App\Repositories\Contracts\UserRepository;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Repositories\EloquentBackRepository;
@@ -46,7 +46,7 @@ use App\Repositories\EloquentLowerMemberTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
 use App\Repositories\EloquentShoulderTreinoRepository;
 use App\Repositories\EloquentTricepsRepository;
-use App\Repositories\EloquentTricepsTreinoRepository;
+use App\Repositories\EloquentTricepsWorkoutRepository;
 use App\Repositories\EloquentUserRepository;
 use App\Repositories\EloquentWorkoutRepository;
 use Illuminate\Support\ServiceProvider;
@@ -132,8 +132,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentTricepsRepository(new Triceps());
         });
 
-        $this->app->bind(TricepsTreinoRepository::class, function () {
-            return new EloquentTricepsTreinoRepository(new TricepsTreino());
+        $this->app->bind(TricepsWorkoutRepository::class, function () {
+            return new EloquentTricepsWorkoutRepository(new TricepsWorkout());
         });
 
 
@@ -162,7 +162,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             BreastWorkoutRepository::class,
             WorkoutRepository::class,
             TricepsRepository::class,
-            TricepsTreinoRepository::class,
+            TricepsWorkoutRepository::class,
             UserRepository::class
         ];
     }

@@ -3,11 +3,10 @@
 namespace App\Repositories;
 
 
-use App\Models\Triceps;
-use Illuminate\Database\Eloquent\Model;
 use App\Repositories\Contracts\TricepsRepository;
+use Illuminate\Database\Eloquent\Model;
 
-class EloquentTricepsTreinoRepository extends AbstractEloquentRepository implements TricepsRepository
+class EloquentTricepsWorkoutRepository extends AbstractEloquentRepository implements TricepsRepository
 {
 
     public function save(array $data)

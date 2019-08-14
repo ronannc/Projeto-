@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-use App\Models\TricepsTreino;
-use App\Repositories\Contracts\TricepsTreinoRepository;
+use App\Models\TricepsWorkout;
+use App\Repositories\Contracts\TricepsWorkoutRepository;
 
-class TricepsTreinoService
+class TricepsWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class TricepsTreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(TricepsTreinoRepository $repository)
+    public function __construct(TricepsWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -32,7 +32,7 @@ class TricepsTreinoService
         }
     }
 
-    public function update(array $data, TricepsTreino $triceps_treino)
+    public function update(array $data, TricepsWorkout $triceps_treino)
     {
 
         try {
@@ -46,7 +46,7 @@ class TricepsTreinoService
         }
     }
 
-    public function delete(TricepsTreino $triceps_treino)
+    public function delete(TricepsWorkout $triceps_treino)
     {
         try {
             $delete = $this->repository->delete($triceps_treino);
