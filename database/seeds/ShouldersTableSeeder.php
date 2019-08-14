@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Shoulders;
+use App\Models\Shoulder;
 use Illuminate\Database\Seeder;
 
 class ShouldersTableSeeder extends Seeder
@@ -13,39 +13,39 @@ class ShouldersTableSeeder extends Seeder
     public function run()
     {
 
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Elevacao lateral',
             'description' => 'Elevacao lateral',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Elevacao frontal',
             'description' => 'Elevacao frontal',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Elevacao diagonal',
             'description' => 'Elevacao diagonal',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Desenvolvimento',
             'description' => 'Desenvolvimento',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Encolhimento',
             'description' => 'Encolhimento',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Remada alta',
             'description' => 'Remada alta',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Crucifixo invertido',
             'description' => 'Crucifixo invertido',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Rotacao externa',
             'description' => 'Rotacao externa',
         ]);
-        Shoulders::create([
+        Shoulder::create([
             'exercise'    => 'Rotacao interna',
             'description' => 'Rotacao interna',
         ]);

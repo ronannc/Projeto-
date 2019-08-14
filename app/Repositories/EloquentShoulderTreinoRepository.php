@@ -4,10 +4,10 @@ namespace App\Repositories;
 
 
 use App\Models\Ombro;
+use App\Repositories\Contracts\ShoulderRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\OmbroRepository;
 
-class EloquentOmbroTreinoRepository extends AbstractEloquentRepository implements OmbroRepository
+class EloquentShoulderTreinoRepository extends AbstractEloquentRepository implements ShoulderRepository
 {
 
     public function save(array $data)

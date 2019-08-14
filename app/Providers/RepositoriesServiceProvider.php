@@ -27,10 +27,10 @@ use App\Repositories\Contracts\CostaTreinoRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\MembroInferiorRepository;
 use App\Repositories\Contracts\MembroInferiorTreinoRepository;
-use App\Repositories\Contracts\OmbroRepository;
 use App\Repositories\Contracts\OmbroTreinoRepository;
 use App\Repositories\Contracts\PeitoralRepository;
 use App\Repositories\Contracts\PeitoralTreinoRepository;
+use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\TreinoRepository;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Repositories\Contracts\TricepsTreinoRepository;
@@ -43,10 +43,10 @@ use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentMembroInferiorRepository;
 use App\Repositories\EloquentMembroInferiorTreinoRepository;
-use App\Repositories\EloquentOmbroRepository;
-use App\Repositories\EloquentOmbroTreinoRepository;
 use App\Repositories\EloquentPeitoralRepository;
 use App\Repositories\EloquentPeitoralTreinoRepository;
+use App\Repositories\EloquentShoulderRepository;
+use App\Repositories\EloquentShoulderTreinoRepository;
 use App\Repositories\EloquentTreinoRepository;
 use App\Repositories\EloquentTricepsRepository;
 use App\Repositories\EloquentTricepsTreinoRepository;
@@ -106,12 +106,12 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentMembroInferiorTreinoRepository(new MembroInferiorTreino());
         });
 
-        $this->app->bind(OmbroRepository::class, function () {
-            return new EloquentOmbroRepository(new Ombro());
+        $this->app->bind(ShoulderRepository::class, function () {
+            return new EloquentShoulderRepository(new Ombro());
         });
 
         $this->app->bind(OmbroTreinoRepository::class, function () {
-            return new EloquentOmbroTreinoRepository(new OmbroTreino());
+            return new EloquentShoulderTreinoRepository(new OmbroTreino());
         });
 
         $this->app->bind(PeitoralRepository::class, function () {
@@ -158,7 +158,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             CostaTreinoRepository::class,
             MembroInferiorRepository::class,
             MembroInferiorTreinoRepository::class,
-            OmbroRepository::class,
+            ShoulderRepository::class,
             OmbroTreinoRepository::class,
             PeitoralRepository::class,
             PeitoralTreinoRepository::class,

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Shoulders;
+use App\Models\Shoulder;
 use Faker\Generator as Faker;
 
 /*
@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Shoulders::class, function (Faker $faker) {
+$factory->define(Shoulder::class, function (Faker $faker) {
     return [
         'exercise'    => $faker->name,
         'description' => $faker->text(15)
