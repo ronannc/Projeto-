@@ -2,22 +2,21 @@
 
 namespace App\Providers;
 
+use App\Models\Back;
+use App\Models\BackWorkout;
 use App\Models\Biceps;
-use App\Models\BicepsTreino;
-use App\Models\Cliente;
+use App\Models\BicepsWorkout;
+use App\Models\Breast;
+use App\Models\BreastWorkout;
+use App\Models\Client;
 use App\Models\ConfiguracaoCliente;
-use App\Models\Costa;
-use App\Models\CostaTreino;
-use App\Models\MembroInferior;
-use App\Models\MembroInferiorTreino;
-use App\Models\Ombro;
-use App\Models\OmbroTreino;
-use App\Models\Peitoral;
-use App\Models\PeitoralTreino;
-use App\Models\Treino;
+use App\Models\LowerMember;
+use App\Models\LowerMemberWorkout;
+use App\Models\Shoulder;
+use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
-use App\Models\TricepsTreino;
 use App\Models\User;
+use App\Models\Workout;
 use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
@@ -77,11 +76,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(BicepsWorkoutRepository::class, function () {
-            return new EloquentBicepsWorkoutRepository(new BicepsTreino());
+            return new EloquentBicepsWorkoutRepository(new BicepsWorkout());
         });
 
         $this->app->bind(ClientRepository::class, function () {
-            return new EloquentClientRepository(new Cliente());
+            return new EloquentClientRepository(new Client());
         });
 
         $this->app->bind(ConfiguracaoClienteRepository::class, function () {
@@ -90,39 +89,39 @@ class RepositoriesServiceProvider extends ServiceProvider
 
 
         $this->app->bind(BackRepository::class, function () {
-            return new EloquentBackRepository(new Costa());
+            return new EloquentBackRepository(new Back());
         });
 
         $this->app->bind(BackWorkoutRepository::class, function () {
-            return new EloquentBackWorkoutRepository(new CostaTreino());
+            return new EloquentBackWorkoutRepository(new BackWorkout());
         });
 
         $this->app->bind(LowerMemberRepository::class, function () {
-            return new EloquentLowerMemberRepository(new MembroInferior());
+            return new EloquentLowerMemberRepository(new LowerMember());
         });
 
         $this->app->bind(LowerMemberWorkoutRepository::class, function () {
-            return new EloquentLowerMemberTreinoRepository(new MembroInferiorTreino());
+            return new EloquentLowerMemberTreinoRepository(new LowerMemberWorkout());
         });
 
         $this->app->bind(ShoulderRepository::class, function () {
-            return new EloquentShoulderRepository(new Ombro());
+            return new EloquentShoulderRepository(new Shoulder());
         });
 
         $this->app->bind(ShoulderWorkoutRepository::class, function () {
-            return new EloquentShoulderTreinoRepository(new OmbroTreino());
+            return new EloquentShoulderTreinoRepository(new ShoulderWorkout());
         });
 
         $this->app->bind(BreastRepository::class, function () {
-            return new EloquentBreastRepository(new Peitoral());
+            return new EloquentBreastRepository(new Breast());
         });
 
         $this->app->bind(BreastWorkoutRepository::class, function () {
-            return new EloquentBreastTreinoRepository(new PeitoralTreino());
+            return new EloquentBreastTreinoRepository(new BreastWorkout());
         });
 
         $this->app->bind(WorkoutRepository::class, function () {
-            return new EloquentWorkoutRepository(new Treino());
+            return new EloquentWorkoutRepository(new Workout());
         });
 
         $this->app->bind(UserRepository::class, function () {
