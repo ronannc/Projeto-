@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('back')}}" method="post">
+        <form action="{{route('back.create')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_exercicio')
