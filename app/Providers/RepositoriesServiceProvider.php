@@ -26,7 +26,6 @@ use App\Repositories\Contracts\BreastRepository;
 use App\Repositories\Contracts\BreastWorkoutRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
-use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 use App\Repositories\Contracts\ShoulderRepository;
@@ -163,7 +162,6 @@ class RepositoriesServiceProvider extends ServiceProvider
             BreastRepository::class,
             BreastWorkoutRepository::class,
             WorkoutRepository::class,
-            ExercicioTreinoRepository::class,
             TricepsRepository::class,
             TricepsTreinoRepository::class,
             UserRepository::class
