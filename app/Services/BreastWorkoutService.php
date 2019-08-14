@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-use App\Models\PeitoralTreino;
-use App\Repositories\Contracts\PeitoralTreinoRepository;
+use App\Models\BreastWorkout;
+use App\Repositories\Contracts\BreastWorkoutRepository;
 
-class PeitoralTreinoService
+class BreastWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class PeitoralTreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(PeitoralTreinoRepository $repository)
+    public function __construct(BreastWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -32,7 +32,7 @@ class PeitoralTreinoService
         }
     }
 
-    public function update(array $data, PeitoralTreino $peitoral_treino)
+    public function update(array $data, BreastWorkout $peitoral_treino)
     {
 
         try {
@@ -46,7 +46,7 @@ class PeitoralTreinoService
         }
     }
 
-    public function delete(PeitoralTreino $peitoral_treino)
+    public function delete(BreastWorkout $peitoral_treino)
     {
         try {
             $delete = $this->repository->delete($peitoral_treino);

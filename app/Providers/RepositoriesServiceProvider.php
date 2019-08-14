@@ -23,12 +23,12 @@ use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BicepsTreinoRepository;
 use App\Repositories\Contracts\BreastRepository;
+use App\Repositories\Contracts\BreastWorkoutRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
-use App\Repositories\Contracts\PeitoralTreinoRepository;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use App\Repositories\Contracts\TricepsRepository;
@@ -118,7 +118,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentBreastRepository(new Peitoral());
         });
 
-        $this->app->bind(PeitoralTreinoRepository::class, function () {
+        $this->app->bind(BreastWorkoutRepository::class, function () {
             return new EloquentBreastTreinoRepository(new PeitoralTreino());
         });
 
@@ -161,7 +161,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             ShoulderRepository::class,
             ShoulderWorkoutRepository::class,
             BreastRepository::class,
-            PeitoralTreinoRepository::class,
+            BreastWorkoutRepository::class,
             WorkoutRepository::class,
             ExercicioTreinoRepository::class,
             TricepsRepository::class,
