@@ -41,10 +41,10 @@ Route::group([
         Route::resource('costa', 'BackController');
         Route::resource('ombro', 'ShoulderController');
         Route::resource('exercicioTreino', 'ExercicioTreinoController');
-        Route::resource('treino', 'TreinoController');
+        Route::resource('treino', 'WorkoutController');
         Route::resource('cliente', 'ClientController');
 
 //        Route::get('editMyAcount', 'ClientController@editMyAcount')->name('editMyAcount');
 //        Route::get('myAcount', 'ClientController@myAcount')->name('myAcount');
-//        Route::get('myCurrentTraining', 'TreinoController@myCurrentTraining')->name('myCurrentTraining');
+//        Route::get('myCurrentTraining', 'WorkoutController@myCurrentTraining')->name('myCurrentTraining');
  });

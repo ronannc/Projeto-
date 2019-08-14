@@ -17,10 +17,10 @@ use App\Models\PeitoralTreino;
 use App\Models\Treino;
 use App\Models\Triceps;
 use App\Models\TricepsTreino;
+use App\Repositories\Contracts\WorkoutRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\TreinoRepository;
 
-class EloquentTreinoRepository extends AbstractEloquentRepository implements TreinoRepository
+class EloquentWorkoutRepository extends AbstractEloquentRepository implements WorkoutRepository
 {
 
     public function save(array $data)
