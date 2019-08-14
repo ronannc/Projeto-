@@ -21,7 +21,7 @@ use App\Models\User;
 use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
-use App\Repositories\Contracts\BicepsTreinoRepository;
+use App\Repositories\Contracts\BicepsWorkoutRepository;
 use App\Repositories\Contracts\BreastRepository;
 use App\Repositories\Contracts\BreastWorkoutRepository;
 use App\Repositories\Contracts\ClientRepository;
@@ -37,7 +37,7 @@ use App\Repositories\Contracts\WorkoutRepository;
 use App\Repositories\EloquentBackRepository;
 use App\Repositories\EloquentBackWorkoutRepository;
 use App\Repositories\EloquentBicepsRepository;
-use App\Repositories\EloquentBicepsTreinoRepository;
+use App\Repositories\EloquentBicepsWorkoutRepository;
 use App\Repositories\EloquentBreastRepository;
 use App\Repositories\EloquentBreastTreinoRepository;
 use App\Repositories\EloquentClientRepository;
@@ -76,8 +76,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentBicepsRepository(new Biceps());
         });
 
-        $this->app->bind(BicepsTreinoRepository::class, function () {
-            return new EloquentBicepstreinoRepository(new BicepsTreino());
+        $this->app->bind(BicepsWorkoutRepository::class, function () {
+            return new EloquentBicepsWorkoutRepository(new BicepsTreino());
         });
 
         $this->app->bind(ClientRepository::class, function () {
@@ -150,7 +150,7 @@ class RepositoriesServiceProvider extends ServiceProvider
     {
         return [
             BicepsRepository::class,
-            BicepsTreinoRepository::class,
+            BicepsWorkoutRepository::class,
             ClientRepository::class,
             ConfiguracaoClienteRepository::class,
             BackRepository::class,

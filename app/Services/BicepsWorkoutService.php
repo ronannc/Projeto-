@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\BicepsTreino;
-use App\Repositories\Contracts\BicepsTreinoRepository;
+use App\Repositories\Contracts\BicepsWorkoutRepository;
 
-class BicepsTreinoService
+class BicepsWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class BicepsTreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(BicepsTreinoRepository $repository)
+    public function __construct(BicepsWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }
