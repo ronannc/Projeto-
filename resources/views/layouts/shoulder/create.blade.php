@@ -12,11 +12,11 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Exercicios - Peitoral</h3>
+            <h3 class="box-title">Cadastro de Exercicios - Ombro</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('peitoral.store')}}" method="post">
+        <form action="{{route('shoulder')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_exercicio')

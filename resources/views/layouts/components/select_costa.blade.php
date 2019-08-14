@@ -10,7 +10,7 @@
 <div class="form-group">
     <label for="select_costa">Costas</label>
     <select class="multiple" data-placeholder="Selecione os exercicios de costa" name="costa[]" multiple="multiple" style="width: 100%">
-        @foreach($extraData['costa'] as $costa)
+        @foreach($extraData['back'] as $costa)
             <option value="{{$costa['id']}}">{{$costa['exercicio']}}</option>
         @endforeach
     </select>

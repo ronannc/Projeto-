@@ -37,7 +37,7 @@ class BackController extends Controller
      */
     public function index(BackDataTable $dataTable)
     {
-        return $dataTable->render('layouts.Back.index');
+        return $dataTable->render('layouts.back.index');
 
     }
 
@@ -48,7 +48,7 @@ class BackController extends Controller
      */
     public function create()
     {
-        return view('layouts.Back.create');
+        return view('layouts.back.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class BackController extends Controller
      */
     public function show(Back $Back)
     {
-        return view('layouts.Back.show', compact('Back'));
+        return view('layouts.back.show', compact('Back'));
     }
 
     /**
@@ -96,7 +96,7 @@ class BackController extends Controller
     {
         $Back = Back::find($id);
 //        dd($Back);
-        return view('layouts.Back.edit', compact('Back'));
+        return view('layouts.back.edit', compact('Back'));
     }
 
     /**

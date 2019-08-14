@@ -12,25 +12,15 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Cliente</h3>
+            <h3 class="box-title">Cadastro de Exercicios - Peitoral</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('cliente.store')}}" method="post">
+        <form action="{{route('breast')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_nome')
-                @include('layouts.components.input_cpf')
-                @include('layouts.components.input_nascimento')
-                @include('layouts.components.input_telefone')
-                <div class="box-header with-border">
-                    <h3 class="box-title">Configuracao de treino</h3>
-                </div>
-                @include('layouts.components.input_peso')
-
-                @include('layouts.components.checkbox_treino')
-                @include('layouts.components.input_porcentagem')
-
+                @include('layouts.components.input_exercicio')
+                @include('layouts.components.input_descricao')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

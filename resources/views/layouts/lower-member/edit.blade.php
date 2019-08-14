@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('membroInferior.update', $membroInferior)}}" method="post">
+        <form action="{{route('lower-member', $membroInferior)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">

@@ -12,20 +12,16 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar Cliente</h3>
+            <h3 class="box-title">Editar de Exercicio - Peitoral</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('cliente.update', $extraData)}}" method="post">
+        <form action="{{route('breast', $peitoral)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
-            <input type="text" class="hide" name="cliente" value="true">
             <div class="box-body">
-                @include('layouts.components.input_nome')
-                @include('layouts.components.input_cpf')
-                @include('layouts.components.input_nascimento')
-                @include('layouts.components.input_telefone')
-                @include('layouts.components.input_peso')
+                @include('layouts.components.input_exercicio', ['data' => $peitoral])
+                @include('layouts.components.input_descricao', ['data' => $peitoral])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

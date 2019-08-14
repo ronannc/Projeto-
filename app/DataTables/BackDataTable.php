@@ -21,10 +21,12 @@ class BackDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Back $back){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('Back.edit', $back) . '"><i class="fa fa-edit"></i></a>'.
+                return '<a title="Editar"  style="color: #000000" href="' . route('back.edit',
+                        $back) . '"><i class="fa fa-edit"></i></a>' .
                         '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$back['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$back['id'].'" style="display:none" action="'.route('Back.destroy', $back).'" method="post">'.
+        <form id="form-delete' . $back['id'] . '" style="display:none" action="' . route('back.destroy',
+                        $back) . '" method="post">' .
             csrf_field().
             method_field('DELETE').'
         </form>';
@@ -41,7 +43,7 @@ class BackDataTable extends DataTable
      */
     public function query(Back $model)
     {
-        return $model->newQuery()->select('id', 'exercicio', 'descricao');
+        return $model->newQuery()->select('id', 'exercise', 'description');
     }
 
     /**
@@ -73,8 +75,8 @@ class BackDataTable extends DataTable
     {
         return [
             'id',
-            'exercicio',
-            'descricao',
+            'exercise',
+            'description',
             'acoes' => ['searchable' => false, 'orderable' => false]
         ];
     }

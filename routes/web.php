@@ -33,15 +33,15 @@ Route::group([
     function () {
         Route::get('/home', 'HomeController@index')->name('home');
 
-//        Route::resource('membroInferior', 'LowerMemberController')->middleware('can:admin');
-        Route::resource('membroInferior', 'LowerMemberController');
-        Route::resource('peitoral', 'BreastController');
+//        Route::resource('lower-member', 'LowerMemberController')->middleware('can:admin');
+        Route::resource('lower-member', 'LowerMemberController');
+        Route::resource('breast', 'BreastController');
         Route::resource('biceps', 'BicepsController');
         Route::resource('triceps', 'TricepsController');
-        Route::resource('costa', 'BackController');
-        Route::resource('ombro', 'ShoulderController');
-        Route::resource('treino', 'WorkoutController');
-        Route::resource('cliente', 'ClientController');
+        Route::resource('back', 'BackController');
+        Route::resource('shoulder', 'ShoulderController');
+        Route::resource('workout', 'WorkoutController');
+        Route::resource('client', 'ClientController');
 
 //        Route::get('editMyAcount', 'ClientController@editMyAcount')->name('editMyAcount');
 //        Route::get('myAcount', 'ClientController@myAcount')->name('myAcount');

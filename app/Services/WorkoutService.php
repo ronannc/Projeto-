@@ -66,7 +66,7 @@ class WorkoutService
         if ($formula_treino) {
             $cliente = Client::find($data['formula_treino']['id_cliente']);
         }
-        //tem que receber o peso do cliente para calcular a carga segundo a formula
+        //tem que receber o peso do client para calcular a carga segundo a formula
         $collect = array();
         foreach ($data as $key => $aux) {
             $aux_key = explode('_', $key);

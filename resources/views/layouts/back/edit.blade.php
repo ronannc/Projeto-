@@ -12,16 +12,16 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar de Exercicio - Ombro</h3>
+            <h3 class="box-title">Editar de Exercicio - Costa</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('ombro.update', $ombro)}}" method="post">
+        <form action="{{route('back', $costa)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $ombro])
-                @include('layouts.components.input_descricao', ['data' => $ombro])
+                @include('layouts.components.input_exercicio', ['data' => $costa])
+                @include('layouts.components.input_descricao', ['data' => $costa])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

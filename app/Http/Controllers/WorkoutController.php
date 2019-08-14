@@ -88,19 +88,19 @@ class WorkoutController extends Controller
                 'id_biceps'  => $biceps]);
         }
 
-        foreach ($data['costa'] as $costa) {
+        foreach ($data['back'] as $costa) {
             $this->repository->save_costa_Workout([
                 'id_Workout' => $resultFromStoreWorkout['id'],
                 'id_costa'   => $costa]);
         }
 
-        foreach ($data['ombro'] as $ombro) {
+        foreach ($data['shoulder'] as $ombro) {
             $this->repository->save_ombro_Workout([
                 'id_Workout' => $resultFromStoreWorkout['id'],
                 'id_ombro'   => $ombro]);
         }
 
-        foreach ($data['peitoral'] as $peitoral) {
+        foreach ($data['breast'] as $peitoral) {
             $this->repository->save_peitoral_Workout([
                 'id_Workout'  => $resultFromStoreWorkout['id'],
                 'id_peitoral' => $peitoral]);
@@ -173,19 +173,19 @@ class WorkoutController extends Controller
             $this->repository->update_biceps_Workout($biceps);
         }
 
-        foreach ($process_data['costa'] as $key => $costa){
+        foreach ($process_data['back'] as $key => $costa) {
             $costa['id_costa'] = $key;
             $costa['id_Workout'] = $workout['id'];
             $this->repository->update_costa_Workout($costa);
         }
 
-        foreach ($process_data['peitoral'] as $key => $peitoral){
+        foreach ($process_data['breast'] as $key => $peitoral) {
             $peitoral['id_peitoral'] = $key;
             $peitoral['id_Workout'] = $workout['id'];
             $this->repository->update_peitoral_Workout($peitoral);
         }
 
-        foreach ($process_data['ombro'] as $key => $ombro){
+        foreach ($process_data['shoulder'] as $key => $ombro) {
             $ombro['id_ombro'] = $key;
             $ombro['id_Workout'] = $workout['id'];
             $this->repository->update_ombro_Workout($ombro);

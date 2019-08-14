@@ -131,12 +131,12 @@ return [
             'text'    => 'Costa',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'costa.index'
+                    'text'  => 'Listar',
+                    'route' => 'back.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'costa.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'back.create'
                 ],
             ],
         ],
@@ -145,12 +145,12 @@ return [
             'text'    => 'Membros Inferiores',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'membroInferior.index'
+                    'text'  => 'Listar',
+                    'route' => 'lower-member.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'membroInferior.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'lower-member.create'
                 ],
             ],
         ],
@@ -159,12 +159,12 @@ return [
             'text'    => 'Ombros',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'ombro.index'
+                    'text'  => 'Listar',
+                    'route' => 'shoulder.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'ombro.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'shoulder.create'
                 ],
             ],
         ],
@@ -173,12 +173,12 @@ return [
             'text'    => 'Peitoral',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'peitoral.index'
+                    'text'  => 'Listar',
+                    'route' => 'breast.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'peitoral.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'breast.create'
                 ],
             ],
         ],
@@ -205,12 +205,12 @@ return [
             'text'    => 'Clientes',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'cliente.index',
+                    'text'  => 'Listar',
+                    'route' => 'client.index',
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'cliente.create',
+                    'text'  => 'Cadastrar',
+                    'route' => 'client.create',
                 ],
             ],
         ],
@@ -223,12 +223,12 @@ return [
             'text'    => 'Treinos',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'treino.index',
+                    'text'  => 'Listar',
+                    'route' => 'workout.index',
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'treino.create',
+                    'text'  => 'Cadastrar',
+                    'route' => 'workout.create',
                 ],
             ],
         ],

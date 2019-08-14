@@ -21,11 +21,11 @@ class LowerMemberDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (LowerMember $lower_members) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('lower-member.edit',
                         $lower_members) . '"><i class="fa fa-edit"></i></a>
                         <a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $lower_members['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $lower_members['id'] . '" style="display:none" action="' . route('membroInferior.destroy',
+        <form id="form-delete' . $lower_members['id'] . '" style="display:none" action="' . route('lower-member.destroy',
                         $lower_members) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '

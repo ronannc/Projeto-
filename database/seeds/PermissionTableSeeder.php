@@ -21,7 +21,7 @@ class PermissionTableSeeder extends Seeder
         ]);
         Permission::create([
             'id'   => 2,
-            'name' => 'cliente'
+            'name' => 'client'
         ]);
     }
 }
