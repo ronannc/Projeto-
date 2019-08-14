@@ -21,7 +21,7 @@
             {{ method_field('PUT') }}
             <div class="box-body">
                 @include('layouts.components.input_exercicio', ['data' => $breast])
-                @include('layouts.components.input_descricao', ['data' => $breast])
+                @include('layouts.components.input_description', ['data' => $breast])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

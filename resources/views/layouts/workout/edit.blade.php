@@ -23,14 +23,14 @@
 
                 @include('layouts.components.input_inicio', ['extraData' => $data])
                 @include('layouts.components.input_prox_ficha', ['extraData' => $data])
-                @include('layouts.components.input_descricao', ['extraData' => $data])
+                @include('layouts.components.input_description', ['extraData' => $data])
                 @include('layouts.components.input_objetivo', ['extraData' => $data])
-                @include('layouts.components.input_intervalo', ['extraData' => $data])
-                @include('layouts.components.input_metodo', ['extraData' => $data])
-                @include('layouts.components.input_frequencia', ['extraData' => $data])
+                @include('layouts.components.input_interval', ['extraData' => $data])
+                @include('layouts.components.input_method', ['extraData' => $data])
+                @include('layouts.components.input_frequency', ['extraData' => $data])
                 @include('layouts.components.input_aerob_ini', ['extraData' => $data])
                 @include('layouts.components.input_aerob_fim', ['extraData' => $data])
-                @include('layouts.components.select_cliente')
+                @include('layouts.components.select_client')
 
                 <div class="row">
                     <div class="col-sm-4">
