@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateBackTable extends Migration
+class CreateBacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBackTable extends Migration
      */
     public function up()
     {
-        Schema::create('back', function (Blueprint $table) {
+        Schema::create('backs', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('exercise');
             $table->string('description');

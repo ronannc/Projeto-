@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBackWorkoutTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateBackWorkoutTable extends Migration
         Schema::create('back_workout', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->integer('id_back');
-            $table->foreign('id_back')->references('id')->on('back');
+            $table->foreign('id_back')->references('id')->on('backs');
             $table->integer('id_training');
             $table->foreign('id_training')->references('id')->on('training');
             $table->string('load')->nullable();
