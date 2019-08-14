@@ -18,11 +18,11 @@ use App\Models\Treino;
 use App\Models\Triceps;
 use App\Models\TricepsTreino;
 use App\Models\User;
+use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BicepsTreinoRepository;
 use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
-use App\Repositories\Contracts\CostaRepository;
 use App\Repositories\Contracts\CostaTreinoRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\MembroInferiorRepository;
@@ -35,12 +35,12 @@ use App\Repositories\Contracts\TreinoRepository;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Repositories\Contracts\TricepsTreinoRepository;
 use App\Repositories\Contracts\UserRepository;
+use App\Repositories\EloquentBackRepository;
+use App\Repositories\EloquentBackTreinoRepository;
 use App\Repositories\EloquentBicepsRepository;
 use App\Repositories\EloquentBicepsTreinoRepository;
 use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentConfiguracaoClienteRepository;
-use App\Repositories\EloquentCostaRepository;
-use App\Repositories\EloquentCostaTreinoRepository;
 use App\Repositories\EloquentMembroInferiorRepository;
 use App\Repositories\EloquentMembroInferiorTreinoRepository;
 use App\Repositories\EloquentOmbroRepository;
@@ -90,12 +90,12 @@ class RepositoriesServiceProvider extends ServiceProvider
         });
 
 
-        $this->app->bind(CostaRepository::class, function () {
-            return new EloquentCostaRepository(new Costa());
+        $this->app->bind(BackRepository::class, function () {
+            return new EloquentBackRepository(new Costa());
         });
 
         $this->app->bind(CostaTreinoRepository::class, function () {
-            return new EloquentCostaTreinoRepository(new CostaTreino());
+            return new EloquentBackTreinoRepository(new CostaTreino());
         });
 
         $this->app->bind(MembroInferiorRepository::class, function () {
@@ -154,7 +154,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             BicepsTreinoRepository::class,
             ClientRepository::class,
             ConfiguracaoClienteRepository::class,
-            CostaRepository::class,
+            BackRepository::class,
             CostaTreinoRepository::class,
             MembroInferiorRepository::class,
             MembroInferiorTreinoRepository::class,

@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\Costa;
-use App\Repositories\Contracts\CostaRepository;
+use App\Repositories\Contracts\BackRepository;
 
-class CostaService
+class BackService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class CostaService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(CostaRepository $repository)
+    public function __construct(BackRepository $repository)
     {
         $this->repository = $repository;
     }

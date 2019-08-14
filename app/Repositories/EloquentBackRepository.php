@@ -4,10 +4,10 @@ namespace App\Repositories;
 
 
 use App\Models\Costa;
+use App\Repositories\Contracts\BackRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Contracts\CostaRepository;
 
-class EloquentCostaRepository extends AbstractEloquentRepository implements CostaRepository
+class EloquentBackRepository extends AbstractEloquentRepository implements BackRepository
 {
 
     public function save(array $data)
