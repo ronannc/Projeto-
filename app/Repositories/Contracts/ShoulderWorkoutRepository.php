@@ -5,7 +5,7 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface OmbroTreinoRepository
+interface ShoulderWorkoutRepository
 {
     public function save(array $data);
 

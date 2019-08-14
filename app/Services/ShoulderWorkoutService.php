@@ -4,9 +4,9 @@
 namespace App\Services;
 
 use App\Models\OmbroTreino;
-use App\Repositories\Contracts\OmbroTreinoRepository;
+use App\Repositories\Contracts\ShoulderWorkoutRepository;
 
-class OmbroTreinoService
+class ShoulderWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class OmbroTreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(OmbroTreinoRepository $repository)
+    public function __construct(ShoulderWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }
