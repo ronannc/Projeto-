@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-use App\Models\MembroInferiortreino;
-use App\Repositories\Contracts\MembroInferiortreinoRepository;
+use App\Models\LowerMemberWorkout;
+use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 
-class MembroInferiortreinoService
+class LowerMemberWorkoutService
 {
     protected $repository;
 
@@ -14,7 +14,7 @@ class MembroInferiortreinoService
      * StationService constructor.
      * @param $repository
      */
-    public function __construct(MembroInferiortreinoRepository $repository)
+    public function __construct(LowerMemberWorkoutRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -32,7 +32,7 @@ class MembroInferiortreinoService
         }
     }
 
-    public function update(array $data, MembroInferiortreino $membro_inferior_treino)
+    public function update(array $data, LowerMemberWorkout $membro_inferior_treino)
     {
 
         try {
@@ -46,7 +46,7 @@ class MembroInferiortreinoService
         }
     }
 
-    public function delete(MembroInferiortreino $membro_inferior_treino)
+    public function delete(LowerMemberWorkout $membro_inferior_treino)
     {
         try {
             $delete = $this->repository->delete($membro_inferior_treino);

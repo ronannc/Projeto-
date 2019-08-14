@@ -26,7 +26,7 @@ use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\ExercicioTreinoRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
-use App\Repositories\Contracts\MembroInferiorTreinoRepository;
+use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 use App\Repositories\Contracts\OmbroTreinoRepository;
 use App\Repositories\Contracts\PeitoralRepository;
 use App\Repositories\Contracts\PeitoralTreinoRepository;
@@ -102,7 +102,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentLowerMemberRepository(new MembroInferior());
         });
 
-        $this->app->bind(MembroInferiortreinoRepository::class, function () {
+        $this->app->bind(LowerMemberWorkoutRepository::class, function () {
             return new EloquentLowerMemberTreinoRepository(new MembroInferiorTreino());
         });
 
@@ -157,7 +157,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             BackRepository::class,
             BackWorkoutRepository::class,
             LowerMemberRepository::class,
-            MembroInferiorTreinoRepository::class,
+            LowerMemberWorkoutRepository::class,
             ShoulderRepository::class,
             OmbroTreinoRepository::class,
             PeitoralRepository::class,
