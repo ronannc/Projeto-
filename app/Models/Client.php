@@ -16,8 +16,9 @@ class Client extends Model
         'weight'
     ];
 
-    public function training(){
-        return Training::where('id_client', $this->id)->get();
+    public function workout()
+    {
+        return Workout::where('id_client', $this->id)->get();
     }
 }
 

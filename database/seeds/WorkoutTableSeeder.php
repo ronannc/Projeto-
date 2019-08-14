@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Treino;
+use App\Models\Workout;
 use Illuminate\Database\Seeder;
 
-class TreinoTableSeeder extends Seeder
+class WorkoutTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class TreinoTableSeeder extends Seeder
      */
     public function run(){
 
-        factory(Treino::class, 10)->create();
+        factory(Workout::class, 10)->create();
     }
 }

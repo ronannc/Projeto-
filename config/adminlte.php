@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Virtual Training',
+    'title' => 'Virtual Workout',
 
     'title_prefix' => 'VT',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Virtual</b>Training',
+    'logo' => '<b>Virtual</b>Workout',
 
     'logo_mini' => '<b>V</b>T',
 

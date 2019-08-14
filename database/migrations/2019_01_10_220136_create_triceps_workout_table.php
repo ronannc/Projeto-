@@ -17,8 +17,8 @@ class CreateTricepsWorkoutTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->integer('id_triceps');
             $table->foreign('id_triceps')->references('id')->on('triceps');
-            $table->integer('id_training');
-            $table->foreign('id_training')->references('id')->on('training');
+            $table->integer('id_workout');
+            $table->foreign('id_workout')->references('id')->on('workouts');
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->string('repetition')->nullable();

@@ -8,7 +8,7 @@ class TricepsWorkout extends Model
 {
     protected $fillable = [
         'id_triceps',
-        'id_training',
+        'id_workout',
         'load',
         'series',
         'repetition',

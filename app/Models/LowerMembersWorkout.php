@@ -8,7 +8,7 @@ class LowerMembersWorkout extends Model
 {
     protected $fillable = [
         'id_lower_members',
-        'id_training',
+        'id_workout',
         'load',
         'series',
         'repetition',

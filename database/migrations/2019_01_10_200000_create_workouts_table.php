@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrainingTable extends Migration
+class CreateWorkoutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTrainingTable extends Migration
      */
     public function up()
     {
-        Schema::create('training', function (Blueprint $table) {
+        Schema::create('workouts', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->date('start');
             $table->date('next_workout');
@@ -36,6 +36,6 @@ class CreateTrainingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('training');
+        Schema::dropIfExists('workouts');
     }
 }
