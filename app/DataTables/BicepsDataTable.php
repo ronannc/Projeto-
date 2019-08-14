@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use App\Models\Biceps;
-use App\User;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;

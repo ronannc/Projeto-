@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Models\Costa;
+use App\Models\LowerMembers;
 use Yajra\DataTables\Services\DataTable;
 
-class CostaDataTable extends DataTable
+class LowerMembersDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -16,12 +16,12 @@ class CostaDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Costa $costa){
+            ->editColumn('acoes', function (LowerMembers $lower_members){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('costa.edit', $costa) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$costa['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$costa['id'].'" style="display:none" action="'.route('costa.destroy', $costa).'" method="post">'.
+                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit', $lower_members) . '"><i class="fa fa-edit"></i></a>
+                        <a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$lower_members['id'].'\').submit();}">Excluir</a>
+        <form id="form-delete'.$lower_members['id'].'" style="display:none" action="'.route('membroInferior.destroy', $lower_members).'" method="post">'.
             csrf_field().
             method_field('DELETE').'
         </form>';
@@ -35,9 +35,9 @@ class CostaDataTable extends DataTable
      * @param \App\User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Costa $model)
+    public function query(LowerMembers $model)
     {
-        return $model->newQuery()->select('id', 'exercicio', 'descricao');
+        return $model->newQuery();
     }
 
     /**
@@ -69,9 +69,9 @@ class CostaDataTable extends DataTable
     {
         return [
             'id',
-            'exercicio',
-            'descricao',
-            'acoes' => ['searchable' => false, 'orderable' => false]
+            'exercise',
+            'description',
+            'action' => ['searchable' => false, 'orderable' => false]
         ];
     }
 
@@ -82,6 +82,6 @@ class CostaDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Costa_' . date('YmdHis');
+        return 'LowerMembers' . date('YmdHis');
     }
 }

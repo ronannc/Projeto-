@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Models\Cliente;
+use App\Models\Client;
 use Yajra\DataTables\Services\DataTable;
 
-class ClienteDataTable extends DataTable
+class ClientDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -16,13 +16,13 @@ class ClienteDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Cliente $cliente){
+            ->editColumn('action', function (Client $client){
 
-                return '<a title="Visualisar"  style="color: #000000" href="' . route('cliente.show', $cliente) . '"><i class="fa  fa-eye"></i></a>
-                        <a title="Editar"  style="color: #000000" href="' . route('cliente.edit', $cliente) . '"><i class="fa fa-edit"></i></a>
+                return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
+                        <a title="Editar"  style="color: #000000" href="' . route('client.edit', $client) . '"><i class="fa fa-edit"></i></a>
                         <a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$cliente['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$cliente['id'].'" style="display:none" action="'.route('cliente.destroy', $cliente).'" method="post">'.
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$client['id'].'\').submit();}">Excluir</a>
+        <form id="form-delete'.$client['id'].'" style="display:none" action="'.route('client.destroy', $client).'" method="post">'.
             csrf_field().
             method_field('DELETE').'
         </form>';
@@ -36,9 +36,9 @@ class ClienteDataTable extends DataTable
      * @param \App\User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Cliente $model)
+    public function query(Client $model)
     {
-        return $model->newQuery()->select('id', 'nome', 'cpf', 'telefone', 'nascimento');
+        return $model->newQuery();
     }
 
     /**
@@ -70,11 +70,11 @@ class ClienteDataTable extends DataTable
     {
         return [
             'id',
-            'nome',
+            'name',
             'cpf',
-            'telefone',
-            'nascimento',
-            'acoes' => ['searchable' => false, 'orderable' => false]
+            'phone',
+            'birthday',
+            'action' => ['searchable' => false, 'orderable' => false]
         ];
     }
 
@@ -85,6 +85,6 @@ class ClienteDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Cliente_' . date('YmdHis');
+        return 'Client_' . date('YmdHis');
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Models\MembroInferior;
+use App\Models\Back;
 use Yajra\DataTables\Services\DataTable;
 
-class MembroInferiorDataTable extends DataTable
+class BackDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -16,12 +16,12 @@ class MembroInferiorDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (MembroInferior $membroInferior){
+            ->editColumn('acoes', function (Back $back){
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('membroInferior.edit', $membroInferior) . '"><i class="fa fa-edit"></i></a>
-                        <a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$membroInferior['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$membroInferior['id'].'" style="display:none" action="'.route('membroInferior.destroy', $membroInferior).'" method="post">'.
+                return '<a title="Editar"  style="color: #000000" href="' . route('Back.edit', $back) . '"><i class="fa fa-edit"></i></a>'.
+                        '<a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$back['id'].'\').submit();}">Excluir</a>
+        <form id="form-delete'.$back['id'].'" style="display:none" action="'.route('Back.destroy', $back).'" method="post">'.
             csrf_field().
             method_field('DELETE').'
         </form>';
@@ -35,7 +35,7 @@ class MembroInferiorDataTable extends DataTable
      * @param \App\User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(MembroInferior $model)
+    public function query(Back $model)
     {
         return $model->newQuery()->select('id', 'exercicio', 'descricao');
     }
@@ -82,6 +82,6 @@ class MembroInferiorDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'MembroInferior_' . date('YmdHis');
+        return 'Back_' . date('YmdHis');
     }
 }
