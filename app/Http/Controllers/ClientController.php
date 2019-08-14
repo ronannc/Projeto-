@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ClientDataTable;
-use App\DataTables\TreinoDataTable;
+use App\DataTables\WorkoutDataTable;
 use App\Models\Client;
 use App\Models\User;
 use App\Repositories\Contracts\ClientRepository;
@@ -44,7 +44,7 @@ class ClientController extends Controller
 
             return redirect(route('Client.edit', $Client));
         }
-        return $dataTable->render('layouts.Client.index');
+        return $dataTable->render('layouts.client.index');
     }
 
     /**
@@ -54,7 +54,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('layouts.Client.create');
+        return view('layouts.client.create');
     }
 
     /**
@@ -96,28 +96,28 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Client          $Client
-     * @param TreinoDataTable $dataTable
+     * @param Client           $Client
+     * @param WorkoutDataTable $dataTable
      *
      * @return Response
      */
-    public function show(Client $Client, TreinoDataTable $dataTable)
+    public function show(Client $Client, WorkoutDataTable $dataTable)
     {
         $treino = $Client->treino();
-        return $dataTable->with('data', $treino)->render('layouts.Client.show', compact('treino'), compact('Client'));
+        return $dataTable->with('data', $treino)->render('layouts.client.show', compact('treino'), compact('Client'));
     }
 
-    public function myAcount(TreinoDataTable $dataTable)
+    public function myAcount(WorkoutDataTable $dataTable)
     {
         $Client = User::Client()->first();
         $treino = $Client->treino();
-        return $dataTable->with('data', $treino)->render('layouts.Client.show', compact('treino'), compact('Client'));
+        return $dataTable->with('data', $treino)->render('layouts.client.show', compact('treino'), compact('Client'));
     }
 
-    public function editMyAcount(TreinoDataTable $dataTable)
+    public function editMyAcount(WorkoutDataTable $dataTable)
     {
         $extraData = User::Client()->first();
-        return view('layouts.Client.editClient', compact('extraData'));
+        return view('layouts.client.editClient', compact('extraData'));
     }
 
     /**
@@ -134,7 +134,7 @@ class ClientController extends Controller
         $extraData['configuracao'] = $extraData->configuracao();
         $extraData['formula'] = $configuracaoClient['formula'] == 1 ? 'checked' : '';
         $extraData['porcentagem'] = $configuracaoClient['porcentagem'];
-        return view('layouts.Client.edit', compact('extraData'));
+        return view('layouts.client.edit', compact('extraData'));
     }
 
     /**
