@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\LowerMembers;
+use Illuminate\Database\Seeder;
 
 class LowerMembersTableSeeder extends Seeder
 {

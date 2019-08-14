@@ -1,7 +1,7 @@
 <?php
 
-use Faker\Generator as Faker;
 use App\Models\Costa;
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------

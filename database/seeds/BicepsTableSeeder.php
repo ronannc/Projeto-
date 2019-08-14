@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Biceps;
+use Illuminate\Database\Seeder;
 
 class BicepsTableSeeder extends Seeder
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Breasts;
+use Illuminate\Database\Seeder;
 
 class BreastsTableSeeder extends Seeder
 {

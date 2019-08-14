@@ -1,7 +1,7 @@
 <?php
 
-use Faker\Generator as Faker;
 use App\Models\Biceps;
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------

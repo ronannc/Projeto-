@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Client;
 use Illuminate\Database\Seeder;
-use App\Models\Cliente;
 
-class ClienteTableSeeder extends Seeder
+class ClientTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

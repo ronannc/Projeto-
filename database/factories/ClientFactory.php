@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Client;
 use Faker\Generator as Faker;
-use App\Models\Cliente;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,12 @@ use App\Models\Cliente;
 |
 */
 
-$factory->define(Cliente::class, function (Faker $faker) {
+$factory->define(Client::class, function (Faker $faker) {
     return [
-        'nome' => $faker->name,
-        'cpf' => rand(10000000, 99999999),
-        'telefone' => rand(10000000, 99999999),
-        'nascimento' => $faker->date(),
-        'peso' => rand(50, 110)
+        'name'     => $faker->name,
+        'cpf'      => rand(10000000, 99999999),
+        'phone'    => rand(10000000, 99999999),
+        'birthday' => $faker->date(),
+        'weight'   => rand(50, 110)
     ];
 });

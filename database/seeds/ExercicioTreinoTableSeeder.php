@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\ExercicioTreino;
+use Illuminate\Database\Seeder;
 
 class ExercicioTreinoTableSeeder extends Seeder
 {

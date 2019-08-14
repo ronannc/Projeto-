@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Shoulders;
+use Illuminate\Database\Seeder;
 
 class ShouldersTableSeeder extends Seeder
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Back;
+use Illuminate\Database\Seeder;
 
 class BackTableSeeder extends Seeder
 {
