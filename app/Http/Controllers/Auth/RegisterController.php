@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\Cliente;
-use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\Client;
+use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -44,39 +44,55 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'name'     => [
+                'required',
+                'string',
+                'max:255'
+            ],
+            'email'    => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:users'
+            ],
+            'password' => [
+                'required',
+                'string',
+                'min:6',
+                'confirmed'
+            ],
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\User
+     * @param array $data
+     *
+     * @return User
      */
     protected function create(array $data)
     {
-        $cliente = Cliente::create([
-            'nome'      => $data['name'],
-            'telefone'  => $data['telefone'],
-            'peso'      => $data['peso'],
-            'cpf'       => $data['cpf'],
-            'nascimento'=> $data['nascimento']
+        $cliente = Client::create([
+            'name'     => $data['name'],
+            'phone'    => $data['phone'],
+            'cpf'      => $data['cpf'],
+            'birthday' => $data['birthday']
         ]);
 
         $user = User::create([
-            'name'          => $data['name'],
-            'email'         => $data['email'],
-            'password'      => Hash::make($data['password']),
-            'id_cliente'    => $cliente['id']
+            'name'       => $data['name'],
+            'email'      => $data['email'],
+            'password'   => Hash::make($data['password']),
+            'id_cliente' => $cliente['id']
         ]);
         $user->assignRole(User::CLIENTE);
 

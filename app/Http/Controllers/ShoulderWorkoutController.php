@@ -36,7 +36,7 @@ class ShoulderWorkoutController extends Controller
      */
 //    public function index(ShoulderWorkoutDataTable $dataTable)
 //    {
-//        return $dataTable->render('layouts.ombro_treino.index');
+//        return $dataTable->render('layouts.shoulder_workout.index');
 //
 //    }
 
@@ -47,7 +47,7 @@ class ShoulderWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.ombro_treino.create');
+        return view('layouts.shoulder_workout.create');
     }
 
     /**
@@ -68,19 +68,19 @@ class ShoulderWorkoutController extends Controller
         }
 
         session()->flash('status', 'ShoulderWorkout adicionado com sucesso !');
-        return redirect(route('ombro_treino.index'));
+        return redirect(route('shoulder_workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param ShoulderWorkout $ombro_treino
+     * @param ShoulderWorkout $shoulder_workout
      *
      * @return Response
      */
-    public function show(ShoulderWorkout $ombro_treino)
+    public function show(ShoulderWorkout $shoulder_workout)
     {
-        return view('layouts.ombro_treino.show', compact('ombro_treino'));
+        return view('layouts.shoulder_workout.show', compact('shoulder_workout'));
     }
 
     /**
@@ -92,9 +92,9 @@ class ShoulderWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $ombro_treino = ShoulderWorkout::find($id);
-//        dd($ombro_treino);
-        return view('layouts.ombro_treino.edit', compact('ombro_treino'));
+        $shoulder_workout = ShoulderWorkout::find($id);
+//        dd($shoulder_workout);
+        return view('layouts.shoulder_workout.edit', compact('shoulder_workout'));
     }
 
     /**
@@ -108,16 +108,16 @@ class ShoulderWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $ombro_treino = ShoulderWorkout::find($id);
+        $shoulder_workout = ShoulderWorkout::find($id);
 
-        $resultFromUpdateShoulderWorkout = $this->service->update($data, $ombro_treino);
+        $resultFromUpdateShoulderWorkout = $this->service->update($data, $shoulder_workout);
         if (!empty($resultFromUpdateShoulderWorkout['error'])) {
             session()->flash('error', $resultFromUpdateShoulderWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'ShoulderWorkout atualizado com sucesso!');
 
-        return redirect(route('ombro_treino.index'));
+        return redirect(route('shoulder_workout.index'));
     }
 
     /**
@@ -130,14 +130,14 @@ class ShoulderWorkoutController extends Controller
     public function destroy($id)
     {
 //        dd($id);
-        $ombro_treino = ShoulderWorkout::find($id);
+        $shoulder_workout = ShoulderWorkout::find($id);
 
-        $resultFromDeleteShoulderWorkout = $this->service->delete($ombro_treino);
+        $resultFromDeleteShoulderWorkout = $this->service->delete($shoulder_workout);
         if (!empty($resultFromDeleteShoulderWorkout['error'])) {
             session()->flash('error', $resultFromDeleteShoulderWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'ShoulderWorkout deletado com sucesso!');
-        return redirect(route('ombro_treino.index'));
+        return redirect(route('shoulder_workout.index'));
     }
 }

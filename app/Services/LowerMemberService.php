@@ -34,11 +34,11 @@ class LowerMemberService
         }
     }
 
-    public function update(array $data, LowerMember $membroInferior)
+    public function update(array $data, LowerMember $lowerMember)
     {
 
         try {
-            $update = $this->repository->update($membroInferior, $data);
+            $update = $this->repository->update($lowerMember, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class LowerMemberService
         }
     }
 
-    public function delete(LowerMember $membroInferior)
+    public function delete(LowerMember $lowerMember)
     {
         try {
-            $delete = $this->repository->delete($membroInferior);
+            $delete = $this->repository->delete($lowerMember);
             return $delete;
         } catch (Exception $exception) {
             return [

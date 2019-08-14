@@ -1,7 +1,7 @@
 {
     "name": "virtual/training",
     "type": "project",
-    "description": "Sistema inteligente de treinos.",
+    "description": "Sistema inteligente de workouts.",
     "keywords": [
         "framework",
         "laravel"

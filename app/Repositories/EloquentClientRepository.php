@@ -54,12 +54,12 @@ class EloquentClientRepository extends AbstractEloquentRepository implements Cli
     public function getExerciciosTreino($id)
     {
         $data = Workout::find($id);
-        $data['triceps_treino'] = TricepsWorkout::where('id_treino', $id)->get();
-        $data['biceps_treino'] = BicepsWorkout::where('id_treino', $id)->get();
-        $data['costa_treino'] = BackWorkout::where('id_treino', $id)->get();
-        $data['ombro_treino'] = ShoulderWorkout::where('id_treino', $id)->get();
-        $data['peitoral_treino'] = BreastWorkout::where('id_treino', $id)->get();
-        $data['membro_inferior_treino'] = LowerMemberWorkout::where('id_treino', $id)->get();
+        $data['triceps_workout'] = TricepsWorkout::where('id_workout', $id)->get();
+        $data['biceps_workout'] = BicepsWorkout::where('id_workout', $id)->get();
+        $data['back_workout'] = BackWorkout::where('id_workout', $id)->get();
+        $data['shoulder_workout'] = ShoulderWorkout::where('id_workout', $id)->get();
+        $data['breast_workout'] = BreastWorkout::where('id_workout', $id)->get();
+        $data['lower_member_workout'] = LowerMemberWorkout::where('id_workout', $id)->get();
         return $data;
     }
 }

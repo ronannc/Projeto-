@@ -35,10 +35,10 @@ class WorkoutService
         }
     }
 
-    public function update(array $data, Workout $treino)
+    public function update(array $data, Workout $workout)
     {
         try {
-            $update = $this->repository->update($treino, $data);
+            $update = $this->repository->update($workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class WorkoutService
         }
     }
 
-    public function delete(Workout $treino)
+    public function delete(Workout $workout)
     {
         try {
-            $delete = $this->repository->delete($treino);
+            $delete = $this->repository->delete($workout);
             return $delete;
         } catch (Exception $exception) {
             return [
@@ -61,10 +61,10 @@ class WorkoutService
         }
     }
 
-    public function process_data($data, $formula_treino = false)
+    public function process_data($data, $formula_workout = false)
     {
-        if ($formula_treino) {
-            $cliente = Client::find($data['formula_treino']['id_cliente']);
+        if ($formula_workout) {
+            $cliente = Client::find($data['formula_workout']['id_cliente']);
         }
         //tem que receber o peso do client para calcular a carga segundo a formula
         $collect = array();
@@ -72,12 +72,12 @@ class WorkoutService
             $aux_key = explode('_', $key);
             if (count($aux_key) == 3) {
                 $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
-                if ($formula_treino) {
+                if ($formula_workout) {
                     if ($aux_key[0] == "kg") {
                         $rep = $collect[$aux_key[1]][$aux_key[2]]['rep'];
                         $kg = $collect[$aux_key[1]][$aux_key[2]]['kg'];
                         $collect[$aux_key[1]][$aux_key[2]]['kg'] = $this->formula($kg, $rep, $cliente['peso'],
-                            $data['formula_treino']['porcentagem']);
+                            $data['formula_workout']['porcentagem']);
                     }
                 }
             }

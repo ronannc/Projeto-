@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
 //        $user->assignRole(User::ADMIN);
 
 //        $user = User::create([
-//            'name' => 'Cliente',
+//            'name' => 'Client',
 //            'email' => 'client@mail.com',
 //            'password' => bcrypt('secretxxx'),
 //        ]);

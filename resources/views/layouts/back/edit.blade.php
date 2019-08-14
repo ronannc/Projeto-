@@ -16,12 +16,12 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('back', $costa)}}" method="post">
+        <form action="{{route('back', $back)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $costa])
-                @include('layouts.components.input_descricao', ['data' => $costa])
+                @include('layouts.components.input_exercicio', ['data' => $back])
+                @include('layouts.components.input_descricao', ['data' => $back])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

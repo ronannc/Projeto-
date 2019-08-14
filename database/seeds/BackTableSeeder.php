@@ -14,8 +14,8 @@ class BackTableSeeder extends Seeder
     {
 
         Back::create([
-            'exercise'    => 'Puley costas',
-            'description' => 'Puley costas',
+            'exercise'    => 'Puley backs',
+            'description' => 'Puley backs',
         ]);
         Back::create([
             'exercise'    => 'Puley frente',

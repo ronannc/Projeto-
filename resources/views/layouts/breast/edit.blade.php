@@ -16,12 +16,12 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('breast', $peitoral)}}" method="post">
+        <form action="{{route('breast', $breast)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $peitoral])
-                @include('layouts.components.input_descricao', ['data' => $peitoral])
+                @include('layouts.components.input_exercicio', ['data' => $breast])
+                @include('layouts.components.input_descricao', ['data' => $breast])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

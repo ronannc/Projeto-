@@ -8,10 +8,11 @@
 ?>
 
 <div class="form-group">
-    <label for="select_membro_inferior">Membro Inferior</label>
-    <select class="multiple" data-placeholder="Selecione os exercicios de membro_inferior" name="membro_inferior[]" multiple="multiple" style="width: 100%">
-        @foreach($extraData['membro_inferior'] as $membro_inferior)
-            <option value="{{$membro_inferior['id']}}">{{$membro_inferior['exercicio']}}</option>
+    <label for="select_lower_member">Membro Inferior</label>
+    <select class="multiple" data-placeholder="Selecione os exercicios de lower_member" name="lower_member[]"
+            multiple="multiple" style="width: 100%">
+        @foreach($extraData['lower_member'] as $lower_member)
+            <option value="{{$lower_member['id']}}">{{$lower_member['exercicio']}}</option>
         @endforeach
     </select>
 </div>

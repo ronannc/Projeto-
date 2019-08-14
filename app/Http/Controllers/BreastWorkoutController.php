@@ -36,7 +36,7 @@ class BreastWorkoutController extends Controller
      */
 //    public function index(BreastWorkoutDataTable $dataTable)
 //    {
-//        return $dataTable->render('layouts.peitoral_treino.index');
+//        return $dataTable->render('layouts.breast_workout.index');
 //
 //    }
 
@@ -47,7 +47,7 @@ class BreastWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.peitoral_treino.create');
+        return view('layouts.breast_workout.create');
     }
 
     /**
@@ -68,19 +68,19 @@ class BreastWorkoutController extends Controller
         }
 
         session()->flash('status', 'BreastWorkout adicionado com sucesso !');
-        return redirect(route('peitoral_treino.index'));
+        return redirect(route('breast_workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param BreastWorkout $peitoral_treino
+     * @param BreastWorkout $breast_workout
      *
      * @return Response
      */
-    public function show(BreastWorkout $peitoral_treino)
+    public function show(BreastWorkout $breast_workout)
     {
-        return view('layouts.peitoral_treino.show', compact('peitoral_treino'));
+        return view('layouts.breast_workout.show', compact('breast_workout'));
     }
 
     /**
@@ -92,9 +92,9 @@ class BreastWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $peitoral_treino = BreastWorkout::find($id);
-//        dd($peitoral_treino);
-        return view('layouts.peitoral_treino.edit', compact('peitoral_treino'));
+        $breast_workout = BreastWorkout::find($id);
+//        dd($breast_workout);
+        return view('layouts.breast_workout.edit', compact('breast_workout'));
     }
 
     /**
@@ -108,16 +108,16 @@ class BreastWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $peitoral_treino = BreastWorkout::find($id);
+        $breast_workout = BreastWorkout::find($id);
 
-        $resultFromUpdateBreastWorkout = $this->service->update($data, $peitoral_treino);
+        $resultFromUpdateBreastWorkout = $this->service->update($data, $breast_workout);
         if (!empty($resultFromUpdateBreastWorkout['error'])) {
             session()->flash('error', $resultFromUpdateBreastWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'BreastWorkout atualizado com sucesso!');
 
-        return redirect(route('peitoral_treino.index'));
+        return redirect(route('breast_workout.index'));
     }
 
     /**
@@ -130,14 +130,14 @@ class BreastWorkoutController extends Controller
     public function destroy($id)
     {
 //        dd($id);
-        $peitoral_treino = BreastWorkout::find($id);
+        $breast_workout = BreastWorkout::find($id);
 
-        $resultFromDeleteBreastWorkout = $this->service->delete($peitoral_treino);
+        $resultFromDeleteBreastWorkout = $this->service->delete($breast_workout);
         if (!empty($resultFromDeleteBreastWorkout['error'])) {
             session()->flash('error', $resultFromDeleteBreastWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'BreastWorkout deletado com sucesso!');
-        return redirect(route('peitoral_treino.index'));
+        return redirect(route('breast_workout.index'));
     }
 }

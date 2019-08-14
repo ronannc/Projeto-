@@ -17,24 +17,28 @@ interface WorkoutRepository
 
     public function getExerciciosTreino($id);
 
-    public function save_triceps_treino($data);
+    public function save_triceps_workout($data);
 
-    public function update_triceps_treino($data);
+    public function update_triceps_workout($data);
 
-    public function save_biceps_treino($data);
+    public function save_biceps_workout($data);
 
-    public function update_biceps_treino($data);
+    public function update_biceps_workout($data);
 
-    public function save_costa_treino($data);
-    public function update_costa_treino($data);
+    public function save_back_workout($data);
 
-    public function save_ombro_treino($data);
-    public function update_ombro_treino($data);
+    public function update_back_workout($data);
 
-    public function save_peitoral_treino($data);
-    public function update_peitoral_treino($data);
+    public function save_shoulder_workout($data);
 
-    public function save_membro_inferior_treino( $data);
-    public function update_membro_inferior_treino( $data);
+    public function update_shoulder_workout($data);
+
+    public function save_breast_workout($data);
+
+    public function update_breast_workout($data);
+
+    public function save_lower_member_workout($data);
+
+    public function update_lower_member_workout($data);
 
 }

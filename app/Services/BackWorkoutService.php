@@ -34,11 +34,11 @@ class BackWorkoutService
         }
     }
 
-    public function update(array $data, BackWorkout $costa_treino)
+    public function update(array $data, BackWorkout $back_workout)
     {
 
         try {
-            $update = $this->repository->update($costa_treino, $data);
+            $update = $this->repository->update($back_workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class BackWorkoutService
         }
     }
 
-    public function delete(BackWorkout $costa_treino)
+    public function delete(BackWorkout $back_workout)
     {
         try {
-            $delete = $this->repository->delete($costa_treino);
+            $delete = $this->repository->delete($back_workout);
             return $delete;
         } catch (Exception $exception) {
             return [

@@ -70,7 +70,7 @@ class LowerMemberController extends Controller
         }
 
         session()->flash('status', 'LowerMember adicionado com sucesso !');
-        return redirect(route('LowerMember.index'));
+        return redirect(route('layouts.lower-member.index'));
     }
 
     /**
@@ -119,7 +119,7 @@ class LowerMemberController extends Controller
         }
         session()->flash('success', 'LowerMember atualizado com sucesso!');
 
-        return redirect(route('LowerMember.index'));
+        return redirect(route('layouts.lower-member.index'));
     }
 
     /**
@@ -140,6 +140,6 @@ class LowerMemberController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'LowerMember deletado com sucesso!');
-        return redirect(route('LowerMember.index'));
+        return redirect(route('layouts.lower-member.index'));
     }
 }

@@ -34,11 +34,11 @@ class BreastWorkoutService
         }
     }
 
-    public function update(array $data, BreastWorkout $peitoral_treino)
+    public function update(array $data, BreastWorkout $breast_workout)
     {
 
         try {
-            $update = $this->repository->update($peitoral_treino, $data);
+            $update = $this->repository->update($breast_workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class BreastWorkoutService
         }
     }
 
-    public function delete(BreastWorkout $peitoral_treino)
+    public function delete(BreastWorkout $breast_workout)
     {
         try {
-            $delete = $this->repository->delete($peitoral_treino);
+            $delete = $this->repository->delete($breast_workout);
             return $delete;
         } catch (Exception $exception) {
             return [

@@ -34,11 +34,11 @@ class ShoulderWorkoutService
         }
     }
 
-    public function update(array $data, ShoulderWorkout $ombro_treino)
+    public function update(array $data, ShoulderWorkout $shoulder_workout)
     {
 
         try {
-            $update = $this->repository->update($ombro_treino, $data);
+            $update = $this->repository->update($shoulder_workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class ShoulderWorkoutService
         }
     }
 
-    public function delete(ShoulderWorkout $ombro_treino)
+    public function delete(ShoulderWorkout $shoulder_workout)
     {
         try {
-            $delete = $this->repository->delete($ombro_treino);
+            $delete = $this->repository->delete($shoulder_workout);
             return $delete;
         } catch (Exception $exception) {
             return [

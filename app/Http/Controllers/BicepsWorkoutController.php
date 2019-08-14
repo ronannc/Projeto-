@@ -35,7 +35,7 @@ class BicepsWorkoutController extends Controller
      */
 //    public function index(BicepsWorkoutDataTable $dataTable)
 //    {
-//        return $dataTable->render('layouts.biceps_treino.index');
+//        return $dataTable->render('layouts.biceps_workout.index');
 //
 //    }
 
@@ -46,7 +46,7 @@ class BicepsWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.biceps_treino.create');
+        return view('layouts.biceps_workout.create');
     }
 
     /**
@@ -67,19 +67,19 @@ class BicepsWorkoutController extends Controller
         }
 
         session()->flash('status', 'BicepsWorkout adicionado com sucesso !');
-        return redirect(route('biceps_treino.index'));
+        return redirect(route('biceps_workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param BicepsWorkout $biceps_treino
+     * @param BicepsWorkout $biceps_workout
      *
      * @return Response
      */
-    public function show(BicepsWorkout $biceps_treino)
+    public function show(BicepsWorkout $biceps_workout)
     {
-        return view('layouts.biceps_treino.show', compact('biceps_treino'));
+        return view('layouts.biceps_workout.show', compact('biceps_workout'));
     }
 
     /**
@@ -91,8 +91,8 @@ class BicepsWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $biceps_treino = BicepsWorkout::find($id);
-        return view('layouts.biceps_treino.edit', compact('biceps_treino'));
+        $biceps_workout = BicepsWorkout::find($id);
+        return view('layouts.biceps_workout.edit', compact('biceps_workout'));
     }
 
     /**
@@ -106,16 +106,16 @@ class BicepsWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $biceps_treino = BicepsWorkout::find($id);
+        $biceps_workout = BicepsWorkout::find($id);
 
-        $resultFromUpdateBicepsWorkout = $this->service->update($data, $biceps_treino);
+        $resultFromUpdateBicepsWorkout = $this->service->update($data, $biceps_workout);
         if (!empty($resultFromUpdateBicepsWorkout['error'])) {
             session()->flash('error', $resultFromUpdateBicepsWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'BicepsWorkout atualizado com sucesso!');
 
-        return redirect(route('biceps_treino.index'));
+        return redirect(route('biceps_workout.index'));
     }
 
     /**
@@ -128,14 +128,14 @@ class BicepsWorkoutController extends Controller
     public function destroy($id)
     {
 //        dd($id);
-        $biceps_treino = BicepsWorkout::find($id);
+        $biceps_workout = BicepsWorkout::find($id);
 
-        $resultFromDeleteBicepsWorkout = $this->service->delete($biceps_treino);
+        $resultFromDeleteBicepsWorkout = $this->service->delete($biceps_workout);
         if (!empty($resultFromDeleteBicepsWorkout['error'])) {
             session()->flash('error', $resultFromDeleteBicepsWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'BicepsWorkout deletado com sucesso!');
-        return redirect(route('biceps_treino.index'));
+        return redirect(route('biceps_workout.index'));
     }
 }

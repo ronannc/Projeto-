@@ -16,12 +16,12 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('lower-member', $membroInferior)}}" method="post">
+        <form action="{{route('lower-member', $lowerMember)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $membroInferior])
-                @include('layouts.components.input_descricao', ['data' => $membroInferior])
+                @include('layouts.components.input_exercicio', ['data' => $lowerMember])
+                @include('layouts.components.input_descricao', ['data' => $lowerMember])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

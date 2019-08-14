@@ -36,7 +36,7 @@ class LowerMemberWorkoutController extends Controller
      */
 //    public function index(LowerMemberWorkoutDataTable $dataTable)
 //    {
-//        return $dataTable->render('layouts.membro_inferior_treino.index');
+//        return $dataTable->render('layouts.lower_member_workout.index');
 //
 //    }
 
@@ -47,7 +47,7 @@ class LowerMemberWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.membro_inferior_treino.create');
+        return view('layouts.lower_member_workout.create');
     }
 
     /**
@@ -68,19 +68,19 @@ class LowerMemberWorkoutController extends Controller
         }
 
         session()->flash('status', 'LowerMemberWorkout adicionado com sucesso !');
-        return redirect(route('membro_inferior_treino.index'));
+        return redirect(route('lower_member_workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param LowerMemberWorkout $membro_inferior_treino
+     * @param LowerMemberWorkout $lower_member_workout
      *
      * @return Response
      */
-    public function show(LowerMemberWorkout $membro_inferior_treino)
+    public function show(LowerMemberWorkout $lower_member_workout)
     {
-        return view('layouts.membro_inferior_treino.show', compact('membro_inferior_treino'));
+        return view('layouts.lower_member_workout.show', compact('lower_member_workout'));
     }
 
     /**
@@ -92,9 +92,9 @@ class LowerMemberWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $membro_inferior_treino = LowerMemberWorkout::find($id);
-//        dd($membro_inferior_treino);
-        return view('layouts.membro_inferior_treino.edit', compact('membro_inferior_treino'));
+        $lower_member_workout = LowerMemberWorkout::find($id);
+//        dd($lower_member_workout);
+        return view('layouts.lower_member_workout.edit', compact('lower_member_workout'));
     }
 
     /**
@@ -108,16 +108,16 @@ class LowerMemberWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $membro_inferior_treino = LowerMemberWorkout::find($id);
+        $lower_member_workout = LowerMemberWorkout::find($id);
 
-        $resultFromUpdateLowerMemberWorkout = $this->service->update($data, $membro_inferior_treino);
+        $resultFromUpdateLowerMemberWorkout = $this->service->update($data, $lower_member_workout);
         if (!empty($resultFromUpdateLowerMemberWorkout['error'])) {
             session()->flash('error', $resultFromUpdateLowerMemberWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'LowerMemberWorkout atualizado com sucesso!');
 
-        return redirect(route('membro_inferior_treino.index'));
+        return redirect(route('lower_member_workout.index'));
     }
 
     /**
@@ -130,14 +130,14 @@ class LowerMemberWorkoutController extends Controller
     public function destroy($id)
     {
 //        dd($id);
-        $membro_inferior_treino = LowerMemberWorkout::find($id);
+        $lower_member_workout = LowerMemberWorkout::find($id);
 
-        $resultFromDeleteLowerMemberWorkout = $this->service->delete($membro_inferior_treino);
+        $resultFromDeleteLowerMemberWorkout = $this->service->delete($lower_member_workout);
         if (!empty($resultFromDeleteLowerMemberWorkout['error'])) {
             session()->flash('error', $resultFromDeleteLowerMemberWorkout['message']);
             return back()->withInput();
         }
         session()->flash('success', 'LowerMemberWorkout deletado com sucesso!');
-        return redirect(route('membro_inferior_treino.index'));
+        return redirect(route('lower_member_workout.index'));
     }
 }

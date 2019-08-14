@@ -34,11 +34,11 @@ class LowerMemberWorkoutService
         }
     }
 
-    public function update(array $data, LowerMemberWorkout $membro_inferior_treino)
+    public function update(array $data, LowerMemberWorkout $lower_member_workout)
     {
 
         try {
-            $update = $this->repository->update($membro_inferior_treino, $data);
+            $update = $this->repository->update($lower_member_workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class LowerMemberWorkoutService
         }
     }
 
-    public function delete(LowerMemberWorkout $membro_inferior_treino)
+    public function delete(LowerMemberWorkout $lower_member_workout)
     {
         try {
-            $delete = $this->repository->delete($membro_inferior_treino);
+            $delete = $this->repository->delete($lower_member_workout);
             return $delete;
         } catch (Exception $exception) {
             return [

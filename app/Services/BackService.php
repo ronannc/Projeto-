@@ -3,7 +3,7 @@
 
 namespace App\Services;
 
-use App\Models\Costa;
+use App\Models\Back;
 use App\Repositories\Contracts\BackRepository;
 use Exception;
 
@@ -34,11 +34,11 @@ class BackService
         }
     }
 
-    public function update(array $data, Costa $costa)
+    public function update(array $data, Back $back)
     {
 
         try {
-            $update = $this->repository->update($costa, $data);
+            $update = $this->repository->update($back, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class BackService
         }
     }
 
-    public function delete(Costa $costa)
+    public function delete(Back $back)
     {
         try {
-            $delete = $this->repository->delete($costa);
+            $delete = $this->repository->delete($back);
             return $delete;
         } catch (Exception $exception) {
             return [

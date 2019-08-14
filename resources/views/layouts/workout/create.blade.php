@@ -31,10 +31,10 @@
                 @include('layouts.components.select_cliente')
                 @include('layouts.components.select_triceps')
                 @include('layouts.components.select_biceps')
-                @include('layouts.components.select_costa')
-                @include('layouts.components.select_ombro')
-                @include('layouts.components.select_peitoral')
-                @include('layouts.components.select_membro_inferior')
+                @include('layouts.components.select_back')
+                @include('layouts.components.select_shoulder')
+                @include('layouts.components.select_breast')
+                @include('layouts.components.select_lower_member')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

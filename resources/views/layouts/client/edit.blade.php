@@ -25,10 +25,10 @@
                 @include('layouts.components.input_nascimento')
                 @include('layouts.components.input_telefone')
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuracao de treino</h3>
+                    <h3 class="box-title">Configuracao de workout</h3>
                 </div>
                 @include('layouts.components.input_peso')
-                @include('layouts.components.checkbox_treino')
+                @include('layouts.components.checkbox_workout')
                 @include('layouts.components.input_porcentagem')
             </div>
             <!-- /.box-body -->

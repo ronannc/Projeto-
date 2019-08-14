@@ -34,11 +34,11 @@ class ShoulderService
         }
     }
 
-    public function update(array $data, Shoulder $ombro)
+    public function update(array $data, Shoulder $shoulder)
     {
 
         try {
-            $update = $this->repository->update($ombro, $data);
+            $update = $this->repository->update($shoulder, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class ShoulderService
         }
     }
 
-    public function delete(Shoulder $ombro)
+    public function delete(Shoulder $shoulder)
     {
         try {
-            $delete = $this->repository->delete($ombro);
+            $delete = $this->repository->delete($shoulder);
             return $delete;
         } catch (Exception $exception) {
             return [

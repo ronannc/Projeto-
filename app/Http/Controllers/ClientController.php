@@ -103,15 +103,15 @@ class ClientController extends Controller
      */
     public function show(Client $Client, WorkoutDataTable $dataTable)
     {
-        $treino = $Client->treino();
-        return $dataTable->with('data', $treino)->render('layouts.client.show', compact('treino'), compact('Client'));
+        $workout = $Client->workout();
+        return $dataTable->with('data', $workout)->render('layouts.client.show', compact('workout'), compact('Client'));
     }
 
     public function myAcount(WorkoutDataTable $dataTable)
     {
         $Client = User::Client()->first();
-        $treino = $Client->treino();
-        return $dataTable->with('data', $treino)->render('layouts.client.show', compact('treino'), compact('Client'));
+        $workout = $Client->workout();
+        return $dataTable->with('data', $workout)->render('layouts.client.show', compact('workout'), compact('Client'));
     }
 
     public function editMyAcount(WorkoutDataTable $dataTable)

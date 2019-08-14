@@ -34,11 +34,11 @@ class TricepsWorkoutService
         }
     }
 
-    public function update(array $data, TricepsWorkout $triceps_treino)
+    public function update(array $data, TricepsWorkout $triceps_workout)
     {
 
         try {
-            $update = $this->repository->update($triceps_treino, $data);
+            $update = $this->repository->update($triceps_workout, $data);
             return $update;
         } catch (Exception $exception) {
             return [
@@ -48,10 +48,10 @@ class TricepsWorkoutService
         }
     }
 
-    public function delete(TricepsWorkout $triceps_treino)
+    public function delete(TricepsWorkout $triceps_workout)
     {
         try {
-            $delete = $this->repository->delete($triceps_treino);
+            $delete = $this->repository->delete($triceps_workout);
             return $delete;
         } catch (Exception $exception) {
             return [

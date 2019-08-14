@@ -8,10 +8,11 @@
 ?>
 
 <div class="form-group">
-    <label for="select_ombro">Ombro</label>
-    <select class="multiple" data-placeholder="Selecione os exercicios de ombro" name="ombro[]" multiple="multiple" style="width: 100%">
-        @foreach($extraData['shoulder'] as $ombro)
-            <option value="{{$ombro['id']}}">{{$ombro['exercicio']}}</option>
+    <label for="select_shoulder">Ombro</label>
+    <select class="multiple" data-placeholder="Selecione os exercicios de shoulder" name="shoulder[]"
+            multiple="multiple" style="width: 100%">
+        @foreach($extraData['shoulder'] as $shoulder)
+            <option value="{{$shoulder['id']}}">{{$shoulder['exercicio']}}</option>
         @endforeach
     </select>
 </div>
