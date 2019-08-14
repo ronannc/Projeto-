@@ -38,7 +38,7 @@ class BreastController extends Controller
      */
     public function index(BreastDataTable $dataTable)
     {
-        return $dataTable->render('layouts.Breast.index');
+        return $dataTable->render('layouts.breast.index');
 
     }
 
@@ -49,7 +49,7 @@ class BreastController extends Controller
      */
     public function create()
     {
-        return view('layouts.Breast.create');
+        return view('layouts.breast.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class BreastController extends Controller
      */
     public function show(Breast $Breast)
     {
-        return view('layouts.Breast.show', compact('Breast'));
+        return view('layouts.breast.show', compact('Breast'));
     }
 
     /**
@@ -96,7 +96,7 @@ class BreastController extends Controller
     {
         $Breast = Breast::find($id);
 //        dd($Breast);
-        return view('layouts.Breast.edit', compact('Breast'));
+        return view('layouts.breast.edit', compact('Breast'));
     }
 
     /**

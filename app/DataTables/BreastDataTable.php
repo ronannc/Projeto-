@@ -21,11 +21,11 @@ class BreastDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Breast $Breast) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('Breast.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('breast.edit',
                         $Breast) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Breast['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('Breast.destroy',
+        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('breast.destroy',
                         $Breast) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -43,7 +43,7 @@ class BreastDataTable extends DataTable
      */
     public function query(Breast $model)
     {
-        return $model->newQuery()->select('id', 'exercicio', 'descricao');
+        return $model->newQuery()->select('id', 'exercise', 'description');
     }
 
     /**
@@ -75,8 +75,8 @@ class BreastDataTable extends DataTable
     {
         return [
             'id',
-            'exercicio',
-            'descricao',
+            'exercise',
+            'description',
             'acoes' => [
                 'searchable' => false,
                 'orderable'  => false
