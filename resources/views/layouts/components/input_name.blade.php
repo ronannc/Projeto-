@@ -1,4 +1,5 @@
 <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" name="nome" id="input_nome" placeholder="Nome" value ="{{ old('nome') ?? $extraData['nome'] ?? null }}">
+    <label for="name">Nome</label>
+    <input type="text" class="form-control" name="name" id="input_name" placeholder="Nome"
+           value="{{ old('name') ?? $extraData['name'] ?? null }}">
 </div>
