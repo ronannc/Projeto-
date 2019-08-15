@@ -19,6 +19,8 @@ class CreateBreastsWorkoutTable extends Migration
             $table->foreign('id_breasts')->references('id')->on('breasts');
             $table->integer('id_workout');
             $table->foreign('id_workout')->references('id')->on('workouts');
+            $table->integer('id_workout_modes');
+            $table->foreign('id_workout_modes')->references('id')->on('workout_modes');
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->string('repetition')->nullable();

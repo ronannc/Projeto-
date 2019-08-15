@@ -2,13 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\Triceps;
-use App\User;
+use App\Models\WorkoutMode;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class TricepsDataTable extends DataTable
+class WorkoutModeDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,14 +19,18 @@ class TricepsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('action', function (Triceps $triceps){
+            ->editColumn('acoes', function (WorkoutMode $workoutMode) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('triceps.edit', $triceps) . '"><i class="fa fa-edit"></i></a>'.
-                        '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$triceps['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$triceps['id'].'" style="display:none" action="'.route('triceps.destroy', $triceps).'" method="post">'.
-            csrf_field().
-            method_field('DELETE').'
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('workoutMode.show',
+                        $workoutMode) . '"><i class="fa fa-eye"></i></a>' .
+                    '<a title="Editar"  style="color: #000000" href="' . route('workoutMode.edit',
+                        $workoutMode) . '"><i class="fa fa-edit"></i></a>' .
+                    '<a title="Deletar" href=""
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Modo de Exercicio ?\')){document.getElementById(\'form-delete' . $workoutMode['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $workoutMode['id'] . '" style="display:none" action="' . route('workoutMode.destroy',
+                        $workoutMode) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -36,11 +39,11 @@ class TricepsDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param Triceps $model
+     * @param WorkoutMode $model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Triceps $model)
+    public function query(WorkoutMode $model)
     {
         return $model->newQuery();
     }
@@ -58,7 +61,7 @@ class TricepsDataTable extends DataTable
                 'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
@@ -74,9 +77,9 @@ class TricepsDataTable extends DataTable
     {
         return [
             'id',
-            'exercise',
+            'name',
             'description',
-            'action' => ['searchable' => false, 'orderable' => false]
+            'acoes'
         ];
     }
 
@@ -87,6 +90,6 @@ class TricepsDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Triceps_' . date('YmdHis');
+        return 'WorkoutMode_' . date('YmdHis');
     }
 }
