@@ -60,16 +60,14 @@ class WorkoutModeController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreWorkoutMode = $this->service->store($data);
-//        dd($resultFromStoreWorkoutMode);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreWorkoutMode['error'])) {
-            session()->flash('error', $resultFromStoreWorkoutMode['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'WorkoutMode adicionado com sucesso !');
+        session()->flash('status', 'Adicionado com sucesso !');
         return redirect(route('workout-mode.index'));
     }
 

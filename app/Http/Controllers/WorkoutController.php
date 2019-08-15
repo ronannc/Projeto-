@@ -24,7 +24,7 @@ class WorkoutController extends Controller
      */
     public function __construct(WorkoutRepository $repository, WorkoutService $service)
     {
-        $this->middleware('can:admin', ['except' => ['update', 'myCurrentTraining']]);
+        // $this->middleware('can:admin', ['except' => ['update', 'myCurrentTraining']]);
         $this->repository = $repository;
         $this->service = $service;
     }
@@ -38,13 +38,13 @@ class WorkoutController extends Controller
      */
     public function index(WorkoutDataTable $dataTable)
     {
-        if(User::isCliente() && User::cliente()->first() != null){
-            $cliente = User::cliente()->first();
-            $Workout = $cliente->Workout();
-            return $dataTable->with('data', $Workout)->render('layouts.Workout.index');
-        }
+        // if(User::isCliente() && User::cliente()->first() != null){
+        //     $cliente = User::cliente()->first();
+        //     $Workout = $cliente->Workout();
+        //     return $dataTable->with('data', $Workout)->render('layouts.Workout.index');
+        // }
         $Workout = Workout::all();
-        return $dataTable->with('data', $Workout)->render('layouts.Workout.index');
+        return $dataTable->with('data', $Workout)->render('layouts.workout.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class WorkoutController extends Controller
     public function create()
     {
         $extraData = $this->repository->getExtraData();
-        return view('layouts.Workout.create', compact('extraData') );
+        return view('layouts.workout.create', compact('extraData'));
     }
 
     /**
@@ -115,8 +115,8 @@ class WorkoutController extends Controller
                 'id_lower_member' => $lower_member
             ]);
         }
-        session()->flash('status', 'Workout adicionado com sucesso !');
-        return redirect(route('Workout.edit', $resultFromStoreWorkout));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('workout.edit', $resultFromStoreWorkout));
     }
 
     /**
@@ -129,7 +129,7 @@ class WorkoutController extends Controller
     public function show($id)
     {
         $data = $this->repository->getExerciciosWorkout($id);
-        return view('layouts.Workout.show', compact('data'));
+        return view('layouts.workout.show', compact('data'));
     }
 
     /**
@@ -143,7 +143,7 @@ class WorkoutController extends Controller
     {
         $extraData = $this->repository->getExtraData();
         $data = $this->repository->getExerciciosWorkout($id);
-        return view('layouts.Workout.edit', compact('extraData'), compact('data'));
+        return view('layouts.workout.edit', compact('extraData'), compact('data'));
     }
 
     /**
@@ -213,7 +213,7 @@ class WorkoutController extends Controller
             session()->flash('error', $resultFromUpdateWorkout['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Workout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
         return back();
     }

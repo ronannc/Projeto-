@@ -21,13 +21,13 @@ class WorkoutDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (Workout $Workout) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('Workout.show',
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('workout.show',
                         $Workout) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route('Workout.edit',
+                    '<a title="Editar"  style="color: #000000" href="' . route('workout.edit',
                         $Workout) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Workout['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('Workout.destroy',
+        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('workout.destroy',
                         $Workout) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -77,12 +77,13 @@ class WorkoutDataTable extends DataTable
     {
         return [
             'id',
-            'inicio',
-            'descricao',
-            'objetivo',
-            'intervalo',
-            'metodo',
-            'id_cliente',
+            'start',
+            'next_workout',
+            'goal',
+            'interval',
+            'frequency',
+            'id_method',
+            'id_client',
             'acoes'
         ];
     }
