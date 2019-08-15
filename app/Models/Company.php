@@ -8,7 +8,15 @@ class Company extends Model
 {
     protected $fillable = [
         'name',
+        'social_reason',
         'cnpj',
-        'phone'
+        'phone',
+        'street',
+        'neighborhood',
+        'number',
+        'complement',
+        'zipcode',
+        'logo',
+        'city_id'
     ];
 }
