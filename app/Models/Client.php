@@ -13,7 +13,13 @@ class Client extends Model
         'cpf',
         'phone',
         'birthday',
-        'weight'
+        'avatar',
+        'street',
+        'neighborhood',
+        'number',
+        'complement',
+        'zipcode',
+        'city_id'
     ];
 
     public function workout()

@@ -79,6 +79,12 @@ class ClientDataTable extends DataTable
             'cpf',
             'phone',
             'birthday',
+            'street',
+            'neighborhood',
+            'number',
+            'complement',
+            'zipcode',
+            'city_id',
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,
