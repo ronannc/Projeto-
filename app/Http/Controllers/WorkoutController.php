@@ -69,54 +69,54 @@ class WorkoutController extends Controller
     {
         $data = $request->all();
         $data['status'] = 0;
-        $resultFromStoreWorkout = $this->service->store($data);
+        $response = $this->service->store($data);
 
-        if (!empty($resultFromStoreWorkout['error'])) {
-            session()->flash('error', $resultFromStoreWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
         foreach ($data['triceps'] as $triceps) {
             $this->repository->save_triceps_Workout([
-                'id_workout' => $resultFromStoreWorkout['id'],
+                'id_workout' => $response['id'],
                 'id_triceps' => $triceps]);
         }
 
         foreach ($data['biceps'] as $biceps) {
             $this->repository->save_biceps_Workout([
-                'id_workout' => $resultFromStoreWorkout['id'],
+                'id_workout' => $response['id'],
                 'id_biceps'  => $biceps]);
         }
 
         foreach ($data['back'] as $back) {
             $this->repository->save_back_Workout([
-                'id_workout' => $resultFromStoreWorkout['id'],
+                'id_workout' => $response['id'],
                 'id_back'    => $back
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
             $this->repository->save_shoulder_Workout([
-                'id_workout'  => $resultFromStoreWorkout['id'],
+                'id_workout'  => $response['id'],
                 'id_shoulder' => $shoulder
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
             $this->repository->save_breast_Workout([
-                'id_workout' => $resultFromStoreWorkout['id'],
+                'id_workout' => $response['id'],
                 'id_breast'  => $breast
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
             $this->repository->save_lower_member_Workout([
-                'id_workout'      => $resultFromStoreWorkout['id'],
+                'id_workout'      => $response['id'],
                 'id_lower_member' => $lower_member
             ]);
         }
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('workout.edit', $resultFromStoreWorkout));
+        return redirect(route('workout.edit', $response));
     }
 
     /**
@@ -207,10 +207,10 @@ class WorkoutController extends Controller
             $data['status'] = 0;
         }
 
-        $resultFromUpdateWorkout = $this->service->update($data, $workout);
+        $response = $this->service->update($data, $workout);
 
-        if (!empty($resultFromUpdateWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
@@ -227,13 +227,13 @@ class WorkoutController extends Controller
      */
     public function destroy(Workout $workout)
     {
-        $resultFromDeleteWorkout = $this->service->delete($workout);
-        if (!empty($resultFromDeleteWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteWorkout['message']);
+        $response = $this->service->delete($workout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Workout deletado com sucesso!');
-        return redirect(route('Workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('workout.index'));
     }
 
     public function myCurrentTraining(){
@@ -243,6 +243,6 @@ class WorkoutController extends Controller
                                     ->first();
 
         $data = $this->repository->getExerciciosWorkout($Workout['id']);
-        return view('layouts.Workout.show', compact('data'));
+        return view('layouts.workout.show', compact('data'));
     }
 }

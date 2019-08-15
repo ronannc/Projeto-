@@ -47,7 +47,7 @@ class TricepsWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.triceps_workout.create');
+        return view('layouts.triceps-workout.create');
     }
 
     /**
@@ -59,28 +59,27 @@ class TricepsWorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreTricepsWorkout = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreTricepsWorkout['error'])) {
-            session()->flash('error', $resultFromStoreTricepsWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'TricepsWorkout adicionado com sucesso !');
-        return redirect(route('triceps_workout.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('triceps-workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param TricepsWorkout $triceps_workout
+     * @param TricepsWorkout $tricepsWorkout
      *
      * @return Response
      */
-    public function show(TricepsWorkout $triceps_workout)
+    public function show(TricepsWorkout $tricepsWorkout)
     {
-        return view('layouts.triceps_workout.show', compact('triceps_workout'));
+        return view('layouts.triceps-workout.show', compact('tricepsWorkout'));
     }
 
     /**
@@ -92,9 +91,8 @@ class TricepsWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $triceps_workout = TricepsWorkout::find($id);
-//        dd($triceps_workout);
-        return view('layouts.triceps_workout.edit', compact('triceps_workout'));
+        $tricepsWorkout = TricepsWorkout::find($id);
+        return view('layouts.triceps-workout.edit', compact('tricepsWorkout'));
     }
 
     /**
@@ -107,17 +105,16 @@ class TricepsWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $triceps_workout = TricepsWorkout::find($id);
 
-        $resultFromUpdateTricepsWorkout = $this->service->update($data, $triceps_workout);
-        if (!empty($resultFromUpdateTricepsWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateTricepsWorkout['message']);
+        $response = $this->service->update($request->all(), $triceps_workout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'TricepsWorkout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('triceps_workout.index'));
+        return redirect(route('triceps-workout.index'));
     }
 
     /**
@@ -129,15 +126,14 @@ class TricepsWorkoutController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $triceps_workout = TricepsWorkout::find($id);
+        $tricepsWorkout = TricepsWorkout::find($id);
 
-        $resultFromDeleteTricepsWorkout = $this->service->delete($triceps_workout);
-        if (!empty($resultFromDeleteTricepsWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteTricepsWorkout['message']);
+        $response = $this->service->delete($tricepsWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'TricepsWorkout deletado com sucesso!');
-        return redirect(route('triceps_workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('triceps-workout.index'));
     }
 }

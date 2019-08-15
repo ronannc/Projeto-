@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\DataTables\BicepsDataTable;
 use App\Models\Biceps;
-use Illuminate\Http\Request;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Services\BicepsService;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BicepsController extends Controller
 {
@@ -17,8 +18,9 @@ class BicepsController extends Controller
 
     /**
      * BicepsController constructor.
+     *
      * @param BicepsRepository $repository
-     * @param BicepsService $service
+     * @param BicepsService    $service
      */
     public function __construct(BicepsRepository $repository, BicepsService $service)
     {
@@ -29,7 +31,9 @@ class BicepsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param BicepsDataTable $dataTable
+     *
+     * @return Response
      */
     public function index(BicepsDataTable $dataTable)
     {
@@ -40,7 +44,7 @@ class BicepsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -50,28 +54,29 @@ class BicepsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     *
+     * @return Response
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreBiceps = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreBiceps['error'])) {
-            session()->flash('error', $resultFromStoreBiceps['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Biceps adicionado com sucesso !');
+        session()->flash('status', 'Adicionado com sucesso !');
         return redirect(route('biceps.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Biceps  $biceps
-     * @return \Illuminate\Http\Response
+     * @param Biceps $biceps
+     *
+     * @return Response
      */
     public function show(Biceps $biceps)
     {
@@ -81,8 +86,9 @@ class BicepsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Biceps  $biceps
-     * @return \Illuminate\Http\Response
+     * @param $id
+     *
+     * @return Response
      */
     public function edit($id)
     {
@@ -93,21 +99,21 @@ class BicepsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Biceps  $biceps
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param         $id
+     *
+     * @return Response
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $biceps = Biceps::find($id);
 
-        $resultFromUpdateBiceps = $this->service->update($data, $biceps);
-        if (!empty($resultFromUpdateBiceps['error'])) {
-            session()->flash('error', $resultFromUpdateBiceps['message']);
+        $response = $this->service->update($request->all(), $biceps);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Biceps atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
         return redirect(route('biceps.index'));
     }
@@ -115,19 +121,20 @@ class BicepsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Biceps  $biceps
-     * @return \Illuminate\Http\Response
+     * @param $id
+     *
+     * @return Response
      */
     public function destroy($id)
     {
         $biceps = Biceps::find($id);
 
-        $resultFromDeleteBiceps = $this->service->delete($biceps);
-        if (!empty($resultFromDeleteBiceps['error'])) {
-            session()->flash('error', $resultFromDeleteBiceps['message']);
+        $response = $this->service->delete($biceps);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Biceps deletado com sucesso!');
+        session()->flash('success', 'Deletado com sucesso!');
         return redirect(route('biceps.index'));
     }
 }

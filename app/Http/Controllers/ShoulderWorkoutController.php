@@ -47,7 +47,7 @@ class ShoulderWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.shoulder_workout.create');
+        return view('layouts.shoulder-workout.create');
     }
 
     /**
@@ -59,28 +59,27 @@ class ShoulderWorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreShoulderWorkout = $this->service->store($data);
+        $response = $this->service->store($data = $request->all());
 
-        if (!empty($resultFromStoreShoulderWorkout['error'])) {
-            session()->flash('error', $resultFromStoreShoulderWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'ShoulderWorkout adicionado com sucesso !');
-        return redirect(route('shoulder_workout.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('shoulder-workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param ShoulderWorkout $shoulder_workout
+     * @param ShoulderWorkout $shoulderWorkout
      *
      * @return Response
      */
-    public function show(ShoulderWorkout $shoulder_workout)
+    public function show(ShoulderWorkout $shoulderWorkout)
     {
-        return view('layouts.shoulder_workout.show', compact('shoulder_workout'));
+        return view('layouts.shoulder-workout.show', compact('shoulderWorkout'));
     }
 
     /**
@@ -92,9 +91,8 @@ class ShoulderWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $shoulder_workout = ShoulderWorkout::find($id);
-//        dd($shoulder_workout);
-        return view('layouts.shoulder_workout.edit', compact('shoulder_workout'));
+        $shoulderWorkout = ShoulderWorkout::find($id);
+        return view('layouts.shoulder-workout.edit', compact('shoulderWorkout'));
     }
 
     /**
@@ -107,17 +105,16 @@ class ShoulderWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $shoulder_workout = ShoulderWorkout::find($id);
+        $shoulderWorkout = ShoulderWorkout::find($id);
 
-        $resultFromUpdateShoulderWorkout = $this->service->update($data, $shoulder_workout);
-        if (!empty($resultFromUpdateShoulderWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateShoulderWorkout['message']);
+        $response = $this->service->update($request->all(), $shoulderWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'ShoulderWorkout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('shoulder_workout.index'));
+        return redirect(route('shoulder-workout.index'));
     }
 
     /**
@@ -129,15 +126,14 @@ class ShoulderWorkoutController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $shoulder_workout = ShoulderWorkout::find($id);
+        $shoulderWorkout = ShoulderWorkout::find($id);
 
-        $resultFromDeleteShoulderWorkout = $this->service->delete($shoulder_workout);
-        if (!empty($resultFromDeleteShoulderWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteShoulderWorkout['message']);
+        $response = $this->service->delete($shoulderWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'ShoulderWorkout deletado com sucesso!');
-        return redirect(route('shoulder_workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('shoulder-workout.index'));
     }
 }

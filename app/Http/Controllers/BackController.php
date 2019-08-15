@@ -60,29 +60,27 @@ class BackController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreBack = $this->service->store($data);
-//        dd($resultFromStoreBack);
+        $response = $this->service->store($data = $request->all());
 
-        if (!empty($resultFromStoreBack['error'])) {
-            session()->flash('error', $resultFromStoreBack['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Back adicionado com sucesso !');
-        return redirect(route('Back.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('back.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Back $Back
+     * @param Back $back
      *
      * @return Response
      */
-    public function show(Back $Back)
+    public function show(Back $back)
     {
-        return view('layouts.back.show', compact('Back'));
+        return view('layouts.back.show', compact('back'));
     }
 
     /**
@@ -94,9 +92,8 @@ class BackController extends Controller
      */
     public function edit($id)
     {
-        $Back = Back::find($id);
-//        dd($Back);
-        return view('layouts.back.edit', compact('Back'));
+        $back = Back::find($id);
+        return view('layouts.back.edit', compact('back'));
     }
 
     /**
@@ -109,17 +106,16 @@ class BackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $Back = Back::find($id);
+        $back = Back::find($id);
 
-        $resultFromUpdateBack = $this->service->update($data, $Back);
-        if (!empty($resultFromUpdateBack['error'])) {
-            session()->flash('error', $resultFromUpdateBack['message']);
+        $response = $this->service->update($request->all(), $back);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Back atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('Back.index'));
+        return redirect(route('back.index'));
     }
 
     /**
@@ -131,15 +127,14 @@ class BackController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $Back = Back::find($id);
+        $back = Back::find($id);
 
-        $resultFromDeleteBack = $this->service->delete($Back);
-        if (!empty($resultFromDeleteBack['error'])) {
-            session()->flash('error', $resultFromDeleteBack['message']);
+        $response = $this->service->delete($back);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Back deletado com sucesso!');
-        return redirect(route('Back.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('back.index'));
     }
 }

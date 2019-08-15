@@ -1,9 +1,9 @@
 <div class="form-group">
-    <label for="exercicio">Exercicio</label>
+    <label for="exercise">Exercício</label>
     <input type="text"
            class="form-control"
-           name="exercicio"
-           id="input_exercicio"
+           name="exercise"
+           id="input_exercise"
            placeholder="Nome do Exercicio"
-           value ="{{ old('exercicio') ?? $extraData['exercicio'] ?? null }}">
+           value="{{ old('exercise') ?? $extraData['exercise'] ?? null }}">
 </div>

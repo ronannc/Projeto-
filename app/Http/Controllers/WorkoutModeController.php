@@ -93,7 +93,6 @@ class WorkoutModeController extends Controller
     public function edit($id)
     {
         $workoutMode = WorkoutMode::find($id);
-//        dd($workoutMode);
         return view('layouts.workout-mode.edit', compact('workoutMode'));
     }
 
@@ -107,15 +106,14 @@ class WorkoutModeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $workoutMode = WorkoutMode::find($id);
 
-        $resultFromUpdateWorkoutMode = $this->service->update($data, $workoutMode);
-        if (!empty($resultFromUpdateWorkoutMode['error'])) {
-            session()->flash('error', $resultFromUpdateWorkoutMode['message']);
+        $response = $this->service->update($request->all(), $workoutMode);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'WorkoutMode atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
         return redirect(route('workout-mode.index'));
     }
@@ -129,15 +127,14 @@ class WorkoutModeController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
         $workoutMode = WorkoutMode::find($id);
 
-        $resultFromDeleteWorkoutMode = $this->service->delete($workoutMode);
-        if (!empty($resultFromDeleteWorkoutMode['error'])) {
-            session()->flash('error', $resultFromDeleteWorkoutMode['message']);
+        $response = $this->service->delete($workoutMode);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'WorkoutMode deletado com sucesso!');
+        session()->flash('success', 'Deletado com sucesso!');
         return redirect(route('workout-mode.index'));
     }
 }

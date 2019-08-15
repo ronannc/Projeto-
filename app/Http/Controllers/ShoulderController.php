@@ -62,27 +62,27 @@ class ShoulderController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $resultFromStoreShoulder = $this->service->store($data);
+        $response = $this->service->store($data);
 
-        if (!empty($resultFromStoreShoulder['error'])) {
-            session()->flash('error', $resultFromStoreShoulder['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Shoulder adicionado com sucesso !');
-        return redirect(route('Shoulder.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('shoulder.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Shoulder $Shoulder
+     * @param Shoulder $shoulder
      *
      * @return Response
      */
-    public function show(Shoulder $Shoulder)
+    public function show(Shoulder $shoulder)
     {
-        return view('layouts.shoulder.show', compact('Shoulder'));
+        return view('layouts.shoulder.show', compact('shoulder'));
     }
 
     /**
@@ -94,9 +94,8 @@ class ShoulderController extends Controller
      */
     public function edit($id)
     {
-        $Shoulder = Shoulder::find($id);
-//        dd($Shoulder);
-        return view('layouts.shoulder.edit', compact('Shoulder'));
+        $shoulder = Shoulder::find($id);
+        return view('layouts.shoulder.edit', compact('shoulder'));
     }
 
     /**
@@ -110,16 +109,16 @@ class ShoulderController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $Shoulder = Shoulder::find($id);
+        $shoulder = Shoulder::find($id);
 
-        $resultFromUpdateShoulder = $this->service->update($data, $Shoulder);
-        if (!empty($resultFromUpdateShoulder['error'])) {
-            session()->flash('error', $resultFromUpdateShoulder['message']);
+        $response = $this->service->update($data, $shoulder);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Shoulder atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('Shoulder.index'));
+        return redirect(route('shoulder.index'));
     }
 
     /**
@@ -131,15 +130,14 @@ class ShoulderController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $Shoulder = Shoulder::find($id);
+        $shoulder = Shoulder::find($id);
 
-        $resultFromDeleteShoulder = $this->service->delete($Shoulder);
-        if (!empty($resultFromDeleteShoulder['error'])) {
-            session()->flash('error', $resultFromDeleteShoulder['message']);
+        $response = $this->service->delete($shoulder);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Shoulder deletado com sucesso!');
-        return redirect(route('Shoulder.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('shoulder.index'));
     }
 }

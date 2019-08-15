@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 
 use App\DataTables\TricepsDataTable;
 use App\Models\Triceps;
-use Illuminate\Http\Request;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Services\TricepsService;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class TricepsController extends Controller
 {
@@ -18,8 +19,9 @@ class TricepsController extends Controller
 
     /**
      * TricepsController constructor.
+     *
      * @param TricepsRepository $repository
-     * @param TricepsService $service
+     * @param TricepsService    $service
      */
     public function __construct(TricepsRepository $repository, TricepsService $service)
     {
@@ -30,7 +32,9 @@ class TricepsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param TricepsDataTable $dataTable
+     *
+     * @return Response
      */
     public function index(TricepsDataTable $dataTable)
     {
@@ -41,7 +45,7 @@ class TricepsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -51,28 +55,29 @@ class TricepsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     *
+     * @return Response
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreTriceps = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreTriceps['error'])) {
-            session()->flash('error', $resultFromStoreTriceps['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Triceps adicionado com sucesso !');
+        session()->flash('status', 'Adicionado com sucesso !');
         return redirect(route('triceps.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Triceps  $triceps
-     * @return \Illuminate\Http\Response
+     * @param Triceps $triceps
+     *
+     * @return Response
      */
     public function show(Triceps $triceps)
     {
@@ -82,34 +87,34 @@ class TricepsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Triceps  $triceps
-     * @return \Illuminate\Http\Response
+     * @param $id
+     *
+     * @return Response
      */
     public function edit($id)
     {
         $triceps = Triceps::find($id);
-//        dd($triceps);
         return view('layouts.triceps.edit', compact('triceps'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Triceps  $triceps
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param         $id
+     *
+     * @return Response
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
         $triceps = Triceps::find($id);
 
-        $resultFromUpdateTriceps = $this->service->update($data, $triceps);
-        if (!empty($resultFromUpdateTriceps['error'])) {
-            session()->flash('error', $resultFromUpdateTriceps['message']);
+        $response = $this->service->update($request->all(), $triceps);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Triceps atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
         return redirect(route('triceps.index'));
     }
@@ -117,20 +122,20 @@ class TricepsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Triceps  $triceps
-     * @return \Illuminate\Http\Response
+     * @param $id
+     *
+     * @return Response
      */
     public function destroy($id)
     {
-//        dd($id);
         $triceps = Triceps::find($id);
 
-        $resultFromDeleteTriceps = $this->service->delete($triceps);
-        if (!empty($resultFromDeleteTriceps['error'])) {
-            session()->flash('error', $resultFromDeleteTriceps['message']);
+        $response = $this->service->delete($triceps);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Triceps deletado com sucesso!');
+        session()->flash('success', 'Deletado com sucesso!');
         return redirect(route('triceps.index'));
     }
 }

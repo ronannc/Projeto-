@@ -61,28 +61,27 @@ class LowerMemberController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreLowerMember = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreLowerMember['error'])) {
-            session()->flash('error', $resultFromStoreLowerMember['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'LowerMember adicionado com sucesso !');
-        return redirect(route('layouts.lower-member.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('lower-member.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param LowerMember $LowerMember
+     * @param LowerMember $lowerMember
      *
      * @return Response
      */
-    public function show(LowerMember $LowerMember)
+    public function show(LowerMember $lowerMember)
     {
-        return view('layouts.lower-member.show', compact('LowerMember'));
+        return view('layouts.lower-member.show', compact('lowerMember'));
     }
 
     /**
@@ -94,9 +93,8 @@ class LowerMemberController extends Controller
      */
     public function edit($id)
     {
-        $LowerMember = LowerMember::find($id);
-//        dd($LowerMember);
-        return view('layouts.lower-member.edit', compact('LowerMember'));
+        $lowerMember = LowerMember::find($id);
+        return view('layouts.lower-member.edit', compact('lowerMember'));
     }
 
     /**
@@ -109,17 +107,16 @@ class LowerMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $LowerMember = LowerMember::find($id);
+        $lowerMember = LowerMember::find($id);
 
-        $resultFromUpdateLowerMember = $this->service->update($data, $LowerMember);
-        if (!empty($resultFromUpdateLowerMember['error'])) {
-            session()->flash('error', $resultFromUpdateLowerMember['message']);
+        $response = $this->service->update($request->all(), $lowerMember);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'LowerMember atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('layouts.lower-member.index'));
+        return redirect(route('lower-member.index'));
     }
 
     /**
@@ -131,15 +128,14 @@ class LowerMemberController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $LowerMember = LowerMember::find($id);
+        $lowerMember = LowerMember::find($id);
 
-        $resultFromDeleteLowerMember = $this->service->delete($LowerMember);
-        if (!empty($resultFromDeleteLowerMember['error'])) {
-            session()->flash('error', $resultFromDeleteLowerMember['message']);
+        $response = $this->service->delete($lowerMember);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'LowerMember deletado com sucesso!');
-        return redirect(route('layouts.lower-member.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('lower-member.index'));
     }
 }

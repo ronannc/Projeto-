@@ -47,7 +47,7 @@ class LowerMemberWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.lower_member_workout.create');
+        return view('layouts.lower-member-workout.create');
     }
 
     /**
@@ -60,27 +60,27 @@ class LowerMemberWorkoutController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $resultFromStoreLowerMemberWorkout = $this->service->store($data);
+        $response = $this->service->store($data);
 
-        if (!empty($resultFromStoreLowerMemberWorkout['error'])) {
-            session()->flash('error', $resultFromStoreLowerMemberWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'LowerMemberWorkout adicionado com sucesso !');
-        return redirect(route('lower_member_workout.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('lower-member-workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param LowerMemberWorkout $lower_member_workout
+     * @param LowerMemberWorkout $lowerMemberWorkout
      *
      * @return Response
      */
-    public function show(LowerMemberWorkout $lower_member_workout)
+    public function show(LowerMemberWorkout $lowerMemberWorkout)
     {
-        return view('layouts.lower_member_workout.show', compact('lower_member_workout'));
+        return view('layouts.lower-member-workout.show', compact('lowerMemberWorkout'));
     }
 
     /**
@@ -92,9 +92,8 @@ class LowerMemberWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $lower_member_workout = LowerMemberWorkout::find($id);
-//        dd($lower_member_workout);
-        return view('layouts.lower_member_workout.edit', compact('lower_member_workout'));
+        $lowerMemberWorkout = LowerMemberWorkout::find($id);
+        return view('layouts.lower-member-workout.edit', compact('lowerMemberWorkout'));
     }
 
     /**
@@ -108,16 +107,16 @@ class LowerMemberWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $lower_member_workout = LowerMemberWorkout::find($id);
+        $lowerMemberWorkout = LowerMemberWorkout::find($id);
 
-        $resultFromUpdateLowerMemberWorkout = $this->service->update($data, $lower_member_workout);
-        if (!empty($resultFromUpdateLowerMemberWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateLowerMemberWorkout['message']);
+        $response = $this->service->update($data, $lowerMemberWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'LowerMemberWorkout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('lower_member_workout.index'));
+        return redirect(route('lower-member-workout.index'));
     }
 
     /**
@@ -129,15 +128,14 @@ class LowerMemberWorkoutController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $lower_member_workout = LowerMemberWorkout::find($id);
+        $lowerMemberWorkout = LowerMemberWorkout::find($id);
 
-        $resultFromDeleteLowerMemberWorkout = $this->service->delete($lower_member_workout);
-        if (!empty($resultFromDeleteLowerMemberWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteLowerMemberWorkout['message']);
+        $response = $this->service->delete($lowerMemberWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'LowerMemberWorkout deletado com sucesso!');
-        return redirect(route('lower_member_workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('lower-member-workout.index'));
     }
 }
