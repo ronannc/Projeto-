@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('back', $back)}}" method="post">
+        <form action="{{route('back.update', $back)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">

@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('shoulder', $shoulder)}}" method="post">
+        <form action="{{route('shoulder.update', $shoulder)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
