@@ -81,7 +81,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $cliente = Client::create([
+        $client = Client::create([
             'name'     => $data['name'],
             'phone'    => $data['phone'],
             'cpf'      => $data['cpf'],
@@ -92,7 +92,7 @@ class RegisterController extends Controller
             'name'       => $data['name'],
             'email'      => $data['email'],
             'password'   => Hash::make($data['password']),
-            'id_cliente' => $cliente['id']
+            'id_cliente' => $client['id']
         ]);
         $user->assignRole(User::CLIENTE);
 

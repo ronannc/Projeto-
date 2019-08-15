@@ -13,8 +13,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
     use HasRoles;
+    const SUPERADMIN = 'superAdmin';
     const ADMIN = 'admin';
-    const CLIENTE = 'client';
+    const CLIENT = 'client';
 
     /**
      * The attributes that are mass assignable.
@@ -34,15 +35,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-//    public static function isAdmin()
-//    {
-//        return Auth::check() && Auth::user()->hasRole(self::ADMIN);
-//    }
-//
-//    public static function isCliente()
-//    {
-//        return Auth::check() && Auth::user()->hasRole(self::CLIENTE);
-//    }
+    public static function isSuperAdmin()
+    {
+        return Auth::check() && Auth::user()->hasRole(self::SUPERADMIN);
+    }
+
+    public static function isAdmin()
+    {
+        return Auth::check() && Auth::user()->hasRole(self::ADMIN);
+    }
+
+    public static function isClient()
+    {
+        return Auth::check() && Auth::user()->hasRole(self::CLIENT);
+    }
 
     public static function client()
     {

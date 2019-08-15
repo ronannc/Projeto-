@@ -17,10 +17,14 @@ class PermissionTableSeeder extends Seeder
         # Users
         Permission::create([
             'id'   => 1,
-            'name' => 'admin'
+            'name' => 'superAdmin'
         ]);
         Permission::create([
             'id'   => 2,
+            'name' => 'admin'
+        ]);
+        Permission::create([
+            'id'   => 3,
             'name' => 'client'
         ]);
     }

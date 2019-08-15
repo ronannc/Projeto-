@@ -25,7 +25,6 @@ use App\Repositories\Contracts\BicepsWorkoutRepository;
 use App\Repositories\Contracts\BreastRepository;
 use App\Repositories\Contracts\BreastWorkoutRepository;
 use App\Repositories\Contracts\ClientRepository;
-use App\Repositories\Contracts\ConfiguracaoClienteRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 use App\Repositories\Contracts\ShoulderRepository;
@@ -42,7 +41,6 @@ use App\Repositories\EloquentBicepsWorkoutRepository;
 use App\Repositories\EloquentBreastRepository;
 use App\Repositories\EloquentBreastWorkoutRepository;
 use App\Repositories\EloquentClientRepository;
-use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
@@ -85,11 +83,6 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(ClientRepository::class, function () {
             return new EloquentClientRepository(new Client());
         });
-
-        $this->app->bind(ConfiguracaoClienteRepository::class, function () {
-            return new EloquentConfiguracaoClienteRepository(new ConfiguracaoCliente());
-        });
-
 
         $this->app->bind(BackRepository::class, function () {
             return new EloquentBackRepository(new Back());
@@ -157,7 +150,6 @@ class RepositoriesServiceProvider extends ServiceProvider
             BicepsRepository::class,
             BicepsWorkoutRepository::class,
             ClientRepository::class,
-            ConfiguracaoClienteRepository::class,
             BackRepository::class,
             BackWorkoutRepository::class,
             LowerMemberRepository::class,

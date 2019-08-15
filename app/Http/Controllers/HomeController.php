@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -21,22 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        if(User::isAdmin()){
-            return view('home');
-//        }else{
-//            $client = User::client()->first();
-//
-//            if($client->configuracao() == null){
-//
-//                auth()->logout();
-//                session()->flash('success', 'Sua conta foi criada com sucesso !!! Aguarde os instrutores entrar em contato para liberar seu acesso');
-//
-//                return view('welcome');
-//            }else {
-//
-////                return redirect(route('myAcount', ['id' => $client['id']]));
-//                return redirect(route('myCurrentTraining', ['id' => $client['id']]));
-//            }
-//        }
+        return view('home');
     }
 }
