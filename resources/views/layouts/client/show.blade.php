@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <div class="box box-widget widget-user">
                 <div class="widget-user-header bg-aqua-active">
-                    <h3 class="widget-user-username">{{$cliente['nome']}}</h3>
+                    <h3 class="widget-user-username">{{$cliente['name']}}</h3>
                     <h5 class="widget-user-desc">Identificador: {{$cliente['id'] ?? ''}}</h5>
                 </div>
 
@@ -27,13 +27,13 @@
                         </div>
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">{{$cliente['telefone'] ?? ''}}</h5>
+                                <h5 class="description-header">{{$cliente['phone'] ?? ''}}</h5>
                                 <span class="description-text">Telefone</span>
                             </div>
                         </div>
                         <div class="col-sm-4 border-right">
                             <div class="description-block">
-                                <h5 class="description-header">{{$cliente['nascimento'] ?? ''}}</h5>
+                                <h5 class="description-header">{{$cliente['birthday'] ?? ''}}</h5>
                                 <span class="description-text">Data Nascimento</span>
                             </div>
                         </div>

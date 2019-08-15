@@ -19,12 +19,12 @@
         <form action="{{route('client.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_text')
+                @include('layouts.components.input_name')
                 @include('layouts.components.input_cpf')
                 @include('layouts.components.input_nascimento')
                 @include('layouts.components.input_phone')
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuracao de workout</h3>
+                    <h3 class="box-title">Configuracao de treino</h3>
                 </div>
                 @include('layouts.components.input_peso')
 

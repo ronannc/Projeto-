@@ -21,7 +21,7 @@
             {{ method_field('PUT') }}
             <input type="text" class="hide" name="cliente" value="true">
             <div class="box-body">
-                @include('layouts.components.input_text')
+                @include('layouts.components.input_name')
                 @include('layouts.components.input_cpf')
                 @include('layouts.components.input_nascimento')
                 @include('layouts.components.input_phone')
