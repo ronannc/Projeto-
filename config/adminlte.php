@@ -216,6 +216,24 @@ return [
         ],
 
         [
+            'header' => 'Empresas',
+        ],
+
+        [
+            'text'    => 'Empresas',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'company.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'company.create',
+                ],
+            ],
+        ],
+
+        [
             'header' => 'Treinos',
         ],
 

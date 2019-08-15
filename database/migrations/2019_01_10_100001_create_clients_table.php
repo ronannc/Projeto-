@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('phone');
             $table->date('birthday')->nullable();
             $table->integer('id_company')->nullable();
-            $table->foreign('id_company')->references('id')->on('company');
+            $table->foreign('id_company')->references('id')->on('companies');
             $table->timestamps();
         });
     }

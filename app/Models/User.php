@@ -13,6 +13,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
     use HasRoles;
+
     const SUPERADMIN = 'superAdmin';
     const ADMIN = 'admin';
     const CLIENT = 'client';

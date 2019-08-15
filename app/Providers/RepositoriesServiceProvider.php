@@ -9,6 +9,7 @@ use App\Models\BicepsWorkout;
 use App\Models\Breast;
 use App\Models\BreastWorkout;
 use App\Models\Client;
+use App\Models\Company;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
 use App\Models\Shoulder;
@@ -25,6 +26,7 @@ use App\Repositories\Contracts\BicepsWorkoutRepository;
 use App\Repositories\Contracts\BreastRepository;
 use App\Repositories\Contracts\BreastWorkoutRepository;
 use App\Repositories\Contracts\ClientRepository;
+use App\Repositories\Contracts\CompanyRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
 use App\Repositories\Contracts\ShoulderRepository;
@@ -41,6 +43,7 @@ use App\Repositories\EloquentBicepsWorkoutRepository;
 use App\Repositories\EloquentBreastRepository;
 use App\Repositories\EloquentBreastWorkoutRepository;
 use App\Repositories\EloquentClientRepository;
+use App\Repositories\EloquentCompanyRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
@@ -136,6 +139,10 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentWorkoutModeRepository(new WorkoutMode());
         });
 
+        $this->app->bind(CompanyRepository::class, function () {
+            return new EloquentCompanyRepository(new Company());
+        });
+
     }
 
 
@@ -161,7 +168,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             WorkoutRepository::class,
             TricepsRepository::class,
             TricepsWorkoutRepository::class,
-            UserRepository::class
+            UserRepository::class,
+            CompanyRepository::class
         ];
     }
 }

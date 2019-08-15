@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('id_client')->nullable();
             $table->foreign('id_client')->references('id')->on('clients');
             $table->integer('id_company')->nullable();
-            $table->foreign('id_company')->references('id')->on('company');
+            $table->foreign('id_company')->references('id')->on('companies');
             $table->rememberToken();
             $table->timestamps();
         });

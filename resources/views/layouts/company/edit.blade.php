@@ -12,20 +12,22 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Exercicios - Ombro</h3>
+            <h3 class="box-title">Edicao de Empresas</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('shoulder.store')}}" method="post">
+        <form action="{{route('company.update', $company)}}" method="post">
             @csrf
+            {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio')
-                @include('layouts.components.input_description')
+                @include('layouts.components.input_text', ['config' => 'name', 'title' => 'Nome', 'data' => $company])
+                @include('layouts.components.input_text', ['config' => 'cnpj', 'title' => 'CNPJ', 'data' => $company])
+                @include('layouts.components.input_phone', ['data' => $company])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
+                <button type="submit" class="btn btn-info pull-right">Salvar</button>
             </div>
             <!-- /.box-footer -->
         </form>

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PermissionTableSeeder extends Seeder
 {
@@ -17,14 +18,28 @@ class PermissionTableSeeder extends Seeder
         # Users
         Permission::create([
             'id'   => 1,
-            'name' => 'superAdmin'
+            'name' => 'list'
         ]);
         Permission::create([
             'id'   => 2,
-            'name' => 'admin'
+            'name' => 'create'
         ]);
         Permission::create([
             'id'   => 3,
+            'name' => 'edit'
+        ]);
+        Permission::create([
+            'id'   => 4,
+            'name' => 'delete'
+        ]);
+
+        Role::create([
+            'name' => 'superAdmin'
+        ]);
+        Role::create([
+            'name' => 'admin'
+        ]);
+        Role::create([
             'name' => 'client'
         ]);
     }

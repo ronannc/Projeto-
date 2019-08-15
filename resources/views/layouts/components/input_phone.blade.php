@@ -1,4 +1,9 @@
 <div class="form-group">
-    <label for="telefone">Telefone</label>
-    <input type="text" class="form-control" name="telefone" id="input_telefone" placeholder="Telefone" value ="{{ old('telefone') ?? $extraData['telefone'] ?? null }}">
+    <label for="phone">Telefone</label>
+    <input type="text"
+           class="form-control"
+           name="phone" id="phone"
+           placeholder="Telefone"
+           value ="{{ old('phone') ?? $data['phone'] ?? null }}"
+    >
 </div>

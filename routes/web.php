@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles','RoleController');
-});
-
 Auth::routes();
 
 Route::group([
@@ -31,7 +27,6 @@ Route::group([
     ]
 ],
     function () {
-        Route::resource('roles','RoleController');
 
         Route::get('/home', 'HomeController@index')->name('home');
 
@@ -44,8 +39,5 @@ Route::group([
         Route::resource('workout', 'WorkoutController');
         Route::resource('client', 'ClientController');
         Route::resource('workout-mode', 'WorkoutModeController');
-
-//        Route::get('editMyAcount', 'ClientController@editMyAcount')->name('editMyAcount');
-//        Route::get('myAcount', 'ClientController@myAcount')->name('myAcount');
-//        Route::get('myCurrentTraining', 'WorkoutController@myCurrentTraining')->name('myCurrentTraining');
+        Route::resource('company', 'CompanyController');
  });

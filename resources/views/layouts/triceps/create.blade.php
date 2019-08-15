@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.menssagens')
+    @include('layouts.components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">

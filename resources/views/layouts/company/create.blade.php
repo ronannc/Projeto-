@@ -12,15 +12,16 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Exercicios - Ombro</h3>
+            <h3 class="box-title">Cadastro de Empresas</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('shoulder.store')}}" method="post">
+        <form action="{{route('company.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_exercicio')
-                @include('layouts.components.input_description')
+                @include('layouts.components.input_text', ['config' => 'name', 'title' => 'Nome'])
+                @include('layouts.components.input_text', ['config' => 'cnpj', 'title' => 'CNPJ'])
+                @include('layouts.components.input_phone')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

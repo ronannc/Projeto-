@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.menssagens')
+    @include('layouts.components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -20,7 +20,7 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_name')
+                @include('layouts.components.input_text')
                 @include('layouts.components.input_cpf')
                 @include('layouts.components.input_nascimento')
                 @include('layouts.components.input_phone')
