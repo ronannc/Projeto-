@@ -19,7 +19,7 @@ class WorkoutDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Workout $Workout) {
+            ->editColumn('actions', function (Workout $Workout) {
 
                 return '<a title="Visualizar"  style="color: #000000" href="' . route('workout.show',
                         $Workout) . '"><i class="fa fa-eye"></i></a>' .
@@ -84,7 +84,13 @@ class WorkoutDataTable extends DataTable
             'frequency',
             'id_method',
             'id_client',
-            'acoes'
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

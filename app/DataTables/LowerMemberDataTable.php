@@ -19,7 +19,7 @@ class LowerMemberDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (LowerMember $lower_members) {
+            ->editColumn('actions', function (LowerMember $lower_members) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('lower-member.edit',
                         $lower_members) . '"><i class="fa fa-edit"></i></a>
@@ -77,10 +77,13 @@ class LowerMemberDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'acoes' => [
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
                 'searchable' => false,
-                'orderable'  => false
-            ]
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

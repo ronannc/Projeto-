@@ -19,7 +19,7 @@ class ClientDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('action', function (Client $client) {
+            ->editColumn('actions', function (Client $client) {
 
                 return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
                         <a title="Editar"  style="color: #000000" href="' . route('client.edit', $client) . '"><i class="fa fa-edit"></i></a>
@@ -79,10 +79,13 @@ class ClientDataTable extends DataTable
             'cpf',
             'phone',
             'birthday',
-            'action' => [
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
                 'searchable' => false,
-                'orderable'  => false
-            ]
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

@@ -19,7 +19,7 @@ class BackDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Back $back){
+            ->editColumn('actions', function (Back $back) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('back.edit',
                         $back) . '"><i class="fa fa-edit"></i></a>' .
@@ -77,7 +77,13 @@ class BackDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'acoes' => ['searchable' => false, 'orderable' => false]
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

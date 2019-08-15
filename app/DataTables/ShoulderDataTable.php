@@ -19,7 +19,7 @@ class ShoulderDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Shoulder $Shoulder) {
+            ->editColumn('actions', function (Shoulder $Shoulder) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('shoulder.edit',
                         $Shoulder) . '"><i class="fa fa-edit"></i></a>' .
@@ -77,10 +77,13 @@ class ShoulderDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'acoes' => [
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
                 'searchable' => false,
-                'orderable'  => false
-            ]
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

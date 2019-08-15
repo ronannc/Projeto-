@@ -20,7 +20,7 @@ class TricepsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('action', function (Triceps $triceps){
+            ->editColumn('actions', function (Triceps $triceps) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('triceps.edit', $triceps) . '"><i class="fa fa-edit"></i></a>'.
                         '<a title="Deletar" href=""
@@ -76,7 +76,13 @@ class TricepsDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'action' => ['searchable' => false, 'orderable' => false]
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 
