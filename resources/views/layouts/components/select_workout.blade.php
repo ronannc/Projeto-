@@ -8,8 +8,8 @@
 ?>
 
 <div class="form-group">
-    <label for="id_workout">Treino</label>
-    <select class="multiple form-control select2" data-placeholder="Selecione os exercicios de biceps" name="id_workout"
+    <label for="workout_id">Treino</label>
+    <select class="multiple form-control select2" data-placeholder="Selecione os exercicios de biceps" name="workout_id"
             style="width: 100%">
         @foreach($extraData['workout'] as $workout)
             <option value="{{$workout['id']}}">{{$workout['descricao']}}</option>

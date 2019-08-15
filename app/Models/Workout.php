@@ -12,8 +12,8 @@ class Workout extends Model
         'note',
         'goal',
         'interval',
-        'id_method',
+        'method_id',
         'frequency',
-        'id_client',
+        'client_id',
     ];
 }

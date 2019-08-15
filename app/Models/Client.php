@@ -24,7 +24,7 @@ class Client extends Model
 
     public function workout()
     {
-        return Workout::where('id_client', $this->id)->get();
+        return Workout::where('client_id', $this->id)->get();
     }
 }
 

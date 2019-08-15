@@ -64,7 +64,7 @@ class WorkoutService
     public function process_data($data, $formula_workout = false)
     {
         if ($formula_workout) {
-            $cliente = Client::find($data['formula_workout']['id_cliente']);
+            $cliente = Client::find($data['formula_workout']['client_ide']);
         }
         //tem que receber o peso do client para calcular a carga segundo a formula
         $collect = array();

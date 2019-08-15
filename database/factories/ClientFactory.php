@@ -2,6 +2,7 @@
 
 use App\Models\City;
 use App\Models\Client;
+use App\Models\Company;
 use Faker\Generator as Faker;
 
 /*
@@ -28,5 +29,6 @@ $factory->define(Client::class, function (Faker $faker) {
         'complement'   => $faker->company,
         'zipcode'      => rand(90000, 99999) . '-' . rand(1, 999),
         'city_id'      => City::with([])->inRandomOrder()->first()->id,
+        'company_id'   => Company::with([])->inRandomOrder()->first()->id,
     ];
 });

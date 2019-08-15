@@ -19,10 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('id_client')->nullable();
-            $table->foreign('id_client')->references('id')->on('clients');
-            $table->integer('id_company')->nullable();
-            $table->foreign('id_company')->references('id')->on('companies');
+            $table->integer('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('clients');
+            $table->integer('company_id')->nullable();
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->rememberToken();
             $table->timestamps();
         });

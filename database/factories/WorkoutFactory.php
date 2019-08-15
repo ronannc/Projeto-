@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Client;
 use App\Models\Workout;
 use Faker\Generator as Faker;
 
@@ -22,5 +23,6 @@ $factory->define(Workout::class, function (Faker $faker) {
         'goal'         => $faker->name,
         'interval'     => $faker->name,
         'frequency'    => $faker->name,
+        'client_id'    => Client::with([])->inRandomOrder()->first()->id,
     ];
 });

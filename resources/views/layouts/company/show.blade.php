@@ -77,8 +77,8 @@
     {{--                    @foreach($workout['triceps_workout'] as $exercicioTreino)--}}
 
 {{--                            <tr>--}}
-{{--                                <td>{{$exercicioTreino['id_triceps']}}</td>--}}
-{{--                                <td>{{ \App\Models\Triceps::find($exercicioTreino['id_triceps'])['exercicio']}}</td>--}}
+    {{--                                <td>{{$exercicioTreino['triceps_id']}}</td>--}}
+    {{--                                <td>{{ \App\Models\Triceps::find($exercicioTreino['triceps_id'])['exercicio']}}</td>--}}
 {{--                                <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                                <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                                <td>{{$exercicioTreino['kg']}}</td>--}}
@@ -108,8 +108,8 @@
 {{--                        </tr>--}}
     {{--                    @foreach($workout['biceps_workout'] as $exercicioTreino)--}}
 {{--                        <tr>--}}
-{{--                            <td>{{$exercicioTreino['id_biceps']}}</td>--}}
-{{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_biceps'])['exercicio']}}</td>--}}
+    {{--                            <td>{{$exercicioTreino['biceps_id']}}</td>--}}
+    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['biceps_id'])['exercicio']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['kg']}}</td>--}}
@@ -137,8 +137,8 @@
 {{--                        </tr>--}}
     {{--                    @foreach($workout['breast_workout'] as $exercicioTreino)--}}
 {{--                        <tr>--}}
-    {{--                            <td>{{$exercicioTreino['id_breast']}}</td>--}}
-    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_breast'])['exercicio']}}</td>--}}
+    {{--                            <td>{{$exercicioTreino['breast_id']}}</td>--}}
+    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['breast_id'])['exercicio']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['kg']}}</td>--}}
@@ -168,8 +168,8 @@
 {{--                        </tr>--}}
     {{--                    @foreach($workout['back_workout'] as $exercicioTreino)--}}
 {{--                        <tr>--}}
-    {{--                            <td>{{$exercicioTreino['id_back']}}</td>--}}
-    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_back'])['exercicio']}}</td>--}}
+    {{--                            <td>{{$exercicioTreino['back_id']}}</td>--}}
+    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['back_id'])['exercicio']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['kg']}}</td>--}}
@@ -197,8 +197,8 @@
 {{--                        </tr>--}}
     {{--                    @foreach($workout['shoulder_workout'] as $exercicioTreino)--}}
 {{--                        <tr>--}}
-    {{--                            <td>{{$exercicioTreino['id_shoulder']}}</td>--}}
-    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_shoulder'])['exercicio']}}</td>--}}
+    {{--                            <td>{{$exercicioTreino['shoulder_id']}}</td>--}}
+    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['shoulder_id'])['exercicio']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['kg']}}</td>--}}
@@ -226,8 +226,8 @@
 {{--                        </tr>--}}
     {{--                    @foreach($workout['lower_member_workout'] as $exercicioTreino)--}}
 {{--                        <tr>--}}
-    {{--                            <td>{{$exercicioTreino['id_lower_member']}}</td>--}}
-    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['id_lower_member'])['exercicio']}}</td>--}}
+    {{--                            <td>{{$exercicioTreino['lower_member_id']}}</td>--}}
+    {{--                            <td>{{ \App\Models\Triceps::find($exercicioTreino['lower_member_id'])['exercicio']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['rep']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['serie']}}</td>--}}
 {{--                            <td>{{$exercicioTreino['kg']}}</td>--}}

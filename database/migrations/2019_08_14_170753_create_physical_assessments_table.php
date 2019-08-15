@@ -31,8 +31,8 @@ class CreatePhysicalAssessmentsTable extends Migration
             $table->decimal('height', 3, 2);
             $table->decimal('weight', 6, 3);
             $table->string('blood_pressure');
-            $table->integer('id_client')->nullable();
-            $table->foreign('id_client')->references('id')->on('clients');
+            $table->integer('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('clients');
 
             $table->timestamps();
         });

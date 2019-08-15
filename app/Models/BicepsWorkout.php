@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class BicepsWorkout extends Model
 {
     protected $fillable = [
-        'id_biceps',
-        'id_workout',
+        'biceps_id',
+        'workout_id',
         'load',
         'series',
         'repetition',

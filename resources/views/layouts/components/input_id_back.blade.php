@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="id_back">ID Costa</label>
-    <input type="text" class="form-control" name="id_back" id="input_id_back" placeholder="ID Costa"
-           value="{{ old('id_back') ?? $extraData['id_back'] ?? null }}">
+    <label for="back_id">ID Costa</label>
+    <input type="text" class="form-control" name="back_id" id="input_back_id" placeholder="ID Costa"
+           value="{{ old('back_id') ?? $extraData['back_id'] ?? null }}">
 </div>

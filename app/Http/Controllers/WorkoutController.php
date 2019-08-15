@@ -78,41 +78,43 @@ class WorkoutController extends Controller
 
         foreach ($data['triceps'] as $triceps) {
             $this->repository->save_triceps_Workout([
-                'id_workout' => $response['id'],
-                'id_triceps' => $triceps]);
+                'workout_id' => $response['id'],
+                'triceps_id' => $triceps
+            ]);
         }
 
         foreach ($data['biceps'] as $biceps) {
             $this->repository->save_biceps_Workout([
-                'id_workout' => $response['id'],
-                'id_biceps'  => $biceps]);
+                'workout_id' => $response['id'],
+                'biceps_id'  => $biceps
+            ]);
         }
 
         foreach ($data['back'] as $back) {
             $this->repository->save_back_Workout([
-                'id_workout' => $response['id'],
-                'id_back'    => $back
+                'workout_id' => $response['id'],
+                'back_id'    => $back
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
             $this->repository->save_shoulder_Workout([
-                'id_workout'  => $response['id'],
-                'id_shoulder' => $shoulder
+                'workout_id'  => $response['id'],
+                'shoulder_id' => $shoulder
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
             $this->repository->save_breast_Workout([
-                'id_workout' => $response['id'],
-                'id_breast'  => $breast
+                'workout_id' => $response['id'],
+                'breast_id'  => $breast
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
             $this->repository->save_lower_member_Workout([
-                'id_workout'      => $response['id'],
-                'id_lower_member' => $lower_member
+                'workout_id'      => $response['id'],
+                'lower_member_id' => $lower_member
             ]);
         }
         session()->flash('status', 'Adicionado com sucesso !');
@@ -166,38 +168,38 @@ class WorkoutController extends Controller
         }
 
         foreach ($process_data['triceps'] as $key => $triceps){
-            $triceps['id_triceps'] = $key;
-            $triceps['id_workout'] = $workout['id'];
+            $triceps['triceps_id'] = $key;
+            $triceps['workout_id'] = $workout['id'];
             $this->repository->update_triceps_Workout($triceps);
         }
 
         foreach ($process_data['biceps'] as $key => $biceps){
-            $biceps['id_biceps'] = $key;
-            $biceps['id_workout'] = $workout['id'];
+            $biceps['biceps_id'] = $key;
+            $biceps['workout_id'] = $workout['id'];
             $this->repository->update_biceps_Workout($biceps);
         }
 
         foreach ($process_data['back'] as $key => $back) {
-            $back['id_back'] = $key;
-            $back['id_workout'] = $workout['id'];
+            $back['back_id'] = $key;
+            $back['workout_id'] = $workout['id'];
             $this->repository->update_back_Workout($back);
         }
 
         foreach ($process_data['breast'] as $key => $breast) {
-            $breast['id_breast'] = $key;
-            $breast['id_workout'] = $workout['id'];
+            $breast['breast_id'] = $key;
+            $breast['workout_id'] = $workout['id'];
             $this->repository->update_breast_Workout($breast);
         }
 
         foreach ($process_data['shoulder'] as $key => $shoulder) {
-            $shoulder['id_shoulder'] = $key;
-            $shoulder['id_workout'] = $workout['id'];
+            $shoulder['shoulder_id'] = $key;
+            $shoulder['workout_id'] = $workout['id'];
             $this->repository->update_shoulder_Workout($shoulder);
         }
 
         foreach ($process_data['inferior'] as $key => $inferior){
-            $inferior['id_lower_member'] = $key;
-            $inferior['id_workout'] = $workout['id'];
+            $inferior['lower_member_id'] = $key;
+            $inferior['workout_id'] = $workout['id'];
             $this->repository->update_lower_member_Workout($inferior);
         }
 

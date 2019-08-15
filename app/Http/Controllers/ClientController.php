@@ -80,7 +80,7 @@ class ClientController extends Controller
             $configuracaoClient['formula'] = 0;
         }
         $configuracaoClient['porcentagem'] = $data['porcentagem'];
-        $configuracaoClient['id_Client'] = $response['id'];
+        $configuracaoClient['client_id'] = $response['id'];
 
         $responseConfiguracaoClient = $this->service->storeConfiguracaoClient($configuracaoClient);
 
@@ -162,7 +162,7 @@ class ClientController extends Controller
                 $configuracaoClient['formula'] = 0;
             }
             $configuracaoClient['porcentagem'] = $data['porcentagem'];
-            $configuracaoClient['id_Client'] = $response['id'];
+            $configuracaoClient['client_id'] = $response['id'];
 
             $responseConfiguracaoClient = $this->service->updateConfiguracaoClient($configuracaoClient);
 

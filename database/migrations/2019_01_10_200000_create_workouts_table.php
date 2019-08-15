@@ -21,10 +21,10 @@ class CreateWorkoutsTable extends Migration
             $table->string('goal');
             $table->string('interval');
             $table->string('frequency');
-            $table->integer('id_method')->nullable();
-            $table->foreign('id_method')->references('id')->on('method');
-            $table->integer('id_client')->nullable();
-            $table->foreign('id_client')->references('id')->on('clients');
+            $table->integer('method_id')->nullable();
+            $table->foreign('method_id')->references('id')->on('method');
+            $table->integer('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
         });
     }

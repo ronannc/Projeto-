@@ -28,7 +28,7 @@ class EloquentClientRepository extends AbstractEloquentRepository implements Cli
     public function updateConfiguracaoCliente(array $data)
     {
 
-        $configuracao = ConfiguracaoCliente::where('id_cliente', $data['id_cliente'])->first();
+        $configuracao = ConfiguracaoCliente::where('client_ide', $data['client_ide'])->first();
         if ($configuracao) {
 
             return $configuracao->update([
@@ -54,12 +54,12 @@ class EloquentClientRepository extends AbstractEloquentRepository implements Cli
     public function getExerciciosTreino($id)
     {
         $data = Workout::find($id);
-        $data['triceps_workout'] = TricepsWorkout::where('id_workout', $id)->get();
-        $data['biceps_workout'] = BicepsWorkout::where('id_workout', $id)->get();
-        $data['back_workout'] = BackWorkout::where('id_workout', $id)->get();
-        $data['shoulder_workout'] = ShoulderWorkout::where('id_workout', $id)->get();
-        $data['breast_workout'] = BreastWorkout::where('id_workout', $id)->get();
-        $data['lower_member_workout'] = LowerMemberWorkout::where('id_workout', $id)->get();
+        $data['triceps_workout'] = TricepsWorkout::where('workout_id', $id)->get();
+        $data['biceps_workout'] = BicepsWorkout::where('workout_id', $id)->get();
+        $data['back_workout'] = BackWorkout::where('workout_id', $id)->get();
+        $data['shoulder_workout'] = ShoulderWorkout::where('workout_id', $id)->get();
+        $data['breast_workout'] = BreastWorkout::where('workout_id', $id)->get();
+        $data['lower_member_workout'] = LowerMemberWorkout::where('workout_id', $id)->get();
         return $data;
     }
 }

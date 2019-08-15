@@ -24,7 +24,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'id_client', 'id_company'
+        'name',
+        'email',
+        'password',
+        'client_id',
+        'company_id'
     ];
 
     /**
@@ -53,7 +57,7 @@ class User extends Authenticatable
 
     public static function client()
     {
-        return Auth::user()->hasone(Client::class, 'id', 'id_client');
+        return Auth::user()->hasone(Client::class, 'id', 'client_id');
     }
 
     /**

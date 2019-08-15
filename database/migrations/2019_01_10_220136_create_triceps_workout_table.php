@@ -15,12 +15,12 @@ class CreateTricepsWorkoutTable extends Migration
     {
         Schema::create('triceps_workout', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->integer('id_triceps');
-            $table->foreign('id_triceps')->references('id')->on('triceps');
-            $table->integer('id_workout');
-            $table->foreign('id_workout')->references('id')->on('workouts');
-            $table->integer('id_workout_modes');
-            $table->foreign('id_workout_modes')->references('id')->on('workout_modes');
+            $table->integer('triceps_id');
+            $table->foreign('triceps_id')->references('id')->on('triceps');
+            $table->integer('workout_id');
+            $table->foreign('workout_id')->references('id')->on('workouts');
+            $table->integer('workout_id_modes');
+            $table->foreign('workout_id_modes')->references('id')->on('workout_modes');
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->string('repetition')->nullable();

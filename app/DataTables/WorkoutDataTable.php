@@ -82,8 +82,8 @@ class WorkoutDataTable extends DataTable
             'goal',
             'interval',
             'frequency',
-            'id_method',
-            'id_client',
+            'method_id',
+            'client_id',
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,

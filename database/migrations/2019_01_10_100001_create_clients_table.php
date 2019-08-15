@@ -29,8 +29,8 @@ class CreateClientsTable extends Migration
             $table->integer('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
 
-            $table->integer('id_company')->nullable();
-            $table->foreign('id_company')->references('id')->on('companies');
+            $table->integer('company_id')->nullable();
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
         });
     }

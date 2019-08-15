@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PermissionTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(CompanyTableSeeder::class);
         $this->call(WorkoutModeTableSeeder::class);
         $this->call(BicepsTableSeeder::class);
         $this->call(TricepsTableSeeder::class);
@@ -23,6 +24,5 @@ class DatabaseSeeder extends Seeder
         $this->call(ClientTableSeeder::class);
         $this->call(WorkoutTableSeeder::class);
         $this->call(PhysicalAssessmentsTableSeeder::class);
-        $this->call(CompanyTableSeeder::class);
     }
 }

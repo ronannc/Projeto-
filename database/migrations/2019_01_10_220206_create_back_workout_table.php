@@ -15,12 +15,12 @@ class CreateBackWorkoutTable extends Migration
     {
         Schema::create('back_workout', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->integer('id_back');
-            $table->foreign('id_back')->references('id')->on('backs');
-            $table->integer('id_workout');
-            $table->foreign('id_workout')->references('id')->on('workouts');
-            $table->integer('id_workout_modes');
-            $table->foreign('id_workout_modes')->references('id')->on('workout_modes');
+            $table->integer('back_id');
+            $table->foreign('back_id')->references('id')->on('backs');
+            $table->integer('workout_id');
+            $table->foreign('workout_id')->references('id')->on('workouts');
+            $table->integer('workout_id_modes');
+            $table->foreign('workout_id_modes')->references('id')->on('workout_modes');
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->string('repetition')->nullable();
