@@ -61,28 +61,27 @@ class BreastController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreBreast = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreBreast['error'])) {
-            session()->flash('error', $resultFromStoreBreast['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'Breast adicionado com sucesso !');
-        return redirect(route('Breast.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('breast.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Breast $Breast
+     * @param Breast $breast
      *
      * @return Response
      */
-    public function show(Breast $Breast)
+    public function show(Breast $breast)
     {
-        return view('layouts.breast.show', compact('Breast'));
+        return view('layouts.breast.show', compact('breast'));
     }
 
     /**
@@ -94,9 +93,8 @@ class BreastController extends Controller
      */
     public function edit($id)
     {
-        $Breast = Breast::find($id);
-//        dd($Breast);
-        return view('layouts.breast.edit', compact('Breast'));
+        $breast = Breast::find($id);
+        return view('layouts.breast.edit', compact('breast'));
     }
 
     /**
@@ -109,17 +107,16 @@ class BreastController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $Breast = Breast::find($id);
+        $breast = Breast::find($id);
 
-        $resultFromUpdateBreast = $this->service->update($data, $Breast);
-        if (!empty($resultFromUpdateBreast['error'])) {
-            session()->flash('error', $resultFromUpdateBreast['message']);
+        $response = $this->service->update($request->all(), $breast);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Breast atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('Breast.index'));
+        return redirect(route('breast.index'));
     }
 
     /**
@@ -131,15 +128,14 @@ class BreastController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $Breast = Breast::find($id);
+        $breast = Breast::find($id);
 
-        $resultFromDeleteBreast = $this->service->delete($Breast);
-        if (!empty($resultFromDeleteBreast['error'])) {
-            session()->flash('error', $resultFromDeleteBreast['message']);
+        $response = $this->service->delete($breast);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Breast deletado com sucesso!');
-        return redirect(route('Breast.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('breast.index'));
     }
 }

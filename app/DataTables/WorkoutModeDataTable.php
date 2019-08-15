@@ -19,7 +19,7 @@ class WorkoutModeDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (WorkoutMode $workoutMode) {
+            ->editColumn('actions', function (WorkoutMode $workoutMode) {
 
                 return '<a title="Visualizar"  style="color: #000000" href="' . route('workout-mode.show',
                         $workoutMode) . '"><i class="fa fa-eye"></i></a>' .
@@ -79,7 +79,13 @@ class WorkoutModeDataTable extends DataTable
             'id',
             'name',
             'description',
-            'acoes'
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

@@ -18,7 +18,7 @@ class BicepsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('action', function (Biceps $biceps) {
+            ->editColumn('actions', function (Biceps $biceps) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('biceps.edit', $biceps) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
@@ -71,10 +71,16 @@ class BicepsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id' => ['title' => 'ID'],
-            'exercise' => ['title' => 'Exercicio'],
+            'id'          => ['title' => 'ID'],
+            'exercise'    => ['title' => 'Exercicio'],
             'description' => ['title' => 'Descricao'],
-            'action' => ['title' => 'Acoes', 'searchable' => false, 'orderable' => false]
+            'actions'     => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

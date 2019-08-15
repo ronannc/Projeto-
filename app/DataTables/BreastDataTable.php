@@ -19,7 +19,7 @@ class BreastDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('acoes', function (Breast $Breast) {
+            ->editColumn('actions', function (Breast $Breast) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('breast.edit',
                         $Breast) . '"><i class="fa fa-edit"></i></a>' .
@@ -77,10 +77,13 @@ class BreastDataTable extends DataTable
             'id',
             'exercise',
             'description',
-            'acoes' => [
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
                 'searchable' => false,
-                'orderable'  => false
-            ]
+                'printable'  => false,
+                'exportable' => false,
+            ],
         ];
     }
 

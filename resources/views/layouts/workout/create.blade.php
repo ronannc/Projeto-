@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('workout')}}" method="post">
+        <form action="{{route('workout.store')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_inicio')

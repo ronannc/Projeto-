@@ -47,7 +47,7 @@ class BreastWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.breast_workout.create');
+        return view('layouts.breast-workout.create');
     }
 
     /**
@@ -59,28 +59,27 @@ class BreastWorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreBreastWorkout = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreBreastWorkout['error'])) {
-            session()->flash('error', $resultFromStoreBreastWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'BreastWorkout adicionado com sucesso !');
-        return redirect(route('breast_workout.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('breast-workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param BreastWorkout $breast_workout
+     * @param BreastWorkout $breastWorkout
      *
      * @return Response
      */
-    public function show(BreastWorkout $breast_workout)
+    public function show(BreastWorkout $breastWorkout)
     {
-        return view('layouts.breast_workout.show', compact('breast_workout'));
+        return view('layouts.breast-workout.show', compact('breastWorkout'));
     }
 
     /**
@@ -92,9 +91,8 @@ class BreastWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $breast_workout = BreastWorkout::find($id);
-//        dd($breast_workout);
-        return view('layouts.breast_workout.edit', compact('breast_workout'));
+        $breastWorkout = BreastWorkout::find($id);
+        return view('layouts.breast-workout.edit', compact('breastWorkout'));
     }
 
     /**
@@ -108,16 +106,16 @@ class BreastWorkoutController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $breast_workout = BreastWorkout::find($id);
+        $breastWorkout = BreastWorkout::find($id);
 
-        $resultFromUpdateBreastWorkout = $this->service->update($data, $breast_workout);
-        if (!empty($resultFromUpdateBreastWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateBreastWorkout['message']);
+        $response = $this->service->update($data, $breastWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'BreastWorkout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('breast_workout.index'));
+        return redirect(route('breast-workout.index'));
     }
 
     /**
@@ -129,15 +127,14 @@ class BreastWorkoutController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $breast_workout = BreastWorkout::find($id);
+        $breastWorkout = BreastWorkout::find($id);
 
-        $resultFromDeleteBreastWorkout = $this->service->delete($breast_workout);
-        if (!empty($resultFromDeleteBreastWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteBreastWorkout['message']);
+        $response = $this->service->delete($breastWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'BreastWorkout deletado com sucesso!');
-        return redirect(route('breast_workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('breast-workout.index'));
     }
 }

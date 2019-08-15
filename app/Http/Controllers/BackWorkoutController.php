@@ -46,7 +46,7 @@ class BackWorkoutController extends Controller
      */
     public function create()
     {
-        return view('layouts.back_workout.create');
+        return view('layouts.back-workout.create');
     }
 
     /**
@@ -58,29 +58,27 @@ class BackWorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreBackWorkout = $this->service->store($data);
-//        dd($resultFromStoreBackWorkout);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreBackWorkout['error'])) {
-            session()->flash('error', $resultFromStoreBackWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        session()->flash('status', 'BackWorkout adicionado com sucesso !');
-        return redirect(route('back_workout.index'));
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('back-workout.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param BackWorkout $back_workout
+     * @param BackWorkout $backWorkout
      *
      * @return Response
      */
-    public function show(BackWorkout $back_workout)
+    public function show(BackWorkout $backWorkout)
     {
-        return view('layouts.back_workout.show', compact('back_workout'));
+        return view('layouts.back-workout.show', compact('backWorkout'));
     }
 
     /**
@@ -92,9 +90,8 @@ class BackWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $back_workout = BackWorkout::find($id);
-//        dd($back_workout);
-        return view('layouts.back_workout.edit', compact('back_workout'));
+        $backWorkout = BackWorkout::find($id);
+        return view('layouts.back-workout.edit', compact('backWorkout'));
     }
 
     /**
@@ -107,17 +104,16 @@ class BackWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $back_workout = BackWorkout::find($id);
+        $backWorkout = BackWorkout::find($id);
 
-        $resultFromUpdateBackWorkout = $this->service->update($data, $back_workout);
-        if (!empty($resultFromUpdateBackWorkout['error'])) {
-            session()->flash('error', $resultFromUpdateBackWorkout['message']);
+        $response = $this->service->update($request->all(), $backWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'BackWorkout atualizado com sucesso!');
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('back_workout.index'));
+        return redirect(route('back-workout.index'));
     }
 
     /**
@@ -129,15 +125,14 @@ class BackWorkoutController extends Controller
      */
     public function destroy($id)
     {
-//        dd($id);
-        $back_workout = BackWorkout::find($id);
+        $backWorkout = BackWorkout::find($id);
 
-        $resultFromDeleteBackWorkout = $this->service->delete($back_workout);
-        if (!empty($resultFromDeleteBackWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteBackWorkout['message']);
+        $response = $this->service->delete($backWorkout);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'BackWorkout deletado com sucesso!');
-        return redirect(route('back_workout.index'));
+        session()->flash('success', 'Deletado com sucesso!');
+        return redirect(route('back-workout.index'));
     }
 }

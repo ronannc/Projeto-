@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('workout-mode', $workoutMode)}}" method="post">
+        <form action="{{route('workout-mode.update', $workoutMode)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
