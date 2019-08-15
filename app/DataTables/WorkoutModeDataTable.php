@@ -21,13 +21,13 @@ class WorkoutModeDataTable extends DataTable
         return datatables($query)
             ->editColumn('acoes', function (WorkoutMode $workoutMode) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('workoutMode.show',
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('workout-mode.show',
                         $workoutMode) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route('workoutMode.edit',
+                    '<a title="Editar"  style="color: #000000" href="' . route('workout-mode.edit',
                         $workoutMode) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Modo de Exercicio ?\')){document.getElementById(\'form-delete' . $workoutMode['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $workoutMode['id'] . '" style="display:none" action="' . route('workoutMode.destroy',
+        <form id="form-delete' . $workoutMode['id'] . '" style="display:none" action="' . route('workout-mode.destroy',
                         $workoutMode) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -45,7 +45,7 @@ class WorkoutModeDataTable extends DataTable
      */
     public function query(WorkoutMode $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->select('id', 'name', 'description');
     }
 
     /**

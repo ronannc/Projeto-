@@ -6,7 +6,7 @@ namespace App\Repositories;
 use App\Repositories\Contracts\ShoulderRepository;
 use Illuminate\Database\Eloquent\Model;
 
-class EloquentShoulderTreinoRepository extends AbstractEloquentRepository implements ShoulderRepository
+class EloquentShoulderWorkoutRepository extends AbstractEloquentRepository implements ShoulderRepository
 {
 
     public function save(array $data)

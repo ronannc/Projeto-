@@ -17,6 +17,7 @@ use App\Models\Triceps;
 use App\Models\TricepsWorkout;
 use App\Models\User;
 use App\Models\Workout;
+use App\Models\WorkoutMode;
 use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\BackWorkoutRepository;
 use App\Repositories\Contracts\BicepsRepository;
@@ -32,6 +33,7 @@ use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Repositories\Contracts\TricepsWorkoutRepository;
 use App\Repositories\Contracts\UserRepository;
+use App\Repositories\Contracts\WorkoutModeRepository;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Repositories\EloquentBackRepository;
 use App\Repositories\EloquentBackWorkoutRepository;
@@ -44,10 +46,11 @@ use App\Repositories\EloquentConfiguracaoClienteRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
 use App\Repositories\EloquentShoulderRepository;
-use App\Repositories\EloquentShoulderTreinoRepository;
+use App\Repositories\EloquentShoulderWorkoutRepository;
 use App\Repositories\EloquentTricepsRepository;
 use App\Repositories\EloquentTricepsWorkoutRepository;
 use App\Repositories\EloquentUserRepository;
+use App\Repositories\EloquentWorkoutModeRepository;
 use App\Repositories\EloquentWorkoutRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -109,7 +112,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(ShoulderWorkoutRepository::class, function () {
-            return new EloquentShoulderTreinoRepository(new ShoulderWorkout());
+            return new EloquentShoulderWorkoutRepository(new ShoulderWorkout());
         });
 
         $this->app->bind(BreastRepository::class, function () {
@@ -136,6 +139,9 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentTricepsWorkoutRepository(new TricepsWorkout());
         });
 
+        $this->app->bind(WorkoutModeRepository::class, function () {
+            return new EloquentWorkoutModeRepository(new WorkoutMode());
+        });
 
     }
 

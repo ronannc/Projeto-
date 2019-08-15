@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Virtual Workout',
+    'title' => 'Virtual Training',
 
     'title_prefix' => 'VT',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Virtual</b>Workout',
+    'logo' => '<b>Virtual</b>Training',
 
     'logo_mini' => '<b>V</b>T',
 
@@ -229,6 +229,20 @@ return [
                 [
                     'text'  => 'Cadastrar',
                     'route' => 'workout.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Modos de Treino',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'workout-mode.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'workout-mode.create',
                 ],
             ],
         ],

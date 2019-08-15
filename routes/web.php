@@ -33,7 +33,6 @@ Route::group([
     function () {
         Route::get('/home', 'HomeController@index')->name('home');
 
-//        Route::resource('lower-member', 'LowerMemberController')->middleware('can:admin');
         Route::resource('lower-member', 'LowerMemberController');
         Route::resource('breast', 'BreastController');
         Route::resource('biceps', 'BicepsController');
@@ -42,6 +41,7 @@ Route::group([
         Route::resource('shoulder', 'ShoulderController');
         Route::resource('workout', 'WorkoutController');
         Route::resource('client', 'ClientController');
+        Route::resource('workout-mode', 'WorkoutModeController');
 
 //        Route::get('editMyAcount', 'ClientController@editMyAcount')->name('editMyAcount');
 //        Route::get('myAcount', 'ClientController@myAcount')->name('myAcount');

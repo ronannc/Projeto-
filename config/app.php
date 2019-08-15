@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Virtual Workout'),
+    'name' => env('APP_NAME', 'Virtual Training'),
 
     /*
     |--------------------------------------------------------------------------
