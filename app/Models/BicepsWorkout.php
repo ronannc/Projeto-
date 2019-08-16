@@ -9,8 +9,10 @@ class BicepsWorkout extends Model
     protected $fillable = [
         'biceps_id',
         'workout_id',
+        'workout_id_modes',
         'load',
         'series',
+        'rest_time',
         'repetition',
         'group'
     ];

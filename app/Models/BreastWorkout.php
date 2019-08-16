@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class BreastWorkout extends Model
 {
     protected $fillable = [
-        'breast_ids',
+        'breast_id',
         'workout_id',
+        'workout_id_modes',
         'load',
         'series',
+        'rest_time',
         'repetition',
         'group'
     ];
