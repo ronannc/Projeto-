@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PhysicalAssessment extends Model
 {
     protected $fillable = [
+        'neck',
         'shoulder',
         'chest',
         'right_arm',

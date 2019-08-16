@@ -15,6 +15,7 @@ class CreatePhysicalAssessmentsTable extends Migration
     {
         Schema::create('physical_assessments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('neck');
             $table->integer('shoulder');
             $table->integer('chest');
             $table->integer('right_arm');
