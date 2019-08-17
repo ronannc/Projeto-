@@ -19,7 +19,6 @@ $factory->define(Workout::class, function (Faker $faker) {
     return [
         'start'        => $faker->date(),
         'next_workout' => $faker->date(),
-        'note'         => $faker->name,
         'goal'         => $faker->name,
         'interval'     => $faker->name,
         'frequency'    => $faker->name,

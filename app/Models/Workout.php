@@ -9,7 +9,6 @@ class Workout extends Model
     protected $fillable = [
         'start',
         'next_workout',
-        'note',
         'goal',
         'interval',
         'method_id',

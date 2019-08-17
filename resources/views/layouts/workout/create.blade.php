@@ -19,15 +19,12 @@
         <form action="{{route('workout.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_inicio')
-                @include('layouts.components.input_prox_ficha')
-                @include('layouts.components.input_description')
-                @include('layouts.components.input_objetivo')
+                @include('layouts.components.input_start')
+                @include('layouts.components.input_next_workout')
+                @include('layouts.components.input_goal')
                 @include('layouts.components.input_interval')
-                @include('layouts.components.input_method')
                 @include('layouts.components.input_frequency')
-                @include('layouts.components.input_aerob_ini')
-                @include('layouts.components.input_aerob_fim')
+                @include('layouts.components.select_method')
                 @include('layouts.components.select_client')
                 @include('layouts.components.select_triceps')
                 @include('layouts.components.select_biceps')

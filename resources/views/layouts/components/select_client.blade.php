@@ -1,22 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Ronan Nunes Campos
- * Date: 02/03/2019
- * Time: 12:08
- */
-?>
-
 <div class="form-group">
-    <label for="client_ide">Cliente</label>
-    <select class="form-control select2" data-placeholder="Selecione o Cliente" name="client_ide" style="width: 100%">
-        @foreach($extraData['client'] as $cliente)
+    <label for="client_id">Cliente</label>
+    <select class="form-control select2"
+            data-placeholder="Selecione o Cliente"
+            name="client_id"
+            style="width: 100%"
+            id="client_id">
+        @foreach($extraData['client'] as $client)
             @if(isset($data))
-                @if($cliente['id'] == $data['client_ide'])
-                    <option value="{{$cliente['id']}}" selected>{{$cliente['nome']}}</option>
+                @if($client['id'] == $data['client_id'])
+                    <option value="{{$client['id']}}" selected>{{$client['nome']}}</option>
                 @endif
             @endif
-            <option value="{{$cliente['id']}}">{{$cliente['nome']}}</option>
+            <option value="{{$client['id']}}">{{$client['nome']}}</option>
         @endforeach
     </select>
 </div>

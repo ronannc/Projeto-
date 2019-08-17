@@ -17,7 +17,6 @@ class CreateWorkoutsTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->date('start');
             $table->date('next_workout');
-            $table->string('note');
             $table->string('goal');
             $table->string('interval');
             $table->string('frequency');

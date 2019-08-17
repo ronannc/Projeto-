@@ -24,7 +24,6 @@ class WorkoutController extends Controller
      */
     public function __construct(WorkoutRepository $repository, WorkoutService $service)
     {
-        // $this->middleware('can:admin', ['except' => ['update', 'myCurrentTraining']]);
         $this->repository = $repository;
         $this->service = $service;
     }
@@ -38,11 +37,6 @@ class WorkoutController extends Controller
      */
     public function index(WorkoutDataTable $dataTable)
     {
-        // if(User::isCliente() && User::cliente()->first() != null){
-        //     $cliente = User::cliente()->first();
-        //     $Workout = $cliente->Workout();
-        //     return $dataTable->with('data', $Workout)->render('layouts.Workout.index');
-        // }
         $Workout = Workout::all();
         return $dataTable->with('data', $Workout)->render('layouts.workout.index');
     }

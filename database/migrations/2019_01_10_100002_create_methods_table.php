@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMethodTable extends Migration
+class CreateMethodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMethodTable extends Migration
      */
     public function up()
     {
-        Schema::create('method', function (Blueprint $table) {
+        Schema::create('methods', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('description');
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateMethodTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('method');
+        Schema::dropIfExists('methods');
     }
 }

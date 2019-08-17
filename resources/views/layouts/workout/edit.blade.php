@@ -21,10 +21,10 @@
             {{ method_field('PUT') }}
             <div class="box-body">
 
-                @include('layouts.components.input_inicio', ['extraData' => $data])
-                @include('layouts.components.input_prox_ficha', ['extraData' => $data])
+                @include('layouts.components.input_start', ['extraData' => $data])
+                @include('layouts.components.input_next_workout', ['extraData' => $data])
                 @include('layouts.components.input_description', ['extraData' => $data])
-                @include('layouts.components.input_objetivo', ['extraData' => $data])
+                @include('layouts.components.input_goal', ['extraData' => $data])
                 @include('layouts.components.input_interval', ['extraData' => $data])
                 @include('layouts.components.input_method', ['extraData' => $data])
                 @include('layouts.components.input_frequency', ['extraData' => $data])
