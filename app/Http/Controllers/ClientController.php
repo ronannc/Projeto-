@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ClientDataTable;
 use App\DataTables\WorkoutDataTable;
+use App\Models\City;
 use App\Models\Client;
+use App\Models\Company;
 use App\Models\User;
 use App\Repositories\Contracts\ClientRepository;
 use App\Services\ClientService;
+use App\Services\CompanyService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -54,7 +57,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('layouts.client.create');
+        $extraData['company'] = Company::all();
+        $extraData['city'] = City::all();
+        return view('layouts.client.create', compact('extraData'));
     }
 
     /**

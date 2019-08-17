@@ -19,7 +19,8 @@ class Client extends Model
         'number',
         'complement',
         'zipcode',
-        'city_id'
+        'city_id',
+        'company_id'
     ];
 
     public function workout()

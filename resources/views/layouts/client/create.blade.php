@@ -21,16 +21,15 @@
             <div class="box-body">
                 @include('layouts.components.input_name')
                 @include('layouts.components.input_cpf')
-                @include('layouts.components.input_nascimento')
+                @include('layouts.components.input_birthday')
                 @include('layouts.components.input_phone')
-                <div class="box-header with-border">
-                    <h3 class="box-title">Configuracao de treino</h3>
-                </div>
-                @include('layouts.components.input_peso')
-
-                @include('layouts.components.checkbox_workout')
-                @include('layouts.components.input_porcentagem')
-
+                @include('layouts.components.select_company')
+                @include('layouts.components.input_street')
+                @include('layouts.components.input_neighborhood')
+                @include('layouts.components.input_number')
+                @include('layouts.components.input_complement')
+                @include('layouts.components.input_zipcode')
+                @include('layouts.components.select_city')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
