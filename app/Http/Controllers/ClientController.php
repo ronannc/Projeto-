@@ -71,30 +71,15 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $response = $this->service->store($data);
+
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+        session()->flash('success', 'Adicionado com sucesso!');
 
-        if (isset($data['formula'])) {
-            $configuracaoClient['formula'] = 1;
-        } else {
-            $configuracaoClient['formula'] = 0;
-        }
-        $configuracaoClient['porcentagem'] = $data['porcentagem'];
-        $configuracaoClient['client_id'] = $response['id'];
-
-        $responseConfiguracaoClient = $this->service->storeConfiguracaoClient($configuracaoClient);
-
-        if (!empty($responseConfiguracaoClient['error'])) {
-            session()->flash('error', $responseConfiguracaoClient['message']);
-            return back()->withInput();
-        }
-
-        session()->flash('status', 'Adicionado com sucesso !');
         return redirect(route('client.index'));
     }
 
@@ -150,36 +135,18 @@ class ClientController extends Controller
      *
      * @return Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $response = $this->service->update($data, $client);
+        $client = Client::find($id);
+        $response = $this->service->update($request->all(), $client);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+        session()->flash('success', 'Atualizado com sucesso!');
 
-        if (!isset($data['Client'])) {
-            if (isset($data['formula'])) {
-                $configuracaoClient['formula'] = 1;
-            } else {
-                $configuracaoClient['formula'] = 0;
-            }
-            $configuracaoClient['porcentagem'] = $data['porcentagem'];
-            $configuracaoClient['client_id'] = $response['id'];
-
-            $responseConfiguracaoClient = $this->service->updateConfiguracaoClient($configuracaoClient);
-
-            if (!empty($responseConfiguracaoClient['error'])) {
-                session()->flash('error', $responseConfiguracaoClient['message']);
-                return back()->withInput();
-            }
-        }
-
-        session()->flash('status', 'Atualizado com sucesso !');
-
-        return back();
+        return redirect(route('client.index'));
     }
 
     /**
@@ -192,6 +159,7 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         $response = $this->service->delete($client);
+
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
