@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CompanyDataTable;
+use App\Models\City;
 use App\Models\Company;
 use App\Repositories\Contracts\CompanyRepository;
 use App\Services\CompanyService;
@@ -48,7 +49,10 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('layouts.company.create');
+        $extraData['company'] = Company::all();
+        $extraData['city'] = City::all();
+
+        return view('layouts.company.create', compact('extraData'));
     }
 
     /**
@@ -92,8 +96,12 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        $company = Company::find($id);
-        return view('layouts.company.edit', compact('company'));
+        $extraData['company'] = Company::all();
+        $extraData['city'] = City::all();
+
+        $data = Company::find($id);
+
+        return view('layouts.company.edit', compact('extraData'), compact('data'));
     }
 
     /**

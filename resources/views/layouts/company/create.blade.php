@@ -19,9 +19,16 @@
         <form action="{{route('company.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_text', ['config' => 'name', 'title' => 'Nome'])
-                @include('layouts.components.input_text', ['config' => 'cnpj', 'title' => 'CNPJ'])
+                @include('layouts.components.input_name')
+                @include('layouts.components.input_social_reason')
+                @include('layouts.components.input_cnpj')
                 @include('layouts.components.input_phone')
+                @include('layouts.components.input_street')
+                @include('layouts.components.input_neighborhood')
+                @include('layouts.components.input_number')
+                @include('layouts.components.input_complement')
+                @include('layouts.components.input_zipcode')
+                @include('layouts.components.select_city')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

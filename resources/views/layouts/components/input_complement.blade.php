@@ -5,5 +5,5 @@
            name="complement"
            id="complement"
            placeholder="Complemento"
-           value="{{ old('complement') ?? $extraData['complement'] ?? null }}">
+           value="{{ old('complement') ?? $data['complement'] ?? null }}">
 </div>

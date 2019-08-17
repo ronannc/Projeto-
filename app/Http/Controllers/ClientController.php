@@ -59,6 +59,7 @@ class ClientController extends Controller
     {
         $extraData['company'] = Company::all();
         $extraData['city'] = City::all();
+
         return view('layouts.client.create', compact('extraData'));
     }
 
@@ -95,19 +96,6 @@ class ClientController extends Controller
     {
         $workout = $client->workout();
         return $dataTable->with('data', $workout)->render('layouts.client.show', compact('workout'), compact('client'));
-    }
-
-    public function myAccount(WorkoutDataTable $dataTable)
-    {
-        $client = User::Client()->first();
-        $workout = $client->workout();
-        return $dataTable->with('data', $workout)->render('layouts.client.show', compact('workout'), compact('client'));
-    }
-
-    public function editMyAccount(WorkoutDataTable $dataTable)
-    {
-        $extraData = User::Client()->first();
-        return view('layouts.client.editClient', compact('extraData'));
     }
 
     /**
