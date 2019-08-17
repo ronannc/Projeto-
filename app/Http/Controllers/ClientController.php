@@ -119,12 +119,12 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $extraData = Client::find($id);
-        $clientSettings = $extraData->configuracao();
-        $extraData['configuracao'] = $extraData->configuracao();
-        $extraData['formula'] = $clientSettings['formula'] == 1 ? 'checked' : '';
-        $extraData['porcentagem'] = $clientSettings['porcentagem'];
-        return view('layouts.client.edit', compact('extraData'));
+        $extraData['company'] = Company::all();
+        $extraData['city'] = City::all();
+
+        $data = Client::find($id);
+
+        return view('layouts.client.edit', compact('extraData'), compact('data'));
     }
 
     /**

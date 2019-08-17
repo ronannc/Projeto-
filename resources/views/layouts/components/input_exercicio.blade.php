@@ -3,7 +3,7 @@
     <input type="text"
            class="form-control"
            name="exercise"
-           id="input_exercise"
+           id="exercise"
            placeholder="Nome do Exercicio"
-           value="{{ old('exercise') ?? $extraData['exercise'] ?? null }}">
+           value="{{ old('exercise') ?? $data['exercise'] ?? null }}">
 </div>

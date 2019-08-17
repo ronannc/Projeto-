@@ -1,4 +1,9 @@
 <div class="form-group">
-    <label for="metodo">Metodo</label>
-    <input type="text" class="form-control" name="metodo" id="input_metodo" placeholder="Metodo" value ="{{ old('metodo') ?? $extraData['metodo'] ?? null }}">
+    <label for="method">Metodo</label>
+    <input type="text"
+           class="form-control"
+           name="method"
+           id="method"
+           placeholder="Metodo"
+           value ="{{ old('method') ?? $data['method'] ?? null }}">
 </div>

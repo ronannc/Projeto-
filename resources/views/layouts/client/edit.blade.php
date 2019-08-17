@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('client.update', $extraData)}}" method="post">
+        <form action="{{route('client.update', $data)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
@@ -24,7 +24,13 @@
                 @include('layouts.components.input_cpf')
                 @include('layouts.components.input_birthday')
                 @include('layouts.components.input_phone')
-
+                @include('layouts.components.select_company')
+                @include('layouts.components.input_street')
+                @include('layouts.components.input_neighborhood')
+                @include('layouts.components.input_number')
+                @include('layouts.components.input_complement')
+                @include('layouts.components.input_zipcode')
+                @include('layouts.components.select_city')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
