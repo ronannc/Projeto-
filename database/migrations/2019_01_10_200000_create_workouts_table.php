@@ -21,7 +21,7 @@ class CreateWorkoutsTable extends Migration
             $table->string('interval');
             $table->string('frequency');
             $table->integer('method_id')->nullable();
-            $table->foreign('method_id')->references('id')->on('method');
+            $table->foreign('method_id')->references('id')->on('methods');
             $table->integer('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
