@@ -62,7 +62,7 @@ class WorkoutController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['status'] = 0;
+
         $response = $this->service->store($data);
 
         if (!empty($response['error'])) {
@@ -71,42 +71,42 @@ class WorkoutController extends Controller
         }
 
         foreach ($data['triceps'] as $triceps) {
-            $this->repository->save_triceps_Workout([
+            $this->repository->save_triceps_workout([
                 'workout_id' => $response['id'],
                 'triceps_id' => $triceps
             ]);
         }
 
         foreach ($data['biceps'] as $biceps) {
-            $this->repository->save_biceps_Workout([
+            $this->repository->save_biceps_workout([
                 'workout_id' => $response['id'],
                 'biceps_id'  => $biceps
             ]);
         }
 
         foreach ($data['back'] as $back) {
-            $this->repository->save_back_Workout([
+            $this->repository->save_back_workout([
                 'workout_id' => $response['id'],
                 'back_id'    => $back
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
-            $this->repository->save_shoulder_Workout([
+            $this->repository->save_shoulder_workout([
                 'workout_id'  => $response['id'],
                 'shoulder_id' => $shoulder
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
-            $this->repository->save_breast_Workout([
+            $this->repository->save_breast_workout([
                 'workout_id' => $response['id'],
                 'breast_id'  => $breast
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
-            $this->repository->save_lower_member_Workout([
+            $this->repository->save_lower_member_workout([
                 'workout_id'      => $response['id'],
                 'lower_member_id' => $lower_member
             ]);

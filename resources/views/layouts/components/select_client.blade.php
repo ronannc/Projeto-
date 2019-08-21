@@ -8,10 +8,10 @@
         @foreach($extraData['client'] as $client)
             @if(isset($data))
                 @if($client['id'] == $data['client_id'])
-                    <option value="{{$client['id']}}" selected>{{$client['nome']}}</option>
+                    <option value="{{$client['id']}}" selected>{{$client['name']}}</option>
                 @endif
             @endif
-            <option value="{{$client['id']}}">{{$client['nome']}}</option>
+            <option value="{{$client['id']}}">{{$client['name']}}</option>
         @endforeach
     </select>
 </div>
