@@ -46,5 +46,10 @@ class WorkoutModeTableSeeder extends Seeder
             'name'        => 'Set 21',
             'description' => 'Modo de treino Set 21',
         ]);
+
+        WorkoutMode::create([
+            'name'        => 'Multiplas Series',
+            'description' => 'Modo de treino Multiplas Series',
+        ]);
     }
 }

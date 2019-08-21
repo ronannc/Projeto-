@@ -73,42 +73,48 @@ class WorkoutController extends Controller
         foreach ($data['triceps'] as $triceps) {
             $this->repository->save_triceps_workout([
                 'workout_id' => $response['id'],
-                'triceps_id' => $triceps
+                'triceps_id' => $triceps,
+                'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['biceps'] as $biceps) {
             $this->repository->save_biceps_workout([
                 'workout_id' => $response['id'],
-                'biceps_id'  => $biceps
+                'biceps_id'  => $biceps,
+                'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['back'] as $back) {
             $this->repository->save_back_workout([
                 'workout_id' => $response['id'],
-                'back_id'    => $back
+                'back_id'    => $back,
+                'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
             $this->repository->save_shoulder_workout([
                 'workout_id'  => $response['id'],
-                'shoulder_id' => $shoulder
+                'shoulder_id' => $shoulder,
+                'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
             $this->repository->save_breast_workout([
                 'workout_id' => $response['id'],
-                'breast_id'  => $breast
+                'breast_id'  => $breast,
+                'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
             $this->repository->save_lower_member_workout([
                 'workout_id'      => $response['id'],
-                'lower_member_id' => $lower_member
+                'lower_member_id' => $lower_member,
+                'workout_id_modes' => 8
             ]);
         }
         session()->flash('status', 'Adicionado com sucesso !');

@@ -69,7 +69,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         TricepsWorkout::create([
             'workout_id' => $data['workout_id'],
-            'triceps_id' => $data['triceps_id']
+            'triceps_id' => $data['triceps_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
@@ -90,7 +91,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         BicepsWorkout::create([
             'workout_id' => $data['workout_id'],
-            'biceps_id'  => $data['biceps_id']
+            'biceps_id'  => $data['biceps_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
@@ -111,7 +113,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         BackWorkout::create([
             'workout_id' => $data['workout_id'],
-            'back_id'    => $data['back_id']
+            'back_id'    => $data['back_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
@@ -132,7 +135,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         BreastWorkout::create([
             'workout_id' => $data['workout_id'],
-            'breast_id'  => $data['breast_id']
+            'breast_id'  => $data['breast_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
@@ -153,7 +157,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         ShoulderWorkout::create([
             'workout_id'  => $data['workout_id'],
-            'shoulder_id' => $data['shoulder_id']
+            'shoulder_id' => $data['shoulder_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
@@ -174,7 +179,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         LowerMemberWorkout::create([
             'workout_id'      => $data['workout_id'],
-            'lower_member_id' => $data['lower_member_id']
+            'lower_member_id' => $data['lower_member_id'],
+            'workout_id_modes' => $data['workout_id_modes']
         ]);
     }
 
