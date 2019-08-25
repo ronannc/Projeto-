@@ -40,4 +40,5 @@ Route::group([
         Route::resource('client', 'ClientController');
         Route::resource('workout-mode', 'WorkoutModeController');
         Route::resource('company', 'CompanyController');
+        Route::resource('physical-assessment', 'PhysicalAssessmentController');
  });

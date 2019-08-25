@@ -12,6 +12,7 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
+use App\Models\PhysicalAssessment;
 use App\Models\Shoulder;
 use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
@@ -29,6 +30,7 @@ use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\CompanyRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
+use App\Repositories\Contracts\PhysicalAssessmentRepository;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use App\Repositories\Contracts\TricepsRepository;
@@ -46,6 +48,7 @@ use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentCompanyRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
+use App\Repositories\EloquentPhysicalAssessmentRepository;
 use App\Repositories\EloquentShoulderRepository;
 use App\Repositories\EloquentShoulderWorkoutRepository;
 use App\Repositories\EloquentTricepsRepository;
@@ -143,6 +146,10 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentCompanyRepository(new Company());
         });
 
+        $this->app->bind(PhysicalAssessmentRepository::class, function () {
+            return new EloquentPhysicalAssessmentRepository(new PhysicalAssessment());
+        });
+
     }
 
 
@@ -169,7 +176,8 @@ class RepositoriesServiceProvider extends ServiceProvider
             TricepsRepository::class,
             TricepsWorkoutRepository::class,
             UserRepository::class,
-            CompanyRepository::class
+            CompanyRepository::class,
+            PhysicalAssessmentRepository::class
         ];
     }
 }

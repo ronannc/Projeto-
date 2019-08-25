@@ -216,6 +216,20 @@ return [
         ],
 
         [
+            'text'    => 'Avaliacao Fisica',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'physical-assessment.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'physical-assessment.create',
+                ],
+            ],
+        ],
+
+        [
             'header' => 'Empresas',
         ],
 

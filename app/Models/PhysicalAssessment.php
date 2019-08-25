@@ -23,6 +23,7 @@ class PhysicalAssessment extends Model
         'left_calf',
         'Weight',
         'height',
-        'blood_pressure'
+        'blood_pressure',
+        'client_id'
     ];
 }
