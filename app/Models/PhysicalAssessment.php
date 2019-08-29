@@ -21,7 +21,7 @@ class PhysicalAssessment extends Model
         'left_thigh',
         'right_calf',
         'left_calf',
-        'Weight',
+        'weight',
         'height',
         'blood_pressure',
         'client_id'

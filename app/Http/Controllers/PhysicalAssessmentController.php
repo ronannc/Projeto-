@@ -38,8 +38,8 @@ class PhysicalAssessmentController extends Controller
      */
     public function index(PhysicalAssessmentDataTable $dataTable)
     {
-        return $dataTable->render('layouts.physical-assessment.index');
 
+        return $dataTable->render('layouts.physical-assessment.index');
     }
 
     /**
@@ -49,7 +49,8 @@ class PhysicalAssessmentController extends Controller
      */
     public function create()
     {
-        return view('layouts.physical-assessment.create');
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.physical-assessment.create', compact('extraData'));
     }
 
     /**
@@ -95,7 +96,8 @@ class PhysicalAssessmentController extends Controller
     public function edit($id)
     {
         $PhysicalAssessment = PhysicalAssessment::find($id);
-        return view('layouts.physical-assessment.edit', compact('PhysicalAssessment'));
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.physical-assessment.edit', compact('PhysicalAssessment'), compact('extraData'));
     }
 
     /**
