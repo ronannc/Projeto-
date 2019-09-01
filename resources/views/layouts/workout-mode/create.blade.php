@@ -19,7 +19,7 @@
         <form action="{{route('workout-mode.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_text')
+                @include('layouts.components.input_name')
                 @include('layouts.components.input_description')
             </div>
             <!-- /.box-body -->
