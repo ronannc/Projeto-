@@ -20,7 +20,7 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercicio', ['data' => $lowerMember])
+                @include('layouts.components.input_exercise', ['data' => $lowerMember])
                 @include('layouts.components.input_description', ['data' => $lowerMember])
             </div>
             <!-- /.box-body -->

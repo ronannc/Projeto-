@@ -19,7 +19,7 @@
         <form action="{{route('lower-member.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_exercicio')
+                @include('layouts.components.input_exercise')
                 @include('layouts.components.input_description')
             </div>
             <!-- /.box-body -->

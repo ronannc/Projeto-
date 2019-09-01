@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-
+    protected $repository;
+    protected $service;
     /**
      * TricepsController constructor.
      *
@@ -40,7 +41,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $extraData = $this->repository->getExtraData();
+        return view('layouts.user.create', compact('extraData'));
     }
 
     /**
