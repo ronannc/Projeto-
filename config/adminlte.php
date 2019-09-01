@@ -278,6 +278,20 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Usuarios',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
     ],
 
     /*

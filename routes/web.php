@@ -41,4 +41,6 @@ Route::group([
         Route::resource('workout-mode', 'WorkoutModeController');
         Route::resource('company', 'CompanyController');
         Route::resource('physical-assessment', 'PhysicalAssessmentController');
+        Route::resource('user', 'UserController');
+
  });

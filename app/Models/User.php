@@ -60,6 +60,11 @@ class User extends Authenticatable
         return Auth::user()->hasone(Client::class, 'id', 'client_id');
     }
 
+    public static function company()
+    {
+        return Auth::user()->hasone(Company::class, 'id', 'company_id');
+    }
+
     /**
      * Retorna todas as roles associadas a um usuário.
      *
