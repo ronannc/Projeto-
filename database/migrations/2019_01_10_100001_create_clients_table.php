@@ -1,5 +1,6 @@
 <?php
 
+use App\Support\BloodType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,10 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('name');
+            $table->string('email')->unique();
             $table->string('cpf')->nullable();
+            $table->char('sex', 1)->nullable();
+            $table->enum('blood_type', BloodType::NAMES)->nullable();
             $table->string('phone');
             $table->date('birthday')->nullable();
             $table->string('avatar')->nullable();
@@ -25,6 +29,8 @@ class CreateClientsTable extends Migration
             $table->string('number', 10)->nullable();
             $table->string('complement')->nullable();
             $table->string('zipcode', 20);
+            $table->boolean('is_active')->default(1);
+            $table->datetime('last_access')->nullable();
 
             $table->integer('city_id');
             $table->foreign('city_id')->references('id')->on('cities');

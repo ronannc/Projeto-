@@ -3,6 +3,7 @@
 use App\Models\City;
 use App\Models\Client;
 use App\Models\Company;
+use App\Support\BloodType;
 use Faker\Generator as Faker;
 
 /*
@@ -19,8 +20,14 @@ use Faker\Generator as Faker;
 $factory->define(Client::class, function (Faker $faker) {
     return [
         'name'         => $faker->name,
+        'email'        => $faker->email,
         'cpf'          => rand(10000000, 99999999),
         'phone'        => rand(10000000, 99999999),
+        'sex'          => $faker->randomElement([
+            'm',
+            'f'
+        ]),
+        'blood_type'   => $faker->randomElement(BloodType::NAMES),
         'birthday'     => $faker->date(),
         'avatar'       => $faker->imageUrl(),
         'street'       => $faker->streetName,

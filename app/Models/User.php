@@ -3,18 +3,35 @@
 namespace App\Models;
 
 use App\Support\Translate;
+use DateTime;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * Class User.
+ *
+ * @package App\Models
+ *
+ * @property string   id
+ * @property string   name
+ * @property string   email
+ * @property boolean  is_active
+ * @property DateTime last_access
+ * @property DateTime created_at
+ * @property DateTime updated_at
+ *
+ * @property Company  company
+ *
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
     use HasRoles;
 
-    const SUPERADMIN = 'superAdmin';
+    const SUPER_ADMIN = 'superAdmin';
     const ADMIN = 'admin';
     const CLIENT = 'client';
 
@@ -27,6 +44,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_active',
         'client_id',
         'company_id'
     ];
@@ -37,12 +55,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     public static function isSuperAdmin()
     {
-        return Auth::check() && Auth::user()->hasRole(self::SUPERADMIN);
+        return Auth::check() && Auth::user()->hasRole(self::SUPER_ADMIN);
     }
 
     public static function isAdmin()
@@ -105,7 +124,7 @@ class User extends Authenticatable
     /**
      * Checa se o usuário possui uma role específica.
      *
-     * @param $role
+     * @param          $role
      * @param int|null $userId
      *
      * @return mixed
@@ -124,9 +143,10 @@ class User extends Authenticatable
     /**
      * Checa se o usuário possui uma permission em específico.
      *
-     * @param $permission
-     * @param bool $translated
+     * @param          $permission
+     * @param bool     $translated
      * @param int|null $userId
+     *
      * @return bool
      */
     public static function hasThisPermission($permission, $translated = false, $userId = null)

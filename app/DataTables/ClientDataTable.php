@@ -19,6 +19,12 @@ class ClientDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
+            ->editColumn('is_active', function (Client $model) {
+                return $model->is_active ? 'Ativo' : 'Inativo';
+            })
+            ->editColumn('sex', function (Client $model) {
+                return $model->sex == 'm' ? 'Masc.' : ($model->sex == 'f' ? 'Fem.' : 'N. Inf.');
+            })
             ->editColumn('actions', function (Client $client) {
 
                 return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
@@ -76,6 +82,12 @@ class ClientDataTable extends DataTable
         return [
             'id',
             'name',
+            'email',
+            'is_active' => [
+                'title' => 'Situação',
+            ],
+            'sex',
+            'blood_type',
             'cpf',
             'phone',
             'birthday',
@@ -85,7 +97,7 @@ class ClientDataTable extends DataTable
             'complement',
             'zipcode',
             'city_id',
-            'actions' => [
+            'actions'   => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,
