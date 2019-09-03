@@ -34,13 +34,13 @@ class PermissionTableSeeder extends Seeder
         ]);
 
         Role::create([
-            'name' => 'Super Administrador'
+            'name' => 'superAdmin'
         ]);
         Role::create([
-            'name' => 'Administrador'
+            'name' => 'admin'
         ]);
         Role::create([
-            'name' => 'Cliente'
+            'name' => 'client'
         ]);
     }
 }
