@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Scopes\CompanyGlobalScope;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 /**
  * Class Client.
@@ -32,8 +34,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property Company  company
  *
  */
-class Client extends Model
+class Client extends Model implements AuditableContract
 {
+    use Auditable;
     use CompanyGlobalScope;
 
     public const VERIFIED = 0;

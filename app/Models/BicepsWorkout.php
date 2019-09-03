@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
-class BicepsWorkout extends Model
+class BicepsWorkout extends Model implements AuditableContract
 {
+    use Auditable;
+
     protected $fillable = [
         'biceps_id',
         'workout_id',
