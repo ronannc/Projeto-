@@ -64,6 +64,16 @@ class Client extends Model implements AuditableContract
     {
         return Workout::where('client_id', $this->id)->get();
     }
+
+    public function city()
+    {
+        return $this->hasOne(City::class, 'id', 'city_id');
+    }
+
+    public function company()
+    {
+        return $this->hasOne(City::class, 'id', 'company_id');
+    }
 }
 
 

@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Repositories\Contracts\ClientRepository;
 use App\Services\ClientService;
 use App\Services\CompanyService;
+use App\Support\BloodType;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -59,6 +60,7 @@ class ClientController extends Controller
     {
         $extraData['company'] = Company::all();
         $extraData['city'] = City::all();
+        $extraData['blood_type'] = BloodType::NAMES;
 
         return view('layouts.client.create', compact('extraData'));
     }
@@ -109,6 +111,7 @@ class ClientController extends Controller
     {
         $extraData['company'] = Company::all();
         $extraData['city'] = City::all();
+        $extraData['blood_type'] = BloodType::NAMES;
 
         $data = Client::find($id);
 

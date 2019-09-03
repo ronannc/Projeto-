@@ -30,6 +30,10 @@
                 @include('layouts.components.input_complement')
                 @include('layouts.components.input_zipcode')
                 @include('layouts.components.select_city')
+                @include('layouts.components.input_email')
+                @include('layouts.components.input_sex')
+                @include('layouts.components.select_blood_type')
+
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

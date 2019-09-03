@@ -22,9 +22,6 @@ class ClientDataTable extends DataTable
             ->editColumn('is_active', function (Client $model) {
                 return $model->is_active ? 'Ativo' : 'Inativo';
             })
-            ->editColumn('sex', function (Client $model) {
-                return $model->sex == 'm' ? 'Masc.' : ($model->sex == 'f' ? 'Fem.' : 'N. Inf.');
-            })
             ->editColumn('actions', function (Client $client) {
 
                 return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
@@ -49,7 +46,7 @@ class ClientDataTable extends DataTable
      */
     public function query(Client $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('city', 'company');
     }
 
     /**
@@ -81,22 +78,23 @@ class ClientDataTable extends DataTable
     {
         return [
             'id',
-            'name',
-            'email',
+            'name' => ['title' => 'Nome'],
+            'email' => ['title' => 'Email'],
             'is_active' => [
                 'title' => 'Situação',
             ],
-            'sex',
-            'blood_type',
-            'cpf',
-            'phone',
-            'birthday',
-            'street',
-            'neighborhood',
-            'number',
-            'complement',
-            'zipcode',
-            'city_id',
+            'sex' => ['title' => 'Sexo'],
+            'blood_type' => ['title' => 'Tipo Sanguíneo'],
+            'cpf' => ['title' => 'CPF'],
+            'phone' => ['title' => 'Telefone'],
+            'birthday' => ['title' => 'Nascimento'],
+            'street' => ['title' => 'Rua'],
+            'neighborhood' => ['title' => 'Email'],
+            'number' => ['title' => 'Número'],
+            'complement' => ['title' => 'Complemento'],
+            'zipcode' => ['title' => 'Código Postal'],
+            'city.name' => ['title' => 'Cidade'],
+            'company.name' => ['title' => 'Empresa'],
             'actions'   => [
                 'title'      => 'Ações',
                 'orderable'  => false,
