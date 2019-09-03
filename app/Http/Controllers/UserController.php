@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use App\Services\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -53,7 +55,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->All();
+        $response = $this->service->store($data);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('status', 'Adicionado com sucesso !');
+        return redirect(route('user.index'));
     }
 
     /**

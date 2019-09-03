@@ -81,18 +81,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $client = Client::create([
-            'name'     => $data['name'],
-            'phone'    => $data['phone'],
-            'cpf'      => $data['cpf'],
-            'birthday' => $data['birthday']
-        ]);
-
         $user = User::create([
             'name'       => $data['name'],
             'email'      => $data['email'],
             'password'   => Hash::make($data['password']),
-            'client_ide' => $client['id']
         ]);
         $user->assignRole(User::CLIENTE);
 
