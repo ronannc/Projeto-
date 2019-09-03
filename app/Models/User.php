@@ -38,6 +38,14 @@ class User extends Authenticatable implements AuditableContract
     const ADMIN = 'admin';
     const CLIENT = 'client';
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $casts = [
+        'id' => 'string'
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
