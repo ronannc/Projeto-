@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\CompanyGlobalScope;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
 
@@ -33,6 +34,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Client extends Model
 {
+    use CompanyGlobalScope;
+
     public const VERIFIED = 0;
 
     protected $fillable = [
