@@ -22,10 +22,6 @@ class ClientDataTable extends DataTable
             ->editColumn('is_active', function (Client $model) {
                 return $model->is_active ? 'Ativo' : 'Inativo';
             })
-            ->editColumn('birthday', function (Client $model) {
-                //TODO: Realizar ordenação dessa coluna
-                return date('d/m/Y', strtotime($model->birthday));
-            })
             ->editColumn('actions', function (Client $client) {
 
                 return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
@@ -69,7 +65,6 @@ class ClientDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
-                'scrollX' => true,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
             ]);
     }
