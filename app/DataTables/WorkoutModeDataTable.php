@@ -21,9 +21,7 @@ class WorkoutModeDataTable extends DataTable
         return datatables($query)
             ->editColumn('actions', function (WorkoutMode $workoutMode) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('workout-mode.show',
-                        $workoutMode) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route('workout-mode.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('workout-mode.edit',
                         $workoutMode) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Modo de Exercicio ?\')){document.getElementById(\'form-delete' . $workoutMode['id'] . '\').submit();}">Excluir</a>
