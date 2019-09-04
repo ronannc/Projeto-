@@ -14,9 +14,10 @@ class CreateShouldersTable extends Migration
     public function up()
     {
         Schema::create('shoulders', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->uuid('id')->primary();
             $table->string('exercise');
             $table->string('description');
+
             $table->timestamps();
         });
     }

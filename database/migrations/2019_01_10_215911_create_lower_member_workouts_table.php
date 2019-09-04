@@ -14,18 +14,21 @@ class CreateLowerMemberWorkoutsTable extends Migration
     public function up()
     {
         Schema::create('lower_member_workouts', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('lower_member_ids');
-            $table->foreign('lower_member_ids')->references('id')->on('lower_members');
-            $table->integer('workout_id');
-            $table->foreign('workout_id')->references('id')->on('workouts');
-            $table->integer('workout_id_modes');
-            $table->foreign('workout_id_modes')->references('id')->on('workout_modes');
+            $table->uuid('id')->primary();
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->time('rest_time')->nullable();
             $table->string('repetition')->nullable();
             $table->string('group')->nullable();
+
+            $table->uuid('lower_member_id');
+            $table->foreign('lower_member_id')->references('id')->on('lower_members');
+
+            $table->uuid('workout_id');
+            $table->foreign('workout_id')->references('id')->on('workouts');
+
+            $table->uuid('workout_mode_id');
+            $table->foreign('workout_mode_id')->references('id')->on('workout_modes');
 
             $table->timestamps();
         });

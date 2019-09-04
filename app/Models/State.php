@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 /**
  * Class State
@@ -16,10 +14,8 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
  * @property string name
  * @property City   cities
  */
-class State extends Model implements AuditableContract
+class State extends Model
 {
-    use Auditable;
-
     protected $fillable = [
         'initials',
         'name',

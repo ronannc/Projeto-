@@ -41,6 +41,14 @@ class Client extends Model implements AuditableContract
 
     public const VERIFIED = 0;
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $casts = [
+        'id' => 'string'
+    ];
+
     protected $fillable = [
         'name',
         'email',

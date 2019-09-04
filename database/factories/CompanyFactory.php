@@ -3,6 +3,7 @@
 use App\Models\City;
 use App\Models\Company;
 use Faker\Generator as Faker;
+use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Company::class, function (Faker $faker) {
     return [
+        'id'            => Uuid::uuid4(),
         'name'          => $faker->word,
         'social_reason' => $faker->companySuffix,
         'cnpj'          => $faker->creditCardNumber,

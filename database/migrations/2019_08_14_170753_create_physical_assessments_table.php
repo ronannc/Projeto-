@@ -14,7 +14,7 @@ class CreatePhysicalAssessmentsTable extends Migration
     public function up()
     {
         Schema::create('physical_assessments', function (Blueprint $table) {
-            $table->increments('id');
+            $table->uuid('id')->primary();
             $table->integer('neck');
             $table->integer('shoulder');
             $table->integer('chest');
@@ -32,7 +32,8 @@ class CreatePhysicalAssessmentsTable extends Migration
             $table->decimal('height', 3, 2);
             $table->decimal('weight', 6, 3);
             $table->string('blood_pressure');
-            $table->integer('client_id')->nullable();
+
+            $table->uuid('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
 
             $table->timestamps();

@@ -14,18 +14,21 @@ class CreateShoulderWorkoutsTable extends Migration
     public function up()
     {
         Schema::create('shoulder_workouts', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('shoulder_id');
-            $table->foreign('shoulder_id')->references('id')->on('shoulders');
-            $table->integer('workout_id');
-            $table->foreign('workout_id')->references('id')->on('workouts');
-            $table->integer('workout_id_modes');
-            $table->foreign('workout_id_modes')->references('id')->on('workout_modes');
+            $table->uuid('id')->primary();
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->time('rest_time')->nullable();
             $table->string('repetition')->nullable();
             $table->string('group')->nullable();
+
+            $table->uuid('shoulder_id');
+            $table->foreign('shoulder_id')->references('id')->on('shoulders');
+
+            $table->uuid('workout_id');
+            $table->foreign('workout_id')->references('id')->on('workouts');
+
+            $table->uuid('workout_mode_id');
+            $table->foreign('workout_mode_id')->references('id')->on('workout_modes');
 
             $table->timestamps();
         });

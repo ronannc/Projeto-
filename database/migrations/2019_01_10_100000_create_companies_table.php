@@ -14,7 +14,7 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('social_reason');
             $table->string('cnpj');

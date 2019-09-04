@@ -3,6 +3,7 @@
 use App\Models\Client;
 use App\Models\Workout;
 use Faker\Generator as Faker;
+use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Workout::class, function (Faker $faker) {
     return [
+        'id'           => Uuid::uuid4(),
         'start'        => $faker->date(),
         'next_workout' => $faker->date(),
         'goal'         => $faker->name,

@@ -5,6 +5,7 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Support\BloodType;
 use Faker\Generator as Faker;
+use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Client::class, function (Faker $faker) {
     return [
+        'id'           => Uuid::uuid4(),
         'name'         => $faker->name,
         'email'        => $faker->email,
         'cpf'          => rand(10000000, 99999999),

@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 /**
  * Class Region
@@ -16,10 +14,8 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
  * @property double pib
  * @property int    population
  */
-class Region extends Model implements AuditableContract
+class Region extends Model
 {
-    use Auditable;
-
     public $timestamps = false;
 
     protected $fillable = [

@@ -10,6 +10,14 @@ class TricepsWorkout extends Model implements AuditableContract
 {
     use Auditable;
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $casts = [
+        'id' => 'string'
+    ];
+
     protected $fillable = [
         'triceps_id',
         'workout_id',

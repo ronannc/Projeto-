@@ -2,6 +2,7 @@
 
 use App\Models\Biceps;
 use Faker\Generator as Faker;
+use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Biceps::class, function (Faker $faker) {
     return [
+        'id'          => Uuid::uuid4(),
         'exercise'    => $faker->name,
         'description' => $faker->text(15)
     ];

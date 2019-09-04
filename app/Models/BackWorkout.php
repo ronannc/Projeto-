@@ -10,6 +10,14 @@ class BackWorkout extends Model implements AuditableContract
 {
     use Auditable;
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $casts = [
+        'id' => 'string'
+    ];
+
     protected $fillable = [
         'back_id',
         'workout_id',

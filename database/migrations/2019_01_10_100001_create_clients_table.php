@@ -15,7 +15,7 @@ class CreateClientsTable extends Migration
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('cpf')->nullable();
@@ -35,8 +35,9 @@ class CreateClientsTable extends Migration
             $table->integer('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
 
-            $table->integer('company_id')->nullable();
+            $table->uuid('company_id')->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
+
             $table->timestamps();
         });
     }

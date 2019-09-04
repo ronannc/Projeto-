@@ -14,18 +14,21 @@ class CreateBackWorkoutsTable extends Migration
     public function up()
     {
         Schema::create('back_workouts', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('back_id');
-            $table->foreign('back_id')->references('id')->on('backs');
-            $table->integer('workout_id');
-            $table->foreign('workout_id')->references('id')->on('workouts');
-            $table->integer('workout_id_modes');
-            $table->foreign('workout_id_modes')->references('id')->on('workout_modes');
+            $table->uuid('id')->primary();
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->time('rest_time')->nullable();
             $table->string('repetition')->nullable();
             $table->string('group')->nullable();
+
+            $table->uuid('back_id');
+            $table->foreign('back_id')->references('id')->on('backs');
+
+            $table->uuid('workout_id');
+            $table->foreign('workout_id')->references('id')->on('workouts');
+
+            $table->uuid('workout_mode_id');
+            $table->foreign('workout_mode_id')->references('id')->on('workout_modes');
 
             $table->timestamps();
         });

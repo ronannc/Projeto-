@@ -14,16 +14,19 @@ class CreateWorkoutsTable extends Migration
     public function up()
     {
         Schema::create('workouts', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->uuid('id')->primary();
             $table->date('start');
             $table->date('next_workout');
             $table->string('goal');
             $table->string('interval');
             $table->string('frequency');
-            $table->integer('method_id')->nullable();
+
+            $table->uuid('method_id')->nullable();
             $table->foreign('method_id')->references('id')->on('methods');
-            $table->integer('client_id')->nullable();
+
+            $table->uuid('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
+
             $table->timestamps();
         });
     }
