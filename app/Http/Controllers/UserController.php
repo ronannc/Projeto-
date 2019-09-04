@@ -111,4 +111,12 @@ class UserController extends Controller
     {
         //
     }
+
+    public function getUser (Request $request) {
+        return $request->user();
+    }
+
+    public function welcome(){
+        return view('welcome');
+    }
 }
