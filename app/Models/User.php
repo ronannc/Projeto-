@@ -162,6 +162,7 @@ class User extends Authenticatable implements AuditableContract
      */
     public static function hasThisPermission($permission, $translated = false, $userId = null)
     {
+//        dd($permission);
         if ($translated) {
             $permissionEnglish = array_search($permission, Translate::PT_BR);
         } else {
@@ -172,12 +173,14 @@ class User extends Authenticatable implements AuditableContract
             if (!empty($userId)) {
                 $user = User::with([])->find($userId);
 
+//                dd($user->hasPermissionTo($permissionEnglish));
                 return $user->hasPermissionTo($permissionEnglish);
             }
 
             return Auth::user()->hasPermissionTo($permissionEnglish);
         }
 
+//        dd("AA");
         return false;
     }
 }
