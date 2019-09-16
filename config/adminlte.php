@@ -355,13 +355,8 @@ return [
         ],
 
         [
-            'text'    => 'Auditoria',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'audits.index',
-                ],
-            ],
+            'text'  => 'Auditoria',
+            'route' => 'audits.index',
         ],
 
         [
