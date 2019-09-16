@@ -114,6 +114,76 @@ return [
         ],
 
         [
+            'text'    => 'Empresas',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'company.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'company.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Usuarios',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Administradores',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Roles',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Permissions',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
             'text'    => 'Auditoria',
             'submenu' => [
                 [
@@ -124,18 +194,23 @@ return [
         ],
 
         [
+            'text'  => 'Notificações',
+            'route' => 'home',
+        ],
+
+        [
             'header' => 'Exercicios',
         ],
         [
             'text'    => 'Biceps',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'biceps.index'
+                    'text'  => 'Listar',
+                    'route' => 'biceps.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'biceps.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'biceps.create'
                 ],
             ],
         ],
@@ -200,12 +275,12 @@ return [
             'text'    => 'Triceps',
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'route'  => 'triceps.index'
+                    'text'  => 'Listar',
+                    'route' => 'triceps.index'
                 ],
                 [
-                    'text' => 'Cadastrar',
-                    'route'  => 'triceps.create'
+                    'text'  => 'Cadastrar',
+                    'route' => 'triceps.create'
                 ],
             ],
         ],
@@ -243,24 +318,6 @@ return [
         ],
 
         [
-            'header' => 'Empresas',
-        ],
-
-        [
-            'text'    => 'Empresas',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'company.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'company.create',
-                ],
-            ],
-        ],
-
-        [
             'header' => 'Treinos',
         ],
 
@@ -288,20 +345,6 @@ return [
                 [
                     'text'  => 'Cadastrar',
                     'route' => 'workout-mode.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Usuarios',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
                 ],
             ],
         ],
