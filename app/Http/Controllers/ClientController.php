@@ -7,10 +7,8 @@ use App\DataTables\WorkoutDataTable;
 use App\Models\City;
 use App\Models\Client;
 use App\Models\Company;
-use App\Models\User;
 use App\Repositories\Contracts\ClientRepository;
 use App\Services\ClientService;
-use App\Services\CompanyService;
 use App\Support\BloodType;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -43,11 +41,6 @@ class ClientController extends Controller
      */
     public function index(ClientDataTable $dataTable)
     {
-        if (User::isClient() && User::Client()->first() != null) {
-            $Client = User::Client()->first();
-
-            return redirect(route('client.edit', $Client));
-        }
         return $dataTable->render('layouts.client.index');
     }
 
