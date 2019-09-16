@@ -13,7 +13,9 @@ use App\Listeners\Observers\CompanyObserver;
 use App\Listeners\Observers\LowerMemberObserver;
 use App\Listeners\Observers\LowerMemberWorkoutObserver;
 use App\Listeners\Observers\MethodObserver;
+use App\Listeners\Observers\PermissionObserver;
 use App\Listeners\Observers\PhysicalAssessmentObserver;
+use App\Listeners\Observers\RoleObserver;
 use App\Listeners\Observers\ShoulderObserver;
 use App\Listeners\Observers\ShoulderWorkoutObserver;
 use App\Listeners\Observers\TricepsObserver;
@@ -32,7 +34,9 @@ use App\Models\Company;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
 use App\Models\Method;
+use App\Models\Permission;
 use App\Models\PhysicalAssessment;
+use App\Models\Role;
 use App\Models\Shoulder;
 use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
@@ -85,5 +89,7 @@ class EventServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
         Workout::observe(WorkoutObserver::class);
         WorkoutMode::observe(WorkoutModeObserver::class);
+        Permission::observe(PermissionObserver::class);
+        Role::observe(RoleObserver::class);
     }
 }

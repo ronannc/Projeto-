@@ -14,17 +14,17 @@ class UsersTableSeeder extends Seeder
     {
 
         $user = User::create([
-            'name'     => 'SuperAdmin',
-            'email'    => 'superadmin@email.com',
-            'password' => bcrypt('secretxxx'),
-        ]);
-        $user->assignRole(User::SUPER_ADMIN);
-
-        $user = User::create([
-            'name'     => 'Admin',
+            'name'     => 'Administrator',
             'email'    => 'admin@email.com',
             'password' => bcrypt('secretxxx'),
         ]);
         $user->assignRole(User::ADMIN);
+
+        $user = User::create([
+            'name'     => 'Manager',
+            'email'    => 'manager@email.com',
+            'password' => bcrypt('secretxxx'),
+        ]);
+        $user->assignRole(User::MANAGER);
     }
 }
