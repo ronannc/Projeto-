@@ -21,6 +21,7 @@ Auth::routes();
 Route::group([
     'middleware' => [
         'auth',
+        'invalidateIfBlocked'
     ]
 ],
     function () {
