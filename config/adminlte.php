@@ -297,19 +297,6 @@ return [
                     ],
                 ],
                 [
-                    'text'    => 'Secretários',
-                    'submenu' => [
-                        [
-                            'text'  => 'Listar',
-                            'route' => 'user.index',
-                        ],
-                        [
-                            'text'  => 'Cadastrar',
-                            'route' => 'user.create',
-                        ],
-                    ],
-                ],
-                [
                     'text'    => 'Online',
                     'submenu' => [
                         [
