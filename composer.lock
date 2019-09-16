@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d3da2db9e0fa3ebc0a78d9ea26e9465",
+    "content-hash": "fff31d314eb3bb7a1f6cb4cfaed122cf",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -732,6 +732,69 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "highideas/laravel-users-online",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/highideas/laravel-users-online.git",
+                "reference": "92f9e28abbc5c234e0aa229d1759142e0df67576"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/highideas/laravel-users-online/zipball/92f9e28abbc5c234e0aa229d1759142e0df67576",
+                "reference": "92f9e28abbc5c234e0aa229d1759142e0df67576",
+                "shasum": ""
+            },
+            "require-dev": {
+                "codacy/coverage": "dev-master",
+                "illuminate/auth": "^5.8",
+                "illuminate/cache": "^5.8",
+                "illuminate/database": "^5.8",
+                "illuminate/session": "^5.8",
+                "illuminate/support": "^5.8",
+                "orchestra/testbench": "~3.8",
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HighIdeas\\UsersOnline\\Providers\\UsersOnlineEventServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HighIdeas\\UsersOnline\\": "src/",
+                    "HighIdeas\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel Goncalves",
+                    "role": "Developer",
+                    "email": "gabrielll_07@hotmail.com",
+                    "homepage": "http://gabrieldeveloper.com.br"
+                },
+                {
+                    "name": "Marco Araujo",
+                    "role": "Developer",
+                    "email": "marco.araujo.junior@gmail.com",
+                    "homepage": "http://marcojunior.com"
+                }
+            ],
+            "description": "This package will provide an online users management.",
+            "keywords": [
+                "Users",
+                "laravel"
+            ],
+            "time": "2019-05-13T20:58:54+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

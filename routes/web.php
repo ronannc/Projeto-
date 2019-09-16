@@ -39,6 +39,7 @@ Route::group([
         Route::resource('company', 'CompanyController');
         Route::resource('physical-assessment', 'PhysicalAssessmentController');
         Route::resource('user', 'UserController');
+        Route::get('users/online', 'UserController@online')->name('users.online');
         Route::resource('audits', 'AuditController');
 
     });

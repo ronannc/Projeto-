@@ -10,6 +10,7 @@
     "require": {
         "php": ">=7.2.3",
         "fideloper/proxy": "~4.0",
+        "highideas/laravel-users-online": "^3.0",
         "jeroennoten/laravel-adminlte": "^1.24",
         "laravel/framework": "5.7.*",
         "laravel/horizon": "^2.2",
