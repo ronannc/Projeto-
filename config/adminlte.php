@@ -322,11 +322,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'user.index',
+                    'route' => 'roles.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'user.create',
+                    'route' => 'roles.create',
                 ],
             ],
         ],

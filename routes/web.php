@@ -42,5 +42,6 @@ Route::group([
         Route::resource('user', 'UserController');
         Route::get('users/online', 'UserController@online')->name('users.online');
         Route::resource('audits', 'AuditController');
+        Route::resource('roles', 'RoleController');
 
     });

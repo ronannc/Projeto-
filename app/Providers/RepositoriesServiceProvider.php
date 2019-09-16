@@ -12,7 +12,9 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
+use App\Models\Permission;
 use App\Models\PhysicalAssessment;
+use App\Models\Role;
 use App\Models\Shoulder;
 use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
@@ -30,7 +32,9 @@ use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\CompanyRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
+use App\Repositories\Contracts\PermissionRepository;
 use App\Repositories\Contracts\PhysicalAssessmentRepository;
+use App\Repositories\Contracts\RoleRepository;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Repositories\Contracts\ShoulderWorkoutRepository;
 use App\Repositories\Contracts\TricepsRepository;
@@ -48,7 +52,9 @@ use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentCompanyRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
+use App\Repositories\EloquentPermissionRepository;
 use App\Repositories\EloquentPhysicalAssessmentRepository;
+use App\Repositories\EloquentRoleRepository;
 use App\Repositories\EloquentShoulderRepository;
 use App\Repositories\EloquentShoulderWorkoutRepository;
 use App\Repositories\EloquentTricepsRepository;
@@ -150,6 +156,14 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentPhysicalAssessmentRepository(new PhysicalAssessment());
         });
 
+        $this->app->bind(RoleRepository::class, function () {
+            return new EloquentRoleRepository(new Role());
+        });
+
+        $this->app->bind(PermissionRepository::class, function () {
+            return new EloquentPermissionRepository(new Permission());
+        });
+
     }
 
 
@@ -177,7 +191,9 @@ class RepositoriesServiceProvider extends ServiceProvider
             TricepsWorkoutRepository::class,
             UserRepository::class,
             CompanyRepository::class,
-            PhysicalAssessmentRepository::class
+            PhysicalAssessmentRepository::class,
+            RoleRepository::class,
+            PermissionRepository::class,
         ];
     }
 }
