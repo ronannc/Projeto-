@@ -14,11 +14,20 @@ class CreateAuditsTable extends Migration
     public function up()
     {
         Schema::create('audits', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('user_type')->nullable();
+            $table->bigIncrements('id');
             $table->uuid('user_id')->nullable();
+            $table->string('user_type')->nullable();
+            $table->index([
+                'user_id',
+                'user_type',
+            ]);
             $table->string('event');
-            $table->morphs('auditable');
+            $table->uuid('auditable_id');
+            $table->string('auditable_type');
+            $table->index([
+                'auditable_id',
+                'auditable_type',
+            ]);
             $table->text('old_values')->nullable();
             $table->text('new_values')->nullable();
             $table->text('url')->nullable();
@@ -26,11 +35,6 @@ class CreateAuditsTable extends Migration
             $table->string('user_agent')->nullable();
             $table->string('tags')->nullable();
             $table->timestamps();
-
-            $table->index([
-                'user_id',
-                'user_type'
-            ]);
         });
     }
 

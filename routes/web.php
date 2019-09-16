@@ -39,5 +39,6 @@ Route::group([
         Route::resource('company', 'CompanyController');
         Route::resource('physical-assessment', 'PhysicalAssessmentController');
         Route::resource('user', 'UserController');
+        Route::resource('audits', 'AuditController');
 
- });
+    });

@@ -109,6 +109,19 @@ return [
 
     'menu' => [
 
+        [
+            'header' => 'Administrador',
+        ],
+
+        [
+            'text'    => 'Auditoria',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'audits.index',
+                ],
+            ],
+        ],
 
         [
             'header' => 'Exercicios',
