@@ -63,6 +63,8 @@ class User extends Authenticatable implements AuditableContract
         'name',
         'email',
         'password',
+        'avatar',
+        'last_access',
         'is_active',
         'client_id',
         'company_id'

@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        auth()->user()->update(['last_access' => now()]);
         return view('home');
     }
 }
