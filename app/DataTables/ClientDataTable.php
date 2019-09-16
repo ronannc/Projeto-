@@ -26,6 +26,9 @@ class ClientDataTable extends DataTable
                 //TODO: Realizar ordenação dessa coluna
                 return date('d/m/Y', strtotime($model->birthday));
             })
+            ->editColumn('company.name', function (Client $model) {
+                return $model->company->name ?? '-';
+            })
             ->editColumn('actions', function (Client $client) {
 
                 return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
