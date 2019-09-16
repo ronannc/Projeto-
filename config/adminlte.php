@@ -110,99 +110,10 @@ return [
     'menu' => [
 
         [
-            'header' => 'Administrador',
-        ],
-
-        [
-            'text'    => 'Empresas',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'company.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'company.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Usuarios',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Administradores',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Roles',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Permissions',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
-                ],
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Auditoria',
-            'submenu' => [
-                [
-                    'text'  => 'Listar',
-                    'route' => 'audits.index',
-                ],
-            ],
-        ],
-
-        [
-            'text'  => 'Notificações',
-            'route' => 'home',
-        ],
-
-        [
-            'header' => 'Exercicios',
+            'header' => 'Exercícios',
         ],
         [
-            'text'    => 'Biceps',
+            'text'    => 'Bíceps',
             'submenu' => [
                 [
                     'text'  => 'Listar',
@@ -272,7 +183,7 @@ return [
         ],
 
         [
-            'text'    => 'Triceps',
+            'text'    => 'Tríceps',
             'submenu' => [
                 [
                     'text'  => 'Listar',
@@ -304,7 +215,7 @@ return [
         ],
 
         [
-            'text'    => 'Avaliacao Fisica',
+            'text'    => 'Avaliacao Física',
             'submenu' => [
                 [
                     'text'  => 'Listar',
@@ -347,6 +258,128 @@ return [
                     'route' => 'workout-mode.create',
                 ],
             ],
+        ],
+
+        // MENU DE ADMINISTRADORES
+
+        [
+            'header' => 'Administrador',
+        ],
+
+        [
+            'text'    => 'Empresas',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'company.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'company.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Usuários',
+            'submenu' => [
+                [
+                    'text'    => 'Gerentes',
+                    'submenu' => [
+                        [
+                            'text'  => 'Listar',
+                            'route' => 'user.index',
+                        ],
+                        [
+                            'text'  => 'Cadastrar',
+                            'route' => 'user.create',
+                        ],
+                    ],
+                ],
+                [
+                    'text'    => 'Secretários',
+                    'submenu' => [
+                        [
+                            'text'  => 'Listar',
+                            'route' => 'user.index',
+                        ],
+                        [
+                            'text'  => 'Cadastrar',
+                            'route' => 'user.create',
+                        ],
+                    ],
+                ],
+                [
+                    'text'    => 'Online',
+                    'submenu' => [
+                        [
+                            'text'  => 'Listar',
+                            'route' => 'user.index',
+                        ],
+                        [
+                            'text'  => 'Cadastrar',
+                            'route' => 'user.create',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Administradores',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Roles',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Permissions',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'user.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'user.create',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Auditoria',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'audits.index',
+                ],
+            ],
+        ],
+
+        [
+            'text'  => 'Notificações',
+            'route' => 'home',
         ],
     ],
 
