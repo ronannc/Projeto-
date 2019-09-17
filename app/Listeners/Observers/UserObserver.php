@@ -19,11 +19,6 @@ class UserObserver
     public function creating(Model $model)
     {
         $model->id = Uuid::uuid4();
-
-        // todo: fix it with auth user company id
-        if (auth()->check()) {
-            $model->company_id = auth()->user()->company_id;
-        }
     }
 
     /**

@@ -3,15 +3,16 @@
 namespace App\Repositories\Contracts;
 
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
-interface UserRepository
+/**
+ * Interface UserRepository
+ *
+ * @package namespace App\Repositories;
+ */
+interface UserRepository extends BaseRepository
 {
-    public function getExtraData();
+    public function getExtraData($id = null);
 
-    public function save(array $data);
-
-    public function update(Model $model, array $data);
-
-    public function delete(Model $model);
+    public function findByEmail(string $email): ?User;
 }

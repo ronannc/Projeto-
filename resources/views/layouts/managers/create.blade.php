@@ -16,15 +16,12 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('user.store')}}" method="post">
+        <form action="{{route('managers.store')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_name')
                 @include('layouts.components.input_email')
-                @include('layouts.components.select_client')
                 @include('layouts.components.select_company')
-                @include('layouts.components.input_password')
-                @include('layouts.components.select_role')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

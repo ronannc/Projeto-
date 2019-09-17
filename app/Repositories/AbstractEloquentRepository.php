@@ -2,183 +2,87 @@
 
 namespace App\Repositories;
 
-use App\Models\User;
 use App\Repositories\Contracts\BaseRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 
 abstract class AbstractEloquentRepository implements BaseRepository
 {
     /**
-     * Name of the Model with absolute namespace
-     *
-     * @var string
-     */
-    protected $modelName;
-
-    /**
-     * Instance that extends Illuminate\Database\Eloquent\Model
-     *
      * @var Model
      */
     protected $model;
 
-    /**
-     * get logged in user
-     *
-     * @var User $loggedInUser
-     */
-    protected $loggedInUser;
+    /** @var bool */
+    protected $withoutGlobalScopes = false;
 
-    /**
-     * Constructor
-     *
-     * @param Model $model
-     */
+    /** @var array */
+    protected $with = [];
+
     public function __construct(Model $model)
     {
         $this->model = $model;
-        $this->loggedInUser = $this->getLoggedInUser();
     }
 
-    /**
-     * get loggedIn user
-     *
-     * @return User
-     */
-    protected function getLoggedInUser()
+    public function with(array $with = [])
     {
-        $user = Auth::user();
-
-        if ($user instanceof User) {
-            return $user;
-        } else {
-            return new User();
-        }
+        $this->with = $with;
+        return $this;
     }
 
-    /**
-     * Get Model instance
-     *
-     * @return Model
-     */
-    public function getModel()
+    public function withoutGlobalScopes()
     {
-        return $this->model;
+        $this->withoutGlobalScopes = true;
+        return $this;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function findBy(array $searchCriteria = [])
+    public function store(array $data)
     {
-        $limit = !empty($searchCriteria['per_page']) ? (int)$searchCriteria['per_page'] : 15; // it's needed for pagination
-
-        $queryBuilder = $this->model->where(function ($query) use ($searchCriteria) {
-
-            $this->applySearchCriteriaInQueryBuilder($query, $searchCriteria);
-        }
-        );
-
-        return $queryBuilder->paginate($limit);
+        return $this->model->with([])->create($data);
     }
 
-    /**
-     * Apply condition on query builder based on search criteria
-     *
-     * @param Object $queryBuilder
-     * @param array $searchCriteria
-     *
-     * @return mixed
-     */
-    protected function applySearchCriteriaInQueryBuilder($queryBuilder, array $searchCriteria = [])
-    {
-
-        foreach ($searchCriteria as $key => $value) {
-
-            //skip pagination related query params
-            if (in_array($key, [
-                'page',
-                'per_page'
-            ])) {
-                continue;
-            }
-
-            //we can pass multiple params for a filter with commas
-            $allValues = explode(',', $value);
-
-            if (count($allValues) > 1) {
-                $queryBuilder->whereIn($key, $allValues);
-            } else {
-                $operator = '=';
-                $queryBuilder->where($key, $operator, $value);
-            }
-        }
-
-        return $queryBuilder;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function save(array $data)
-    {
-        return $this->model->create($data);
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function update(Model $model, array $data)
     {
-        $fillAbleProperties = $this->model->getFillable();
+        return tap($model)->update($data);
+    }
 
-        foreach ($data as $key => $value) {
-
-            // update only fillAble properties
-            if (in_array($key, $fillAbleProperties)) {
-                $model->$key = $value;
-            }
+    public function findByCriteria(array $criteria = []): Collection
+    {
+        if (!$this->withoutGlobalScopes) {
+            return $this->model->with($this->with)
+                ->where($criteria)
+                ->orderBy('created_at', 'desc')
+                ->get();
         }
 
-        // update the model
-        $model->save();
-
-        // get updated model from database
-        $model = $this->findOne($model->getKey(), $model->getKeyName());
-
-        return $model;
+        return $this->model->with($this->with)
+            ->withoutGlobalScopes()
+            ->where($criteria)
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function findOne($id, $fieldname)
+    public function findByFilters()
     {
-        return $this->findOneBy([$fieldname => $id]);
+        return $this->model->with($this->with)->paginate();
     }
 
-    /**
-     * @inheritdoc
-     */
+    public function findOneById($id)
+    {
+        return $this->findOneBy(['id' => $id]);
+    }
+
     public function findOneBy(array $criteria)
     {
-        return $this->model->where($criteria)->first();
+        if (!$this->withoutGlobalScopes) {
+            return $this->model->with($this->with)->where($criteria)->firstOrFail();
+        }
+
+        return $this->model->with($this->with)->withoutGlobalScopes()->where($criteria)->firstOrFail();
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function findIn($key, array $values)
-    {
-        return $this->model->whereIn($key, $values)->get();
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function delete(Model $model)
     {
-        return $model->delete();
+        return $model->with([])->delete();
     }
 }

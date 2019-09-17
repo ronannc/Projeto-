@@ -9,6 +9,10 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use App\Services\UserService;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 
 class ManagerController extends Controller
 {
@@ -43,7 +47,7 @@ class ManagerController extends Controller
      *
      * @param string $id
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function edit($id)
     {
@@ -58,15 +62,14 @@ class ManagerController extends Controller
     /**
      * Exibe um formulário para adicionar um manager.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function create()
     {
         // todo: modificar
         $extraData = $this->userRepository->getExtraData();
-        $resource = 'Managers';
 
-        return view('layouts.users.create', compact('extraData'), compact('resource'));
+        return view('layouts.managers.create', compact('extraData'));
     }
 
     /**
@@ -74,14 +77,14 @@ class ManagerController extends Controller
      *
      * @param UserCreateRequest $request
      *
-     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return $this|RedirectResponse|Redirector
      */
     public function store(UserCreateRequest $request)
     {
         // todo: modificar
         $request->request->add(['role' => User::MANAGER]);
 
-        $response = $this->userService->store($request->except('company_id'));
+        $response = $this->userService->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -100,7 +103,7 @@ class ManagerController extends Controller
      * @param UserUpdateRequest $request
      * @param string            $id
      *
-     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return $this|RedirectResponse|Redirector
      */
     public function update(UserUpdateRequest $request, $id)
     {

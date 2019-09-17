@@ -24,6 +24,8 @@ class ManagerDataTable extends DataTable
                 return $model->is_active ? "Ativo" : "Inativo";
             })->editColumn('email', function (User $model) {
                 return $model->email;
+            })->editColumn('company', function (User $model) {
+                return $model->company['name'];
             })->filterColumn('last_access', function ($query, $keyword) {
                 $query->whereRaw("DATE_FORMAT(last_access,'%d/%m/%Y') like ?", ["%$keyword%"]);
             })->filterColumn('created_at', function ($query, $keyword) {
@@ -51,7 +53,7 @@ class ManagerDataTable extends DataTable
      */
     public function query()
     {
-        $query = User::query()
+        $query = User::query()->with(['company'])
             ->role(User::MANAGER);
 
         return $this->applyScopes($query);
@@ -105,6 +107,13 @@ class ManagerDataTable extends DataTable
             ],
             'is_active'   => [
                 'title'      => 'Status',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => true,
+                'exportable' => true,
+            ],
+            'company'     => [
+                'title'      => 'Empresa',
                 'orderable'  => false,
                 'searchable' => false,
                 'printable'  => true,

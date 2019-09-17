@@ -8,17 +8,35 @@ use Illuminate\Database\Eloquent\Model;
 interface BaseRepository
 {
     /**
+     * Set the relationships of the query
+     *
+     * @param array $with
+     *
+     * @return mixed
+     */
+    public function with(array $with = []);
+
+    /**
+     * Set withoutGlobalScopes attribute to true and apply it to the query
+     *
+     * @return mixed
+     */
+    public function withoutGlobalScopes();
+
+    /**
      * Find a resource by id
      *
-     * @param $id
+     * @param string $id
+     *
      * @return Model|null
      */
-    public function findOne($id, $fieldname);
+    public function findOneById($id);
 
     /**
      * Find a resource by criteria
      *
      * @param array $criteria
+     *
      * @return Model|null
      */
     public function findOneBy(array $criteria);
@@ -26,33 +44,27 @@ interface BaseRepository
     /**
      * Search All resources by criteria
      *
-     * @param array $searchCriteria
-     * @return Collection
-     */
-    public function findBy(array $searchCriteria = []);
-
-    /**
-     * Search All resources by any values of a key
+     * @param array $criteria
      *
-     * @param string $key
-     * @param array $values
      * @return Collection
      */
-    public function findIn($key, array $values);
+    public function findByCriteria(array $criteria = []): Collection;
 
     /**
      * Save a resource
      *
      * @param array $data
+     *
      * @return Model
      */
-    public function save(array $data);
+    public function store(array $data);
 
     /**
      * Update a resource
      *
      * @param Model $model
      * @param array $data
+     *
      * @return Model
      */
     public function update(Model $model, array $data);
@@ -61,6 +73,7 @@ interface BaseRepository
      * Delete a resource
      *
      * @param Model $model
+     *
      * @return mixed
      */
     public function delete(Model $model);
