@@ -23,13 +23,10 @@
 
                 @include('layouts.components.input_start', ['extraData' => $data])
                 @include('layouts.components.input_next_workout', ['extraData' => $data])
-                @include('layouts.components.input_description', ['extraData' => $data])
                 @include('layouts.components.input_goal', ['extraData' => $data])
                 @include('layouts.components.input_interval', ['extraData' => $data])
-                @include('layouts.components.input_method', ['extraData' => $data])
+                @include('layouts.components.select_method', ['extraData' => $extraData])
                 @include('layouts.components.input_frequency', ['extraData' => $data])
-                @include('layouts.components.input_aerob_ini', ['extraData' => $data])
-                @include('layouts.components.input_aerob_fim', ['extraData' => $data])
                 @include('layouts.components.select_client')
 
                 <div class="row">

@@ -44,7 +44,7 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
             'back'         => Back::all(),
             'breast'       => Breast::all(),
             'shoulder'     => Shoulder::all(),
-            'lower_member' => LowerMember::all()
+            'lower_member' => LowerMember::all(),
         ];
     }
 

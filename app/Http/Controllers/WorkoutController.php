@@ -147,7 +147,6 @@ class WorkoutController extends Controller
     {
         $extraData = $this->repository->getExtraData();
         $data = $this->repository->getExerciciosTreino($id);
-//        dd($data);
         return view('layouts.workouts.edit', compact('extraData'), compact('data'));
     }
 
@@ -162,12 +161,6 @@ class WorkoutController extends Controller
     public function update(Request $request, Workout $workout)
     {
         $data = $request->all();
-
-//        $data['formula_Workout'] = $workout->usa_formula();
-//        if ($data['formula_Workout']['formula']) {
-//            $process_data = $this->service->process_data($data, true);
-//        } else {
-//        }
 
         $process_data = $this->service->process_data($data);
 
@@ -207,12 +200,6 @@ class WorkoutController extends Controller
             $inferior['workout_id'] = $workout['id'];
             $this->repository->update_lower_member_Workout($inferior);
         }
-
-//        if (User::isCliente()) {
-//            $data['status'] = WorkoutMode::query()->first()['id'];
-//        } else {
-//            $data['status'] = 0;
-//        }
 
         $response = $this->service->update($data, $workout);
 
