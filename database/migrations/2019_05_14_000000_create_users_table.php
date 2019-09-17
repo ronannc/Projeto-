@@ -22,9 +22,6 @@ class CreateUsersTable extends Migration
             $table->boolean('is_active')->default(1);
             $table->datetime('last_access')->nullable();
 
-            $table->uuid('client_id')->nullable();
-            $table->foreign('client_id')->references('id')->on('clients');
-
             $table->uuid('company_id')->nullable();
             $table->foreign('company_id')->references('id')->on('companies');
 

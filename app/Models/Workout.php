@@ -27,4 +27,9 @@ class Workout extends Model implements AuditableContract
         'frequency',
         'client_id',
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

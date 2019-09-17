@@ -227,11 +227,6 @@ class User extends Authenticatable implements AuditableContract
         return $this->belongsTo(Company::class);
     }
 
-    public function client()
-    {
-        return $this->belongsTo(Client::class);
-    }
-
     /**
      * Checa se o usuário possui a permission.
      *
@@ -279,7 +274,6 @@ class User extends Authenticatable implements AuditableContract
     {
         return $query->where('company_id', '=', auth()->user()->company_id);
     }
-
 
     public function scopeActive($query)
     {
