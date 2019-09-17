@@ -38,7 +38,7 @@ class WorkoutController extends Controller
     public function index(WorkoutDataTable $dataTable)
     {
         $Workout = Workout::all();
-        return $dataTable->with('data', $Workout)->render('layouts.workout.index');
+        return $dataTable->with('data', $Workout)->render('layouts.workouts.index');
     }
 
     /**
@@ -49,7 +49,7 @@ class WorkoutController extends Controller
     public function create()
     {
         $extraData = $this->repository->getExtraData();
-        return view('layouts.workout.create', compact('extraData'));
+        return view('layouts.workouts.create', compact('extraData'));
     }
 
     /**
@@ -72,48 +72,48 @@ class WorkoutController extends Controller
 
         foreach ($data['triceps'] as $triceps) {
             $this->repository->save_triceps_workout([
-                'workout_id' => $response['id'],
-                'triceps_id' => $triceps,
+                'workout_id'       => $response['id'],
+                'triceps_id'       => $triceps,
                 'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['biceps'] as $biceps) {
             $this->repository->save_biceps_workout([
-                'workout_id' => $response['id'],
-                'biceps_id'  => $biceps,
+                'workout_id'       => $response['id'],
+                'biceps_id'        => $biceps,
                 'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['back'] as $back) {
             $this->repository->save_back_workout([
-                'workout_id' => $response['id'],
-                'back_id'    => $back,
+                'workout_id'       => $response['id'],
+                'back_id'          => $back,
                 'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
             $this->repository->save_shoulder_workout([
-                'workout_id'  => $response['id'],
-                'shoulder_id' => $shoulder,
+                'workout_id'       => $response['id'],
+                'shoulder_id'      => $shoulder,
                 'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
             $this->repository->save_breast_workout([
-                'workout_id' => $response['id'],
-                'breast_id'  => $breast,
+                'workout_id'       => $response['id'],
+                'breast_id'        => $breast,
                 'workout_id_modes' => 8
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
             $this->repository->save_lower_member_workout([
-                'workout_id'      => $response['id'],
-                'lower_member_id' => $lower_member,
+                'workout_id'       => $response['id'],
+                'lower_member_id'  => $lower_member,
                 'workout_id_modes' => 8
             ]);
         }
@@ -131,7 +131,7 @@ class WorkoutController extends Controller
     public function show($id)
     {
         $data = $this->repository->getExerciciosWorkout($id);
-        return view('layouts.workout.show', compact('data'));
+        return view('layouts.workouts.show', compact('data'));
     }
 
     /**
@@ -145,7 +145,7 @@ class WorkoutController extends Controller
     {
         $extraData = $this->repository->getExtraData();
         $data = $this->repository->getExerciciosWorkout($id);
-        return view('layouts.workout.edit', compact('extraData'), compact('data'));
+        return view('layouts.workouts.edit', compact('extraData'), compact('data'));
     }
 
     /**
@@ -161,19 +161,19 @@ class WorkoutController extends Controller
         $data = $request->all();
 
         $data['formula_Workout'] = $workout->usa_formula();
-        if ($data['formula_Workout']['formula']){
+        if ($data['formula_Workout']['formula']) {
             $process_data = $this->service->process_data($data, true);
-        }else{
+        } else {
             $process_data = $this->service->process_data($data);
         }
 
-        foreach ($process_data['triceps'] as $key => $triceps){
+        foreach ($process_data['triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;
             $triceps['workout_id'] = $workout['id'];
             $this->repository->update_triceps_Workout($triceps);
         }
 
-        foreach ($process_data['biceps'] as $key => $biceps){
+        foreach ($process_data['biceps'] as $key => $biceps) {
             $biceps['biceps_id'] = $key;
             $biceps['workout_id'] = $workout['id'];
             $this->repository->update_biceps_Workout($biceps);
@@ -197,15 +197,15 @@ class WorkoutController extends Controller
             $this->repository->update_shoulder_Workout($shoulder);
         }
 
-        foreach ($process_data['inferior'] as $key => $inferior){
+        foreach ($process_data['inferior'] as $key => $inferior) {
             $inferior['lower_member_id'] = $key;
             $inferior['workout_id'] = $workout['id'];
             $this->repository->update_lower_member_Workout($inferior);
         }
 
-        if(User::isCliente()){
+        if (User::isCliente()) {
             $data['status'] = 1;
-        }else{
+        } else {
             $data['status'] = 0;
         }
 
@@ -238,13 +238,14 @@ class WorkoutController extends Controller
         return redirect(route('workouts.index'));
     }
 
-    public function myCurrentTraining(){
+    public function myCurrentTraining()
+    {
         $cliente = User::cliente()->first();
         $Workout = $cliente->Workout()->where('inicio', '<=', date('Y-m-d'))
-                                    ->where('prox_ficha', '>=', date('Y-m-d'))
-                                    ->first();
+            ->where('prox_ficha', '>=', date('Y-m-d'))
+            ->first();
 
         $data = $this->repository->getExerciciosWorkout($Workout['id']);
-        return view('layouts.workout.show', compact('data'));
+        return view('layouts.workouts.show', compact('data'));
     }
 }

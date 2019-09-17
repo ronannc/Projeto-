@@ -41,7 +41,7 @@ class ClientController extends Controller
      */
     public function index(ClientDataTable $dataTable)
     {
-        return $dataTable->render('layouts.client.index');
+        return $dataTable->render('layouts.clients.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class ClientController extends Controller
         $extraData['city'] = City::all();
         $extraData['blood_type'] = BloodType::NAMES;
 
-        return view('layouts.client.create', compact('extraData'));
+        return view('layouts.clients.create', compact('extraData'));
     }
 
     /**
@@ -90,7 +90,8 @@ class ClientController extends Controller
     public function show(Client $client, WorkoutDataTable $dataTable)
     {
         $workout = $client->workout();
-        return $dataTable->with('data', $workout)->render('layouts.client.show', compact('workout'), compact('client'));
+        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'),
+            compact('client'));
     }
 
     /**
@@ -108,7 +109,7 @@ class ClientController extends Controller
 
         $data = Client::find($id);
 
-        return view('layouts.client.edit', compact('extraData'), compact('data'));
+        return view('layouts.clients.edit', compact('extraData'), compact('data'));
     }
 
     /**

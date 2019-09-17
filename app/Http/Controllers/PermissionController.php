@@ -8,6 +8,11 @@ use App\Http\Requests\PermissionCreateRequest;
 use App\Http\Requests\PermissionUpdateRequest;
 use App\Repositories\Contracts\PermissionRepository;
 use App\Services\PermissionService;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 
 /**
  * Class PermissionController
@@ -33,18 +38,18 @@ class PermissionController extends Controller
      *
      * @param PermissionDataTable $dataTable
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @return JsonResponse|View
      */
     public function index(PermissionDataTable $dataTable)
     {
-        return $dataTable->render('layouts.permission.index');
+        return $dataTable->render('layouts.permissions.index');
 
     }
 
     /**
-     * Exibe um formulário para criar uma nova permission.
+     * Exibe um formulário para criar uma nova permissions.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -52,11 +57,11 @@ class PermissionController extends Controller
     }
 
     /**
-     * Exibe um formulário para editar uma permission.
+     * Exibe um formulário para editar uma permissions.
      *
      * @param string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
@@ -66,7 +71,7 @@ class PermissionController extends Controller
     }
 
     /**
-     * Atualiza uma permission.
+     * Atualiza uma permissions.
      *
      * @param PermissionUpdateRequest $request
      * @param string                  $id
@@ -89,11 +94,11 @@ class PermissionController extends Controller
     }
 
     /**
-     * Adiciona uma permission.
+     * Adiciona uma permissions.
      *
      * @param PermissionCreateRequest $request
      *
-     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return $this|RedirectResponse|Redirector
      */
     public function store(PermissionCreateRequest $request)
     {

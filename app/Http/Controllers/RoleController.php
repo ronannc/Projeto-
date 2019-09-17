@@ -42,11 +42,11 @@ class RoleController extends Controller
      */
     public function index(RoleDataTable $dataTable)
     {
-        return $dataTable->render('layouts.role.index');
+        return $dataTable->render('layouts.roles.index');
     }
 
     /**
-     * Exibe um formulário para criar uma nova role.
+     * Exibe um formulário para criar uma nova roles.
      *
      * @return Response
      */
@@ -54,11 +54,11 @@ class RoleController extends Controller
     {
         $extraData = $this->roleRepository->getExtraData();
 
-        return view('layouts.role.create', compact('extraData'));
+        return view('layouts.roles.create', compact('extraData'));
     }
 
     /**
-     * Exibe um formulário para editar uma role.
+     * Exibe um formulário para editar uma roles.
      *
      * @param string $id
      *
@@ -69,11 +69,11 @@ class RoleController extends Controller
         $data = $this->roleRepository->findOneById($id);
         $extraData = $this->roleRepository->getExtraData($id);
 
-        return view('layouts.role.edit', compact('data'), compact('extraData'));
+        return view('layouts.roles.edit', compact('data'), compact('extraData'));
     }
 
     /**
-     * Atualiza uma role.
+     * Atualiza uma roles.
      *
      * @param RoleUpdateRequest $request
      * @param string            $id
@@ -96,7 +96,7 @@ class RoleController extends Controller
     }
 
     /**
-     * Adiciona uma role.
+     * Adiciona uma roles.
      *
      * @param RoleCreateRequest $request
      *
@@ -114,6 +114,6 @@ class RoleController extends Controller
 
         session()->flash('status', 'Role adicionada com sucesso!');
 
-        return redirect(route('role.index'));
+        return redirect(route('roles.index'));
     }
 }

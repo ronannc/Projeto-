@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\DataTables\MethodDataTable;
 use App\Models\Method;
-use App\Repositories\Contracts\BackRepository;
 use App\Repositories\Contracts\MethodRepository;
-use App\Services\BackService;
 use App\Services\MethodService;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class MethodController extends Controller
 {
@@ -19,8 +18,8 @@ class MethodController extends Controller
     /**
      * BackController constructor.
      *
-     * @param BackRepository $repository
-     * @param BackService    $service
+     * @param MethodRepository $repository
+     * @param MethodService    $service
      */
     public function __construct(MethodRepository $repository, MethodService $service)
     {
@@ -34,24 +33,25 @@ class MethodController extends Controller
      */
     public function index(MethodDataTable $dataTable)
     {
-        return $dataTable->render('layouts.method.index');
+        return $dataTable->render('layouts.methods.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
-        return view('layouts.method.create');
+        return view('layouts.methods.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     *
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -64,14 +64,15 @@ class MethodController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('method.index'));
+        return redirect(route('methods.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Method  $method
-     * @return \Illuminate\Http\Response
+     * @param Method $method
+     *
+     * @return void
      */
     public function show(Method $method)
     {
@@ -81,20 +82,22 @@ class MethodController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Method  $method
-     * @return \Illuminate\Http\Response
+     * @param Method $method
+     *
+     * @return Response
      */
     public function edit(Method $method)
     {
-        return view('layouts.method.edit', compact('method'));
+        return view('layouts.methods.edit', compact('method'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Method  $method
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Method  $method
+     *
+     * @return Response
      */
     public function update(Request $request, Method $method)
     {
@@ -105,14 +108,15 @@ class MethodController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('method.index'));
+        return redirect(route('methods.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Method  $method
-     * @return \Illuminate\Http\Response
+     * @param Method $method
+     *
+     * @return Response
      */
     public function destroy(Method $method)
     {

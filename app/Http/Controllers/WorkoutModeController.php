@@ -37,7 +37,7 @@ class WorkoutModeController extends Controller
      */
     public function index(WorkoutModeDataTable $dataTable)
     {
-        return $dataTable->render('layouts.workout-mode.index');
+        return $dataTable->render('layouts.workout-modes.index');
 
     }
 
@@ -48,7 +48,7 @@ class WorkoutModeController extends Controller
      */
     public function create()
     {
-        return view('layouts.workout-mode.create');
+        return view('layouts.workout-modes.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class WorkoutModeController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('workout-mode.index'));
+        return redirect(route('workout-modes.index'));
     }
 
     /**
@@ -80,7 +80,7 @@ class WorkoutModeController extends Controller
      */
     public function show(WorkoutMode $workoutMode)
     {
-        return view('layouts.workout-mode.show', compact('workoutMode'));
+        return view('layouts.workout-modes.show', compact('workoutMode'));
     }
 
     /**
@@ -93,7 +93,7 @@ class WorkoutModeController extends Controller
     public function edit($id)
     {
         $workoutMode = WorkoutMode::find($id);
-        return view('layouts.workout-mode.edit', compact('workoutMode'));
+        return view('layouts.workout-modes.edit', compact('workoutMode'));
     }
 
     /**
@@ -115,7 +115,7 @@ class WorkoutModeController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('workout-mode.index'));
+        return redirect(route('workout-modes.index'));
     }
 
     /**
@@ -135,6 +135,6 @@ class WorkoutModeController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('workout-mode.index'));
+        return redirect(route('workout-modes.index'));
     }
 }

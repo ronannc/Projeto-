@@ -38,7 +38,7 @@ class LowerMemberController extends Controller
      */
     public function index(LowerMemberDataTable $dataTable)
     {
-        return $dataTable->render('layouts.lower-member.index');
+        return $dataTable->render('layouts.lower-members.index');
 
     }
 
@@ -49,7 +49,7 @@ class LowerMemberController extends Controller
      */
     public function create()
     {
-        return view('layouts.lower-member.create');
+        return view('layouts.lower-members.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class LowerMemberController extends Controller
      */
     public function show(LowerMember $lowerMember)
     {
-        return view('layouts.lower-member.show', compact('lowerMember'));
+        return view('layouts.lower-members.show', compact('lowerMember'));
     }
 
     /**
@@ -94,7 +94,7 @@ class LowerMemberController extends Controller
     public function edit($id)
     {
         $lowerMember = LowerMember::find($id);
-        return view('layouts.lower-member.edit', compact('lowerMember'));
+        return view('layouts.lower-members.edit', compact('lowerMember'));
     }
 
     /**

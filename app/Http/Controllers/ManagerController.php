@@ -35,7 +35,7 @@ class ManagerController extends Controller
      */
     public function index(ManagerDataTable $dataTable)
     {
-        return $dataTable->render('layouts.manager.index');
+        return $dataTable->render('layouts.managers.index');
     }
 
     /**

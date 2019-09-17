@@ -38,7 +38,7 @@ class CompanyController extends Controller
      */
     public function index(CompanyDataTable $dataTable)
     {
-        return $dataTable->render('layouts.company.index');
+        return $dataTable->render('layouts.companies.index');
 
     }
 
@@ -52,7 +52,7 @@ class CompanyController extends Controller
         $extraData['company'] = Company::all();
         $extraData['city'] = City::all();
 
-        return view('layouts.company.create', compact('extraData'));
+        return view('layouts.companies.create', compact('extraData'));
     }
 
     /**
@@ -84,7 +84,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('layouts.company.show', compact('company'));
+        return view('layouts.companies.show', compact('company'));
     }
 
     /**
@@ -101,7 +101,7 @@ class CompanyController extends Controller
 
         $data = Company::find($id);
 
-        return view('layouts.company.edit', compact('extraData'), compact('data'));
+        return view('layouts.companies.edit', compact('extraData'), compact('data'));
     }
 
     /**
