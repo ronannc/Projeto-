@@ -81,9 +81,6 @@
     </div>
 
     @yield('js')
-    @section('js')
-        <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-        {!! $dataTable->scripts() !!}
-    @stop
+
 </body>
 </html>

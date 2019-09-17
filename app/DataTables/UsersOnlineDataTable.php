@@ -73,12 +73,14 @@ class UsersOnlineDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->setTableAttributes([
-                'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
+                'class' => 'table table-responsive table-full-width table-bordered table-striped table-hover nowrap',
+                'style' => 'width: 100%'
             ])
             ->parameters($this->getBuilderParameters())->parameters([
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
-                'responsive' => true,
                 'pageLength' => 10,
+                'responsive' => true,
+                'scrollX' => true,
                 'language'   => ['url' => 'datatable/portuguese-brasil.json'],
             ]);
     }
