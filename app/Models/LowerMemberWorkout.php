@@ -21,7 +21,7 @@ class LowerMemberWorkout extends Model implements AuditableContract
     protected $fillable = [
         'lower_member_ids',
         'workout_id',
-        'workout_id_modes',
+        'workout_mode_id',
         'load',
         'series',
         'rest_time',

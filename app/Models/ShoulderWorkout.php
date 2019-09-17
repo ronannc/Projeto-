@@ -21,7 +21,7 @@ class ShoulderWorkout extends Model implements AuditableContract
     protected $fillable = [
         'shoulder_id',
         'workout_id',
-        'workout_id_modes',
+        'workout_mode_id',
         'load',
         'series',
         'rest_time',
