@@ -24,7 +24,7 @@ class LowerMemberWorkoutService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->save($data);
+            $store = $this->repository->store($data);
             return $store;
         } catch (Exception $exception) {
             return [
@@ -36,7 +36,6 @@ class LowerMemberWorkoutService
 
     public function update(array $data, LowerMemberWorkout $lower_member_workout)
     {
-
         try {
             $update = $this->repository->update($lower_member_workout, $data);
             return $update;

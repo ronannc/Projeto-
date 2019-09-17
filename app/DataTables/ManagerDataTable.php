@@ -78,6 +78,28 @@ class ManagerDataTable extends DataTable
                 'responsive' => true,
                 'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
+                'lengthMenu' => [
+                    [
+                        5,
+                        10,
+                        15,
+                        20,
+                        100,
+                    ],
+                    [
+                        5,
+                        10,
+                        15,
+                        20,
+                        100,
+                    ],
+                ],
+                'buttons'    => [
+                    'create',
+                    'export',
+                    'print',
+                    'reload',
+                ],
             ]);
     }
 

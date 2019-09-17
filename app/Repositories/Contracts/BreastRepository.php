@@ -3,13 +3,7 @@
 namespace App\Repositories\Contracts;
 
 
-use Illuminate\Database\Eloquent\Model;
-
-interface BreastRepository
+interface BreastRepository extends BaseRepository
 {
-    public function save(array $data);
-
-    public function update(Model $model, array $data);
-
-    public function delete(Model $model);
+    //
 }

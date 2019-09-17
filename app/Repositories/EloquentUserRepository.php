@@ -13,11 +13,9 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
 {
     public function getExtraData($id = null)
     {
-        $extraData = [
-            'client'  => Client::all(),
-            'company' => Company::all(),
-            'role'    => Role::all(),
-        ];
+        $extraData['client'] = Client::all();
+        $extraData['company'] = Company::all();
+        $extraData['role'] = Role::all();
 
         if (!empty($id)) {
             $extraData['permissions'] = Role::findByName(User::MANAGER)->permissions()->get();

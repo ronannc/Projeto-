@@ -6,4 +6,5 @@ use App\Repositories\Contracts\CityRepository;
 
 class EloquentCityRepository extends AbstractEloquentRepository implements CityRepository
 {
+    //
 }

@@ -3,7 +3,6 @@
 
 namespace App\Services;
 
-use App\Models\Back;
 use App\Models\Method;
 use App\Repositories\Contracts\MethodRepository;
 use Exception;
@@ -25,7 +24,7 @@ class MethodService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->save($data);
+            $store = $this->repository->store($data);
             return $store;
         } catch (Exception $exception) {
             return [

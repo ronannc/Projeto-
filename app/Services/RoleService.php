@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Role;
 use App\Repositories\Contracts\RoleRepository;
 use App\Support\Notify;
 use Illuminate\Support\Facades\Log;
@@ -24,7 +25,9 @@ class RoleService
 
             $store = $this->roleRepository->store($data);
 
-            $this->roleRepository->findOneById($store->id)->syncPermissions($permissions);
+            /** @var Role $role */
+            $role = $this->roleRepository->findOneById($store->id);
+            $role->syncPermissions($permissions);
 
             return $store;
         } catch (\Exception $exception) {
@@ -44,6 +47,7 @@ class RoleService
 
             unset($data['permissions']);
 
+            /** @var Role $role */
             $role = $this->roleRepository->findOneById($id);
             $update = $this->roleRepository->update($role, $data);
 

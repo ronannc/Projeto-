@@ -23,7 +23,7 @@ class BicepsService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->save($data);
+            $store = $this->repository->store($data);
             return $store;
         } catch (Exception $exception) {
             return [

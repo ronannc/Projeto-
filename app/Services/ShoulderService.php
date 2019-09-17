@@ -24,7 +24,7 @@ class ShoulderService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->save($data);
+            $store = $this->repository->store($data);
             return $store;
         } catch (Exception $exception) {
             return [
@@ -36,7 +36,6 @@ class ShoulderService
 
     public function update(array $data, Shoulder $shoulder)
     {
-
         try {
             $update = $this->repository->update($shoulder, $data);
             return $update;

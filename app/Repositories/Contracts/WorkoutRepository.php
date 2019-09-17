@@ -3,16 +3,8 @@
 namespace App\Repositories\Contracts;
 
 
-use Illuminate\Database\Eloquent\Model;
-
-interface WorkoutRepository
+interface WorkoutRepository extends BaseRepository
 {
-    public function save(array $data);
-
-    public function update(Model $model, array $data);
-
-    public function delete(Model $model);
-
     public function getExtraData();
 
     public function getExerciciosTreino($id);

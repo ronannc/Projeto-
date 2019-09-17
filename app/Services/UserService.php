@@ -3,7 +3,6 @@
 
 namespace App\Services;
 
-use App\Models\Company;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
 use App\Repositories\Contracts\UserRepository;
@@ -30,26 +29,19 @@ class UserService
 
     public function store(array $data)
     {
-        $password = substr(Uuid::uuid4(), 0, 8);
-        $data['password'] = bcrypt($password);
-
         try {
+            $password = substr(Uuid::uuid4(), 0, 8);
+            $data['password'] = bcrypt($password);
+
             return DB::transaction(function () use ($data, $password) {
 
-                $user = $this->userRepository->store($data);
-                $user->assignRole($data['role']);
+                /** @var User $response */
+                $response = $this->userRepository->store($data);
+                $response->assignRole($data['role']);
 
-                if ($data['role'] === User::ADMIN) {
-                    $companies = Company::all();
+                Notification::send($response, new WelcomeEmailNotification($data['email'], $password));
 
-                    foreach ($companies as $company) {
-                        $company->users()->syncWithoutDetaching([$user->id]);
-                    }
-                }
-
-                Notification::send($user, new WelcomeEmailNotification($data['email'], $password));
-
-                return $user;
+                return $response;
             });
 
 
@@ -65,10 +57,9 @@ class UserService
 
     public function update(array $data, User $user)
     {
-
         try {
-            $update = $this->userRepository->update($user, $data);
-            return $update;
+            $response = $this->userRepository->update($user, $data);
+            return $response;
         } catch (\Exception $exception) {
             return [
                 'error'   => true,
@@ -80,8 +71,8 @@ class UserService
     public function delete(User $user)
     {
         try {
-            $delete = $this->userRepository->delete($user);
-            return $delete;
+            $response = $this->userRepository->delete($user);
+            return $response;
         } catch (\Exception $exception) {
             return [
                 'error'   => true,

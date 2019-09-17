@@ -24,7 +24,7 @@ class ShoulderWorkoutService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->save($data);
+            $store = $this->repository->store($data);
             return $store;
         } catch (Exception $exception) {
             return [
@@ -36,7 +36,6 @@ class ShoulderWorkoutService
 
     public function update(array $data, ShoulderWorkout $shoulder_workout)
     {
-
         try {
             $update = $this->repository->update($shoulder_workout, $data);
             return $update;
