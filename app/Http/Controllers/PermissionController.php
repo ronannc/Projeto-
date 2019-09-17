@@ -37,8 +37,8 @@ class PermissionController extends Controller
      */
     public function index(PermissionDataTable $dataTable)
     {
-        $resource = 'Permissions';
-        return $dataTable->render('components.datatable', compact('resource'));
+        return $dataTable->render('layouts.permission.index');
+
     }
 
     /**

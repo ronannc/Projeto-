@@ -119,7 +119,7 @@ class User extends Authenticatable implements AuditableContract
     }
 
     /**
-     * Retorna todas as roles associadas a um usuário.
+     * Retorna todas as role associadas a um usuário.
      *
      * @param $userId
      *
@@ -174,7 +174,7 @@ class User extends Authenticatable implements AuditableContract
     }
 
     /**
-     * Retorna todas as permissions associadas a um usuário via roles.
+     * Retorna todas as permissions associadas a um usuário via role.
      *
      * @param null $userId
      *
@@ -225,6 +225,11 @@ class User extends Authenticatable implements AuditableContract
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
     }
 
     /**

@@ -64,7 +64,7 @@ class LowerMemberDataTable extends DataTable
                 'pageLength' => 10,
                 'responsive' => true,
                 'scrollX' => true,
-                'language'   => ['url' => 'datatable/portuguese-brasil.json'],
+                'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
 

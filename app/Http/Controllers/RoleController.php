@@ -34,7 +34,7 @@ class RoleController extends Controller
     }
 
     /**
-     * Exibe a lista de roles cadastradas.
+     * Exibe a lista de role cadastradas.
      *
      * @param RoleDataTable $dataTable
      *
@@ -42,7 +42,7 @@ class RoleController extends Controller
      */
     public function index(RoleDataTable $dataTable)
     {
-        return $dataTable->render('layouts.roles.index');
+        return $dataTable->render('layouts.role.index');
     }
 
     /**
@@ -54,7 +54,7 @@ class RoleController extends Controller
     {
         $extraData = $this->roleRepository->getExtraData();
 
-        return view('layouts.roles.create', compact('extraData'));
+        return view('layouts.role.create', compact('extraData'));
     }
 
     /**
@@ -69,7 +69,7 @@ class RoleController extends Controller
         $data = $this->roleRepository->findOneById($id);
         $extraData = $this->roleRepository->getExtraData($id);
 
-        return view('layouts.roles.edit', compact('data'), compact('extraData'));
+        return view('layouts.role.edit', compact('data'), compact('extraData'));
     }
 
     /**
@@ -114,6 +114,6 @@ class RoleController extends Controller
 
         session()->flash('status', 'Role adicionada com sucesso!');
 
-        return redirect(route('roles.index'));
+        return redirect(route('role.index'));
     }
 }

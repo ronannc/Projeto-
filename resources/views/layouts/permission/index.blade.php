@@ -7,7 +7,7 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Listagem de Exercicios Biceps</h3>
+            <h3 class="box-title">Permissions</h3>
         </div>
         <div class="box-body">
             {!! $dataTable->table() !!}
@@ -18,3 +18,5 @@
 @section('js')
     {!! $dataTable->scripts() !!}
 @stop
+
+

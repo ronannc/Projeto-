@@ -58,7 +58,7 @@ class MethodDataTable extends DataTable
                 'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
-                'language'   => ['url' => 'datatable/portuguese-brasil.json'],
+                'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
 

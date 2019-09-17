@@ -298,36 +298,20 @@ return [
         [
             'text'    => 'Usuários',
             'submenu' => [
-                [
-                    'text'    => 'Gerentes',
-                    'submenu' => [
-                        [
-                            'text'  => 'Listar',
-                            'route' => 'user.index',
-                        ],
-                        [
-                            'text'  => 'Cadastrar',
-                            'route' => 'user.create',
-                        ],
-                    ],
-                ],
-                [
-                    'text'  => 'Online',
-                    'route' => 'users.online',
-                ],
-            ],
-        ],
 
-        [
-            'text'    => 'Administradores',
-            'submenu' => [
                 [
                     'text'  => 'Listar',
                     'route' => 'user.index',
                 ],
+
                 [
                     'text'  => 'Cadastrar',
                     'route' => 'user.create',
+                ],
+
+                [
+                    'text'  => 'Online',
+                    'route' => 'users.online',
                 ],
             ],
         ],
@@ -337,11 +321,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'roles.index',
+                    'route' => 'role.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'roles.create',
+                    'route' => 'role.create',
                 ],
             ],
         ],
@@ -351,11 +335,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'user.index',
+                    'route' => 'permission.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'user.create',
+                    'route' => 'permission.create',
                 ],
             ],
         ],

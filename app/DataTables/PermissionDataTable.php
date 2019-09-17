@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\Role;
+use App\Models\Permission;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class RoleDataTable extends DataTable
+class PermissionDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,20 +19,20 @@ class RoleDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('created_at', function (Role $model) {
+            ->editColumn('created_at', function (Permission $model) {
                 return date('d/m/Y H:i:s', strtotime($model->created_at));
             })
-            ->editColumn('updated_at', function (Role $model) {
+            ->editColumn('updated_at', function (Permission $model) {
                 return date('d/m/Y H:i:s', strtotime($model->updated_at));
             })
-            ->editColumn('actions', function (Role $role) {
+            ->editColumn('actions', function (Permission $permission) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('role.edit',
-                        $role) . '"><i class="fa fa-edit"></i></a>' .
+                return '<a title="Editar"  style="color: #000000" href="' . route('permission.edit',
+                        $permission) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $role['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $role['id'] . '" style="display:none" action="' . route('role.destroy',
-                        $role) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Permissao ?\')){document.getElementById(\'form-delete' . $permission['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $permission['id'] . '" style="display:none" action="' . route('permission.destroy',
+                        $permission) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';
@@ -47,7 +47,7 @@ class RoleDataTable extends DataTable
      */
     public function query()
     {
-        $query = Role::query();
+        $query = Permission::query();
 
         return $this->applyScopes($query);
     }
@@ -91,6 +91,7 @@ class RoleDataTable extends DataTable
                 'exportable' => false,
             ],
             'name'       => ['title' => 'Nome'],
+            'guard_name'       => ['title' => 'Guard Name'],
             'updated_at' => ['title' => 'Atualizado'],
             'id'         => [
                 'title'      => 'Id',
@@ -109,6 +110,6 @@ class RoleDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'roles_' . date('YmdHis');
+        return 'Permissions_' . date('YmdHis');
     }
 }
