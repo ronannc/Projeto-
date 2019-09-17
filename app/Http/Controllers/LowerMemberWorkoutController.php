@@ -68,7 +68,7 @@ class LowerMemberWorkoutController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('lower-member-workout.index'));
+        return redirect(route('lower-member-workouts.index'));
     }
 
     /**
@@ -116,7 +116,7 @@ class LowerMemberWorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('lower-member-workout.index'));
+        return redirect(route('lower-member-workouts.index'));
     }
 
     /**
@@ -136,6 +136,6 @@ class LowerMemberWorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('lower-member-workout.index'));
+        return redirect(route('lower-member-workouts.index'));
     }
 }

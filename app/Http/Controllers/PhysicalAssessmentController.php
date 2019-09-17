@@ -71,7 +71,7 @@ class PhysicalAssessmentController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('physical-assessment.index'));
+        return redirect(route('physical-assessments.index'));
     }
 
     /**
@@ -120,7 +120,7 @@ class PhysicalAssessmentController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('physical-assessment.index'));
+        return redirect(route('physical-assessments.index'));
     }
 
     /**
@@ -140,6 +140,6 @@ class PhysicalAssessmentController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('physical-assessment.index'));
+        return redirect(route('physical-assessments.index'));
     }
 }

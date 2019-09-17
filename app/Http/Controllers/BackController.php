@@ -65,7 +65,7 @@ class BackController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('back.index'));
+        return redirect(route('backs.index'));
     }
 
     /**
@@ -112,7 +112,7 @@ class BackController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('back.index'));
+        return redirect(route('backs.index'));
     }
 
     /**
@@ -132,6 +132,6 @@ class BackController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('back.index'));
+        return redirect(route('backs.index'));
     }
 }

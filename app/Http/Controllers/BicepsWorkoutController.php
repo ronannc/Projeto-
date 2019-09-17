@@ -66,7 +66,7 @@ class BicepsWorkoutController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('biceps-workout.index'));
+        return redirect(route('biceps-workouts.index'));
     }
 
     /**
@@ -113,7 +113,7 @@ class BicepsWorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('biceps-workout.index'));
+        return redirect(route('biceps-workouts.index'));
     }
 
     /**
@@ -133,6 +133,6 @@ class BicepsWorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('biceps-workout.index'));
+        return redirect(route('biceps-workouts.index'));
     }
 }

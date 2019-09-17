@@ -66,7 +66,7 @@ class BackWorkoutController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('back-workout.index'));
+        return redirect(route('back-workouts.index'));
     }
 
     /**
@@ -113,7 +113,7 @@ class BackWorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('back-workout.index'));
+        return redirect(route('back-workouts.index'));
     }
 
     /**
@@ -133,6 +133,6 @@ class BackWorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('back-workout.index'));
+        return redirect(route('back-workouts.index'));
     }
 }

@@ -21,11 +21,11 @@ class BreastDataTable extends DataTable
         return datatables($query)
             ->editColumn('actions', function (Breast $Breast) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('breast.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('breasts.edit',
                         $Breast) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Breast['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('breast.destroy',
+        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('breasts.destroy',
                         $Breast) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '

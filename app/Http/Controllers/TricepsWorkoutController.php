@@ -67,7 +67,7 @@ class TricepsWorkoutController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('triceps-workout.index'));
+        return redirect(route('triceps-workouts.index'));
     }
 
     /**
@@ -114,7 +114,7 @@ class TricepsWorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('triceps-workout.index'));
+        return redirect(route('triceps-workouts.index'));
     }
 
     /**
@@ -134,6 +134,6 @@ class TricepsWorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('triceps-workout.index'));
+        return redirect(route('triceps-workouts.index'));
     }
 }

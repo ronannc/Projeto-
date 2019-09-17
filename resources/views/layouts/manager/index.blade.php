@@ -12,7 +12,7 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Listagem de Usuarios</h3>
+            <h3 class="box-title">Listagem de Gerentes</h3>
         </div>
         <div class="box-body">
             {!! $dataTable->table() !!}

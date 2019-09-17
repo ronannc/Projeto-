@@ -131,11 +131,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'back.index'
+                    'route' => 'backs.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'back.create'
+                    'route' => 'backs.create'
                 ],
             ],
         ],
@@ -145,11 +145,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'lower-member.index'
+                    'route' => 'lower-members.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'lower-member.create'
+                    'route' => 'lower-members.create'
                 ],
             ],
         ],
@@ -159,11 +159,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'shoulder.index'
+                    'route' => 'shoulders.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'shoulder.create'
+                    'route' => 'shoulders.create'
                 ],
             ],
         ],
@@ -173,11 +173,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'breast.index'
+                    'route' => 'breasts.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'breast.create'
+                    'route' => 'breasts.create'
                 ],
             ],
         ],
@@ -205,11 +205,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'client.index',
+                    'route' => 'clients.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'client.create',
+                    'route' => 'clients.create',
                 ],
             ],
         ],
@@ -219,11 +219,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'physical-assessment.index',
+                    'route' => 'physical-assessments.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'physical-assessment.create',
+                    'route' => 'physical-assessments.create',
                 ],
             ],
         ],
@@ -237,11 +237,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'workout.index',
+                    'route' => 'workouts.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'workout.create',
+                    'route' => 'workouts.create',
                 ],
             ],
         ],
@@ -251,11 +251,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'workout-mode.index',
+                    'route' => 'workout-modes.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'workout-mode.create',
+                    'route' => 'workout-modes.create',
                 ],
             ],
         ],
@@ -265,11 +265,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'method.index',
+                    'route' => 'methods.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'method.create',
+                    'route' => 'methods.create',
                 ],
             ],
         ],
@@ -286,11 +286,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'company.index',
+                    'route' => 'companies.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'company.create',
+                    'route' => 'companies.create',
                 ],
             ],
         ],
@@ -298,20 +298,36 @@ return [
         [
             'text'    => 'Usuários',
             'submenu' => [
-
                 [
-                    'text'  => 'Listar',
-                    'route' => 'user.index',
+                    'text'    => 'Gerentes',
+                    'submenu' => [
+                        [
+                            'text'  => 'Listar',
+                            'route' => 'managers.index',
+                        ],
+                        [
+                            'text'  => 'Cadastrar',
+                            'route' => 'managers.create',
+                        ],
+                    ],
                 ],
-
-                [
-                    'text'  => 'Cadastrar',
-                    'route' => 'user.create',
-                ],
-
                 [
                     'text'  => 'Online',
                     'route' => 'users.online',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Administradores',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'users.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'users.create',
                 ],
             ],
         ],
@@ -321,11 +337,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'role.index',
+                    'route' => 'roles.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'role.create',
+                    'route' => 'roles.create',
                 ],
             ],
         ],
@@ -335,11 +351,11 @@ return [
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'permission.index',
+                    'route' => 'permissions.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'permission.create',
+                    'route' => 'permissions.create',
                 ],
             ],
         ],

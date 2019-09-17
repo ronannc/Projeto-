@@ -21,11 +21,11 @@ class PhysicalAssessmentDataTable extends DataTable
         return datatables($query)
             ->editColumn('actions', function (PhysicalAssessment $physicalAssessment) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('physical-assessment.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('physical-assessments.edit',
                         $physicalAssessment) . '"><i class="fa fa-edit"></i></a>' .
                         '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Avalicao Fisica ?\')){document.getElementById(\'form-delete'.$physicalAssessment['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete' . $physicalAssessment['id'] . '" style="display:none" action="' . route('physical-assessment.destroy',
+        <form id="form-delete' . $physicalAssessment['id'] . '" style="display:none" action="' . route('physical-assessments.destroy',
                         $physicalAssessment) . '" method="post">' .
             csrf_field().
             method_field('DELETE').'

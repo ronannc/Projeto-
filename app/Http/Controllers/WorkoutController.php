@@ -118,7 +118,7 @@ class WorkoutController extends Controller
             ]);
         }
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('workout.edit', $response));
+        return redirect(route('workouts.edit', $response));
     }
 
     /**
@@ -235,7 +235,7 @@ class WorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('workout.index'));
+        return redirect(route('workouts.index'));
     }
 
     public function myCurrentTraining(){

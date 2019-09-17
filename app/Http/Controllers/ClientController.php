@@ -76,7 +76,7 @@ class ClientController extends Controller
         }
         session()->flash('success', 'Adicionado com sucesso!');
 
-        return redirect(route('client.index'));
+        return redirect(route('clients.index'));
     }
 
     /**
@@ -130,7 +130,7 @@ class ClientController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('client.index'));
+        return redirect(route('clients.index'));
     }
 
     /**
@@ -149,6 +149,6 @@ class ClientController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('client.index'));
+        return redirect(route('clients.index'));
     }
 }

@@ -70,7 +70,7 @@ class ShoulderController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('shoulder.index'));
+        return redirect(route('shoulders.index'));
     }
 
     /**
@@ -118,7 +118,7 @@ class ShoulderController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('shoulder.index'));
+        return redirect(route('shoulders.index'));
     }
 
     /**
@@ -138,6 +138,6 @@ class ShoulderController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('shoulder.index'));
+        return redirect(route('shoulders.index'));
     }
 }

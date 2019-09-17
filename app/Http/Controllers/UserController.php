@@ -37,17 +37,19 @@ class UserController extends Controller
      */
     public function online(UsersOnlineDataTable $dataTable)
     {
-        return $dataTable->render('layouts.user.index');
+        return $dataTable->render('layouts.users.index');
     }
 
     /**
      * Display a listing of the resource.
      *
+     * @param UserDataTable $dataTable
+     *
      * @return Response
      */
     public function index(UserDataTable $dataTable)
     {
-        return $dataTable->render('layouts.user.index');
+        return $dataTable->render('layouts.users.index');
     }
 
     /**
@@ -58,7 +60,7 @@ class UserController extends Controller
     public function create()
     {
         $extraData = $this->repository->getExtraData();
-        return view('layouts.user.create', compact('extraData'));
+        return view('layouts.users.create', compact('extraData'));
     }
 
     /**
@@ -79,7 +81,7 @@ class UserController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('user.index'));
+        return redirect(route('users.index'));
     }
 
     /**

@@ -21,13 +21,13 @@ class WorkoutDataTable extends DataTable
         return datatables($query)
             ->editColumn('actions', function (Workout $Workout) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('workout.show',
+                return '<a title="Visualizar"  style="color: #000000" href="' . route('workouts.show',
                         $Workout) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route('workout.edit',
+                    '<a title="Editar"  style="color: #000000" href="' . route('workouts.edit',
                         $Workout) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Workout['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('workout.destroy',
+        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('workouts.destroy',
                         $Workout) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '

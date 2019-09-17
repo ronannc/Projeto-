@@ -69,7 +69,7 @@ class BreastController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('breast.index'));
+        return redirect(route('breasts.index'));
     }
 
     /**
@@ -116,7 +116,7 @@ class BreastController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('breast.index'));
+        return redirect(route('breasts.index'));
     }
 
     /**
@@ -136,6 +136,6 @@ class BreastController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('breast.index'));
+        return redirect(route('breasts.index'));
     }
 }

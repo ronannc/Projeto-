@@ -28,22 +28,23 @@ Route::group([
 
         Route::get('/home', 'HomeController@index')->name('home');
 
-        Route::resource('lower-member', 'LowerMemberController');
-        Route::resource('breast', 'BreastController');
+        Route::resource('lower-members', 'LowerMemberController');
+        Route::resource('breasts', 'BreastController');
         Route::resource('biceps', 'BicepsController');
         Route::resource('triceps', 'TricepsController');
-        Route::resource('back', 'BackController');
-        Route::resource('shoulder', 'ShoulderController');
-        Route::resource('workout', 'WorkoutController');
-        Route::resource('client', 'ClientController');
-        Route::resource('workout-mode', 'WorkoutModeController');
-        Route::resource('company', 'CompanyController');
-        Route::resource('physical-assessment', 'PhysicalAssessmentController');
-        Route::resource('user', 'UserController');
+        Route::resource('backs', 'BackController');
+        Route::resource('shoulders', 'ShoulderController');
+        Route::resource('workouts', 'WorkoutController');
+        Route::resource('clients', 'ClientController');
+        Route::resource('workout-modes', 'WorkoutModeController');
+        Route::resource('companies', 'CompanyController');
+        Route::resource('physical-assessments', 'PhysicalAssessmentController');
+        Route::resource('users', 'UserController');
         Route::get('users/online', 'UserController@online')->name('users.online');
         Route::resource('audits', 'AuditController');
-        Route::resource('role', 'RoleController');
-        Route::resource('permission', 'PermissionController');
-        Route::resource('method', 'MethodController');
+        Route::resource('roles', 'RoleController');
+        Route::resource('permissions', 'PermissionController');
+        Route::resource('methods', 'MethodController');
+        Route::resource('managers', 'ManagerController');
 
     });

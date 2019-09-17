@@ -67,7 +67,7 @@ class BreastWorkoutController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('breast-workout.index'));
+        return redirect(route('breast-workouts.index'));
     }
 
     /**
@@ -115,7 +115,7 @@ class BreastWorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('breast-workout.index'));
+        return redirect(route('breast-workouts.index'));
     }
 
     /**
@@ -135,6 +135,6 @@ class BreastWorkoutController extends Controller
             return back()->withInput();
         }
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('breast-workout.index'));
+        return redirect(route('breast-workouts.index'));
     }
 }
