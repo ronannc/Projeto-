@@ -70,7 +70,6 @@ class MethodDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id'           => ['title' => 'ID'],
             'description' => ['title' => 'Descrição'],
             'name' => ['title' => 'Nome'],
             'actions'      => [

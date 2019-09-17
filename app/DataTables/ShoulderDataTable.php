@@ -76,7 +76,6 @@ class ShoulderDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'exercise',
             'description',
             'actions' => [
