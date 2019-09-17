@@ -31,11 +31,11 @@ class ClientDataTable extends DataTable
             })
             ->editColumn('actions', function (Client $client) {
 
-                return '<a title="Visualisar"  style="color: #000000" href="' . route('client.show', $client) . '"><i class="fa  fa-eye"></i></a>
-                        <a title="Editar"  style="color: #000000" href="' . route('client.edit', $client) . '"><i class="fa fa-edit"></i></a>
+                return '<a title="Visualisar"  style="color: #000000" href="' . route('clients.show', $client) . '"><i class="fa  fa-eye"></i></a>
+                        <a title="Editar"  style="color: #000000" href="' . route('clients.edit', $client) . '"><i class="fa fa-edit"></i></a>
                         <a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $client['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $client['id'] . '" style="display:none" action="' . route('client.destroy',
+        <form id="form-delete' . $client['id'] . '" style="display:none" action="' . route('clients.destroy',
                         $client) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -87,7 +87,6 @@ class ClientDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'name' => ['title' => 'Nome'],
             'email' => ['title' => 'Email'],
             'is_active' => [

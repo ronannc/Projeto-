@@ -73,7 +73,6 @@ class BicepsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id'          => ['title' => 'ID'],
             'exercise'    => ['title' => 'Exercicio'],
             'description' => ['title' => 'Descricao'],
             'actions'     => [

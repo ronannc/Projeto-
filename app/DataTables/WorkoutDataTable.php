@@ -78,7 +78,6 @@ class WorkoutDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
             'start',
             'next_workout',
             'goal',

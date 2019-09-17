@@ -21,11 +21,11 @@ class CompanyDataTable extends DataTable
         return datatables($query)
             ->editColumn('actions', function (Company $company) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('company.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('companies.edit',
                         $company) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Empresa ?\')){document.getElementById(\'form-delete' . $company['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $company['id'] . '" style="display:none" action="' . route('company.destroy',
+        <form id="form-delete' . $company['id'] . '" style="display:none" action="' . route('companies.destroy',
                         $company) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -76,7 +76,6 @@ class CompanyDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id'           => ['title' => 'ID'],
             'name'         => ['title' => 'Nome'],
             'cnpj'         => ['title' => 'CNPJ'],
             'phone'        => ['title' => 'Telefone'],
