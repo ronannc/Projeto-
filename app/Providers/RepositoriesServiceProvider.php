@@ -12,6 +12,7 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
+use App\Models\Method;
 use App\Models\Permission;
 use App\Models\PhysicalAssessment;
 use App\Models\Role;
@@ -32,6 +33,7 @@ use App\Repositories\Contracts\ClientRepository;
 use App\Repositories\Contracts\CompanyRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
+use App\Repositories\Contracts\MethodRepository;
 use App\Repositories\Contracts\PermissionRepository;
 use App\Repositories\Contracts\PhysicalAssessmentRepository;
 use App\Repositories\Contracts\RoleRepository;
@@ -52,6 +54,7 @@ use App\Repositories\EloquentClientRepository;
 use App\Repositories\EloquentCompanyRepository;
 use App\Repositories\EloquentLowerMemberRepository;
 use App\Repositories\EloquentLowerMemberTreinoRepository;
+use App\Repositories\EloquentMethodRepository;
 use App\Repositories\EloquentPermissionRepository;
 use App\Repositories\EloquentPhysicalAssessmentRepository;
 use App\Repositories\EloquentRoleRepository;
@@ -164,6 +167,10 @@ class RepositoriesServiceProvider extends ServiceProvider
             return new EloquentPermissionRepository(new Permission());
         });
 
+        $this->app->bind(MethodRepository::class, function () {
+            return new EloquentMethodRepository(new Method());
+        });
+
     }
 
 
@@ -194,6 +201,7 @@ class RepositoriesServiceProvider extends ServiceProvider
             PhysicalAssessmentRepository::class,
             RoleRepository::class,
             PermissionRepository::class,
+            MethodRepository::class,
         ];
     }
 }

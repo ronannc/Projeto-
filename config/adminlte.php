@@ -247,7 +247,7 @@ return [
         ],
 
         [
-            'text'    => 'Modos de Treino',
+            'text'    => 'Métodos de Treino',
             'submenu' => [
                 [
                     'text'  => 'Listar',
@@ -259,6 +259,21 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Modos de Treino',
+            'submenu' => [
+                [
+                    'text'  => 'Listar',
+                    'route' => 'method.index',
+                ],
+                [
+                    'text'  => 'Cadastrar',
+                    'route' => 'method.create',
+                ],
+            ],
+        ],
+
 
         // MENU DE ADMINISTRADORES
 
