@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\WorkoutDataTable;
 use App\Models\User;
 use App\Models\Workout;
+use App\Models\WorkoutMode;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Services\WorkoutService;
 use Illuminate\Http\Request;
@@ -74,7 +75,7 @@ class WorkoutController extends Controller
             $this->repository->save_triceps_workout([
                 'workout_id'       => $response['id'],
                 'triceps_id'       => $triceps,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
@@ -82,7 +83,7 @@ class WorkoutController extends Controller
             $this->repository->save_biceps_workout([
                 'workout_id'       => $response['id'],
                 'biceps_id'        => $biceps,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
@@ -90,7 +91,7 @@ class WorkoutController extends Controller
             $this->repository->save_back_workout([
                 'workout_id'       => $response['id'],
                 'back_id'          => $back,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
@@ -98,7 +99,7 @@ class WorkoutController extends Controller
             $this->repository->save_shoulder_workout([
                 'workout_id'       => $response['id'],
                 'shoulder_id'      => $shoulder,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
@@ -106,15 +107,16 @@ class WorkoutController extends Controller
             $this->repository->save_breast_workout([
                 'workout_id'       => $response['id'],
                 'breast_id'        => $breast,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
         foreach ($data['lower_member'] as $lower_member) {
+//            dd($lower_member);
             $this->repository->save_lower_member_workout([
                 'workout_id'       => $response['id'],
                 'lower_member_id'  => $lower_member,
-                'workout_id_modes' => 8
+                'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
         session()->flash('status', 'Adicionado com sucesso !');
@@ -130,7 +132,7 @@ class WorkoutController extends Controller
      */
     public function show($id)
     {
-        $data = $this->repository->getExerciciosWorkout($id);
+        $data = $this->repository->getExerciciosTreino($id);
         return view('layouts.workouts.show', compact('data'));
     }
 
@@ -144,7 +146,8 @@ class WorkoutController extends Controller
     public function edit($id)
     {
         $extraData = $this->repository->getExtraData();
-        $data = $this->repository->getExerciciosWorkout($id);
+        $data = $this->repository->getExerciciosTreino($id);
+//        dd($data);
         return view('layouts.workouts.edit', compact('extraData'), compact('data'));
     }
 
@@ -160,12 +163,14 @@ class WorkoutController extends Controller
     {
         $data = $request->all();
 
-        $data['formula_Workout'] = $workout->usa_formula();
-        if ($data['formula_Workout']['formula']) {
-            $process_data = $this->service->process_data($data, true);
-        } else {
-            $process_data = $this->service->process_data($data);
-        }
+//        $data['formula_Workout'] = $workout->usa_formula();
+//        if ($data['formula_Workout']['formula']) {
+//            $process_data = $this->service->process_data($data, true);
+//        } else {
+//        }
+
+        $process_data = $this->service->process_data($data);
+
 
         foreach ($process_data['triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;
@@ -203,11 +208,11 @@ class WorkoutController extends Controller
             $this->repository->update_lower_member_Workout($inferior);
         }
 
-        if (User::isCliente()) {
-            $data['status'] = 1;
-        } else {
-            $data['status'] = 0;
-        }
+//        if (User::isCliente()) {
+//            $data['status'] = WorkoutMode::query()->first()['id'];
+//        } else {
+//            $data['status'] = 0;
+//        }
 
         $response = $this->service->update($data, $workout);
 
