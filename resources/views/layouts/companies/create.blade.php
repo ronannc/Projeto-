@@ -16,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('company.store')}}" method="post">
+        <form action="{{route('companies.store')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_name')
