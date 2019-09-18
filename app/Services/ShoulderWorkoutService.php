@@ -47,11 +47,12 @@ class ShoulderWorkoutService
         }
     }
 
-    public function delete(ShoulderWorkout $shoulder_workout)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($shoulder_workout);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

@@ -48,11 +48,12 @@ class PhysicalAssessmentService
         }
     }
 
-    public function delete(PhysicalAssessment $physicalAssessment)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($physicalAssessment);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

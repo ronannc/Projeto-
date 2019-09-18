@@ -137,19 +137,21 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Client $client
+     * @param $id
      *
      * @return Response
      */
-    public function destroy(Client $client)
+    public function destroy($id)
     {
-        $response = $this->service->delete($client);
+        $response = $this->service->destroy($id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('clients.index'));
+
+        return back();
     }
 }

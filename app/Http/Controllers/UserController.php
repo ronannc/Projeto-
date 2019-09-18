@@ -124,13 +124,22 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param User $user
+     * @param $id
      *
      * @return void
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $response = $this->service->destroy($id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('success', 'Deletado com sucesso!');
+
+        return back();
     }
 
     public function getUser(Request $request)

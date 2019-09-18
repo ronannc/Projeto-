@@ -125,14 +125,15 @@ class BicepsWorkoutController extends Controller
      */
     public function destroy($id)
     {
-        $bicepsWorkout = BicepsWorkout::find($id);
+        $response = $this->service->destroy($id);
 
-        $resultFromDeleteBicepsWorkout = $this->service->delete($bicepsWorkout);
-        if (!empty($resultFromDeleteBicepsWorkout['error'])) {
-            session()->flash('error', $resultFromDeleteBicepsWorkout['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('biceps-workouts.index'));
+
+        return back();
     }
 }

@@ -114,18 +114,21 @@ class MethodController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Method $method
+     * @param $id
      *
      * @return Response
      */
-    public function destroy(Method $method)
+    public function destroy($id)
     {
-        $resultFromDeleteMethod = $this->service->delete($method);
-        if (!empty($resultFromDeleteMethod['error'])) {
-            session()->flash('error', $resultFromDeleteMethod['message']);
+        $response = $this->service->destroy($id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('back.index'));
+
+        return back();
     }
 }

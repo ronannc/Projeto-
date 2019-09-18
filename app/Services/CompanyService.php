@@ -48,11 +48,12 @@ class CompanyService
         }
     }
 
-    public function delete(Company $company)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($company);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

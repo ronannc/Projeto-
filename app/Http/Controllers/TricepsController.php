@@ -128,14 +128,15 @@ class TricepsController extends Controller
      */
     public function destroy($id)
     {
-        $triceps = Triceps::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($triceps);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('triceps.index'));
+
+        return back();
     }
 }

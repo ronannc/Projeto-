@@ -124,14 +124,15 @@ class BackController extends Controller
      */
     public function destroy($id)
     {
-        $back = Back::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($back);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('backs.index'));
+
+        return back();
     }
 }

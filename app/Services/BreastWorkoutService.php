@@ -48,11 +48,12 @@ class BreastWorkoutService
         }
     }
 
-    public function delete(BreastWorkout $breast_workout)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($breast_workout);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

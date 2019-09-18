@@ -47,11 +47,12 @@ class TricepsService
         }
     }
 
-    public function delete(Triceps $triceps)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($triceps);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

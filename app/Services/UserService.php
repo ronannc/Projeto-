@@ -15,7 +15,7 @@ use Ramsey\Uuid\Uuid;
 class UserService
 {
     /** @var UserRepository */
-    protected $userRepository;
+    protected $repository;
 
     /**
      * StationService constructor.
@@ -24,7 +24,7 @@ class UserService
      */
     public function __construct(UserRepository $repository)
     {
-        $this->userRepository = $repository;
+        $this->repository = $repository;
     }
 
     public function store(array $data)
@@ -36,7 +36,7 @@ class UserService
             return DB::transaction(function () use ($data, $password) {
 
                 /** @var User $response */
-                $response = $this->userRepository->store($data);
+                $response = $this->repository->store($data);
                 $response->assignRole($data['role']);
 
                 Notification::send($response, new WelcomeEmailNotification($data['email'], $password));
@@ -58,7 +58,7 @@ class UserService
     public function update(array $data, User $user)
     {
         try {
-            $response = $this->userRepository->update($user, $data);
+            $response = $this->repository->update($user, $data);
             return $response;
         } catch (\Exception $exception) {
             return [
@@ -68,11 +68,12 @@ class UserService
         }
     }
 
-    public function delete(User $user)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $response = $this->userRepository->delete($user);
-            return $response;
+            return $model->delete();
         } catch (\Exception $exception) {
             return [
                 'error'   => true,

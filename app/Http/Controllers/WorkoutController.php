@@ -214,19 +214,22 @@ class WorkoutController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Workout $workout
+     * @param $id
      *
      * @return Response
      */
-    public function destroy(Workout $workout)
+    public function destroy($id)
     {
-        $response = $this->service->delete($workout);
+        $response = $this->service->destroy($id);
+
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('workouts.index'));
+
+        return back();
     }
 
     public function myCurrentTraining()

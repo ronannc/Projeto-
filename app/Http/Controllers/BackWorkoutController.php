@@ -125,14 +125,15 @@ class BackWorkoutController extends Controller
      */
     public function destroy($id)
     {
-        $backWorkout = BackWorkout::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($backWorkout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('back-workouts.index'));
+
+        return back();
     }
 }

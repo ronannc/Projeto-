@@ -135,14 +135,15 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $company = Company::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($company);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('company.index'));
+
+        return back();
     }
 }

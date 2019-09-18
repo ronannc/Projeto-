@@ -130,14 +130,15 @@ class ShoulderController extends Controller
      */
     public function destroy($id)
     {
-        $shoulder = Shoulder::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($shoulder);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('shoulders.index'));
+
+        return back();
     }
 }

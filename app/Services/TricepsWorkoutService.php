@@ -47,11 +47,12 @@ class TricepsWorkoutService
         }
     }
 
-    public function delete(TricepsWorkout $triceps_workout)
+    public function destroy($id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $delete = $this->repository->delete($triceps_workout);
-            return $delete;
+            return $model->delete();
         } catch (Exception $exception) {
             return [
                 'error'   => true,

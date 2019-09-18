@@ -19,15 +19,15 @@ class ManagerController extends Controller
     use Authorizable;
 
     /** @var UserRepository */
-    private $userRepository;
+    private $repository;
 
     /** @var UserService */
-    private $userService;
+    private $service;
 
     public function __construct(UserRepository $userRepository, UserService $userService)
     {
-        $this->userRepository = $userRepository;
-        $this->userService = $userService;
+        $this->repository = $userRepository;
+        $this->service = $userService;
     }
 
     /**
@@ -52,8 +52,8 @@ class ManagerController extends Controller
     public function edit($id)
     {
         // todo: modificar
-        $model = $this->userRepository->with(['contacts'])->findOneById($id);
-        $extraData = $this->userRepository->getExtraData($id);
+        $model = $this->repository->with(['contacts'])->findOneById($id);
+        $extraData = $this->repository->getExtraData($id);
         $extraData['resource'] = 'Managers';
 
         return view('layouts.users.edit', compact('model'), compact('extraData'));
@@ -67,7 +67,7 @@ class ManagerController extends Controller
     public function create()
     {
         // todo: modificar
-        $extraData = $this->userRepository->getExtraData();
+        $extraData = $this->repository->getExtraData();
 
         return view('layouts.managers.create', compact('extraData'));
     }
@@ -84,7 +84,7 @@ class ManagerController extends Controller
         // todo: modificar
         $request->request->add(['role' => User::MANAGER]);
 
-        $response = $this->userService->store($request->all());
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -108,7 +108,7 @@ class ManagerController extends Controller
     public function update(UserUpdateRequest $request, $id)
     {
         // todo: modificar
-        $response = $this->userService->update($request->except('company_id'), $id);
+        $response = $this->service->update($request->except('company_id'), $id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -117,6 +117,20 @@ class ManagerController extends Controller
         }
 
         session()->flash('success', 'Gerente atualizado com sucesso!');
+
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $response = $this->service->destroy($id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+            return back()->withInput();
+        }
+
+        session()->flash('success', 'Deletado com sucesso!');
 
         return back();
     }

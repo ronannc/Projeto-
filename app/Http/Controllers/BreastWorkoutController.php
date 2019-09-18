@@ -127,14 +127,15 @@ class BreastWorkoutController extends Controller
      */
     public function destroy($id)
     {
-        $breastWorkout = BreastWorkout::find($id);
+        $response = $this->service->destroy($id);
 
-        $response = $this->service->delete($breastWorkout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
+
         session()->flash('success', 'Deletado com sucesso!');
-        return redirect(route('breast-workouts.index'));
+
+        return back();
     }
 }
