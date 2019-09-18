@@ -68,7 +68,8 @@ class ClientController extends Controller
     public function store(Request $request)
     {
 
-        $response = $this->service->store($request->all());
+        $data = $request->all();
+        $response = $this->service->store($data);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);

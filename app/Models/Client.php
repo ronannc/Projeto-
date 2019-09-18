@@ -80,7 +80,7 @@ class Client extends Model implements AuditableContract
 
     public function company()
     {
-        return $this->belongsTo(Company::class);
+        return $this->hasOne(Company::class, 'id', 'company_id');
     }
 }
 
