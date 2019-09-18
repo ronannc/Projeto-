@@ -39,11 +39,11 @@ class WorkoutService
     public function update(array $data, $id)
     {
         $model = $this->repository->findOneById($id);
-
         try {
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
+
 
             return [
                 'error'   => true,

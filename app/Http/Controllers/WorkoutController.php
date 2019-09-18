@@ -200,7 +200,8 @@ class WorkoutController extends Controller
             $this->repository->update_lower_member_Workout($inferior);
         }
 
-        $response = $this->service->update($data, $workout);
+
+        $response = $this->service->update($data, $workout->id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -208,7 +209,7 @@ class WorkoutController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return back();
+        return redirect()->route('workouts.index');
     }
 
     /**

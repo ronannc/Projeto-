@@ -17,15 +17,13 @@
             <!-- /.box-header -->
             <div class="box-body " style="">
                 <ul class="nav nav-stacked">
-                    <li>Inicio <span class="pull-right">{{$data['inicio']}}</span></li>
-                    <li>Proxima Ficha <span class="pull-right">{{$data['prox_ficha']}}</span></li>
-                    <li>Descricao<span class="pull-right">{{$data['descricao']}}</span></li>
-                    <li>Objetivo<span class="pull-right">{{$data['objetivo']}}</span></li>
-                    <li>Intervalo<span class="pull-right">{{$data['intervalo']}}</span></li>
-                    <li>Metodo<span class="pull-right">{{$data['metodo']}}</span></li>
-                    <li>Frequencia<span class="pull-right">{{$data['frequencia']}}</span></li>
-                    <li>Aerobico Inicial<span class="pull-right">{{$data['aerob_ini']}}</span></li>
-                    <li>Aerobico Final<span class="pull-right">{{$data['aerob_fim']}}</span></li>
+                    <li>Inicio <span class="pull-right">{{date('d/m/Y', strtotime($data['start']))}}</span></li>
+                    <li>Proxima Ficha <span class="pull-right">{{date('d/m/Y', strtotime($data['next_workout']))}}</span></li>
+                    <li>Objetivo<span class="pull-right">{{$data['goal']}}</span></li>
+                    <li>Intervalo<span class="pull-right">{{$data['interval']}}</span></li>
+                    <li>Metodo<span class="pull-right">{{$data->method->description}}</span></li>
+                    <li>Frequencia<span class="pull-right">{{$data['frequency']}}</span></li>
+                    <li>Cliente<span class="pull-right">{{$data->client->name}}</span></li>
                 </ul>
             </div>
             <!-- /.box-body -->
@@ -61,12 +59,12 @@
                                     </tr>
                                     @foreach($data['triceps_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['triceps_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\Triceps::find($exercicioTreino['triceps_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                             {{--                                                <td><input class="form-control" name="rep_triceps_{{$exercicioTreino['triceps_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                             {{--                                                <td><input class="form-control" name="kg_triceps_{{$exercicioTreino['triceps_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
@@ -96,12 +94,12 @@
                                     </tr>
                                     @foreach($data['biceps_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\Biceps::find($exercicioTreino['biceps_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\Biceps::find($exercicioTreino['biceps_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                             {{--                                                <td><input class="form-control" name="rep_biceps_{{$exercicioTreino['biceps_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                             {{--                                                <td><input class="form-control" name="kg_biceps_{{$exercicioTreino['biceps_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
@@ -131,12 +129,12 @@
                                     </tr>
                                     @foreach($data['breast_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\Peitoral::find($exercicioTreino['breast_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\Breast::find($exercicioTreino['breast_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                             {{--                                                <td><input class="form-control" name="rep_breast_{{$exercicioTreino['breast_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                             {{--                                                <td><input class="form-control" name="kg_breast_{{$exercicioTreino['breast_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
@@ -168,12 +166,12 @@
                                     </tr>
                                     @foreach($data['back_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\Costa::find($exercicioTreino['back_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\Back::find($exercicioTreino['back_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                         {{--                                                <td><input class="form-control" name="rep_back_{{$exercicioTreino['back_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                         {{--                                                <td><input class="form-control" name="kg_back_{{$exercicioTreino['back_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
@@ -203,12 +201,12 @@
                                     </tr>
                                     @foreach($data['shoulder_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\Ombro::find($exercicioTreino['shoulder_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\Shoulder::find($exercicioTreino['shoulder_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                             {{--                                                <td><input class="form-control" name="rep_shoulder_{{$exercicioTreino['shoulder_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                             {{--                                                <td><input class="form-control" name="kg_shoulder_{{$exercicioTreino['shoulder_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
@@ -238,12 +236,12 @@
                                     </tr>
                                     @foreach($data['lower_member_workout'] as $exercicioTreino)
                                         <tr>
-                                            <td>{{$exercicioTreino['grupo'] ?? ''}}</td>
-                                            <td style="width: 150px">{{ \App\Models\MembroInferior::find($exercicioTreino['lower_member_id'])['exercicio']}}</td>
-                                            <td>{{$exercicioTreino['serie'] ?? ''}}</td>
+                                            <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                            <td style="width: 150px">{{ \App\Models\LowerMember::find($exercicioTreino['lower_member_id'])['exercise']}}</td>
+                                            <td>{{$exercicioTreino['series'] ?? ''}}</td>
 {{--                                            @if($data['status'])--}}
-                                                <td>{{$exercicioTreino['rep'] ?? ''}}</td>
-                                                <td>{{number_format($exercicioTreino['kg'] ?? '', 0)}}</td>
+                                                <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                                <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
 {{--                                            @else--}}
                                             {{--                                                <td><input class="form-control" name="rep_inferior_{{$exercicioTreino['lower_member_id']}}" type="text" value="{{$exercicioTreino['rep'] ?? ''}}"></td>--}}
                                             {{--                                                <td><input class="form-control" name="kg_inferior_{{$exercicioTreino['lower_member_id']}}" type="text" value="{{$exercicioTreino['kg'] ?? ''}}"></td>--}}
