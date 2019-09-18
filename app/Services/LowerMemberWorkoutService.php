@@ -3,9 +3,9 @@
 
 namespace App\Services;
 
-use App\Models\LowerMemberWorkout;
 use App\Repositories\Contracts\LowerMemberWorkoutRepository;
-use Exception;
+use App\Support\Notify;
+use Illuminate\Support\Facades\Log;
 
 class LowerMemberWorkoutService
 {
@@ -24,25 +24,29 @@ class LowerMemberWorkoutService
     public function store(array $data)
     {
         try {
-            $store = $this->repository->store($data);
-            return $store;
-        } catch (Exception $exception) {
+            return $this->repository->store($data);
+        } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
             return [
                 'error'   => true,
-                'message' => $exception->getMessage()
+                'message' => Notify::ERROR_MESSAGE
             ];
         }
     }
 
-    public function update(array $data, LowerMemberWorkout $lower_member_workout)
+    public function update(array $data, $id)
     {
+        $model = $this->repository->findOneById($id);
+
         try {
-            $update = $this->repository->update($lower_member_workout, $data);
-            return $update;
-        } catch (Exception $exception) {
+            return $this->repository->update($model, $data);
+        } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
             return [
                 'error'   => true,
-                'message' => $exception->getMessage()
+                'message' => Notify::ERROR_MESSAGE
             ];
         }
     }
@@ -53,13 +57,13 @@ class LowerMemberWorkoutService
 
         try {
             return $model->delete();
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
             return [
                 'error'   => true,
-                'message' => $exception->getMessage()
+                'message' => Notify::ERROR_MESSAGE
             ];
         }
     }
-
-
 }

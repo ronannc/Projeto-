@@ -55,15 +55,23 @@ class UserService
         }
     }
 
-    public function update(array $data, User $user)
+    public function update(array $data, $id)
     {
+        /** @var User $model */
+        $model = $this->repository->findOneById($id);
+
+        if (!empty($data['permissions'])) {
+            $model->syncPermissions($data['permissions']);
+        }
+
         try {
-            $response = $this->repository->update($user, $data);
-            return $response;
+            return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
             return [
                 'error'   => true,
-                'message' => $exception->getMessage()
+                'message' => Notify::ERROR_MESSAGE
             ];
         }
     }
@@ -75,6 +83,8 @@ class UserService
         try {
             return $model->delete();
         } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
             return [
                 'error'   => true,
                 'message' => $exception->getMessage()
