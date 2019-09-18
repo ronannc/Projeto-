@@ -66,7 +66,6 @@ class ManagerController extends Controller
      */
     public function create()
     {
-        // todo: modificar
         $extraData = $this->repository->getExtraData();
 
         return view('layouts.managers.create', compact('extraData'));
@@ -81,7 +80,6 @@ class ManagerController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-        // todo: modificar
         $request->request->add(['role' => User::MANAGER]);
 
         $response = $this->service->store($request->all());
@@ -107,8 +105,7 @@ class ManagerController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-        // todo: modificar
-        $response = $this->service->update($request->except('company_id'), $id);
+        $response = $this->service->update($request->all(), $id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);

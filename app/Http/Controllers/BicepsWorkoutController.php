@@ -104,16 +104,15 @@ class BicepsWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $bicepsWorkout = BicepsWorkout::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $bicepsWorkout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('biceps-workouts.index'));
+        return back();
     }
 
     /**

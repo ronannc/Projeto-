@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\DataTables\UserDataTable;
 use App\DataTables\UsersOnlineDataTable;
+use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use App\Services\UserService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -72,8 +74,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->All();
-        $response = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -111,14 +112,24 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param User    $user
+     * @param UserUpdateRequest $request
+     * @param                   $id
      *
      * @return void
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, $id)
     {
-        //
+        $response = $this->service->update($request->all(), $id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+
+            return back()->withInput();
+        }
+
+        session()->flash('success', 'Atualizado com sucesso!');
+
+        return back();
     }
 
     /**
@@ -138,6 +149,28 @@ class UserController extends Controller
         }
 
         session()->flash('success', 'Deletado com sucesso!');
+
+        return back();
+    }
+
+    /**
+     * Altera o status de um usuário.
+     *
+     * @param string $id
+     *
+     * @return RedirectResponse
+     */
+    public function changeUserStatus($id)
+    {
+        $response = $this->service->changeUserStatus($id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+
+            return back();
+        }
+
+        session()->flash('success', 'Status do usuário alterado com sucesso.');
 
         return back();
     }

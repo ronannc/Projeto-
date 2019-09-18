@@ -105,16 +105,15 @@ class TricepsWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $triceps_workout = TricepsWorkout::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $triceps_workout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('triceps-workouts.index'));
+        return back();
     }
 
     /**

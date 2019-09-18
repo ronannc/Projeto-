@@ -105,17 +105,15 @@ class BreastWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $breastWorkout = BreastWorkout::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($data, $breastWorkout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('breast-workouts.index'));
+        return back();
     }
 
     /**

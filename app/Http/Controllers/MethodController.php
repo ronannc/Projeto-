@@ -29,6 +29,7 @@ class MethodController extends Controller
 
     /**
      * @param MethodDataTable $dataTable
+     *
      * @return mixed
      */
     public function index(MethodDataTable $dataTable)
@@ -55,11 +56,10 @@ class MethodController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $resultFromStoreMethod = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
-        if (!empty($resultFromStoreMethod['error'])) {
-            session()->flash('error', $resultFromStoreMethod['message']);
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
@@ -95,20 +95,21 @@ class MethodController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Method  $method
+     * @param         $id
      *
      * @return Response
      */
-    public function update(Request $request, Method $method)
+    public function update(Request $request, $id)
     {
-        $resultFromUpdateMethod = $this->service->update($request->all(), $method);
-        if (!empty($resultFromUpdateMethod['error'])) {
-            session()->flash('error', $resultFromUpdateMethod['message']);
+        $response = $this->service->update($request->all(), $id);
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('methods.index'));
+        return back();
     }
 
     /**

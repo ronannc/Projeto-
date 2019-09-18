@@ -106,16 +106,15 @@ class WorkoutModeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $workoutMode = WorkoutMode::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $workoutMode);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('workout-modes.index'));
+        return back();
     }
 
     /**

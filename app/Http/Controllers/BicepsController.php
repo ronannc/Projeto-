@@ -106,16 +106,15 @@ class BicepsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $biceps = Biceps::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $biceps);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('biceps.index'));
+        return back();
     }
 
     /**

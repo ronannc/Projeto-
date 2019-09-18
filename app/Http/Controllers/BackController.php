@@ -57,7 +57,7 @@ class BackController extends Controller
      */
     public function store(Request $request)
     {
-        $response = $this->service->store($data = $request->all());
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -89,7 +89,7 @@ class BackController extends Controller
      */
     public function edit($id)
     {
-        $back = Back::find($id);
+        $back = $this->repository->findOneById($id);
         return view('layouts.backs.edit', compact('back'));
     }
 
@@ -103,16 +103,15 @@ class BackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $back = Back::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $back);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('backs.index'));
+        return back();
     }
 
     /**

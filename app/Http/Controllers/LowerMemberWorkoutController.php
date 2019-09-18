@@ -59,8 +59,7 @@ class LowerMemberWorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $response = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -106,17 +105,15 @@ class LowerMemberWorkoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $lowerMemberWorkout = LowerMemberWorkout::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($data, $lowerMemberWorkout);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('lower-member-workouts.index'));
+        return back();
     }
 
     /**

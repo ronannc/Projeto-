@@ -114,16 +114,15 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $company = Company::find($id);
+        $response = $this->service->update($request->all(), $id);
 
-        $response = $this->service->update($request->all(), $company);
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('company.index'));
+        return back();
     }
 
     /**

@@ -67,15 +67,14 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data = $request->all();
-        $response = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
-        session()->flash('success', 'Adicionado com sucesso!');
+
+        session()->flash('status', 'Adicionado com sucesso !');
 
         return redirect(route('clients.index'));
     }
@@ -91,7 +90,8 @@ class ClientController extends Controller
     public function show(Client $client, WorkoutDataTable $dataTable)
     {
         $workout = $client->workout();
-        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'), compact('client'));
+        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'),
+            compact('client'));
     }
 
     /**
@@ -116,14 +116,13 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Client  $client
+     * @param         $id
      *
      * @return Response
      */
     public function update(Request $request, $id)
     {
-        $client = Client::find($id);
-        $response = $this->service->update($request->all(), $client);
+        $response = $this->service->update($request->all(), $id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -131,7 +130,7 @@ class ClientController extends Controller
         }
         session()->flash('success', 'Atualizado com sucesso!');
 
-        return redirect(route('clients.index'));
+        return back();
     }
 
     /**
