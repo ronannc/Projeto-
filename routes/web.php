@@ -47,4 +47,11 @@ Route::group([
         Route::resource('methods', 'MethodController');
         Route::resource('managers', 'ManagerController');
 
+        Route::group(['prefix' => 'notifications'],
+            function () {
+                Route::get('', 'NotificationController@index')->name('notifications.index');
+                Route::get('visualize-all', 'NotificationController@visualizeAll')->name('visualizeAll');
+                Route::get('visualize/{id}', 'NotificationController@visualize')->name('visualize');
+            });
+
     });

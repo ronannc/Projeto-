@@ -367,7 +367,7 @@ return [
 
         [
             'text'  => 'Notificações',
-            'route' => 'home',
+            'route' => 'notifications.index',
         ],
     ],
 
