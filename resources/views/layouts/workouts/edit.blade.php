@@ -2,10 +2,6 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @section('content')
 
     @include('layouts.components.status')
@@ -14,8 +10,6 @@
         <div class="box-header with-border">
             <h3 class="box-title">Editar Treino</h3>
         </div>
-        <!-- /.box-header -->
-        <!-- form start -->
         <form action="{{route('workouts.update', $data)}}" method="post">
             @csrf
             {{ method_field('PUT') }}

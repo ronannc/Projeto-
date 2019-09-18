@@ -2,10 +2,6 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @section('content')
     <div class="col-12">
         <div class="box box-primary box-solid">
