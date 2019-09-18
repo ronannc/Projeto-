@@ -83,8 +83,8 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'email',
+            'name' => ['title', 'Nome'],
+            'email' => ['title', 'Email'],
             'is_active' => [
                 'title' => 'Situação',
             ],
@@ -95,7 +95,6 @@ class UserDataTable extends DataTable
                 'printable'  => false,
                 'exportable' => false,
             ],
-            'id',
         ];
     }
 

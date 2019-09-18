@@ -67,11 +67,11 @@ class ClientDataTable extends DataTable
                 'style' => 'width: 100%'
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
                 'scrollX' => true,
-                'language'   => ['url' => '/datatable/portuguese-brasil.json'],
+                'language' => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
 
@@ -99,11 +99,11 @@ class ClientDataTable extends DataTable
             'zipcode' => ['title' => 'Código Postal'],
             'city.name' => ['title' => 'Cidade'],
             'company.name' => ['title' => 'Empresa'],
-            'actions'   => [
-                'title'      => 'Ações',
-                'orderable'  => false,
+            'actions' => [
+                'title' => 'Ações',
+                'orderable' => false,
                 'searchable' => false,
-                'printable'  => false,
+                'printable' => false,
                 'exportable' => false,
             ],
         ];

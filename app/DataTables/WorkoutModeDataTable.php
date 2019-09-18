@@ -76,8 +76,8 @@ class WorkoutModeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'description',
+            'name' => ['title', 'Nome'],
+            'description' => ['title', 'Descrição'],
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,

@@ -76,8 +76,8 @@ class BreastDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'exercise',
-            'description',
+            'exercise' => ['title', 'Exercício'],
+            'description' => ['title', 'Descrição'],
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,
