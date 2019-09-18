@@ -51,6 +51,9 @@ class WorkoutDataTable extends DataTable
      */
     public function query(Workout $model)
     {
+        if($this->data){
+            return $this->data;
+        }
         return $model->newQuery()->with(['client', 'method']);
     }
 

@@ -38,8 +38,7 @@ class WorkoutController extends Controller
      */
     public function index(WorkoutDataTable $dataTable)
     {
-        $Workout = Workout::all();
-        return $dataTable->with('data', $Workout)->render('layouts.workouts.index');
+        return $dataTable->render('layouts.workouts.index');
     }
 
     /**

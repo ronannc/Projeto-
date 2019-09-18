@@ -91,8 +91,7 @@ class ClientController extends Controller
     public function show(Client $client, WorkoutDataTable $dataTable)
     {
         $workout = $client->workout();
-        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'),
-            compact('client'));
+        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'), compact('client'));
     }
 
     /**

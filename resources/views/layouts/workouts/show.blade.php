@@ -38,7 +38,7 @@
 {{--        </div>--}}
         <!-- /.box-header -->
         <!-- form start -->
-    <form action="{{route('workouts', $data)}}" method="post">
+    <form action="{{route('workouts.update', $data)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
 {{--            <div class="box-body">--}}

@@ -70,7 +70,7 @@ class Client extends Model implements AuditableContract
 
     public function workout()
     {
-        return Workout::where('client_id', $this->id)->get();
+        return Workout::where('client_id', $this->id)->with('client')->with('method')->get();
     }
 
     public function city()
