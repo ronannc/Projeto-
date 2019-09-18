@@ -19,6 +19,12 @@ class WorkoutDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
+            ->editColumn('start', function (Workout $Workout) {
+                return date('d/m/Y', strtotime($Workout['start']));
+            })
+            ->editColumn('next_workout', function (Workout $Workout) {
+                return date('d/m/Y', strtotime($Workout['next_workout']));
+            })
             ->editColumn('actions', function (Workout $Workout) {
 
                 return '<a title="Visualizar"  style="color: #000000" href="' . route('workouts.show',
@@ -45,7 +51,7 @@ class WorkoutDataTable extends DataTable
      */
     public function query(Workout $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['client', 'method']);
     }
 
     /**
@@ -78,13 +84,13 @@ class WorkoutDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'start',
-            'next_workout',
-            'goal',
-            'interval',
-            'frequency',
-            'method_id',
-            'client_id',
+            'start' => ['title' => 'Inicio'],
+            'next_workout' => ['title' => 'Próximo Treino'],
+            'goal' => ['title' => 'Objetivo'],
+            'interval' => ['title' => 'Intervalo'],
+            'frequency' => ['title' => 'Frequência'],
+            'method.description' => ['title' => 'Método'],
+            'client.name' => ['title' => 'Cliente'],
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,

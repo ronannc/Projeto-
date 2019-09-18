@@ -32,4 +32,9 @@ class Workout extends Model implements AuditableContract
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function method()
+    {
+        return $this->belongsTo(Method::class);
+    }
 }
