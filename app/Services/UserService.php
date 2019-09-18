@@ -4,9 +4,11 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Notifications\InfoNotification;
 use App\Notifications\WelcomeEmailNotification;
 use App\Repositories\Contracts\UserRepository;
 use App\Support\Notify;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
@@ -92,5 +94,31 @@ class UserService
         }
     }
 
+    /**
+     * Altera o status de um usuário.
+     *
+     * @param string $id
+     *
+     * @return array|bool
+     */
+    public function changeUserStatus($id)
+    {
+        try {
+            $user = $this->repository->findOneById($id);
+            $user->update(['is_active' => $user->is_active ? false : true]);
+
+            Notification::send(User::allAdmins(),
+                new InfoNotification(Auth::user()->name . ' alterou o status do usuário ' . $user->name));
+
+            return true;
+        } catch (\Exception $exception) {
+            Log::error(Notify::log($exception));
+
+            return [
+                'error'   => true,
+                'message' => Notify::ERROR_MESSAGE
+            ];
+        }
+    }
 
 }
