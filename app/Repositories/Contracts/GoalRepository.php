@@ -3,7 +3,7 @@
 namespace App\Repositories\Contracts;
 
 
-interface MethodRepository extends BaseRepository
+interface GoalRepository extends BaseRepository
 {
     //
 }

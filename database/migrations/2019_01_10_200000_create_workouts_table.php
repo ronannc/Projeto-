@@ -17,12 +17,11 @@ class CreateWorkoutsTable extends Migration
             $table->uuid('id')->primary();
             $table->date('start');
             $table->date('next_workout');
-            $table->string('goal');
             $table->string('interval');
             $table->string('frequency');
 
-            $table->uuid('method_id')->nullable();
-            $table->foreign('method_id')->references('id')->on('methods');
+            $table->uuid('goal_id')->nullable();
+            $table->foreign('goal_id')->references('id')->on('goals');
 
             $table->uuid('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');

@@ -3,11 +3,11 @@
 
 namespace App\Services;
 
-use App\Repositories\Contracts\MethodRepository;
+use App\Repositories\Contracts\GoalRepository;
 use App\Support\Notify;
 use Illuminate\Support\Facades\Log;
 
-class MethodService
+class GoalService
 {
     protected $repository;
 
@@ -16,7 +16,7 @@ class MethodService
      *
      * @param $repository
      */
-    public function __construct(MethodRepository $repository)
+    public function __construct(GoalRepository $repository)
     {
         $this->repository = $repository;
     }

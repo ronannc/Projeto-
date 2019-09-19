@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Method;
+use App\Models\Goal;
 use Illuminate\Database\Seeder;
 
-class MethodTableSeeder extends Seeder
+class GoalTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,47 +12,47 @@ class MethodTableSeeder extends Seeder
      */
     public function run()
     {
-        Method::create([
+        Goal::create([
             'name'        => 'Força',
             'description' => 'Treino focado em força muscular',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Hipertrofia',
             'description' => 'Treino focado em hipertrofia muscular',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Resistência',
             'description' => 'Treino focado em resistência muscular',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Emagrecimento',
             'description' => 'Treino focado em perda de gordura',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Qualidade de vida',
             'description' => 'Treino para qualidade de vida',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Potência',
             'description' => 'Treino focado em potência muscular',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Condicionamento Físico',
             'description' => 'Treino focado em condicionamento físico',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Fadiga',
             'description' => 'Treino focado em fadiga',
         ]);
 
-        Method::create([
+        Goal::create([
             'name'        => 'Oclusão Vascular',
             'description' => 'Treino focado em oclusão vascular',
         ]);

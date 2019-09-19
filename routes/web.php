@@ -44,7 +44,7 @@ Route::group([
         Route::resource('audits', 'AuditController');
         Route::resource('roles', 'RoleController');
         Route::resource('permissions', 'PermissionController');
-        Route::resource('methods', 'MethodController');
+        Route::resource('goals', 'GoalController');
         Route::resource('managers', 'ManagerController');
 
         Route::group(['prefix' => 'notifications'],

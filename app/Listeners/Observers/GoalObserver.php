@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 
-class MethodObserver
+class GoalObserver
 {
     /**
      * Handle the user "creating" event.

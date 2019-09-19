@@ -2,28 +2,31 @@
 
 namespace App\DataTables;
 
-use App\Models\Method;
+use App\Models\Goal;
+use Yajra\DataTables\DataTableAbstract;
+use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
 
-class MethodDataTable extends DataTable
+class GoalDataTable extends DataTable
 {
     /**
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
+     *
+     * @return DataTableAbstract
      */
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Method $method) {
+            ->editColumn('actions', function (Goal $model) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('methods.edit',
-                        $method) . '"><i class="fa fa-edit"></i></a>' .
+                return '<a title="Editar"  style="color: #000000" href="' . route('goals.edit',
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Empresa ?\')){document.getElementById(\'form-delete' . $method['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $method['id'] . '" style="display:none" action="' . route('methods.destroy',
-                        $method) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Empresa ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('goals.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';
@@ -34,10 +37,11 @@ class MethodDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\MethodDataTable $model
+     * @param Goal $model
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Method $model)
+    public function query(Goal $model)
     {
         return $model->newQuery();
     }
@@ -45,7 +49,7 @@ class MethodDataTable extends DataTable
     /**
      * Optional method if you want to use html builder.
      *
-     * @return \Yajra\DataTables\Html\Builder
+     * @return Builder
      */
     public function html()
     {
@@ -89,6 +93,6 @@ class MethodDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Method_' . date('YmdHis');
+        return 'Goal_' . date('YmdHis');
     }
 }

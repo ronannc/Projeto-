@@ -10,7 +10,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Cadastro de Métodos</h3>
         </div>
-        <form action="{{route('methods.store')}}" method="post">
+        <form action="{{route('goals.store')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('layouts.components.input_name')

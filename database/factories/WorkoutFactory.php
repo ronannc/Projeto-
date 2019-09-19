@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Client;
-use App\Models\Method;
+use App\Models\Goal;
 use App\Models\Workout;
 use Faker\Generator as Faker;
 use Ramsey\Uuid\Uuid;
@@ -22,8 +22,7 @@ $factory->define(Workout::class, function (Faker $faker) {
         'id'           => Uuid::uuid4(),
         'start'        => $faker->date(),
         'next_workout' => $faker->date(),
-        'goal'         => $faker->name,
-        'method_id'    => Method::with([])->inRandomOrder()->first()->id,
+        'goal_id'      => Goal::with([])->inRandomOrder()->first()->id,
         'interval'     => $faker->name,
         'frequency'    => $faker->name,
         'client_id'    => Client::with([])->inRandomOrder()->first()->id,

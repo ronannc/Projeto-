@@ -10,9 +10,9 @@ use App\Models\BicepsWorkout;
 use App\Models\Breast;
 use App\Models\BreastWorkout;
 use App\Models\Client;
+use App\Models\Goal;
 use App\Models\LowerMember;
 use App\Models\LowerMemberWorkout;
-use App\Models\Method;
 use App\Models\Shoulder;
 use App\Models\ShoulderWorkout;
 use App\Models\Triceps;
@@ -37,7 +37,7 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     public function getExtraData()
     {
         return [
-            'method'       => Method::all(),
+            'method'       => Goal::all(),
             'client'       => Client::all(),
             'biceps'       => Biceps::all(),
             'triceps'      => Triceps::all(),

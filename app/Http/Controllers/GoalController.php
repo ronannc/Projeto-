@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\MethodDataTable;
-use App\Models\Method;
-use App\Repositories\Contracts\MethodRepository;
-use App\Services\MethodService;
+use App\DataTables\GoalDataTable;
+use App\Models\Goal;
+use App\Repositories\Contracts\GoalRepository;
+use App\Services\GoalService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class MethodController extends Controller
+class GoalController extends Controller
 {
 
     protected $repository;
@@ -18,23 +18,23 @@ class MethodController extends Controller
     /**
      * BackController constructor.
      *
-     * @param MethodRepository $repository
-     * @param MethodService    $service
+     * @param GoalRepository $repository
+     * @param GoalService    $service
      */
-    public function __construct(MethodRepository $repository, MethodService $service)
+    public function __construct(GoalRepository $repository, GoalService $service)
     {
         $this->repository = $repository;
         $this->service = $service;
     }
 
     /**
-     * @param MethodDataTable $dataTable
+     * @param GoalDataTable $dataTable
      *
      * @return mixed
      */
-    public function index(MethodDataTable $dataTable)
+    public function index(GoalDataTable $dataTable)
     {
-        return $dataTable->render('layouts.methods.index');
+        return $dataTable->render('layouts.goals.index');
     }
 
     /**
@@ -44,7 +44,7 @@ class MethodController extends Controller
      */
     public function create()
     {
-        return view('layouts.methods.create');
+        return view('layouts.goals.create');
     }
 
     /**
@@ -64,17 +64,17 @@ class MethodController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('methods.index'));
+        return redirect(route('goals.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Method $method
+     * @param Goal $method
      *
      * @return void
      */
-    public function show(Method $method)
+    public function show(Goal $method)
     {
         //
     }
@@ -82,13 +82,13 @@ class MethodController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Method $method
+     * @param Goal $method
      *
      * @return Response
      */
-    public function edit(Method $method)
+    public function edit(Goal $method)
     {
-        return view('layouts.methods.edit', compact('method'));
+        return view('layouts.goals.edit', compact('method'));
     }
 
     /**

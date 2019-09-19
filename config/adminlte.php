@@ -261,15 +261,15 @@ return [
         ],
 
         [
-            'text'    => 'Modos de Treino',
+            'text'    => 'Objetivos de Treino',
             'submenu' => [
                 [
                     'text'  => 'Listar',
-                    'route' => 'methods.index',
+                    'route' => 'goals.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
-                    'route' => 'methods.create',
+                    'route' => 'goals.create',
                 ],
             ],
         ],

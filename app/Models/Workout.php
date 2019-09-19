@@ -21,9 +21,8 @@ class Workout extends Model implements AuditableContract
     protected $fillable = [
         'start',
         'next_workout',
-        'goal',
         'interval',
-        'method_id',
+        'goal_id',
         'frequency',
         'client_id',
     ];
@@ -35,6 +34,6 @@ class Workout extends Model implements AuditableContract
 
     public function method()
     {
-        return $this->belongsTo(Method::class);
+        return $this->belongsTo(Goal::class);
     }
 }

@@ -10,7 +10,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Editar Metodos de Treino</h3>
         </div>
-        <form action="{{route('methods.update', $method)}}" method="post">
+        <form action="{{route('goals.update', $method)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
