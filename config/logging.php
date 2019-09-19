@@ -53,11 +53,11 @@ return [
         ],
 
         'slack' => [
-            'driver' => 'slack',
-            'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Laravel Log',
-            'emoji' => ':boom:',
-            'level' => 'critical',
+            'driver'   => 'slack',
+            'url'      => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Virtual Trainning',
+            'emoji'    => ':exclamation:',
+            'level'    => 'debug',
         ],
 
         'papertrail' => [
