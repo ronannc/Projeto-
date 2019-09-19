@@ -83,6 +83,11 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo('edit_workout');
         $role->givePermissionTo('list_workout');
 
+        # Goals
+        $role->givePermissionTo('add_goals');
+        $role->givePermissionTo('edit_goals');
+        $role->givePermissionTo('list_goals');
+
         # Companies
         $role->givePermissionTo('edit_companies');
 

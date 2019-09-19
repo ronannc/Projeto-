@@ -12,51 +12,59 @@ class TricepsTableSeeder extends Seeder
      */
     public function run()
     {
-
-        Triceps::create([
+        factory(Triceps::class)->create([
             'exercise'    => 'Puley triceps',
             'description' => 'Puley triceps',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Puley invertido',
             'description' => 'Puley invertido',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Frances',
             'description' => 'Frances',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Frances isolado',
             'description' => 'Frances isolado',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps banco',
             'description' => 'Triceps banco',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps testa',
             'description' => 'Triceps testa',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps supino',
             'description' => 'Triceps supino',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps up',
             'description' => 'Triceps up',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps corda',
             'description' => 'Triceps corda',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps cross isolado',
             'description' => 'Triceps cross isolad',
         ]);
-        Triceps::create([
+
+        factory(Triceps::class)->create([
             'exercise'    => 'Triceps coice',
             'description' => 'Triceps coice',
         ]);
-
     }
 }

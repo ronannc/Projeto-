@@ -12,48 +12,57 @@ class BreastsTableSeeder extends Seeder
      */
     public function run()
     {
-
-        Breast::create([
+        factory(Breast::class)->create([
             'exercise'    => 'Supino reto',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Supino inclinado',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Peck deck',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Crucifixo',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Fly 45',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Pullouver',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Cross chest',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Flexao de braco',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Supino com halter',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Supino 45 com halter',
             'description' => '',
         ]);
-        Breast::create([
+
+        factory(Breast::class)->create([
             'exercise'    => 'Supino declinado',
             'description' => '',
         ]);

@@ -12,47 +12,47 @@ class GoalTableSeeder extends Seeder
      */
     public function run()
     {
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Força',
             'description' => 'Treino focado em força muscular',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Hipertrofia',
             'description' => 'Treino focado em hipertrofia muscular',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Resistência',
             'description' => 'Treino focado em resistência muscular',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Emagrecimento',
             'description' => 'Treino focado em perda de gordura',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Qualidade de vida',
             'description' => 'Treino para qualidade de vida',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Potência',
             'description' => 'Treino focado em potência muscular',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Condicionamento Físico',
             'description' => 'Treino focado em condicionamento físico',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Fadiga',
             'description' => 'Treino focado em fadiga',
         ]);
 
-        Goal::create([
+        factory(Goal::class)->create([
             'name'        => 'Oclusão Vascular',
             'description' => 'Treino focado em oclusão vascular',
         ]);

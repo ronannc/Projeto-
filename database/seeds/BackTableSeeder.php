@@ -12,59 +12,69 @@ class BackTableSeeder extends Seeder
      */
     public function run()
     {
-
-        Back::create([
+        factory(Back::class)->create([
             'exercise'    => 'Puley backs',
             'description' => 'Puley backs',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Puley frente',
             'description' => 'Puley frente',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Remada baixa',
             'description' => 'Remada baixa',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Remada curvada',
             'description' => 'Remada curvada',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Costas peck deck',
             'description' => 'Costas peck deck',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Puxador',
             'description' => 'Puxador',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Remada Cavalinho',
             'description' => 'Remada Cavalinho',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Extensao Tronco',
             'description' => 'Extensao Tronco',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Extensao de braco',
             'description' => 'Extensao de braco',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Puley frente pegada supinada',
             'description' => 'Puley frente pegada supinada',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Remada uni-lateral',
             'description' => 'Remada uni-lateral',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Barra fixa',
             'description' => 'Barra fixa',
         ]);
-        Back::create([
+
+        factory(Back::class)->create([
             'exercise'    => 'Levantamento terra',
             'description' => 'Levantamento terra',
         ]);
-
     }
 }

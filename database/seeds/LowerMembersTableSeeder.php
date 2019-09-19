@@ -12,63 +12,74 @@ class LowerMembersTableSeeder extends Seeder
      */
     public function run()
     {
-
-        LowerMember::create([
+        factory(LowerMember::class)->create([
             'exercise'    => 'Agachamento',
             'description' => 'Agachamento',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Leg-Press',
             'description' => 'Leg-Press',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Extensao de joelho',
             'description' => 'Extensao de joelho',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Flexao de joelho',
             'description' => 'Flexao de joelho',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Aducao',
             'description' => 'Aducao',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Abducao',
             'description' => 'Abducao',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Gluteo',
             'description' => 'Gluteo',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Hack',
             'description' => 'Hack',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Extensao de quadril',
             'description' => 'Extensao de quadril',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Flexao de quadril',
             'description' => 'Flexao de quadril',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Panturrilha',
             'description' => 'Panturrilha',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Stiff',
             'description' => 'Stiff',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Afundo',
             'description' => 'Afundo',
         ]);
-        LowerMember::create([
+
+        factory(LowerMember::class)->create([
             'exercise'    => 'Subida no banco',
             'description' => 'Subida no banco',
         ]);
-
     }
 }

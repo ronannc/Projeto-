@@ -12,59 +12,69 @@ class BicepsTableSeeder extends Seeder
      */
     public function run()
     {
-
-        Biceps::create([
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca direta',
             'description' => 'Rosca direta',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca alternada',
             'description' => 'Rosca alternada',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca simultaneo',
             'description' => 'Rosca simultaneo',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca concentrada',
             'description' => 'Rosca concentrada',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca invertida',
             'description' => 'Rosca invertida',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca na polia',
             'description' => 'Rosca na polia',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca martelo',
             'description' => 'Rosca martelo',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Extensao punho',
             'description' => 'Extensao punho',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Flexao punho',
             'description' => 'Flexao punho',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca scoth',
             'description' => 'Rosca scoth',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca no banco inclinado',
             'description' => 'Rosca no banco inclinado',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca martelo com rotacao',
             'description' => 'Rosca martelo com rotacao',
         ]);
-        Biceps::create([
+
+        factory(Biceps::class)->create([
             'exercise'    => 'Rosca 21',
             'description' => 'Rosca 21',
         ]);
-
     }
 }

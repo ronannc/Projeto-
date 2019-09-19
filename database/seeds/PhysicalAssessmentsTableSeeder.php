@@ -12,7 +12,6 @@ class PhysicalAssessmentsTableSeeder extends Seeder
      */
     public function run()
     {
-
         factory(PhysicalAssessment::class, 10)->create();
     }
 }

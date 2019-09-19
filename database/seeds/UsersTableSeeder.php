@@ -12,19 +12,20 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
-        $user = User::create([
+        factory(User::class, 1)->create([
             'name'     => 'Administrator',
             'email'    => 'admin@email.com',
             'password' => bcrypt('secretxxx'),
-        ]);
-        $user->assignRole(User::ADMIN);
+        ])->each(function (User $user) {
+            $user->assignRole(User::ADMIN);
+        });
 
-        $user = User::create([
+        factory(User::class, 1)->create([
             'name'     => 'Manager',
             'email'    => 'manager@email.com',
             'password' => bcrypt('secretxxx'),
-        ]);
-        $user->assignRole(User::MANAGER);
+        ])->each(function (User $user) {
+            $user->assignRole(User::MANAGER);
+        });
     }
 }
