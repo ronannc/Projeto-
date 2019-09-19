@@ -43,7 +43,7 @@ class PhysicalAssessmentDataTable extends DataTable
      */
     public function query(PhysicalAssessment $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->has('client')->with('client');
     }
 
     /**
@@ -93,7 +93,7 @@ class PhysicalAssessmentDataTable extends DataTable
             'weight' => ['title' => 'Peso'],
             'height' => ['title' => 'Altura'],
             'blood_pressure' => ['title' => 'Pressão Sanguínea'],
-            'client_id' => ['title' => 'Cliente'],
+            'client.name' => ['title' => 'Cliente'],
             'actions' => [
                 'title'      => 'Ações',
                 'orderable'  => false,

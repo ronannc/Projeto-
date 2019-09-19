@@ -38,4 +38,8 @@ class PhysicalAssessment extends Model implements AuditableContract
         'blood_pressure',
         'client_id'
     ];
+
+    public function client(){
+        return $this->belongsTo(Client::class);
+    }
 }

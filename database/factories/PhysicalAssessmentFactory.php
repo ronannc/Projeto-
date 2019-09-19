@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Client;
 use App\Models\PhysicalAssessment;
 use Faker\Generator as Faker;
 use Ramsey\Uuid\Uuid;
@@ -21,6 +22,7 @@ $factory->define(PhysicalAssessment::class, function (Faker $faker) {
         'left_thigh'     => $faker->numberBetween(1, 200),
         'right_calf'     => $faker->numberBetween(1, 200),
         'left_calf'      => $faker->numberBetween(1, 200),
+        'client_id'      => Client::with([])->inRandomOrder()->first()->id,
         'height'         => $faker->randomFloat(2, 0, 2),
         'weight'         => $faker->randomFloat(2, 2, 200),
         'blood_pressure' => $faker->name,

@@ -23,7 +23,7 @@ class CompanyScope implements Scope
     {
         if (auth()->check() && !User::isAdmin()) {
             $company_id = Company::withoutGlobalScope(CompanyScope::class)->find(Auth::user()->company_id)->id;
-            $builder->where($model->getTable() . '.clinic_id', $company_id);
+            $builder->where($model->getTable() . '.company_id', $company_id);
         }
     }
 }
