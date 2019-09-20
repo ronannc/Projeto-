@@ -70,11 +70,11 @@ class GoalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Goal $method
+     * @param Goal $goal
      *
      * @return void
      */
-    public function show(Goal $method)
+    public function show(Goal $goal)
     {
         //
     }
@@ -82,13 +82,13 @@ class GoalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Goal $method
+     * @param Goal $goal
      *
      * @return Response
      */
-    public function edit(Goal $method)
+    public function edit(Goal $goal)
     {
-        return view('layouts.goals.edit', compact('method'));
+        return view('layouts.goals.edit', compact('goal'));
     }
 
     /**

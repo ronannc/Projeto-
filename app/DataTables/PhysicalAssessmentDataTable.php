@@ -43,7 +43,7 @@ class PhysicalAssessmentDataTable extends DataTable
      */
     public function query(PhysicalAssessment $model)
     {
-        return $model->newQuery()->has('client')->with('client');
+        return $model->newQuery()->has('client')->with('client')->get();
     }
 
     /**
@@ -76,6 +76,14 @@ class PhysicalAssessmentDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'client.name' => ['title' => 'Cliente'],
+            'actions' => [
+                'title'      => 'Ações',
+                'orderable'  => false,
+                'searchable' => false,
+                'printable'  => false,
+                'exportable' => false,
+            ],
             'neck' => ['title' => 'Pescoço'],
             'shoulder' => ['title' => 'Ombros'],
             'chest' => ['title' => 'Peitoral'],
@@ -93,14 +101,6 @@ class PhysicalAssessmentDataTable extends DataTable
             'weight' => ['title' => 'Peso'],
             'height' => ['title' => 'Altura'],
             'blood_pressure' => ['title' => 'Pressão Sanguínea'],
-            'client.name' => ['title' => 'Cliente'],
-            'actions' => [
-                'title'      => 'Ações',
-                'orderable'  => false,
-                'searchable' => false,
-                'printable'  => false,
-                'exportable' => false,
-            ],
         ];
     }
 

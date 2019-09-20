@@ -2,10 +2,6 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @section('content')
 
     @include('layouts.components.status')
@@ -14,8 +10,6 @@
         <div class="box-header with-border">
             <h3 class="box-title">Editar de Exercicio - Costa</h3>
         </div>
-        <!-- /.box-header -->
-        <!-- form start -->
         <form action="{{route('physical-assessments.update', $PhysicalAssessment)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
@@ -39,12 +33,10 @@
                 @include('layouts.components.input_blood_pressure', ['data' => $PhysicalAssessment])
                 @include('layouts.components.select_client', ['data' => $PhysicalAssessment])
             </div>
-            <!-- /.box-body -->
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>
                 <button type="submit" class="btn btn-info pull-right">Editar</button>
             </div>
-            <!-- /.box-footer -->
         </form>
     </div>
 @stop
