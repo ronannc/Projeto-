@@ -92,8 +92,8 @@ class ShoulderWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $shoulderWorkout = $this->repository->findOneById($id);
-        return view('layouts.shoulder-workout.edit', compact('shoulderWorkout'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.shoulder-workout.edit', compact('model'));
     }
 
     /**

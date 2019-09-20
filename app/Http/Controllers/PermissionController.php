@@ -65,8 +65,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        $permission = $this->repository->findOneById($id);
-        return view('layouts.permissions.edit', compact('permission'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.permissions.edit', compact('model'));
     }
 
     /**

@@ -94,8 +94,8 @@ class BreastController extends Controller
      */
     public function edit($id)
     {
-        $breast = $this->repository->findOneById($id);
-        return view('layouts.breasts.edit', compact('breast'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.breasts.edit', compact('model'));
     }
 
     /**

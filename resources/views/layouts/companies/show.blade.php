@@ -69,7 +69,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}
@@ -101,7 +101,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}
@@ -130,7 +130,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}
@@ -161,7 +161,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}
@@ -190,7 +190,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}
@@ -219,7 +219,7 @@
 {{--                        <tbody>--}}
 {{--                        <tr>--}}
 {{--                            <th style="width: 10px">#</th>--}}
-{{--                            <th>Exercicio</th>--}}
+    {{--                            <th>Exercício</th>--}}
 {{--                            <th>Rep</th>--}}
 {{--                            <th>Serie</th>--}}
 {{--                            <th>Kg</th>--}}

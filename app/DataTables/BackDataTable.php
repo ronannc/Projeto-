@@ -19,14 +19,14 @@ class BackDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Back $back) {
+            ->editColumn('actions', function (Back $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('backs.edit',
-                        $back) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                         '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$back['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete' . $back['id'] . '" style="display:none" action="' . route('backs.destroy',
-                        $back) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('backs.destroy',
+                        $model) . '" method="post">' .
             csrf_field().
             method_field('DELETE').'
         </form>';

@@ -94,8 +94,8 @@ class TricepsController extends Controller
      */
     public function edit($id)
     {
-        $triceps = $this->repository->findOneById($id);
-        return view('layouts.triceps.edit', compact('triceps'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.triceps.edit', compact('model'));
     }
 
     /**

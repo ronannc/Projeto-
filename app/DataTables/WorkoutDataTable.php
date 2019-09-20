@@ -2,9 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Goal;
 use App\Models\Workout;
-use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
@@ -21,22 +19,22 @@ class WorkoutDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('start', function (Workout $Workout) {
-                return date('d/m/Y', strtotime($Workout['start']));
+            ->editColumn('start', function (Workout $model) {
+                return date('d/m/Y', strtotime($model['start']));
             })
-            ->editColumn('next_workout', function (Workout $Workout) {
-                return date('d/m/Y', strtotime($Workout['next_workout']));
+            ->editColumn('next_workout', function (Workout $model) {
+                return date('d/m/Y', strtotime($model['next_workout']));
             })
-            ->editColumn('actions', function (Workout $Workout) {
+            ->editColumn('actions', function (Workout $model) {
 
                 return '<a title="Visualizar"  style="color: #000000" href="' . route('workouts.show',
-                        $Workout) . '"><i class="fa fa-eye"></i></a>' .
+                        $model) . '"><i class="fa fa-eye"></i></a>' .
                     '<a title="Editar"  style="color: #000000" href="' . route('workouts.edit',
-                        $Workout) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Workout['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Workout['id'] . '" style="display:none" action="' . route('workouts.destroy',
-                        $Workout) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('workouts.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';
@@ -90,13 +88,13 @@ class WorkoutDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'start' => ['title' => 'Inicio'],
-            'next_workout' => ['title' => 'Próximo Treino'],
+            'start'            => ['title' => 'Início'],
+            'next_workout'     => ['title' => 'Próximo Treino'],
             'goal.description' => ['title' => 'Objetivo'],
-            'interval' => ['title' => 'Intervalo'],
-            'frequency' => ['title' => 'Frequência'],
-            'client.name' => ['title' => 'Cliente'],
-            'actions' => [
+            'interval'         => ['title' => 'Intervalo'],
+            'frequency'        => ['title' => 'Frequência'],
+            'client.name'      => ['title' => 'Cliente'],
+            'actions'          => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,

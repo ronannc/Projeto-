@@ -20,12 +20,14 @@ class TricepsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Triceps $triceps) {
+            ->editColumn('actions', function (Triceps $model) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('triceps.edit', $triceps) . '"><i class="fa fa-edit"></i></a>'.
+                return '<a title="Editar"  style="color: #000000" href="' . route('triceps.edit',
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                         '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete'.$triceps['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete'.$triceps['id'].'" style="display:none" action="'.route('triceps.destroy', $triceps).'" method="post">'.
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('triceps.destroy',
+                        $model) . '" method="post">' .
             csrf_field().
             method_field('DELETE').'
         </form>';

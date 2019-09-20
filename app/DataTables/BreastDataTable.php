@@ -19,14 +19,14 @@ class BreastDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Breast $Breast) {
+            ->editColumn('actions', function (Breast $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('breasts.edit',
-                        $Breast) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $Breast['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $Breast['id'] . '" style="display:none" action="' . route('breasts.destroy',
-                        $Breast) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('breasts.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';

@@ -105,11 +105,11 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param User $user
+     * @param $id
      *
      * @return void
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         //
     }

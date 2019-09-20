@@ -91,8 +91,8 @@ class GoalController extends Controller
      */
     public function edit($id)
     {
-        $goal = $this->repository->findOneById($id);
-        return view('layouts.goals.edit', compact('goal'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.goals.edit', compact('model'));
     }
 
     /**

@@ -2,6 +2,8 @@
 
 @section('title', 'AdminLTE')
 
+@php($data = $model)
+
 @section('content')
 
     @include('components.status')
@@ -10,7 +12,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Editar Treino</h3>
         </div>
-        <form action="{{route('workouts.update', $data)}}" method="post">
+        <form action="{{route('workouts.update', $data->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
@@ -34,7 +36,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>
@@ -72,7 +74,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>
@@ -110,7 +112,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>
@@ -150,7 +152,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>
@@ -188,7 +190,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>
@@ -226,7 +228,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Rep</th>
                                         <th>Serie</th>
                                         <th>Kg</th>

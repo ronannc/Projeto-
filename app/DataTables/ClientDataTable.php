@@ -26,14 +26,14 @@ class ClientDataTable extends DataTable
                 //TODO: Realizar ordenação dessa coluna
                 return date('d/m/Y', strtotime($model->birthday));
             })
-            ->editColumn('actions', function (Client $client) {
+            ->editColumn('actions', function (Client $model) {
 
-                return '<a title="Visualisar"  style="color: #000000" href="' . route('clients.show', $client) . '"><i class="fa  fa-eye"></i></a>
-                        <a title="Editar"  style="color: #000000" href="' . route('clients.edit', $client) . '"><i class="fa fa-edit"></i></a>
+                return '<a title="Visualisar"  style="color: #000000" href="' . route('clients.show', $model) . '"><i class="fa  fa-eye"></i></a>
+                        <a title="Editar"  style="color: #000000" href="' . route('clients.edit', $model) . '"><i class="fa fa-edit"></i></a>
                         <a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $client['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $client['id'] . '" style="display:none" action="' . route('clients.destroy',
-                        $client) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('clients.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';

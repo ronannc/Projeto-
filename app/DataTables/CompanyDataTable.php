@@ -19,14 +19,14 @@ class CompanyDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Company $company) {
+            ->editColumn('actions', function (Company $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('companies.edit',
-                        $company) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Empresa ?\')){document.getElementById(\'form-delete' . $company['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $company['id'] . '" style="display:none" action="' . route('companies.destroy',
-                        $company) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Empresa ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('companies.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';

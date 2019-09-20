@@ -93,8 +93,8 @@ class BackController extends Controller
      */
     public function edit($id)
     {
-        $back = $this->repository->findOneById($id);
-        return view('layouts.backs.edit', compact('back'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.backs.edit', compact('model'));
     }
 
     /**

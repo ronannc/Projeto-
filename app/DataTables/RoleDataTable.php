@@ -30,7 +30,7 @@ class RoleDataTable extends DataTable
                 return '<a title="Editar"  style="color: #000000" href="' . route('role.edit',
                         $role) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $role['id'] . '\').submit();}">Excluir</a>
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $role['id'] . '\').submit();}">Excluir</a>
         <form id="form-delete' . $role['id'] . '" style="display:none" action="' . route('role.destroy',
                         $role) . '" method="post">' .
                     csrf_field() .

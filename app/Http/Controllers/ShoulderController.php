@@ -94,8 +94,8 @@ class ShoulderController extends Controller
      */
     public function edit($id)
     {
-        $shoulder = $this->repository->findOneById($id);
-        return view('layouts.shoulders.edit', compact('shoulder'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.shoulders.edit', compact('model'));
     }
 
     /**

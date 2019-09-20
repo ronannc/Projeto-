@@ -148,8 +148,8 @@ class WorkoutController extends Controller
     public function edit($id)
     {
         $extraData = $this->repository->getExtraData();
-        $data = $this->repository->getExerciciosTreino($id);
-        return view('layouts.workouts.edit', compact('extraData'), compact('data'));
+        $model = $this->repository->getExerciciosTreino($id);
+        return view('layouts.workouts.edit', compact('extraData'), compact('model'));
     }
 
     /**

@@ -23,14 +23,14 @@ class UserDataTable extends DataTable
             ->editColumn('is_active', function (User $model) {
                 return $model->is_active ? 'Ativo' : 'Inativo';
             })
-            ->editColumn('actions', function (User $user) {
+            ->editColumn('actions', function (User $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('users.edit',
-                        $user) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este usuario ?\')){document.getElementById(\'form-delete' . $user['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $user['id'] . '" style="display:none" action="' . route('users.destroy',
-                        $user) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este usuario ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('users.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';

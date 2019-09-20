@@ -92,8 +92,8 @@ class BreastWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $breastWorkout = $this->repository->findOneById($id);
-        return view('layouts.breast-workout.edit', compact('breastWorkout'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.breast-workout.edit', compact('model'));
     }
 
     /**

@@ -17,11 +17,11 @@
             <!-- /.box-header -->
             <div class="box-body " style="">
                 <ul class="nav nav-stacked">
-                    <li>Inicio <span class="pull-right">{{date('d/m/Y', strtotime($data['start']))}}</span></li>
+                    <li>Início <span class="pull-right">{{date('d/m/Y', strtotime($data['start']))}}</span></li>
                     <li>Próxima Ficha <span class="pull-right">{{date('d/m/Y', strtotime($data['next_workout']))}}</span></li>
                     <li>Objetivo<span class="pull-right">{{$data['goal']}}</span></li>
                     <li>Intervalo<span class="pull-right">{{$data['interval']}}</span></li>
-                    <li>Método<span class="pull-right">{{$data->method->description}}</span></li>
+                    <li>Método<span class="pull-right">{{$data->goal->description}}</span></li>
                     <li>Frequência<span class="pull-right">{{$data['frequency']}}</span></li>
                     <li>Cliente<span class="pull-right">{{$data->client->name}}</span></li>
                 </ul>
@@ -52,7 +52,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>
@@ -87,7 +87,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>
@@ -122,7 +122,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>
@@ -159,7 +159,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>
@@ -194,7 +194,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>
@@ -229,7 +229,7 @@
                                     <tbody>
                                     <tr>
                                         <th>Grupo</th>
-                                        <th>Exercicio</th>
+                                        <th>Exercício</th>
                                         <th>Serie</th>
                                         <th>Rep</th>
                                         <th>Kg</th>

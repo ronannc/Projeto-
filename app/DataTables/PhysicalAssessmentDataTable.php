@@ -19,14 +19,14 @@ class PhysicalAssessmentDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (PhysicalAssessment $physicalAssessment) {
+            ->editColumn('actions', function (PhysicalAssessment $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('physical-assessments.edit',
-                        $physicalAssessment) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                         '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Avalicao Fisica ?\')){document.getElementById(\'form-delete'.$physicalAssessment['id'].'\').submit();}">Excluir</a>
-        <form id="form-delete' . $physicalAssessment['id'] . '" style="display:none" action="' . route('physical-assessments.destroy',
-                        $physicalAssessment) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Avalicao Fisica ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('physical-assessments.destroy',
+                        $model) . '" method="post">' .
             csrf_field().
             method_field('DELETE').'
         </form>';

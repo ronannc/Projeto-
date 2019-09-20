@@ -18,12 +18,14 @@ class BicepsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (Biceps $biceps) {
+            ->editColumn('actions', function (Biceps $model) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('biceps.edit', $biceps) . '"><i class="fa fa-edit"></i></a>' .
+                return '<a title="Editar"  style="color: #000000" href="' . route('biceps.edit',
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercicio ?\')){document.getElementById(\'form-delete' . $biceps['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $biceps['id'] . '" style="display:none" action="' . route('biceps.destroy', $biceps) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('biceps.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';

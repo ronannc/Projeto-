@@ -6,17 +6,19 @@
     {{--<h1>Dashboard</h1>--}}
 @stop
 
+@php($data = $model)
+
 @section('content')
 
     @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar de Exercicio - Triceps</h3>
+            <h3 class="box-title">Editar de exercício - Triceps</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('triceps.update', $triceps)}}" method="post">
+        <form action="{{route('triceps.update', $triceps->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">

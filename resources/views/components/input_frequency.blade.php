@@ -4,6 +4,6 @@
            class="form-control"
            name="frequency"
            id="frequency"
-           placeholder="Frequencia do Exercicio"
+           placeholder="Frequencia do Exercício"
            value ="{{ old('frequency') ?? $data['frequency'] ?? null }}">
 </div>

@@ -2,6 +2,8 @@
 
 @section('title', 'AdminLTE')
 
+@php($data = $model)
+
 @section('content_header')
     {{--<h1>Dashboard</h1>--}}
 @stop
@@ -12,16 +14,16 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar de Exercicio - Ombro</h3>
+            <h3 class="box-title">Editar de exercício - Ombro</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('shoulders.update', $shoulder)}}" method="post">
+        <form action="{{route('shoulders.update', $data->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('components.input_exercise', ['data' => $shoulder])
-                @include('components.input_description', ['data' => $shoulder])
+                @include('components.input_exercise', ['data' => $data])
+                @include('components.input_description', ['data' => $data])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

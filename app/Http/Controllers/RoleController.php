@@ -67,10 +67,10 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $data = $this->repository->findOneById($id);
+        $model = $this->repository->findOneById($id);
         $extraData = $this->repository->getExtraData($id);
 
-        return view('layouts.roles.edit', compact('data'), compact('extraData'));
+        return view('layouts.roles.edit', compact('model'), compact('extraData'));
     }
 
     /**

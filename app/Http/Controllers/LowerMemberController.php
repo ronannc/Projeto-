@@ -94,8 +94,8 @@ class LowerMemberController extends Controller
      */
     public function edit($id)
     {
-        $lowerMember = $this->repository->findOneById($id);
-        return view('layouts.lower-members.edit', compact('lowerMember'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.lower-members.edit', compact('model'));
     }
 
     /**

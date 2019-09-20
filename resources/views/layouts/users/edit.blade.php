@@ -6,6 +6,8 @@
     {{--<h1>Dashboard</h1>--}}
 @stop
 
+@php($data = $model)
+
 @section('content')
 
     @include('components.status')
@@ -16,14 +18,14 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('users.update', $user)}}" method="post">
+        <form action="{{route('users.update', $data->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('components.input_email', ['data' => $user])
-                @include('components.select_client', ['data' => $user])
-                @include('components.select_company', ['data' => $user])
-                @include('components.input_password', ['data' => $user])
+                @include('components.input_email', ['data' => $data])
+                @include('components.select_client', ['data' => $data])
+                @include('components.select_company', ['data' => $data])
+                @include('components.input_password', ['data' => $data])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

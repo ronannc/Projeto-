@@ -91,8 +91,8 @@ class BicepsWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $bicepsWorkout = $this->repository->findOneById($id);
-        return view('layouts.biceps-workout.edit', compact('bicepsWorkout'));
+        $model = $this->repository->findOneById($id);
+        return view('layouts.biceps-workout.edit', compact('model'));
     }
 
     /**

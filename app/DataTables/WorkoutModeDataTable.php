@@ -19,14 +19,14 @@ class WorkoutModeDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('actions', function (WorkoutMode $workoutMode) {
+            ->editColumn('actions', function (WorkoutMode $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('workout-modes.edit',
-                        $workoutMode) . '"><i class="fa fa-edit"></i></a>' .
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Modo de Exercicio ?\')){document.getElementById(\'form-delete' . $workoutMode['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $workoutMode['id'] . '" style="display:none" action="' . route('workout-modes.destroy',
-                        $workoutMode) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Modo de Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('workout-modes.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';
