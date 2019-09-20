@@ -91,7 +91,7 @@ class BackWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $backWorkout = BackWorkout::find($id);
+        $backWorkout = $this->repository->findOneById($id);
         return view('layouts.back-workout.edit', compact('backWorkout'));
     }
 

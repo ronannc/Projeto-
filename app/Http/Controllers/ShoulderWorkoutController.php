@@ -92,7 +92,7 @@ class ShoulderWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $shoulderWorkout = ShoulderWorkout::find($id);
+        $shoulderWorkout = $this->repository->findOneById($id);
         return view('layouts.shoulder-workout.edit', compact('shoulderWorkout'));
     }
 

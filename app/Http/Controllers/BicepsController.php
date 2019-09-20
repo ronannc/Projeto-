@@ -94,7 +94,7 @@ class BicepsController extends Controller
      */
     public function edit($id)
     {
-        $biceps = Biceps::find($id);
+        $biceps = $this->repository->findOneById($id);
         return view('layouts.biceps.edit', compact('biceps'));
     }
 

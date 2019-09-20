@@ -109,7 +109,7 @@ class ClientController extends Controller
         $extraData['city'] = City::all();
         $extraData['blood_type'] = BloodType::NAMES;
 
-        $data = Client::find($id);
+        $data = $this->repository->findOneById($id);
 
         return view('layouts.clients.edit', compact('extraData'), compact('data'));
     }

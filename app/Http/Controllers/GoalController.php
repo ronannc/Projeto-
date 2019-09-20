@@ -85,12 +85,13 @@ class GoalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Goal $goal
+     * @param $id
      *
      * @return Response
      */
-    public function edit(Goal $goal)
+    public function edit($id)
     {
+        $goal = $this->repository->findOneById($id);
         return view('layouts.goals.edit', compact('goal'));
     }
 

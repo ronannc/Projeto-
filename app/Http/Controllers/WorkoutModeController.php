@@ -93,7 +93,7 @@ class WorkoutModeController extends Controller
      */
     public function edit($id)
     {
-        $workoutMode = WorkoutMode::find($id);
+        $workoutMode = $this->repository->findOneById($id);
         return view('layouts.workout-modes.edit', compact('workoutMode'));
     }
 

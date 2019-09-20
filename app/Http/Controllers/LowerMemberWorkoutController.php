@@ -92,7 +92,7 @@ class LowerMemberWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $lowerMemberWorkout = LowerMemberWorkout::find($id);
+        $lowerMemberWorkout = $this->repository->findOneById($id);
         return view('layouts.lower-member-workout.edit', compact('lowerMemberWorkout'));
     }
 

@@ -95,7 +95,7 @@ class PhysicalAssessmentController extends Controller
      */
     public function edit($id)
     {
-        $PhysicalAssessment = PhysicalAssessment::find($id);
+        $PhysicalAssessment = $this->repository->findOneById($id);
         $extraData = $this->repository->getExtraData();
 
         return view('layouts.physical-assessments.edit', compact('PhysicalAssessment'), compact('extraData'));

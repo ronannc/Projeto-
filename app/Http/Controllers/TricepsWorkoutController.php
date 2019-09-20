@@ -92,7 +92,7 @@ class TricepsWorkoutController extends Controller
      */
     public function edit($id)
     {
-        $tricepsWorkout = TricepsWorkout::find($id);
+        $tricepsWorkout = $this->repository->findOneById($id);
         return view('layouts.triceps-workout.edit', compact('tricepsWorkout'));
     }
 

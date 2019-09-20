@@ -100,7 +100,7 @@ class CompanyController extends Controller
         $extraData['company'] = Company::all();
         $extraData['city'] = City::all();
 
-        $data = Company::find($id);
+        $data = $this->repository->findOneById($id);
 
         return view('layouts.companies.edit', compact('extraData'), compact('data'));
     }
