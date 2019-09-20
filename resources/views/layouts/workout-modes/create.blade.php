@@ -8,7 +8,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Modos de treino</h3>
+            <h3 class="box-title">Cadastro de Métodos de Treino</h3>
         </div>
         <form action="{{route('workout-modes.store')}}" method="post">
             @csrf

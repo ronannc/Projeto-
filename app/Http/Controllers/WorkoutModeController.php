@@ -39,7 +39,7 @@ class WorkoutModeController extends Controller
      */
     public function index(WorkoutModeDataTable $dataTable)
     {
-        $resource = 'Listagem de modos de treino';
+        $resource = 'Listagem de Métodos de Treino';
         return $dataTable->render('components.datatable', compact('resource'));
     }
 

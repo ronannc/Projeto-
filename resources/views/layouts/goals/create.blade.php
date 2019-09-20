@@ -8,7 +8,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cadastro de Métodos</h3>
+            <h3 class="box-title">Cadastro de Objetivos de Treino</h3>
         </div>
         <form action="{{route('goals.store')}}" method="post">
             @csrf

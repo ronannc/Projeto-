@@ -10,7 +10,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Editar Modos de Treino</h3>
+            <h3 class="box-title">Editar Métodos de Treino</h3>
         </div>
         <form action="{{route('workout-modes.update', $data->id)}}" method="post">
             @csrf
