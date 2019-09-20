@@ -12,7 +12,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('permission.store')}}" method="post">
+        <form action="{{route('permissions.store')}}" method="post">
             @csrf
             <div class="box-body">
                 @include('components.input_name')

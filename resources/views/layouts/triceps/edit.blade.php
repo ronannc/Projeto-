@@ -18,12 +18,12 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('triceps.update', $triceps->id)}}" method="post">
+        <form action="{{route('triceps.update', $model->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('components.input_exercise', ['data' => $triceps])
-                @include('components.input_description', ['data' => $triceps])
+                @include('components.input_exercise', ['data' => $model])
+                @include('components.input_description', ['data' => $model])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

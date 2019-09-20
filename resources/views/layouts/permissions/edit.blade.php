@@ -14,7 +14,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('permission.update', $data->id)}}" method="post">
+        <form action="{{route('permissions.update', $data->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
