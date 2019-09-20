@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
-    
+
 @section('content')
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box">
         <div class="box-header">

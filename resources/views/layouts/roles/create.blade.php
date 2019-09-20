@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -15,7 +15,7 @@
         <form action="{{route('role.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_name')
+                @include('components.input_name')
 
                 <div class="form-group">
                     <label for="name">Permissions associadas a role </label>

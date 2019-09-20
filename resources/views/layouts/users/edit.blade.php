@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -20,10 +20,10 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_email', ['data' => $user])
-                @include('layouts.components.select_client', ['data' => $user])
-                @include('layouts.components.select_company', ['data' => $user])
-                @include('layouts.components.input_password', ['data' => $user])
+                @include('components.input_email', ['data' => $user])
+                @include('components.select_client', ['data' => $user])
+                @include('components.select_company', ['data' => $user])
+                @include('components.input_password', ['data' => $user])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

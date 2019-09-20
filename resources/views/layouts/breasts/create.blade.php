@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -19,8 +19,8 @@
         <form action="{{route('breasts.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_exercise')
-                @include('layouts.components.input_description')
+                @include('components.input_exercise')
+                @include('components.input_description')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

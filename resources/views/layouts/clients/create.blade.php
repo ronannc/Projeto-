@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -13,20 +13,20 @@
         <form action="{{route('clients.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_name')
-                @include('layouts.components.input_cpf')
-                @include('layouts.components.input_birthday')
-                @include('layouts.components.input_phone')
-                @include('layouts.components.select_company')
-                @include('layouts.components.input_street')
-                @include('layouts.components.input_neighborhood')
-                @include('layouts.components.input_number')
-                @include('layouts.components.input_complement')
-                @include('layouts.components.input_zipcode')
-                @include('layouts.components.select_city')
-                @include('layouts.components.input_email')
-                @include('layouts.components.input_sex')
-                @include('layouts.components.select_blood_type')
+                @include('components.input_name')
+                @include('components.input_cpf')
+                @include('components.input_birthday')
+                @include('components.input_phone')
+                @include('components.select_company')
+                @include('components.input_street')
+                @include('components.input_neighborhood')
+                @include('components.input_number')
+                @include('components.input_complement')
+                @include('components.input_zipcode')
+                @include('components.select_city')
+                @include('components.input_email')
+                @include('components.input_sex')
+                @include('components.select_blood_type')
             </div>
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>

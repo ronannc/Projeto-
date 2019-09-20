@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-    @include('layouts.components.status')
+    @include('components.status')
     <div class="row">
         <div class="col-sm-12">
             <div class="box box-widget widget-user">

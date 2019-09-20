@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -15,13 +15,13 @@
             {{ method_field('PUT') }}
             <div class="box-body">
 
-                @include('layouts.components.input_start', ['extraData' => $data])
-                @include('layouts.components.input_next_workout', ['extraData' => $data])
-                @include('layouts.components.input_goal', ['extraData' => $data])
-                @include('layouts.components.input_interval', ['extraData' => $data])
-                @include('layouts.components.select_method', ['extraData' => $extraData])
-                @include('layouts.components.input_frequency', ['extraData' => $data])
-                @include('layouts.components.select_client')
+                @include('components.input_start', ['extraData' => $data])
+                @include('components.input_next_workout', ['extraData' => $data])
+                @include('components.input_goal', ['extraData' => $data])
+                @include('components.input_interval', ['extraData' => $data])
+                @include('components.select_method', ['extraData' => $extraData])
+                @include('components.input_frequency', ['extraData' => $data])
+                @include('components.select_client')
 
                 <div class="row">
                     <div class="col-sm-4">

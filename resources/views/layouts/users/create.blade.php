@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -19,10 +19,10 @@
         <form action="{{route('users.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_name')
-                @include('layouts.components.input_email')
-                @include('layouts.components.select_company')
-                @include('layouts.components.select_role')
+                @include('components.input_name')
+                @include('components.input_email')
+                @include('components.select_company')
+                @include('components.select_role')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

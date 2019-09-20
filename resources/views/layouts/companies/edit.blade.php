@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -20,16 +20,16 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_name')
-                @include('layouts.components.input_social_reason')
-                @include('layouts.components.input_cnpj')
-                @include('layouts.components.input_phone')
-                @include('layouts.components.input_street')
-                @include('layouts.components.input_neighborhood')
-                @include('layouts.components.input_number')
-                @include('layouts.components.input_complement')
-                @include('layouts.components.input_zipcode')
-                @include('layouts.components.select_city')
+            @include('components.input_name')
+            @include('components.input_social_reason')
+            @include('components.input_cnpj')
+            @include('components.input_phone')
+            @include('components.input_street')
+            @include('components.input_neighborhood')
+            @include('components.input_number')
+            @include('components.input_complement')
+            @include('components.input_zipcode')
+            @include('components.select_city')
             <!-- /.box-body -->
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>

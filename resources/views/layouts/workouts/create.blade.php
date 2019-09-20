@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -13,19 +13,19 @@
         <form action="{{route('workouts.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('layouts.components.input_start')
-                @include('layouts.components.input_next_workout')
-                @include('layouts.components.input_goal')
-                @include('layouts.components.input_interval')
-                @include('layouts.components.input_frequency')
-                @include('layouts.components.select_method')
-                @include('layouts.components.select_client')
-                @include('layouts.components.select_triceps')
-                @include('layouts.components.select_biceps')
-                @include('layouts.components.select_back')
-                @include('layouts.components.select_shoulder')
-                @include('layouts.components.select_breast')
-                @include('layouts.components.select_lower_member')
+                @include('components.input_start')
+                @include('components.input_next_workout')
+                @include('components.input_goal')
+                @include('components.input_interval')
+                @include('components.input_frequency')
+                @include('components.select_method')
+                @include('components.select_client')
+                @include('components.select_triceps')
+                @include('components.select_biceps')
+                @include('components.select_back')
+                @include('components.select_shoulder')
+                @include('components.select_breast')
+                @include('components.select_lower_member')
             </div>
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>

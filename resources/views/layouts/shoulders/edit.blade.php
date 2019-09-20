@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -20,8 +20,8 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_exercise', ['data' => $shoulder])
-                @include('layouts.components.input_description', ['data' => $shoulder])
+                @include('components.input_exercise', ['data' => $shoulder])
+                @include('components.input_description', ['data' => $shoulder])
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

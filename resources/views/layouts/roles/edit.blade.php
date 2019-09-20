@@ -8,7 +8,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -20,7 +20,7 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_name', ['data' => $role])
+                @include('components.input_name', ['data' => $role])
                 <div class="form-group">
                     <label for="name">Permissions associadas a role </label>
                     <input type="text"

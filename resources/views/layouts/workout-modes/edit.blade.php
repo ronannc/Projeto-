@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('layouts.components.status')
+    @include('components.status')
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -14,8 +14,8 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('layouts.components.input_name', ['data' => $workoutMode])
-                @include('layouts.components.input_description', ['data' => $workoutMode])
+                @include('components.input_name', ['data' => $workoutMode])
+                @include('components.input_description', ['data' => $workoutMode])
             </div>
             <div class="box-footer">
                 <button class="btn btn-default">Cancelar</button>
