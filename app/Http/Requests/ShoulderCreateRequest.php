@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BicepsStoreRequest extends FormRequest
+class ShoulderCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class BicepsStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,16 +24,7 @@ class BicepsStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'exercicios' => 'Required',
-            'descricao' => 'Required',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'exercicios.required' => 'O campo Rede é obrigatório.',
-            'descricao.required' => "O campo Posto é obrigatório.",
+            //
         ];
     }
 }
