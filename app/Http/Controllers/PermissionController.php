@@ -22,15 +22,15 @@ class PermissionController extends Controller
     use Authorizable;
 
     /** @var PermissionRepository */
-    private $permissionRepository;
+    private $repository;
 
     /** @var PermissionService */
-    private $permissionService;
+    private $service;
 
-    public function __construct(PermissionRepository $permissionRepository, PermissionService $permissionService)
+    public function __construct(PermissionRepository $repository, PermissionService $service)
     {
-        $this->permissionRepository = $permissionRepository;
-        $this->permissionService = $permissionService;
+        $this->repository = $repository;
+        $this->service = $service;
     }
 
     /**
@@ -42,8 +42,8 @@ class PermissionController extends Controller
      */
     public function index(PermissionDataTable $dataTable)
     {
-        return $dataTable->render('layouts.permissions.index');
-
+        $resource = 'Listagem de permissões';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        $permission = $this->permissionRepository->findOneById($id);
+        $permission = $this->repository->findOneById($id);
 
         return view('layouts.permissions.edit', compact('permission'));
     }
@@ -80,7 +80,7 @@ class PermissionController extends Controller
      */
     public function update(PermissionUpdateRequest $request, $id)
     {
-        $response = $this->permissionService->update($request->all(), $id);
+        $response = $this->service->update($request->all(), $id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -102,7 +102,7 @@ class PermissionController extends Controller
      */
     public function store(PermissionCreateRequest $request)
     {
-        $reponse = $this->permissionService->store($request->all());
+        $reponse = $this->service->store($request->all());
 
         if (!empty($reponse['error'])) {
             session()->flash('error', $reponse['message']);

@@ -11,10 +11,11 @@ use Illuminate\Http\Response;
 
 class BackWorkoutController extends Controller
 {
-
+    /** @var BackWorkoutRepository */
     protected $repository;
-    protected $service;
 
+    /** @var BackWorkoutService */
+    protected $service;
 
     /**
      * BackWorkoutController constructor.

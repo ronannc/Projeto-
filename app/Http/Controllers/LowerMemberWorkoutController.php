@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class LowerMemberWorkoutController extends Controller
 {
-
+    /** @var LowerMemberWorkoutRepository */
     protected $repository;
-    protected $service;
 
+    /** @var LowerMemberWorkoutService */
+    protected $service;
 
     /**
      * LowerMemberWorkoutController constructor.

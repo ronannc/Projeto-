@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class PhysicalAssessmentController extends Controller
 {
-
+    /** @var PhysicalAssessmentRepository */
     protected $repository;
-    protected $service;
 
+    /** @var PhysicalAssessmentService */
+    protected $service;
 
     /**
      * PhysicalAssessmentController constructor.
@@ -38,8 +39,8 @@ class PhysicalAssessmentController extends Controller
      */
     public function index(PhysicalAssessmentDataTable $dataTable)
     {
-
-        return $dataTable->render('layouts.physical-assessments.index');
+        $resource = 'Listagem de avaliações físicas';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

@@ -9,7 +9,7 @@
 
 <div class="form-group">
     <label for="select_breast">Peitoral</label>
-    <select class="multiple" data-placeholder="Selecione os exercicios de Peitoral" name="breast[]" multiple="multiple"
+    <select class="multiple" data-placeholder="Selecione os exercícios de Peitoral" name="breast[]" multiple="multiple"
             style="width: 100%">
         @foreach($extraData['breast'] as $breast)
             <option value="{{$breast['id']}}">{{$breast['exercise']}}</option>

@@ -11,7 +11,10 @@ use Illuminate\Http\Response;
 
 class BackController extends Controller
 {
+    /** @var BackRepository */
     protected $repository;
+
+    /** @var BackService */
     protected $service;
 
     /**
@@ -35,7 +38,8 @@ class BackController extends Controller
      */
     public function index(BackDataTable $dataTable)
     {
-        return $dataTable->render('layouts.backs.index');
+        $resource = 'Listagem de exercícios de costas';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

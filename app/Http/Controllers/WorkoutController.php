@@ -13,8 +13,10 @@ use Illuminate\Http\Response;
 
 class WorkoutController extends Controller
 {
-
+    /** @var WorkoutRepository */
     protected $repository;
+
+    /** @var WorkoutService */
     protected $service;
 
     /**
@@ -38,7 +40,8 @@ class WorkoutController extends Controller
      */
     public function index(WorkoutDataTable $dataTable)
     {
-        return $dataTable->render('layouts.workouts.index');
+        $resource = 'Listagem de treinos';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

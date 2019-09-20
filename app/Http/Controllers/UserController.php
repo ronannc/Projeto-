@@ -15,7 +15,10 @@ use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    /** @var UserRepository */
     protected $repository;
+
+    /** @var UserService */
     protected $service;
 
     /**
@@ -39,7 +42,8 @@ class UserController extends Controller
      */
     public function online(UsersOnlineDataTable $dataTable)
     {
-        return $dataTable->render('layouts.users.index');
+        $resource = 'Usuários online';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**
@@ -51,7 +55,8 @@ class UserController extends Controller
      */
     public function index(UserDataTable $dataTable)
     {
-        return $dataTable->render('layouts.users.index');
+        $resource = 'Listagem de usuários';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

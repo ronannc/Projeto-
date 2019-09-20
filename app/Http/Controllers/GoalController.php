@@ -11,8 +11,10 @@ use Illuminate\Http\Response;
 
 class GoalController extends Controller
 {
-
+    /** @var GoalRepository */
     protected $repository;
+
+    /** @var GoalService */
     protected $service;
 
     /**
@@ -34,7 +36,8 @@ class GoalController extends Controller
      */
     public function index(GoalDataTable $dataTable)
     {
-        return $dataTable->render('layouts.goals.index');
+        $resource = 'Listagem de objetivos de treino';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

@@ -22,15 +22,15 @@ class RoleController extends Controller
     use Authorizable;
 
     /** @var RoleRepository */
-    private $roleRepository;
+    private $repository;
 
     /** @var RoleService */
-    private $roleService;
+    private $service;
 
     public function __construct(RoleRepository $roleRepository, RoleService $roleService)
     {
-        $this->roleRepository = $roleRepository;
-        $this->roleService = $roleService;
+        $this->repository = $roleRepository;
+        $this->service = $roleService;
     }
 
     /**
@@ -42,7 +42,8 @@ class RoleController extends Controller
      */
     public function index(RoleDataTable $dataTable)
     {
-        return $dataTable->render('layouts.roles.index');
+        $resource = 'Listagem de roles';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**
@@ -52,7 +53,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $extraData = $this->roleRepository->getExtraData();
+        $extraData = $this->repository->getExtraData();
 
         return view('layouts.roles.create', compact('extraData'));
     }
@@ -66,8 +67,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $data = $this->roleRepository->findOneById($id);
-        $extraData = $this->roleRepository->getExtraData($id);
+        $data = $this->repository->findOneById($id);
+        $extraData = $this->repository->getExtraData($id);
 
         return view('layouts.roles.edit', compact('data'), compact('extraData'));
     }
@@ -82,7 +83,7 @@ class RoleController extends Controller
      */
     public function update(RoleUpdateRequest $request, $id)
     {
-        $response = $this->roleService->update($request->only('permissions'), $id);
+        $response = $this->service->update($request->only('permissions'), $id);
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
@@ -104,7 +105,7 @@ class RoleController extends Controller
      */
     public function store(RoleCreateRequest $request)
     {
-        $response = $this->roleService->store($request->all());
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);

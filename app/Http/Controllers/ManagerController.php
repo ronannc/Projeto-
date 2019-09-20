@@ -24,10 +24,10 @@ class ManagerController extends Controller
     /** @var UserService */
     private $service;
 
-    public function __construct(UserRepository $userRepository, UserService $userService)
+    public function __construct(UserRepository $repository, UserService $service)
     {
-        $this->repository = $userRepository;
-        $this->service = $userService;
+        $this->repository = $repository;
+        $this->service = $service;
     }
 
     /**
@@ -39,7 +39,8 @@ class ManagerController extends Controller
      */
     public function index(ManagerDataTable $dataTable)
     {
-        return $dataTable->render('layouts.managers.index');
+        $resource = 'Listagem de gerentes';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

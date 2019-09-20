@@ -13,8 +13,8 @@ class TricepsTableSeeder extends Seeder
     public function run()
     {
         factory(Triceps::class)->create([
-            'exercise'    => 'Puley triceps',
-            'description' => 'Puley triceps',
+            'exercise'    => 'Puley tríceps',
+            'description' => 'Puley tríceps',
         ]);
 
         factory(Triceps::class)->create([

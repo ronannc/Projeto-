@@ -9,7 +9,7 @@
 
 <div class="form-group">
     <label for="select_back">Costas</label>
-    <select class="multiple" data-placeholder="Selecione os exercicios de Costas" name="back[]" multiple="multiple"
+    <select class="multiple" data-placeholder="Selecione os exercícios de costas" name="back[]" multiple="multiple"
             style="width: 100%">
         @foreach($extraData['back'] as $back)
             <option value="{{$back['id']}}">{{$back['exercise']}}</option>

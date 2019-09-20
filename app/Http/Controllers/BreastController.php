@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class BreastController extends Controller
 {
-
+    /** @var BreastRepository */
     protected $repository;
-    protected $service;
 
+    /** @var BreastService */
+    protected $service;
 
     /**
      * BreastController constructor.
@@ -38,8 +39,8 @@ class BreastController extends Controller
      */
     public function index(BreastDataTable $dataTable)
     {
-        return $dataTable->render('layouts.breasts.index');
-
+        $resource = 'Listagem de exercícios de peitoral';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

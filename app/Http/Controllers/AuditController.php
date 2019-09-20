@@ -17,6 +17,7 @@ class AuditController extends Controller
      */
     public function index(AuditsDataTable $dataTable)
     {
-        return $dataTable->render('layouts.audits.index');
+        $resource = 'Auditoria';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 }

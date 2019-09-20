@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class CompanyController extends Controller
 {
-
+    /** @var CompanyRepository */
     protected $repository;
-    protected $service;
 
+    /** @var CompanyService */
+    protected $service;
 
     /**
      * CompanyController constructor.
@@ -38,8 +39,8 @@ class CompanyController extends Controller
      */
     public function index(CompanyDataTable $dataTable)
     {
-        return $dataTable->render('layouts.companies.index');
-
+        $resource = 'Listagem de empresas';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

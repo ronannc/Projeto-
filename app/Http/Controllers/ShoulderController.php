@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class ShoulderController extends Controller
 {
-
+    /** @var ShoulderRepository */
     protected $repository;
-    protected $service;
 
+    /** @var ShoulderService */
+    protected $service;
 
     /**
      * ShoulderController constructor.
@@ -38,8 +39,8 @@ class ShoulderController extends Controller
      */
     public function index(ShoulderDataTable $dataTable)
     {
-        return $dataTable->render('layouts.shoulders.index');
-
+        $resource = 'Listagem de exercícios de ombro';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

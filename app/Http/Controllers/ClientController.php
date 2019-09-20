@@ -15,10 +15,11 @@ use Illuminate\Http\Response;
 
 class ClientController extends Controller
 {
-
+    /** @var ClientRepository */
     protected $repository;
-    protected $service;
 
+    /** @var ClientService */
+    protected $service;
 
     /**
      * ClientController constructor.
@@ -41,7 +42,8 @@ class ClientController extends Controller
      */
     public function index(ClientDataTable $dataTable)
     {
-        return $dataTable->render('layouts.clients.index');
+        $resource = 'Listagem de clientes';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

@@ -11,10 +11,11 @@ use Illuminate\Http\Response;
 
 class BicepsWorkoutController extends Controller
 {
-
+    /** @var BicepsWorkoutRepository */
     protected $repository;
-    protected $service;
 
+    /** @var BicepsWorkoutService */
+    protected $service;
 
     /**
      * BicepsWorkoutController constructor.

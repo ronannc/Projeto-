@@ -22,7 +22,8 @@ class NotificationController extends Controller
      */
     public function index(NotificationDataTable $dataTable)
     {
-        return $dataTable->render('layouts.notifications.index');
+        $resource = 'Notificações';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**
@@ -35,6 +36,9 @@ class NotificationController extends Controller
         return redirect(route('notifications.index'));
     }
 
+    /**
+     * Marca uma notificação como visualizada.
+     */
     public function visualize($id)
     {
         Notification::with([])->findOrFail($id)->update(['read_at' => now()]);

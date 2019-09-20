@@ -12,10 +12,11 @@ use Illuminate\Http\Response;
 
 class LowerMemberController extends Controller
 {
-
+    /** @var LowerMemberRepository */
     protected $repository;
-    protected $service;
 
+    /** @var LowerMemberService */
+    protected $service;
 
     /**
      * LowerMemberController constructor.
@@ -38,8 +39,8 @@ class LowerMemberController extends Controller
      */
     public function index(LowerMemberDataTable $dataTable)
     {
-        return $dataTable->render('layouts.lower-members.index');
-
+        $resource = 'Listagem de exercícios de membros inferiores';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

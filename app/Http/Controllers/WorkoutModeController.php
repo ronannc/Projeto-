@@ -11,10 +11,11 @@ use Illuminate\Http\Response;
 
 class WorkoutModeController extends Controller
 {
-
+    /** @var WorkoutModeRepository */
     protected $repository;
-    protected $service;
 
+    /** @var WorkoutModeService */
+    protected $service;
 
     /**
      * WorkoutModeController constructor.
@@ -37,8 +38,8 @@ class WorkoutModeController extends Controller
      */
     public function index(WorkoutModeDataTable $dataTable)
     {
-        return $dataTable->render('layouts.workout-modes.index');
-
+        $resource = 'Listagem de modos de treino';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**

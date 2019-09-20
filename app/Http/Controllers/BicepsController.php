@@ -12,9 +12,11 @@ use Illuminate\Http\Response;
 class BicepsController extends Controller
 {
 
+    /** @var BicepsRepository */
     protected $repository;
-    protected $service;
 
+    /** @var BicepsService */
+    protected $service;
 
     /**
      * BicepsController constructor.
@@ -37,8 +39,8 @@ class BicepsController extends Controller
      */
     public function index(BicepsDataTable $dataTable)
     {
-        return $dataTable->render('layouts.biceps.index');
-
+        $resource = 'Listagem de exercícios de bíceps';
+        return $dataTable->render('components.datatable', compact('resource'));
     }
 
     /**
