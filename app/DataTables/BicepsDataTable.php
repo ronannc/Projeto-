@@ -13,6 +13,7 @@ class BicepsDataTable extends DataTable
      * Build DataTable class.
      *
      * @param mixed $query Results from query() method.
+     *
      * @return DataTableAbstract
      */
     public function dataTable($query)
@@ -42,7 +43,9 @@ class BicepsDataTable extends DataTable
      */
     public function query(Biceps $model)
     {
-        return $model->newQuery();
+        return $model
+            ->newQuery()
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -62,7 +65,7 @@ class BicepsDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
+                'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
@@ -75,8 +78,14 @@ class BicepsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'exercise' => ['title', 'Exercício'],
-            'description' => ['title', 'Descrição'],
+            'exercise'    => [
+                'title',
+                'Exercício'
+            ],
+            'description' => [
+                'title',
+                'Descrição'
+            ],
             'actions'     => [
                 'title'      => 'Ações',
                 'orderable'  => false,

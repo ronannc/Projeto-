@@ -23,12 +23,12 @@ class PhysicalAssessmentDataTable extends DataTable
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('physical-assessments.edit',
                         $model) . '"><i class="fa fa-edit"></i></a>' .
-                        '<a title="Deletar" href=""
+                    '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Avalicao Fisica ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
         <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('physical-assessments.destroy',
                         $model) . '" method="post">' .
-            csrf_field().
-            method_field('DELETE').'
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -43,7 +43,10 @@ class PhysicalAssessmentDataTable extends DataTable
      */
     public function query(PhysicalAssessment $model)
     {
-        return $model->newQuery()->has('client')->with('client')->get();
+        return $model
+            ->newQuery()
+            ->has('client')
+            ->with('client');
     }
 
     /**
@@ -63,7 +66,7 @@ class PhysicalAssessmentDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
+                'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
@@ -76,30 +79,30 @@ class PhysicalAssessmentDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'client.name' => ['title' => 'Cliente'],
-            'actions' => [
+            'client.name'    => ['title' => 'Cliente'],
+            'actions'        => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,
                 'printable'  => false,
                 'exportable' => false,
             ],
-            'neck' => ['title' => 'Pescoço'],
-            'shoulder' => ['title' => 'Ombros'],
-            'chest' => ['title' => 'Peitoral'],
-            'right_arm' => ['title' => 'Braço Dir.'],
-            'left_arm' => ['title' => 'Braço Esq.'],
-            'right_forearm' => ['title' => 'Antebraço Dir.'],
-            'left_forearm' => ['title' => 'Antebraço Esq.'],
-            'waist' => ['title' => 'Cintura'],
-            'abdomen' => ['title' => 'Abdomem'],
-            'hip' => ['title' => 'Quadril'],
-            'right_thigh' => ['title' => 'Coxa Dir.'],
-            'left_thigh' => ['title' => 'Coxa Esq.'],
-            'right_calf' => ['title' => 'Panturrilha Dir.'],
-            'left_calf' => ['title' => 'Panturrilha Esq.'],
-            'weight' => ['title' => 'Peso'],
-            'height' => ['title' => 'Altura'],
+            'neck'           => ['title' => 'Pescoço'],
+            'shoulder'       => ['title' => 'Ombros'],
+            'chest'          => ['title' => 'Peitoral'],
+            'right_arm'      => ['title' => 'Braço Dir.'],
+            'left_arm'       => ['title' => 'Braço Esq.'],
+            'right_forearm'  => ['title' => 'Antebraço Dir.'],
+            'left_forearm'   => ['title' => 'Antebraço Esq.'],
+            'waist'          => ['title' => 'Cintura'],
+            'abdomen'        => ['title' => 'Abdomem'],
+            'hip'            => ['title' => 'Quadril'],
+            'right_thigh'    => ['title' => 'Coxa Dir.'],
+            'left_thigh'     => ['title' => 'Coxa Esq.'],
+            'right_calf'     => ['title' => 'Panturrilha Dir.'],
+            'left_calf'      => ['title' => 'Panturrilha Esq.'],
+            'weight'         => ['title' => 'Peso'],
+            'height'         => ['title' => 'Altura'],
             'blood_pressure' => ['title' => 'Pressão Sanguínea'],
         ];
     }

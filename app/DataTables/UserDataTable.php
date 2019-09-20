@@ -48,7 +48,8 @@ class UserDataTable extends DataTable
     public function query()
     {
         $query = User::query()
-            ->role(User::ADMIN);
+            ->role(User::ADMIN)
+            ->orderByDesc('created_at');
 
         return $this->applyScopes($query);
     }

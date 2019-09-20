@@ -43,7 +43,9 @@ class CompanyDataTable extends DataTable
      */
     public function query(Company $model)
     {
-        return $model->newQuery();
+        return $model
+            ->newQuery()
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -63,7 +65,7 @@ class CompanyDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
+                'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }

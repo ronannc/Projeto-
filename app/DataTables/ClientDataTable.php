@@ -50,7 +50,10 @@ class ClientDataTable extends DataTable
      */
     public function query(Client $model)
     {
-        return $model->newQuery()->with('city', 'company');
+        return $model
+            ->newQuery()
+            ->with('city', 'company')
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -67,11 +70,11 @@ class ClientDataTable extends DataTable
                 'style' => 'width: 100%'
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
-                'language' => ['url' => '/datatable/portuguese-brasil.json'],
+                'scrollX'    => true,
+                'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
 
@@ -84,27 +87,27 @@ class ClientDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name' => ['title' => 'Nome'],
-            'actions' => [
-                'title' => 'Ações',
-                'orderable' => false,
+            'name'         => ['title' => 'Nome'],
+            'actions'      => [
+                'title'      => 'Ações',
+                'orderable'  => false,
                 'searchable' => false,
-                'printable' => false,
+                'printable'  => false,
                 'exportable' => false,
             ],
-            'email' => ['title' => 'Email'],
-            'is_active' => ['title' => 'Situação'],
-            'sex' => ['title' => 'Sexo'],
-            'blood_type' => ['title' => 'Tipo Sanguíneo'],
-            'cpf' => ['title' => 'CPF'],
-            'phone' => ['title' => 'Telefone'],
-            'birthday' => ['title' => 'Nascimento'],
-            'street' => ['title' => 'Rua'],
+            'email'        => ['title' => 'Email'],
+            'is_active'    => ['title' => 'Situação'],
+            'sex'          => ['title' => 'Sexo'],
+            'blood_type'   => ['title' => 'Tipo Sanguíneo'],
+            'cpf'          => ['title' => 'CPF'],
+            'phone'        => ['title' => 'Telefone'],
+            'birthday'     => ['title' => 'Nascimento'],
+            'street'       => ['title' => 'Rua'],
             'neighborhood' => ['title' => 'Email'],
-            'number' => ['title' => 'Número'],
-            'complement' => ['title' => 'Complemento'],
-            'zipcode' => ['title' => 'Código Postal'],
-            'city.name' => ['title' => 'Cidade'],
+            'number'       => ['title' => 'Número'],
+            'complement'   => ['title' => 'Complemento'],
+            'zipcode'      => ['title' => 'Código Postal'],
+            'city.name'    => ['title' => 'Cidade'],
             'company.name' => ['title' => 'Empresa'],
         ];
     }

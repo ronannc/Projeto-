@@ -43,7 +43,10 @@ class WorkoutModeDataTable extends DataTable
      */
     public function query(WorkoutMode $model)
     {
-        return $model->newQuery()->select('id', 'name', 'description');
+        return $model
+            ->newQuery()
+            ->select('id', 'name', 'description')
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -63,7 +66,7 @@ class WorkoutModeDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
+                'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
@@ -76,9 +79,15 @@ class WorkoutModeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name' => ['title', 'Nome'],
-            'description' => ['title', 'Descrição'],
-            'actions' => [
+            'name'        => [
+                'title',
+                'Nome'
+            ],
+            'description' => [
+                'title',
+                'Descrição'
+            ],
+            'actions'     => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,

@@ -25,14 +25,14 @@ class PermissionDataTable extends DataTable
             ->editColumn('updated_at', function (Permission $model) {
                 return date('d/m/Y H:i:s', strtotime($model->updated_at));
             })
-            ->editColumn('actions', function (Permission $permission) {
+            ->editColumn('actions', function (Permission $model) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('permission.edit',
-                        $permission) . '"><i class="fa fa-edit"></i></a>' .
+                return '<a title="Editar"  style="color: #000000" href="' . route('permissions.edit',
+                        $model) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Permissao ?\')){document.getElementById(\'form-delete' . $permission['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $permission['id'] . '" style="display:none" action="' . route('permission.destroy',
-                        $permission) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir esta Permissao ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('permissions.destroy',
+                        $model) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
         </form>';
@@ -47,7 +47,8 @@ class PermissionDataTable extends DataTable
      */
     public function query()
     {
-        $query = Permission::query();
+        $query = Permission::query()
+            ->orderByDesc('created_at');
 
         return $this->applyScopes($query);
     }

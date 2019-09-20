@@ -55,7 +55,14 @@ class WorkoutDataTable extends DataTable
         if(isset($data)){
             return $data;
         }
-        return $model->newQuery()->has('client')->with(['client','goal']);
+        return $model
+            ->newQuery()
+            ->has('client')
+            ->with([
+                'client',
+                'goal'
+            ])
+            ->orderByDesc('created_at');
     }
 
     /**

@@ -27,11 +27,11 @@ class RoleDataTable extends DataTable
             })
             ->editColumn('actions', function (Role $role) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('role.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('roles.edit',
                         $role) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $role['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $role['id'] . '" style="display:none" action="' . route('role.destroy',
+        <form id="form-delete' . $role['id'] . '" style="display:none" action="' . route('roles.destroy',
                         $role) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') . '
@@ -47,7 +47,8 @@ class RoleDataTable extends DataTable
      */
     public function query()
     {
-        $query = Role::query();
+        $query = Role::query()
+            ->orderByDesc('created_at');
 
         return $this->applyScopes($query);
     }

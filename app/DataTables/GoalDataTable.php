@@ -43,7 +43,9 @@ class GoalDataTable extends DataTable
      */
     public function query(Goal $model)
     {
-        return $model->newQuery();
+        return $model
+            ->newQuery()
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -59,7 +61,7 @@ class GoalDataTable extends DataTable
                 'class' => 'table table-full-width table-bordered table-striped dataTable table-hover',
             ])
             ->parameters($this->getBuilderParameters())->parameters([
-                'dom' => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
+                'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'responsive' => true,
                 'pageLength' => 10,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
@@ -75,8 +77,8 @@ class GoalDataTable extends DataTable
     {
         return [
             'description' => ['title' => 'Descrição'],
-            'name' => ['title' => 'Nome'],
-            'actions'      => [
+            'name'        => ['title' => 'Nome'],
+            'actions'     => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,

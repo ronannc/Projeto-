@@ -43,7 +43,10 @@ class BreastDataTable extends DataTable
      */
     public function query(Breast $model)
     {
-        return $model->newQuery()->select('id', 'exercise', 'description');
+        return $model
+            ->newQuery()
+            ->select('id', 'exercise', 'description')
+            ->orderByDesc('created_at');
     }
 
     /**

@@ -43,7 +43,10 @@ class ShoulderDataTable extends DataTable
      */
     public function query(Shoulder $model)
     {
-        return $model->newQuery()->select('id', 'exercise', 'description');
+        return $model
+            ->newQuery()
+            ->select('id', 'exercise', 'description')
+            ->orderByDesc('created_at');
     }
 
     /**

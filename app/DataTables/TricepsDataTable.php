@@ -44,7 +44,9 @@ class TricepsDataTable extends DataTable
      */
     public function query(Triceps $model)
     {
-        return $model->newQuery();
+        return $model
+            ->newQuery()
+            ->orderByDesc('created_at');
     }
 
     /**

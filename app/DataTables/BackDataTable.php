@@ -23,12 +23,12 @@ class BackDataTable extends DataTable
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('backs.edit',
                         $model) . '"><i class="fa fa-edit"></i></a>' .
-                        '<a title="Deletar" href=""
+                    '<a title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
         <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('backs.destroy',
                         $model) . '" method="post">' .
-            csrf_field().
-            method_field('DELETE').'
+                    csrf_field() .
+                    method_field('DELETE') . '
         </form>';
 
             })->escapeColumns([0]);
@@ -43,7 +43,10 @@ class BackDataTable extends DataTable
      */
     public function query(Back $model)
     {
-        return $model->newQuery()->select('id', 'exercise', 'description');
+        return $model
+            ->newQuery()
+            ->select('id', 'exercise', 'description')
+            ->orderByDesc('created_at');
     }
 
     /**
@@ -63,7 +66,7 @@ class BackDataTable extends DataTable
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
+                'scrollX'    => true,
                 'language'   => ['url' => '/datatable/portuguese-brasil.json'],
             ]);
     }
@@ -76,9 +79,15 @@ class BackDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'exercise' => ['title', 'Exercício'],
-            'description' => ['title', 'Descrição'],
-            'actions' => [
+            'exercise'    => [
+                'title',
+                'Exercício'
+            ],
+            'description' => [
+                'title',
+                'Descrição'
+            ],
+            'actions'     => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,

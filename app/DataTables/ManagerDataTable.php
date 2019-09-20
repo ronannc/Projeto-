@@ -53,8 +53,10 @@ class ManagerDataTable extends DataTable
      */
     public function query()
     {
-        $query = User::query()->with(['company'])
-            ->role(User::MANAGER);
+        $query = User::query()
+            ->with(['company'])
+            ->role(User::MANAGER)
+            ->orderByDesc('created_at');
 
         return $this->applyScopes($query);
     }
