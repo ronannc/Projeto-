@@ -85,6 +85,13 @@ class ClientDataTable extends DataTable
     {
         return [
             'name' => ['title' => 'Nome'],
+            'actions' => [
+                'title' => 'Ações',
+                'orderable' => false,
+                'searchable' => false,
+                'printable' => false,
+                'exportable' => false,
+            ],
             'email' => ['title' => 'Email'],
             'is_active' => ['title' => 'Situação'],
             'sex' => ['title' => 'Sexo'],
@@ -99,13 +106,6 @@ class ClientDataTable extends DataTable
             'zipcode' => ['title' => 'Código Postal'],
             'city.name' => ['title' => 'Cidade'],
             'company.name' => ['title' => 'Empresa'],
-            'actions' => [
-                'title' => 'Ações',
-                'orderable' => false,
-                'searchable' => false,
-                'printable' => false,
-                'exportable' => false,
-            ],
         ];
     }
 

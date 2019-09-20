@@ -2,6 +2,7 @@
 
 namespace App\DataTables;
 
+use App\Models\Goal;
 use App\Models\Workout;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTableAbstract;
@@ -52,7 +53,11 @@ class WorkoutDataTable extends DataTable
      */
     public function query(Workout $model)
     {
-        return $model->newQuery()->has('client')->with(['client','method']);
+        $data = $this->data;
+        if(isset($data)){
+            return $data;
+        }
+        return $model->newQuery()->has('client')->with(['client','goal']);
     }
 
     /**
@@ -87,10 +92,9 @@ class WorkoutDataTable extends DataTable
         return [
             'start' => ['title' => 'Inicio'],
             'next_workout' => ['title' => 'Próximo Treino'],
-            'goal' => ['title' => 'Objetivo'],
+            'goal.description' => ['title' => 'Objetivo'],
             'interval' => ['title' => 'Intervalo'],
             'frequency' => ['title' => 'Frequência'],
-            'method.description' => ['title' => 'Método'],
             'client.name' => ['title' => 'Cliente'],
             'actions' => [
                 'title'      => 'Ações',
