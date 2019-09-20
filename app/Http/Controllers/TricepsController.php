@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\DataTables\TricepsDataTable;
+use App\Http\Requests\TricepsCreateRequest;
+use App\Http\Requests\TricepsUpdateRequest;
 use App\Models\Triceps;
 use App\Repositories\Contracts\TricepsRepository;
 use App\Services\TricepsService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class TricepsController extends Controller
@@ -56,11 +57,11 @@ class TricepsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param TricepsCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(TricepsCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -101,12 +102,12 @@ class TricepsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param TricepsUpdateRequest $request
+     * @param                      $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(TricepsUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

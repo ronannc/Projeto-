@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\BackDataTable;
+use App\Http\Requests\BackCreateRequest;
+use App\Http\Requests\BackUpdateRequest;
 use App\Models\Back;
 use App\Repositories\Contracts\BackRepository;
 use App\Services\BackService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class BackController extends Controller
@@ -55,11 +56,11 @@ class BackController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param BackCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(BackCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -100,12 +101,12 @@ class BackController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param BackUpdateRequest $request
+     * @param                   $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(BackUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

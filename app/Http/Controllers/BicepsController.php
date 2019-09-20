@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\BicepsDataTable;
+use App\Http\Requests\BicepsCreateRequest;
+use App\Http\Requests\BicepsUpdateRequest;
 use App\Models\Biceps;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Services\BicepsService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class BicepsController extends Controller
@@ -56,11 +57,11 @@ class BicepsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param BicepsCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(BicepsCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -101,12 +102,12 @@ class BicepsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param BicepsUpdateRequest $request
+     * @param                     $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(BicepsUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

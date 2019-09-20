@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\UserDataTable;
 use App\DataTables\UsersOnlineDataTable;
+use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
@@ -73,11 +74,11 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param UserCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\GoalDataTable;
+use App\Http\Requests\GoalCreateRequest;
+use App\Http\Requests\GoalUpdateRequest;
 use App\Models\Goal;
 use App\Repositories\Contracts\GoalRepository;
 use App\Services\GoalService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class GoalController extends Controller
@@ -53,11 +54,11 @@ class GoalController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param GoalCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(GoalCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -98,12 +99,12 @@ class GoalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param GoalUpdateRequest $request
+     * @param                   $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(GoalUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

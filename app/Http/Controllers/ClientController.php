@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ClientDataTable;
 use App\DataTables\WorkoutDataTable;
+use App\Http\Requests\ClientCreateRequest;
+use App\Http\Requests\ClientUpdateRequest;
 use App\Models\City;
 use App\Models\Client;
 use App\Models\Company;
 use App\Repositories\Contracts\ClientRepository;
 use App\Services\ClientService;
 use App\Support\BloodType;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ClientController extends Controller
@@ -63,11 +64,11 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param ClientCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ClientCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -117,12 +118,12 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param ClientUpdateRequest $request
+     * @param                     $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(ClientUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

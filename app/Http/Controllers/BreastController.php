@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\DataTables\BreastDataTable;
+use App\Http\Requests\BreastCreateRequest;
+use App\Http\Requests\BreastUpdateRequest;
 use App\Models\Breast;
 use App\Repositories\Contracts\BreastRepository;
 use App\Services\BreastService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class BreastController extends Controller
@@ -56,11 +57,11 @@ class BreastController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param BreastCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(BreastCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -101,12 +102,12 @@ class BreastController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param BreastUpdateRequest $request
+     * @param                     $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(BreastUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

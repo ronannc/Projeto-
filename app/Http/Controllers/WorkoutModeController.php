@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\WorkoutModeDataTable;
+use App\Http\Requests\WorkoutModeCreateRequest;
+use App\Http\Requests\WorkoutModeUpdateRequest;
 use App\Models\WorkoutMode;
 use App\Repositories\Contracts\WorkoutModeRepository;
 use App\Services\WorkoutModeService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class WorkoutModeController extends Controller
@@ -55,11 +56,11 @@ class WorkoutModeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param WorkoutModeCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(WorkoutModeCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -100,12 +101,12 @@ class WorkoutModeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param WorkoutModeUpdateRequest $request
+     * @param                          $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(WorkoutModeUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

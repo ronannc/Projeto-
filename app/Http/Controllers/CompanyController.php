@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CompanyDataTable;
+use App\Http\Requests\CompanyCreateRequest;
+use App\Http\Requests\CompanyUpdateRequest;
 use App\Models\City;
 use App\Models\Company;
 use App\Repositories\Contracts\CompanyRepository;
 use App\Services\CompanyService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class CompanyController extends Controller
@@ -59,11 +60,11 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param CompanyCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CompanyCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -108,12 +109,12 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param CompanyUpdateRequest $request
+     * @param                      $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(CompanyUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

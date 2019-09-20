@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\WorkoutDataTable;
+use App\Http\Requests\WorkoutCreateRequest;
+use App\Http\Requests\WorkoutUpdateRequest;
 use App\Models\User;
 use App\Models\Workout;
 use App\Models\WorkoutMode;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Services\WorkoutService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class WorkoutController extends Controller
@@ -58,11 +59,11 @@ class WorkoutController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param WorkoutCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(WorkoutCreateRequest $request)
     {
         $data = $request->all();
 
@@ -75,40 +76,40 @@ class WorkoutController extends Controller
 
         foreach ($data['triceps'] as $triceps) {
             $this->repository->save_triceps_workout([
-                'workout_id'       => $response['id'],
-                'triceps_id'       => $triceps,
+                'workout_id'      => $response['id'],
+                'triceps_id'      => $triceps,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
         foreach ($data['biceps'] as $biceps) {
             $this->repository->save_biceps_workout([
-                'workout_id'       => $response['id'],
-                'biceps_id'        => $biceps,
+                'workout_id'      => $response['id'],
+                'biceps_id'       => $biceps,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
         foreach ($data['back'] as $back) {
             $this->repository->save_back_workout([
-                'workout_id'       => $response['id'],
-                'back_id'          => $back,
+                'workout_id'      => $response['id'],
+                'back_id'         => $back,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
         foreach ($data['shoulder'] as $shoulder) {
             $this->repository->save_shoulder_workout([
-                'workout_id'       => $response['id'],
-                'shoulder_id'      => $shoulder,
+                'workout_id'      => $response['id'],
+                'shoulder_id'     => $shoulder,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
 
         foreach ($data['breast'] as $breast) {
             $this->repository->save_breast_workout([
-                'workout_id'       => $response['id'],
-                'breast_id'        => $breast,
+                'workout_id'      => $response['id'],
+                'breast_id'       => $breast,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
@@ -116,8 +117,8 @@ class WorkoutController extends Controller
         foreach ($data['lower_member'] as $lower_member) {
 //            dd($lower_member);
             $this->repository->save_lower_member_workout([
-                'workout_id'       => $response['id'],
-                'lower_member_id'  => $lower_member,
+                'workout_id'      => $response['id'],
+                'lower_member_id' => $lower_member,
                 'workout_mode_id' => WorkoutMode::query()->first()['id']
             ]);
         }
@@ -155,12 +156,12 @@ class WorkoutController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Workout $workout
+     * @param WorkoutUpdateRequest $request
+     * @param Workout              $workout
      *
      * @return Response
      */
-    public function update(Request $request, Workout $workout)
+    public function update(WorkoutUpdateRequest $request, Workout $workout)
     {
         $data = $request->all();
 

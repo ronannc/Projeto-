@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\DataTables\LowerMemberDataTable;
+use App\Http\Requests\LowerMemberCreateRequest;
+use App\Http\Requests\LowerMemberUpdateRequest;
 use App\Models\LowerMember;
 use App\Repositories\Contracts\LowerMemberRepository;
 use App\Services\LowerMemberService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class LowerMemberController extends Controller
@@ -56,11 +57,11 @@ class LowerMemberController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param LowerMemberCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(LowerMemberCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -101,12 +102,12 @@ class LowerMemberController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param LowerMemberUpdateRequest $request
+     * @param                          $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(LowerMemberUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

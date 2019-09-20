@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\DataTables\PhysicalAssessmentDataTable;
+use App\Http\Requests\PhysicalAssessmentCreateRequest;
+use App\Http\Requests\PhysicalAssessmentUpdateRequest;
 use App\Models\PhysicalAssessment;
 use App\Repositories\Contracts\PhysicalAssessmentRepository;
 use App\Services\PhysicalAssessmentService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PhysicalAssessmentController extends Controller
@@ -57,11 +58,11 @@ class PhysicalAssessmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param PhysicalAssessmentCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(PhysicalAssessmentCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -104,12 +105,12 @@ class PhysicalAssessmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param PhysicalAssessmentUpdateRequest $request
+     * @param                                 $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(PhysicalAssessmentUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 

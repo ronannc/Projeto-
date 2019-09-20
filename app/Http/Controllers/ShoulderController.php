@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\DataTables\ShoulderDataTable;
+use App\Http\Requests\ShoulderCreateRequest;
+use App\Http\Requests\ShoulderUpdateRequest;
 use App\Models\Shoulder;
 use App\Repositories\Contracts\ShoulderRepository;
 use App\Services\ShoulderService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ShoulderController extends Controller
@@ -56,11 +57,11 @@ class ShoulderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param ShoulderCreateRequest $request
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ShoulderCreateRequest $request)
     {
         $response = $this->service->store($request->all());
 
@@ -101,12 +102,12 @@ class ShoulderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param         $id
+     * @param ShoulderUpdateRequest $request
+     * @param                       $id
      *
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(ShoulderUpdateRequest $request, $id)
     {
         $response = $this->service->update($request->all(), $id);
 
