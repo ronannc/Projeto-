@@ -45,6 +45,7 @@ class CompanyDataTable extends DataTable
     {
         return $model
             ->newQuery()
+            ->with('city')
             ->orderByDesc('created_at');
     }
 
@@ -86,7 +87,7 @@ class CompanyDataTable extends DataTable
             'number'       => ['title' => 'Número'],
             'complement'   => ['title' => 'Complemento'],
             'zipcode'      => ['title' => 'CEP'],
-            'city_id'      => ['title' => 'Cidade'],
+            'city.name'    => ['title' => 'Cidade'],
             'actions'      => [
                 'title'      => 'Ações',
                 'orderable'  => false,

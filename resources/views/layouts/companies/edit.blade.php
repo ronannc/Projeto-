@@ -1,11 +1,6 @@
 @extends('adminlte::page')
 
 @section('title', 'AdminLTE')
-
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @php($data = $model)
 
 @section('content')
@@ -33,12 +28,10 @@
                 @include('components.input_zipcode', ['data' => $data])
                 @include('components.select_city', ['data' => $data])
             </div>
-            <!-- /.box-body -->
             <div class="box-footer">
                 <button class="btn btn-default">Cancelar</button>
                 <button type="submit" class="btn btn-info pull-right">Salvar</button>
             </div>
-            <!-- /.box-footer -->
         </form>
     </div>
 @stop

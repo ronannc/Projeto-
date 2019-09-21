@@ -74,7 +74,7 @@ class CompanyController extends Controller
         }
 
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('company.index'));
+        return redirect(route('companies.index'));
     }
 
     /**

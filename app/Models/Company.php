@@ -31,4 +31,9 @@ class Company extends Model implements AuditableContract
         'logo',
         'city_id'
     ];
+
+    public function city()
+    {
+        return $this->hasOne(City::class, 'id', 'city_id');
+    }
 }
