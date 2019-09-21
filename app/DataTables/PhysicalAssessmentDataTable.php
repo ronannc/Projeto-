@@ -46,7 +46,8 @@ class PhysicalAssessmentDataTable extends DataTable
         return $model
             ->newQuery()
             ->has('client')
-            ->with('client');
+            ->with('client')
+            ->get();
     }
 
     /**
