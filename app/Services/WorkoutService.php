@@ -3,7 +3,14 @@
 
 namespace App\Services;
 
+use App\Models\BackWorkout;
+use App\Models\BicepsWorkout;
+use App\Models\BreastWorkout;
 use App\Models\Client;
+use App\Models\LowerMemberWorkout;
+use App\Models\Shoulder;
+use App\Models\ShoulderWorkout;
+use App\Models\TricepsWorkout;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Support\Notify;
 use Illuminate\Support\Facades\Log;
@@ -56,9 +63,17 @@ class WorkoutService
     {
         $model = $this->repository->findOneById($id);
 
+        TricepsWorkout::where('workout_id', $id)->delete();
+        ShoulderWorkout::where('workout_id', $id)->delete();
+        LowerMemberWorkout::where('workout_id', $id)->delete();
+        BicepsWorkout::where('workout_id', $id)->delete();
+        BackWorkout::where('workout_id', $id)->delete();
+        BreastWorkout::where('workout_id', $id)->delete();
+
         try {
             return $model->delete();
         } catch (\Exception $exception) {
+            dd($exception->getMessage());
             Log::error(Notify::log($exception));
 
             return [

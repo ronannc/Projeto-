@@ -36,7 +36,7 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     public function getExtraData()
     {
         return [
-            'method'       => Goal::all(),
+            'goal'         => Goal::all(),
             'client'       => Client::all(),
             'biceps'       => Biceps::all(),
             'triceps'      => Triceps::all(),

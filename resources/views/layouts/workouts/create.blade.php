@@ -15,10 +15,9 @@
             <div class="box-body">
                 @include('components.input_start')
                 @include('components.input_next_workout')
-                @include('components.input_goal')
                 @include('components.input_interval')
                 @include('components.input_frequency')
-                @include('components.select_method')
+                @include('components.select_goal')
                 @include('components.select_client')
                 @include('components.select_triceps')
                 @include('components.select_biceps')

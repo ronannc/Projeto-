@@ -8,14 +8,14 @@
 ?>
 
 <div class="form-group">
-    <label for="method_id">Metodos</label>
+    <label for="goal_id">Metodos</label>
     <select class="multiple form-control select2"
             data-placeholder="Selecione os metodos de treino"
-            name="method_id"
+            name="goal_id"
             style="width: 100%"
-            id="method_id">
-        @foreach($extraData['method'] as $method)
-            <option value="{{$method['id']}}">{{$method['name']}}</option>
+            id="goal_id">
+        @foreach($extraData['goal'] as $goal)
+            <option value="{{$goal['id']}}">{{$goal['name']}}</option>
         @endforeach
     </select>
 </div>
