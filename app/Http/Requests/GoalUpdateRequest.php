@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\User;
 
 class GoalUpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class GoalUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return User::isAdmin() || User::isManager();
     }
 
     /**
@@ -24,7 +25,8 @@ class GoalUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'          => 'required|string|max:191',
+            'description'         => 'required|string|max:191',
         ];
     }
 }
