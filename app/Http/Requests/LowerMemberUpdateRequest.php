@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LowerMemberUpdateRequest extends FormRequest
@@ -11,9 +12,14 @@ class LowerMemberUpdateRequest extends FormRequest
      *
      * @return bool
      */
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
     public function authorize()
     {
-        return true;
+        return User::isAdmin() || User::isManager();
     }
 
     /**
@@ -24,7 +30,8 @@ class LowerMemberUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'exercise'          => 'required|string|max:191',
+            'description'         => 'required|string|max:191',
         ];
     }
 }

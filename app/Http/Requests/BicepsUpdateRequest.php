@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BicepsUpdateRequest extends FormRequest
@@ -13,7 +14,7 @@ class BicepsUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return User::isAdmin() || User::isManager();
     }
 
     /**
@@ -24,7 +25,8 @@ class BicepsUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'exercise'          => 'required|string|max:191',
+            'description'         => 'required|string|max:191',
         ];
     }
 }
