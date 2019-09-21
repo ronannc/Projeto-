@@ -26,6 +26,8 @@ Route::group([
 ],
     function () {
 
+        Route::get('dashboard', 'HomeController@dashboard')->name('dashboard');
+        Route::view('admin/horizon', 'admin.horizon')->name('horizon');
         Route::get('/home', 'HomeController@index')->name('home');
 
         Route::resource('lower-members', 'LowerMemberController');

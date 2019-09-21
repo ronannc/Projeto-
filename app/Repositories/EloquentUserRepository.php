@@ -7,6 +7,8 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class EloquentUserRepository extends AbstractEloquentRepository implements UserRepository
@@ -31,5 +33,20 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         return User::with([])
             ->where('email', '=', $email)
             ->first();
+    }
+
+    /**
+     * Conta quantos usuários acessaram o sistema na última semana.
+     *
+     * @param $dayOfWeek
+     *
+     * @return int
+     */
+    public function getOnlineUsersOnLastWeek($dayOfWeek)
+    {
+        return User::with([])
+            ->where('last_access', '>=', Carbon::now()->subDays(7))
+            ->where(DB::raw('DAYOFWEEK(DATE(last_access))'), $dayOfWeek)
+            ->count();
     }
 }

@@ -187,6 +187,8 @@ return [
 
         OwenIt\Auditing\AuditingServiceProvider::class,
 
+        Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class
+
     ],
 
     /*
