@@ -80,6 +80,8 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
+        $request->request->add(['role' => User::ADMIN]);
+
         $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {

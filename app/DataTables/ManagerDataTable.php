@@ -41,7 +41,7 @@ class ManagerDataTable extends DataTable
             })
             ->editColumn('actions', function (User $user) {
 
-                return '<a title="Editar"  style="color: #000000" href="' . route('users.edit',
+                return '<a title="Editar"  style="color: #000000" href="' . route('managers.edit',
                         $user) . '"><i class="fa fa-edit"></i></a>';
             })->escapeColumns([0]);
     }
@@ -148,13 +148,6 @@ class ManagerDataTable extends DataTable
                 'title'      => 'Último acesso',
                 'orderable'  => false,
                 'searchable' => false,
-                'printable'  => true,
-                'exportable' => true,
-            ],
-            'id'          => [
-                'title'      => 'Id',
-                'orderable'  => false,
-                'searchable' => true,
                 'printable'  => true,
                 'exportable' => true,
             ],

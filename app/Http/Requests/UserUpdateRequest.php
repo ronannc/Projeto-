@@ -21,9 +21,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        $id = $this->segment(1) == 'profile' ? Auth::user()->id : $this->segment(2);
-
-        return User::hasThisPermission('edit_users') || Auth::user()->id === $id;
+        return User::hasThisPermission('edit_users');
     }
 
     /**
@@ -38,6 +36,7 @@ class UserUpdateRequest extends FormRequest
         return [
             'name'      => 'string|max:100',
             'is_active' => 'boolean',
+            'password' => 'required|confirmed',
             'email'     => [
                 'email',
                 'max:255',
