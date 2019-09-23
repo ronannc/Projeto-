@@ -2,10 +2,6 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @php($data = $model)
 
 @section('content')
@@ -22,10 +18,10 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('components.input_email', ['data' => $data])
-                @include('components.select_client', ['data' => $data])
-                @include('components.select_company', ['data' => $data])
-                @include('components.input_password', ['data' => $data])
+                @include('components.input_name')
+                @include('components.input_email')
+                @include('components.input_password')
+                @include('components.input_password_confirmation')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

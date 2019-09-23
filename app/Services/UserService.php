@@ -32,16 +32,16 @@ class UserService
     public function store(array $data)
     {
         try {
-            $password = substr(Uuid::uuid4(), 0, 8);
-            $data['password'] = bcrypt($password);
+            $data['role'] = User::ADMIN;
+            $data['password'] = bcrypt($data['password']);
 
-            return DB::transaction(function () use ($data, $password) {
+            return DB::transaction(function () use ($data) {
 
                 /** @var User $response */
                 $response = $this->repository->store($data);
                 $response->assignRole($data['role']);
 
-                Notification::send($response, new WelcomeEmailNotification($data['email'], $password));
+                Notification::send($response, new WelcomeEmailNotification($data['email'], $data['password']));
 
                 return $response;
             });
@@ -67,8 +67,10 @@ class UserService
         }
 
         try {
+            $data['password'] = bcrypt($data['password']);
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
+
             Log::error(Notify::log($exception));
 
             return [

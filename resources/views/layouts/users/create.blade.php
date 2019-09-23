@@ -2,10 +2,6 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    {{--<h1>Dashboard</h1>--}}
-@stop
-
 @section('content')
 
     @include('components.status')
@@ -21,8 +17,8 @@
             <div class="box-body">
                 @include('components.input_name')
                 @include('components.input_email')
-                @include('components.select_company')
-                @include('components.select_role')
+                @include('components.input_password')
+                @include('components.input_password_confirmation')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

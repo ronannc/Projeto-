@@ -112,7 +112,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = $this->repository->findOneById($id);
+        return view('layouts.users.edit', compact('model'));
     }
 
     /**
