@@ -21,6 +21,8 @@
             <div class="box-body">
                 @include('components.input_name')
                 @include('components.input_email')
+                @include('components.input_password')
+                @include('components.input_password_confirmation')
                 @include('components.select_company')
             </div>
             <!-- /.box-body -->

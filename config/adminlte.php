@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 return [
 
     /*
@@ -111,16 +113,25 @@ return [
 
         [
             'header' => 'Exercícios',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
         ],
         [
             'text'    => 'Bíceps',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'biceps.index'
+
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'biceps.create'
                 ],
             ],
@@ -128,13 +139,19 @@ return [
 
         [
             'text'    => 'Costa',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'backs.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'backs.create'
                 ],
             ],
@@ -142,13 +159,19 @@ return [
 
         [
             'text'    => 'Membros Inferiores',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'lower-members.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'lower-members.create'
                 ],
             ],
@@ -156,13 +179,19 @@ return [
 
         [
             'text'    => 'Ombros',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'shoulders.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'shoulders.create'
                 ],
             ],
@@ -170,13 +199,19 @@ return [
 
         [
             'text'    => 'Peitoral',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'breasts.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'breasts.create'
                 ],
             ],
@@ -184,13 +219,19 @@ return [
 
         [
             'text'    => 'Tríceps',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'triceps.index'
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'triceps.create'
                 ],
             ],
@@ -248,13 +289,19 @@ return [
 
         [
             'text'    => 'Métodos de Treino',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'workout-modes.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'workout-modes.create',
                 ],
             ],
@@ -262,13 +309,19 @@ return [
 
         [
             'text'    => 'Objetivos de Treino',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'goals.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'goals.create',
                 ],
             ],
@@ -283,13 +336,19 @@ return [
 
         [
             'text'    => 'Empresas',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'companies.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'companies.create',
                 ],
             ],
@@ -320,13 +379,19 @@ return [
 
         [
             'text'    => 'Administradores',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'users.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'users.create',
                 ],
             ],
@@ -334,13 +399,19 @@ return [
 
         [
             'text'    => 'Roles',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'roles.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'roles.create',
                 ],
             ],
@@ -348,13 +419,19 @@ return [
 
         [
             'text'    => 'Permissions',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'submenu' => [
                 [
                     'text'  => 'Listar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'permissions.index',
                 ],
                 [
                     'text'  => 'Cadastrar',
+                    'can'         => User::ADMIN,
+                    'role'        =>  User::ADMIN,
                     'route' => 'permissions.create',
                 ],
             ],
@@ -362,16 +439,22 @@ return [
 
         [
             'text'  => 'Auditoria',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'route' => 'audits.index',
         ],
 
         [
             'text'  => 'Notificações',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'route' => 'notifications.index',
         ],
 
         [
             'text'  => 'Logs',
+            'can'         => User::ADMIN,
+            'role'        =>  User::ADMIN,
             'route' => 'log-viewer::dashboard',
         ],
     ],

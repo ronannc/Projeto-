@@ -32,7 +32,7 @@ class UserService
     public function store(array $data)
     {
         try {
-            $data['role'] = User::ADMIN;
+
             $data['password'] = bcrypt($data['password']);
 
             return DB::transaction(function () use ($data) {

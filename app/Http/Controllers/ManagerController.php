@@ -52,12 +52,11 @@ class ManagerController extends Controller
      */
     public function edit($id)
     {
-        // todo: modificar
-        $model = $this->repository->with(['contacts'])->findOneById($id);
+        $model = $this->repository->with('company')->findOneById($id);
         $extraData = $this->repository->getExtraData($id);
         $extraData['resource'] = 'Managers';
 
-        return view('layouts.users.edit', compact('model'), compact('extraData'));
+        return view('layouts.managers.edit', compact('model'), compact('extraData'));
     }
 
     /**
