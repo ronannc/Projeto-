@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Virtual</b>Training',
+    'logo' => '<b>Virtual</b> Training',
 
-    'logo_mini' => '<b>V</b>T',
+    'logo_mini' => '<b>V</b> T',
 
     /*
     |--------------------------------------------------------------------------
@@ -368,6 +368,11 @@ return [
         [
             'text'  => 'Notificações',
             'route' => 'notifications.index',
+        ],
+
+        [
+            'text'  => 'Logs',
+            'route' => 'log-viewer::dashboard',
         ],
     ],
 
