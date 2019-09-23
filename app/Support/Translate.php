@@ -30,8 +30,6 @@ abstract class Translate
         'company_id'      => 'empresa',
         'client_id'       => 'cliente',
         'user_id'         => 'usuário',
-        'vehicle_id'      => 'veículo',
-        'order_id'        => 'ordem de serviço',
         'schedule_id'     => 'agendamento',
         'appointment_id'  => 'compromisso',
         'key'             => 'chave',
