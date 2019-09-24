@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Company;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\Html\Builder;
 use Yajra\DataTables\Services\DataTable;
@@ -43,6 +44,12 @@ class CompanyDataTable extends DataTable
      */
     public function query(Company $model)
     {
+        $user = Auth::user();
+        if($user->isManager()){
+            return  $user->company()
+                         ->with('city')
+                         ->orderByDesc('created_at');
+        }
         return $model
             ->newQuery()
             ->with('city')

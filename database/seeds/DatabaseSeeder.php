@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PermissionsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
         $this->call(CompanyTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         $this->call(WorkoutModeTableSeeder::class);
         $this->call(BicepsTableSeeder::class);
         $this->call(TricepsTableSeeder::class);

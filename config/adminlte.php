@@ -1,7 +1,6 @@
 <?php
 
 use App\Filter\MenuFilter;
-use App\Models\User;
 
 return [
 
@@ -116,97 +115,97 @@ return [
             'header' => 'Exercícios',
         ],
         [
-            'text'    => 'Bíceps',
+            'text' => 'Bíceps',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'         => 'list_biceps',
+                    'text' => 'Listar',
+                    'can' => 'list_biceps',
                     'route' => 'biceps.index'
 
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'         => 'add_biceps',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_biceps',
                     'route' => 'biceps.create'
                 ],
             ],
         ],
 
         [
-            'text'    => 'Costa',
+            'text' => 'Costa',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_back',
+                    'text' => 'Listar',
+                    'can' => 'list_back',
                     'route' => 'backs.index'
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_back',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_back',
                     'route' => 'backs.create'
                 ],
             ],
         ],
 
         [
-            'text'    => 'Membros Inferiores',
+            'text' => 'Membros Inferiores',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_lower_member',
+                    'text' => 'Listar',
+                    'can' => 'list_lower_member',
                     'route' => 'lower-members.index'
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_lower_member',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_lower_member',
                     'route' => 'lower-members.create'
                 ],
             ],
         ],
 
         [
-            'text'    => 'Ombros',
+            'text' => 'Ombros',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_shoulder',
+                    'text' => 'Listar',
+                    'can' => 'list_shoulder',
                     'route' => 'shoulders.index'
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_shoulder',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_shoulder',
                     'route' => 'shoulders.create'
                 ],
             ],
         ],
 
         [
-            'text'    => 'Peitoral',
+            'text' => 'Peitoral',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_breast',
+                    'text' => 'Listar',
+                    'can' => 'list_breast',
                     'route' => 'breasts.index'
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_breast',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_breast',
                     'route' => 'breasts.create'
                 ],
             ],
         ],
 
         [
-            'text'    => 'Tríceps',
+            'text' => 'Tríceps',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_triceps',
+                    'text' => 'Listar',
+                    'can' => 'list_triceps',
                     'route' => 'triceps.index'
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_triceps',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_triceps',
                     'route' => 'triceps.create'
                 ],
             ],
@@ -217,28 +216,28 @@ return [
         ],
 
         [
-            'text'    => 'Clientes',
+            'text' => 'Clientes',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
+                    'text' => 'Listar',
                     'route' => 'clients.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
+                    'text' => 'Cadastrar',
                     'route' => 'clients.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Avaliacao Física',
+            'text' => 'Avaliacao Física',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
+                    'text' => 'Listar',
                     'route' => 'physical-assessments.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
+                    'text' => 'Cadastrar',
                     'route' => 'physical-assessments.create',
                 ],
             ],
@@ -249,46 +248,46 @@ return [
         ],
 
         [
-            'text'    => 'Treinos',
+            'text' => 'Treinos',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
+                    'text' => 'Listar',
                     'route' => 'workouts.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
+                    'text' => 'Cadastrar',
                     'route' => 'workouts.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Métodos de Treino',
+            'text' => 'Métodos de Treino',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_workout_modes',
+                    'text' => 'Listar',
+                    'can' => 'list_workout_modes',
                     'route' => 'workout-modes.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_workout_modes',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_workout_modes',
                     'route' => 'workout-modes.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Objetivos de Treino',
+            'text' => 'Objetivos de Treino',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_goals',
+                    'text' => 'Listar',
+                    'can' => 'list_goals',
                     'route' => 'goals.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_goals',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_goals',
                     'route' => 'goals.create',
                 ],
             ],
@@ -302,109 +301,112 @@ return [
         ],
 
         [
-            'text'    => 'Empresas',
+            'text' => 'Empresas',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_companies',
+                    'text' => 'Listar',
+                    'can' => 'list_companies',
                     'route' => 'companies.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_companies',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_companies',
                     'route' => 'companies.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Usuários',
+            'text' => 'Usuários',
             'submenu' => [
                 [
-                    'text'    => 'Gerentes',
+                    'text' => 'Gerentes',
                     'submenu' => [
                         [
-                            'text'  => 'Listar',
-                            'can'        =>  'list_managers',
+                            'text' => 'Listar',
+                            'can' => 'list_managers',
                             'route' => 'managers.index',
                         ],
                         [
-                            'text'  => 'Cadastrar',
-                            'can'        =>  'add_managers',
+                            'text' => 'Cadastrar',
+                            'can' => 'add_managers',
                             'route' => 'managers.create',
                         ],
                     ],
                 ],
                 [
-                    'text'  => 'Online',
+                    'text' => 'Online',
                     'route' => 'users.online',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Administradores',
+            'text' => 'Administradores',
+            'can' => 'list_users',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_users',
+                    'text' => 'Listar',
+                    'can' => 'list_users',
                     'route' => 'users.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_users',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_users',
                     'route' => 'users.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Roles',
+            'text' => 'Roles',
+            'can' => 'list_roles',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_roles',
+                    'text' => 'Listar',
+                    'can' => 'list_roles',
                     'route' => 'roles.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_roles',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_roles',
                     'route' => 'roles.create',
                 ],
             ],
         ],
 
         [
-            'text'    => 'Permissions',
+            'text' => 'Permissions',
+            'can' => 'list_permissions',
             'submenu' => [
                 [
-                    'text'  => 'Listar',
-                    'can'        =>  'list_permissions',
+                    'text' => 'Listar',
+                    'can' => 'list_permissions',
                     'route' => 'permissions.index',
                 ],
                 [
-                    'text'  => 'Cadastrar',
-                    'can'        =>  'add_permissions',
+                    'text' => 'Cadastrar',
+                    'can' => 'add_permissions',
                     'route' => 'permissions.create',
                 ],
             ],
         ],
 
         [
-            'text'  => 'Auditoria',
-            'can'        =>  'list_audits',
+            'text' => 'Auditoria',
+            'can' => 'list_audits',
             'route' => 'audits.index',
         ],
 
         [
-            'text'  => 'Notificações',
-            'can'        =>  'list_notifications',
+            'text' => 'Notificações',
+            'can' => 'list_notifications',
             'route' => 'notifications.index',
         ],
 
         [
-            'text'  => 'Logs',
-            'cab'        =>  'list_logs',
+            'text' => 'Logs',
+            'cab' => 'list_logs',
             'route' => 'log-viewer::dashboard',
         ],
     ],
@@ -442,7 +444,7 @@ return [
 
     'plugins' => [
         'datatables' => true,
-        'select2'    => true,
-        'chartjs'    => true,
+        'select2' => true,
+        'chartjs' => true,
     ],
 ];
