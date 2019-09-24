@@ -111,7 +111,5 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'add_goals']);
         Permission::create(['name' => 'edit_goals']);
         Permission::create(['name' => 'list_goals']);
-
-
     }
 }

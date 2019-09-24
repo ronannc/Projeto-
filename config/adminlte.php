@@ -406,7 +406,7 @@ return [
 
         [
             'text' => 'Logs',
-            'cab' => 'list_logs',
+            'can' => 'list_logs',
             'route' => 'log-viewer::dashboard',
         ],
     ],
