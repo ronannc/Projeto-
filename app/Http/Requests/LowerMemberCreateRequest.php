@@ -19,7 +19,7 @@ class LowerMemberCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return User::isAdmin() || User::isManager();
+        return User::hasThisPermission('add_lower_member');
     }
 
     /**

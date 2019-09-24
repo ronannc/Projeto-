@@ -14,7 +14,7 @@ class GoalUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return User::isAdmin() || User::isManager();
+        return User::hasThisPermission('edit_goals');
     }
 
     /**

@@ -14,7 +14,8 @@ class BicepsCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return User::isAdmin() || User::isManager();
+        return User::hasThisPermission('add_biceps');
+
     }
 
     /**

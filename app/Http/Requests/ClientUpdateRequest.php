@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Client;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -15,7 +16,7 @@ class ClientUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return User::hasThisPermission('edit_clients');
     }
 
     /**

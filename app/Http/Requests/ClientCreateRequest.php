@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClientCreateRequest extends FormRequest
@@ -13,7 +14,7 @@ class ClientCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return User::hasThisPermission('add_clients');
     }
 
     /**
