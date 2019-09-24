@@ -10,8 +10,9 @@
                 @if($company['id'] == $data['company_id'])
                     <option value="{{$company['id']}}" selected>{{$company['name']}}</option>
                 @endif
-            @endif
+            @else
             <option value="{{$company['id']}}">{{$company['name']}}</option>
+            @endif
         @endforeach
     </select>
 </div>

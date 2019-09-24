@@ -36,7 +36,7 @@ class CompanyUpdateRequest extends FormRequest
             'neighborhood'       => 'string|max:255',
             'number'             => 'string|max:10',
             'complement'         => 'nullable|string|max:255',
-            'zipcode'            => 'string|size:9',
+            'zipcode'            => 'string|size:8',
             'city_id'            => 'integer|exists:cities,id',
             'notify_days_before' => 'integer|min:2|max:10',
         ];

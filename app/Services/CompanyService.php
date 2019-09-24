@@ -59,7 +59,7 @@ class CompanyService
             return $model->delete();
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
-
+            dd($exception->getMessage());
             return [
                 'error'   => true,
                 'message' => Notify::ERROR_MESSAGE

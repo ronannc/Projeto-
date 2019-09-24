@@ -10,8 +10,9 @@
                 @if($client['id'] == $data['client_id'])
                     <option value="{{$client['id']}}" selected>{{$client['name']}}</option>
                 @endif
+            @else
+                <option value="{{$client['id']}}">{{$client['name']}}</option>
             @endif
-            <option value="{{$client['id']}}">{{$client['name']}}</option>
         @endforeach
     </select>
 </div>

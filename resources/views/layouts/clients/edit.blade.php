@@ -22,20 +22,20 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
-                @include('components.input_name', ['data' => $data])
-                @include('components.input_cpf', ['data' => $data])
-                @include('components.input_birthday', ['data' => $data])
-                @include('components.input_phone', ['data' => $data])
-                @include('components.select_company', ['data' => $data])
-                @include('components.input_street', ['data' => $data])
-                @include('components.input_neighborhood', ['data' => $data])
-                @include('components.input_number', ['data' => $data])
-                @include('components.input_complement', ['data' => $data])
-                @include('components.input_zipcode', ['data' => $data])
-                @include('components.select_city', ['data' => $data])
-                @include('components.input_email', ['data' => $data])
-                @include('components.input_sex', ['data' => $data])
-                @include('components.select_blood_type', ['data' => $data])
+                @include('components.input_name')
+                @include('components.input_cpf')
+                @include('components.input_birthday')
+                @include('components.input_phone')
+                @include('components.select_company')
+                @include('components.input_street')
+                @include('components.input_neighborhood')
+                @include('components.input_number')
+                @include('components.input_complement')
+                @include('components.input_zipcode')
+                @include('components.select_city')
+                @include('components.input_email')
+                @include('components.input_sex')
+                @include('components.select_blood_type')
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

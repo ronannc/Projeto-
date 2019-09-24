@@ -54,9 +54,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        $extraData['company'] = Company::all();
-        $extraData['city'] = City::all();
-        $extraData['blood_type'] = BloodType::NAMES;
+        $extraData = $this->repository->getExtraData();
 
         return view('layouts.clients.create', compact('extraData'));
     }
@@ -106,9 +104,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $extraData['company'] = Company::all();
-        $extraData['city'] = City::all();
-        $extraData['blood_type'] = BloodType::NAMES;
+        $extraData = $this->repository->getExtraData();
 
         $model = $this->repository->findOneById($id);
 

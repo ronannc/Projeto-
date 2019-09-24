@@ -36,7 +36,7 @@ class CompanyCreateRequest extends FormRequest
             'neighborhood'  => 'nullable|string|max:255',
             'number'        => 'nullable|string|max:10',
             'complement'    => 'nullable|string|max:255',
-            'zipcode'       => 'required|string|size:9',
+            'zipcode'       => 'required|string|size:8',
             'city_id'       => 'required|integer|exists:cities,id',
         ];
     }
