@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
@@ -15,8 +16,13 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
 {
     public function getExtraData($id = null)
     {
+        $user = Auth::user();
+        if($user->isManager()){
+            $extraData['company'] = $user->company()->get();
+        }else{
+            $extraData['company'] = Company::all();
+        }
         $extraData['client'] = Client::all();
-        $extraData['company'] = Company::all();
         $extraData['role'] = Role::all();
 
         if (!empty($id)) {
