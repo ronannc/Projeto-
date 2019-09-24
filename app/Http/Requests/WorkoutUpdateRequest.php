@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class WorkoutUpdateRequest extends FormRequest
@@ -13,7 +14,7 @@ class WorkoutUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return User::hasThisPermission('edit_workout');
     }
 
     /**
@@ -24,7 +25,12 @@ class WorkoutUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'start' => 'required|date',
+            'next_workout' => 'required|date',
+            'interval' => 'required|string|max:191',
+            'frequency' => 'required|string|max:191',
+            'goal_id' => 'required|string|exists:goals,id',
+            'client_id' => 'required|string|exists:clients,id',
         ];
     }
 }
