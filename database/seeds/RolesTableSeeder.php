@@ -28,9 +28,9 @@ class RolesTableSeeder extends Seeder
 
         $role = Role::create(['name' => User::MANAGER]);
 
-        $role->givePermissionTo('add_users');
-        $role->givePermissionTo('edit_users');
-        $role->givePermissionTo('list_users');
+//        $role->givePermissionTo('add_users');
+//        $role->givePermissionTo('edit_users');
+//        $role->givePermissionTo('list_users');
 
         # Managers
         $role->givePermissionTo('add_managers');
@@ -44,54 +44,60 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo('view_clients');
 
         # Back exercises
-        $role->givePermissionTo('add_back');
-        $role->givePermissionTo('edit_back');
+//        $role->givePermissionTo('add_back');
+//        $role->givePermissionTo('edit_back');
         $role->givePermissionTo('list_back');
 
         # Bíceps exercises
-        $role->givePermissionTo('add_biceps');
-        $role->givePermissionTo('edit_biceps');
+//        $role->givePermissionTo('add_biceps');
+//        $role->givePermissionTo('edit_biceps');
         $role->givePermissionTo('list_biceps');
 
         # Breast exercises
-        $role->givePermissionTo('add_breast');
-        $role->givePermissionTo('edit_breast');
+//        $role->givePermissionTo('add_breast');
+//        $role->givePermissionTo('edit_breast');
         $role->givePermissionTo('list_breast');
 
         # Lower members exercises
-        $role->givePermissionTo('add_lower_member');
-        $role->givePermissionTo('edit_lower_member');
+//        $role->givePermissionTo('add_lower_member');
+//        $role->givePermissionTo('edit_lower_member');
         $role->givePermissionTo('list_lower_member');
 
         # Physical assessment exercises
-        $role->givePermissionTo('add_physical_assessment');
-        $role->givePermissionTo('edit_physical_assessment');
+//        $role->givePermissionTo('add_physical_assessment');
+//        $role->givePermissionTo('edit_physical_assessment');
         $role->givePermissionTo('list_physical_assessment');
 
         # Shoulder exercises
-        $role->givePermissionTo('add_shoulder');
-        $role->givePermissionTo('edit_shoulder');
+//        $role->givePermissionTo('add_shoulder');
+//        $role->givePermissionTo('edit_shoulder');
         $role->givePermissionTo('list_shoulder');
 
         # Tríceps exercises
-        $role->givePermissionTo('add_triceps');
-        $role->givePermissionTo('edit_triceps');
+//        $role->givePermissionTo('add_triceps');
+//        $role->givePermissionTo('edit_triceps');
         $role->givePermissionTo('list_triceps');
 
         # Workout exercises
-        $role->givePermissionTo('add_workout');
-        $role->givePermissionTo('edit_workout');
+//        $role->givePermissionTo('add_workout');
+//        $role->givePermissionTo('edit_workout');
         $role->givePermissionTo('list_workout');
 
+        # Workout exercises
+//        $role->givePermissionTo('add_workout_modes');
+//        $role->givePermissionTo('edit_workout_modes');
+        $role->givePermissionTo('list_workout_modes');
+
         # Goals
-        $role->givePermissionTo('add_goals');
-        $role->givePermissionTo('edit_goals');
+//        $role->givePermissionTo('add_goals');
+//        $role->givePermissionTo('edit_goals');
         $role->givePermissionTo('list_goals');
 
         # Companies
+        $role->givePermissionTo('list_companies');
         $role->givePermissionTo('edit_companies');
 
         # Notifications
-        $role->givePermissionTo('list_notifications');
+//        $role->givePermissionTo('list_notifications');
     }
 }

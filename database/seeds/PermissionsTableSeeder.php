@@ -56,6 +56,9 @@ class PermissionsTableSeeder extends Seeder
         # Notifications
         Permission::create(['name' => 'list_notifications']);
 
+        # Logs
+        Permission::create(['name' => 'list_logs']);
+
         # Online
         Permission::create(['name' => 'list_online']);
 
@@ -99,9 +102,16 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'edit_workout']);
         Permission::create(['name' => 'list_workout']);
 
+        # Workout Modes
+        Permission::create(['name' => 'add_workout_modes']);
+        Permission::create(['name' => 'edit_workout_modes']);
+        Permission::create(['name' => 'list_workout_modes']);
+
         # Workout exercises
         Permission::create(['name' => 'add_goals']);
         Permission::create(['name' => 'edit_goals']);
         Permission::create(['name' => 'list_goals']);
+
+
     }
 }
