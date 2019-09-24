@@ -52,7 +52,7 @@ class ManagerController extends Controller
      */
     public function edit($id)
     {
-        $model = $this->repository->with('company')->findOneById($id);
+        $model = $this->repository->with(['company'])->findOneById($id);
         $extraData = $this->repository->getExtraData($id);
         $extraData['resource'] = 'Managers';
 

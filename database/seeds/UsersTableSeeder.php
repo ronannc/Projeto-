@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,8 @@ class UsersTableSeeder extends Seeder
             'name'     => 'Manager',
             'email'    => 'manager@email.com',
             'password' => bcrypt('secretxxx'),
+            'company_id'   => Company::with([])->inRandomOrder()->first()->id,
+
         ])->each(function (User $user) {
             $user->assignRole(User::MANAGER);
         });

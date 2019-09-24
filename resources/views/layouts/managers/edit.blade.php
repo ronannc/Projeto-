@@ -18,7 +18,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('user.update', $data->id)}}" method="post">
+        <form action="{{route('managers.update', $data->id)}}" method="post">
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
