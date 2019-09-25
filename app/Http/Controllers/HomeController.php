@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Company;
 use App\Models\Notification;
+use App\Models\PhysicalAssessment;
 use App\Models\User;
+use App\Models\Workout;
 use App\Repositories\Contracts\UserRepository;
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -36,15 +41,30 @@ class HomeController extends Controller
     }
 
     public function dashboard(){
-        $dashboardBadges       = $this->generateSidebarBadges();
-        $usersOnlineStatsChart = $this->usersOnlineStatsChart();
-        $exceptionsStatsChart  = $this->notificationsStatsChart();
 
-        return view('admin.dashboard', [
-            'usersOnlineStatsChart' => $usersOnlineStatsChart,
-            'exceptionsStatsChart'  => $exceptionsStatsChart,
-            'dashboardBadges'       => $dashboardBadges,
-        ]);
+        $user = Auth::user();
+
+        if($user->isManager()){
+            $extraData['company'] = $user->company;
+            $extraData['users'] = $extraData['company']->managers;
+            $extraData['clients'] = $extraData['company']->clients;
+            $extraData['workouts'] = collect();
+            $extraData['physicalAssessment'] = collect();
+
+            foreach ($extraData['clients'] as $client){
+                $extraData['workouts'] = $extraData['workouts']->merge($client->workout());
+                $extraData['physicalAssessment'] = $extraData['physicalAssessment']->merge($client->physicalAssessment());
+            }
+
+        }else{
+            $extraData['company'] =  Company::all();
+            $extraData['users'] = User::all();
+            $extraData['clients'] = Client::all();
+            $extraData['workouts'] = Workout::all();
+            $extraData['physicalAssessment'] = PhysicalAssessment::all();
+        }
+
+        return view('admin.dashboard', compact('extraData'));
     }
 
     /**

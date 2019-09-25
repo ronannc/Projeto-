@@ -36,4 +36,14 @@ class Company extends Model implements AuditableContract
     {
         return $this->hasOne(City::class, 'id', 'city_id');
     }
+
+    public function managers()
+    {
+        return $this->hasMany(User::class, 'company_id', 'id');
+    }
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class, 'company_id', 'id');
+    }
 }
