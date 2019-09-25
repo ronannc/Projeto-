@@ -40,5 +40,30 @@ abstract class Translate
         'start_at'        => 'inicia em',
         'finish_at'       => 'finaliza em',
         'repeat_days'     => 'dias em que se repetem',
+        'exercise'        => 'Exercício',
+        'sex'=>'Sexo',
+        'blood_type'      => 'Tipo Sanguíneo',
+        'phone' => 'Telefone',
+        'birthday' => 'Aniversário',
+        'city_id' => 'Cidade',
+        'neck' => 'Pescoço',
+        'shoulder' => 'Ombros',
+        'chest' => 'Peito',
+        'right_arm' => 'Braço Direito',
+        'left_arm' => 'Braço Esquerdo',
+        'right_forearm' => 'Antebraço Direito',
+        'left_forearm' => 'Antebraço Esquerdo',
+        'waist' => 'Cintura',
+        'abdomen' => 'Abdomem',
+        'hip' => 'Quadril',
+        'right_thigh' => 'Coxa Direita',
+        'left_thigh' => 'Coxa Esquerda',
+        'right_calf' => 'Panturrilha Direita',
+        'left_calf' => 'Panturrilha Esquerda',
+        'height' => 'Altura',
+        'weight' => 'Peso',
+        'blood_pressure' => 'Pressão Sanguínea'
+
+
     ];
 }
