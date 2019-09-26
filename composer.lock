@@ -4873,16 +4873,16 @@
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v4.16.0",
+            "version": "v4.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "78d2ff38f087751de8d446424a2d36a142707c52"
+                "reference": "af9c29640c979a60ac71dc2a9571e50589f83a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/78d2ff38f087751de8d446424a2d36a142707c52",
-                "reference": "78d2ff38f087751de8d446424a2d36a142707c52",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/af9c29640c979a60ac71dc2a9571e50589f83a19",
+                "reference": "af9c29640c979a60ac71dc2a9571e50589f83a19",
                 "shasum": ""
             },
             "require": {
@@ -4929,7 +4929,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2019-09-20T08:31:59+00:00"
+            "time": "2019-09-23T04:08:35+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
@@ -7284,8 +7284,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
