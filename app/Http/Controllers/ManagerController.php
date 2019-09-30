@@ -28,6 +28,11 @@ class ManagerController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_managers');
+        $this->middleware('permission:add_managers', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_managers', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_managers', ['only' => ['destroy']]);
     }
 
     /**

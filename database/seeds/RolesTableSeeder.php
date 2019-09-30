@@ -32,12 +32,14 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo('add_managers');
         $role->givePermissionTo('edit_managers');
         $role->givePermissionTo('list_managers');
+        $role->givePermissionTo('destroy_managers');
 
         # Clients
         $role->givePermissionTo('add_clients');
         $role->givePermissionTo('edit_clients');
         $role->givePermissionTo('list_clients');
         $role->givePermissionTo('view_clients');
+        $role->givePermissionTo('destroy_clients');
 
         # Back exercises
         $role->givePermissionTo('list_back');

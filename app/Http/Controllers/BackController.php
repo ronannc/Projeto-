@@ -28,6 +28,12 @@ class BackController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+
+        $this->middleware('permission:list_back');
+        $this->middleware('permission:add_back', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_back', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_back', ['only' => ['destroy']]);
     }
 
     /**

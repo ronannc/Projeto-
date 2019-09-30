@@ -28,6 +28,12 @@ class WorkoutModeController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+
+        $this->middleware('permission:list_workout_modes');
+        $this->middleware('permission:add_workout_modes', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_workout_modes', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_workout_modes', ['only' => ['destroy']]);
     }
 
     /**

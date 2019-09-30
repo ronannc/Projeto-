@@ -30,6 +30,11 @@ class WorkoutController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_workout');
+        $this->middleware('permission:add_workout', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_workout', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_workout', ['only' => ['destroy']]);
     }
 
     /**

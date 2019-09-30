@@ -29,6 +29,12 @@ class ShoulderController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+
+        $this->middleware('permission:list_shoulder');
+        $this->middleware('permission:add_shoulder', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_shoulder', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_shoulder', ['only' => ['destroy']]);
     }
 
     /**
