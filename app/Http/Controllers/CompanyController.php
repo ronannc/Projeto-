@@ -30,7 +30,6 @@ class CompanyController extends Controller
         $this->repository = $repository;
         $this->service = $service;
 
-
         $this->middleware('permission:list_companies');
         $this->middleware('permission:add_companies', ['only' => ['create','store']]);
         $this->middleware('permission:edit_companies', ['only' => ['edit','update']]);
