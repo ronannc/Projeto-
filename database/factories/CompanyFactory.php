@@ -16,8 +16,7 @@ use Ramsey\Uuid\Uuid;
 |
 */
 
-
-$this->factory->define(Company::class, function (Faker $faker) {
+$factory->define(Company::class, function (Faker $faker) {
     return [
         'id'            => Uuid::uuid4(),
         'name'          => $faker->word,

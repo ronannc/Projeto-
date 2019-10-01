@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Route::get('/', 'UserController@welcome');
 
-Route::get('/', function (){
-    return view('welcome');
-});
+Auth::routes();
 
 Route::group([
     'middleware' => [
