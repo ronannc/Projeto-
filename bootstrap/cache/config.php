@@ -604,7 +604,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/ronan/PhpstormProjects/Projeto-/storage/framework/cache/data',
+        'path' => '/var/www/app/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -835,12 +835,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/ronan/PhpstormProjects/Projeto-/storage/app',
+        'root' => '/var/www/app/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/ronan/PhpstormProjects/Projeto-/storage/app/public',
+        'root' => '/var/www/app/storage/app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -927,7 +927,7 @@
   ),
   'log-viewer' => 
   array (
-    'storage-path' => '/home/ronan/PhpstormProjects/Projeto-/storage/logs',
+    'storage-path' => '/var/www/app/storage/logs',
     'pattern' => 
     array (
       'prefix' => 'laravel-',
@@ -1007,13 +1007,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/ronan/PhpstormProjects/Projeto-/storage/logs/laravel.log',
+        'path' => '/var/www/app/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/ronan/PhpstormProjects/Projeto-/storage/logs/laravel.log',
+        'path' => '/var/www/app/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -1077,7 +1077,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/ronan/PhpstormProjects/Projeto-/resources/views/vendor/mail',
+        0 => '/var/www/app/resources/views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -1211,7 +1211,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/ronan/PhpstormProjects/Projeto-/storage/framework/sessions',
+    'files' => '/var/www/app/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1245,9 +1245,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/ronan/PhpstormProjects/Projeto-/resources/views',
+      0 => '/var/www/app/resources/views',
     ),
-    'compiled' => '/home/ronan/PhpstormProjects/Projeto-/storage/framework/views',
+    'compiled' => '/var/www/app/storage/framework/views',
   ),
   'passport' => 
   array (
