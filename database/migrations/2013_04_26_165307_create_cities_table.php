@@ -17,7 +17,7 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        if (app()->environment('testing')) {
+//        if (app()->environment('testing')) {
             Schema::create('regions', function (Blueprint $table) {
                 $table->integer('id', true);
                 $table->string('name');
@@ -69,9 +69,9 @@ class CreateCitiesTable extends Migration
             ]);
 
 
-        } else {
-            DB::unprepared(file_get_contents(__DIR__ . '/cities.sql'));
-        }
+//        } else {
+//            DB::unprepared(file_get_contents(__DIR__ . '/cities.sql'));
+//        }
     }
 
     /**

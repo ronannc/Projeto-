@@ -29,6 +29,11 @@ class PhysicalAssessmentController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_physical_assessment');
+        $this->middleware('permission:add_physical_assessment', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_physical_assessment', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_physical_assessment', ['only' => ['destroy']]);
     }
 
     /**

@@ -28,6 +28,11 @@ class GoalController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_goals');
+        $this->middleware('permission:add_goals', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_goals', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_goals', ['only' => ['destroy']]);
     }
 
     /**

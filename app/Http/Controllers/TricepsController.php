@@ -29,6 +29,11 @@ class TricepsController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_triceps');
+        $this->middleware('permission:add_triceps', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_triceps', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_triceps', ['only' => ['destroy']]);
     }
 
     /**

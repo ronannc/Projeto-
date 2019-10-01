@@ -29,6 +29,11 @@ class LowerMemberController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_lower_member');
+        $this->middleware('permission:add_lower_member', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_lower_member', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_lower_member', ['only' => ['destroy']]);
     }
 
     /**

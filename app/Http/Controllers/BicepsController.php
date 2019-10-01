@@ -29,6 +29,12 @@ class BicepsController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+
+        $this->middleware('permission:list_biceps');
+        $this->middleware('permission:add_biceps', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_biceps', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_biceps', ['only' => ['destroy']]);
     }
 
     /**

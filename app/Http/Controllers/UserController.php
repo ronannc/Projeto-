@@ -32,6 +32,11 @@ class UserController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_users', ['except' => 'welcome']);
+        $this->middleware('permission:add_users', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_users', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_users', ['only' => ['destroy']]);
     }
 
     /**

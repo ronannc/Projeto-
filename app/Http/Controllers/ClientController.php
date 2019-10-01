@@ -32,6 +32,11 @@ class ClientController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+        $this->middleware('permission:list_clients');
+        $this->middleware('permission:add_clients', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_clients', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_clients', ['only' => ['destroy']]);
     }
 
     /**

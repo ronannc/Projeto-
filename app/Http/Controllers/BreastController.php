@@ -29,6 +29,12 @@ class BreastController extends Controller
     {
         $this->repository = $repository;
         $this->service = $service;
+
+
+        $this->middleware('permission:list_breast');
+        $this->middleware('permission:add_breast', ['only' => ['create','store']]);
+        $this->middleware('permission:edit_breast', ['only' => ['edit','update']]);
+        $this->middleware('permission:destroy_breast', ['only' => ['destroy']]);
     }
 
     /**
