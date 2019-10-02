@@ -36,4 +36,8 @@ class Workout extends Model implements AuditableContract
     {
         return $this->belongsTo(Goal::class);
     }
+
+    public function biceps(){
+        return $this->belongsToMany(Biceps::class, 'biceps_workouts', 'workout_id', 'biceps_id');
+    }
 }

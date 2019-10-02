@@ -73,6 +73,11 @@ class Client extends Model implements AuditableContract
         return Workout::where('client_id', $this->id)->with('client')->with('goal')->get();
     }
 
+    public function lastWorkout()
+    {
+        return Workout::where('client_id', $this->id)->with('client')->with('goal')->orderBy('start', 'ASC')->first();
+    }
+
     public function physicalAssessment()
     {
         return PhysicalAssessment::where('client_id', $this->id)->with('client')->get();
