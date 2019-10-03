@@ -37,6 +37,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'edit_companies']);
         Permission::create(['name' => 'list_companies']);
         Permission::create(['name' => 'destroy_companies']);
+        Permission::create(['name' => 'view_companies']);
 
         # Managers
         Permission::create(['name' => 'add_managers']);
