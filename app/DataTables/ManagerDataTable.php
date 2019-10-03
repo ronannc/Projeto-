@@ -56,8 +56,7 @@ class ManagerDataTable extends DataTable
     {
         $user = Auth::user();
         if($user->isManager()){
-            $company = $user->company();
-
+            $company = $user->company;
             return  $company->managers()
                             ->with('company')
                             ->role(User::MANAGER)
