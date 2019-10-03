@@ -110,6 +110,8 @@ class ManagerController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
+        $request->request->add(['role' => User::MANAGER]);
+
         $response = $this->service->update($request->all(), $id);
 
         if (!empty($response['error'])) {

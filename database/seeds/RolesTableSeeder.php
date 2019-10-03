@@ -29,17 +29,17 @@ class RolesTableSeeder extends Seeder
         $role = Role::create(['name' => User::MANAGER]);
 
         # Managers
+        $role->givePermissionTo('list_managers');
         $role->givePermissionTo('add_managers');
         $role->givePermissionTo('edit_managers');
-        $role->givePermissionTo('list_managers');
         $role->givePermissionTo('destroy_managers');
 
         # Clients
+        $role->givePermissionTo('list_clients');
         $role->givePermissionTo('add_clients');
         $role->givePermissionTo('edit_clients');
-        $role->givePermissionTo('list_clients');
-        $role->givePermissionTo('view_clients');
         $role->givePermissionTo('destroy_clients');
+        $role->givePermissionTo('view_clients');
 
         # Physical assessment
         $role->givePermissionTo('list_physical_assessment');

@@ -67,6 +67,8 @@ class UserService
         }
 
         try {
+            $model->assignRole($data['role']);
+
             $data['password'] = bcrypt($data['password']);
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
