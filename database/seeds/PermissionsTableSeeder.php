@@ -98,6 +98,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'edit_physical_assessment']);
         Permission::create(['name' => 'list_physical_assessment']);
         Permission::create(['name' => 'destroy_physical_assessment']);
+        Permission::create(['name' => 'view_physical_assessment']);
 
         # Shoulder exercises
         Permission::create(['name' => 'add_shoulder']);
