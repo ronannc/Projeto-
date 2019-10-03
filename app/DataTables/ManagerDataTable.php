@@ -58,7 +58,7 @@ class ManagerDataTable extends DataTable
         if($user->isManager()){
             $company = $user->company();
 
-            return  $company->manager()
+            return  $company->managers()
                             ->with('company')
                             ->role(User::MANAGER)
                             ->orderByDesc('created_at');
