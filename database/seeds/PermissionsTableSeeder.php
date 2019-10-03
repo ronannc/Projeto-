@@ -117,6 +117,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'edit_workout']);
         Permission::create(['name' => 'list_workout']);
         Permission::create(['name' => 'destroy_workout']);
+        Permission::create(['name' => 'view_workout']);
 
         # Workout Modes
         Permission::create(['name' => 'add_workout_modes']);
