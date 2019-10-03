@@ -21,14 +21,14 @@ class UsersTableSeeder extends Seeder
             $user->assignRole(User::ADMIN);
         });
 
-        factory(User::class, 1)->create([
-            'name'     => 'Manager',
-            'email'    => 'manager@email.com',
-            'password' => bcrypt('secretxxx'),
-            'company_id'   => Company::with([])->inRandomOrder()->first()->id,
-
-        ])->each(function (User $user) {
-            $user->assignRole(User::MANAGER);
-        });
+//        factory(User::class, 1)->create([
+//            'name'     => 'Manager',
+//            'email'    => 'manager@email.com',
+//            'password' => bcrypt('secretxxx'),
+//            'company_id'   => Company::with([])->inRandomOrder()->first()->id,
+//
+//        ])->each(function (User $user) {
+//            $user->assignRole(User::MANAGER);
+//        });
     }
 }
