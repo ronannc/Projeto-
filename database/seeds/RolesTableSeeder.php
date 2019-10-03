@@ -41,6 +41,20 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo('view_clients');
         $role->givePermissionTo('destroy_clients');
 
+        # Physical assessment
+        $role->givePermissionTo('list_physical_assessment');
+        $role->givePermissionTo('add_physical_assessment');
+        $role->givePermissionTo('edit_physical_assessment');
+        $role->givePermissionTo('view_physical_assessment');
+        $role->givePermissionTo('destroy_physical_assessment');
+
+        # Workout exercises
+        $role->givePermissionTo('list_workout');
+        $role->givePermissionTo('add_workout');
+        $role->givePermissionTo('edit_workout');
+        $role->givePermissionTo('view_workout');
+        $role->givePermissionTo('destroy_workout');
+
         # Back exercises
         $role->givePermissionTo('list_back');
 
@@ -53,17 +67,11 @@ class RolesTableSeeder extends Seeder
         # Lower members exercises
         $role->givePermissionTo('list_lower_member');
 
-        # Physical assessment exercises
-        $role->givePermissionTo('list_physical_assessment');
-
         # Shoulder exercises
         $role->givePermissionTo('list_shoulder');
 
         # Tríceps exercises
         $role->givePermissionTo('list_triceps');
-
-        # Workout exercises
-        $role->givePermissionTo('list_workout');
 
         # Workout exercises
         $role->givePermissionTo('list_workout_modes');
@@ -74,5 +82,6 @@ class RolesTableSeeder extends Seeder
         # Companies
         $role->givePermissionTo('list_companies');
         $role->givePermissionTo('edit_companies');
+        $role->givePermissionTo('view_companies');
     }
 }
