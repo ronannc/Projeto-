@@ -220,10 +220,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listar',
+                    'can' => 'list_clients',
                     'route' => 'clients.index',
                 ],
                 [
                     'text' => 'Cadastrar',
+                    'can' => 'add_clients',
                     'route' => 'clients.create',
                 ],
             ],
@@ -234,10 +236,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listar',
+                    'can' => 'list_physical_assessment',
                     'route' => 'physical-assessments.index',
                 ],
                 [
                     'text' => 'Cadastrar',
+                    'can' => 'add_physical_assessment',
                     'route' => 'physical-assessments.create',
                 ],
             ],
@@ -252,10 +256,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listar',
+                    'can' => 'list_workout',
                     'route' => 'workouts.index',
                 ],
                 [
                     'text' => 'Cadastrar',
+                    'can' => 'add_workout',
                     'route' => 'workouts.create',
                 ],
             ],
