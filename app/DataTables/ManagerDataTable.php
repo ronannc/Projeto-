@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTableAbstract;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder;
@@ -53,6 +54,16 @@ class ManagerDataTable extends DataTable
      */
     public function query()
     {
+        $user = Auth::user();
+        if($user->isManager()){
+            $company = $user->company();
+
+            return  $company->manager()
+                            ->with('company')
+                            ->role(User::MANAGER)
+                            ->orderByDesc('created_at');
+        }
+
         $query = User::query()
             ->with(['company'])
             ->role(User::MANAGER)

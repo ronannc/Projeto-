@@ -46,4 +46,5 @@ class Company extends Model implements AuditableContract
     {
         return $this->hasMany(Client::class, 'company_id', 'id');
     }
+
 }
