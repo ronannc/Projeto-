@@ -16,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->group(function (){
     Route::get('biceps/{client_id}', 'BicepsController@exerciseByClient');
+    Route::get('triceps/{client_id}', 'TricepsController@exerciseByClient');
 });
+
+
 
