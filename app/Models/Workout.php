@@ -44,4 +44,8 @@ class Workout extends Model implements AuditableContract
     public function triceps(){
         return $this->belongsToMany(Triceps::class, 'triceps_workouts', 'workout_id', 'triceps_id');
     }
+
+    public function back(){
+        return $this->belongsToMany(Back::class, 'back_workouts', 'workout_id', 'back_id');
+    }
 }

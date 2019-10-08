@@ -68,5 +68,10 @@ class BackService
         }
     }
 
+    public function exerciseByClient($client_id)
+    {
+        return $this->repository->exerciseByClient($client_id);
+    }
+
 
 }
