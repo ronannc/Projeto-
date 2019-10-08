@@ -188,4 +188,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         $lastWorkout = $client->lastWorkout();
         return $lastWorkout->exercises();
     }
+
+    public function workouts($client_id)
+    {
+        $client = Client::find($client_id);
+        $workouts = $client->workout();
+        foreach ($workouts as $workout){
+            $workout->exercises();
+        }
+        return $workouts;
+    }
 }

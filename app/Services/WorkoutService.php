@@ -118,4 +118,9 @@ class WorkoutService
         return $this->repository->lastWorkout($client_id);
     }
 
+    public function workouts($client_id)
+    {
+        return $this->repository->workouts($client_id);
+    }
+
 }

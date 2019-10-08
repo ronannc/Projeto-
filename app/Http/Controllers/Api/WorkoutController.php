@@ -34,4 +34,8 @@ class WorkoutController extends Controller
     public function lastWorkout($client_id){
         return $this->service->lastWorkour($client_id);
     }
+
+    public function workouts($client_id){
+        return $this->service->workouts($client_id);
+    }
 }

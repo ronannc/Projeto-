@@ -35,4 +35,6 @@ interface WorkoutRepository extends BaseRepository
 
     public function lastWorkout($client_id);
 
+    public function workouts($client_id);
+
 }
