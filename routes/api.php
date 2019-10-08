@@ -20,6 +20,8 @@ Route::middleware('auth:api')->group(function (){
     Route::get('back/{client_id}', 'BackController@exerciseByClient');
 });
 
+Route::get('breast/{client_id}', 'BreastController@exerciseByClient');
+
 
 
 
