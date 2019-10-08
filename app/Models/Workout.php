@@ -52,4 +52,8 @@ class Workout extends Model implements AuditableContract
     public function breast(){
         return $this->belongsToMany(Breast::class, 'breast_workouts', 'workout_id', 'breast_id');
     }
+
+    public function lowerMember(){
+        return $this->belongsToMany(LowerMember::class, 'lower_member_workouts', 'workout_id', 'lower_member_id');
+    }
 }
