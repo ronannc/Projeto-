@@ -60,4 +60,14 @@ class Workout extends Model implements AuditableContract
     public function shoulder(){
         return $this->belongsToMany(Shoulder::class, 'shoulder_workouts', 'workout_id', 'shoulder_id');
     }
+
+    public function exercises(){
+        $this['biceps'] = $this->biceps()->get();
+        $this['triceps'] = $this->triceps()->get();
+        $this['lower_member'] = $this->lowerMember()->get();
+        $this['breast'] = $this->breast()->get();
+        $this['shoulder'] = $this->shoulder()->get();
+        $this['back'] = $this->back()->get();
+        return $this;
+    }
 }

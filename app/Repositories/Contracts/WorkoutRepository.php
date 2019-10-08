@@ -33,4 +33,6 @@ interface WorkoutRepository extends BaseRepository
 
     public function update_lower_member_workout($data);
 
+    public function lastWorkout($client_id);
+
 }

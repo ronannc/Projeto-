@@ -21,7 +21,10 @@ Route::middleware('auth:api')->group(function (){
     Route::get('breast/{client_id}', 'BreastController@exerciseByClient');
     Route::get('lower-member/{client_id}', 'LowerMemberController@exerciseByClient');
     Route::get('shoulder/{client_id}', 'LowerMemberController@exerciseByClient');
+    Route::get('workout/{client_id}', 'WorkoutController@lastWorkout');
 });
+
+
 
 
 

@@ -113,4 +113,9 @@ class WorkoutService
         return (((($carga * 100) / abs(102.78 - (2.78 * $repeticceos))) / $pesoClient) * ($porcentagem / 100)) * $pesoClient;
     }
 
+    public function lastWorkour($client_id)
+    {
+        return $this->repository->lastWorkout($client_id);
+    }
+
 }
