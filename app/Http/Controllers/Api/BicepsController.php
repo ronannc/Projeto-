@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Biceps;
 use App\Repositories\Contracts\BicepsRepository;
 use App\Services\BicepsService;
-use Illuminate\Http\Response;
 
 class BicepsController extends Controller
 {
@@ -22,7 +20,7 @@ class BicepsController extends Controller
      * BicepsController constructor.
      *
      * @param BicepsRepository $repository
-     * @param BicepsService    $service
+     * @param BicepsService $service
      */
     public function __construct(BicepsRepository $repository, BicepsService $service)
     {

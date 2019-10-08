@@ -5,26 +5,22 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\BackRepository;
-use App\Repositories\Contracts\BicepsRepository;
-use App\Repositories\Contracts\TricepsRepository;
 use App\Services\BackService;
-use App\Services\BicepsService;
-use App\Services\TricepsService;
 
 class BackController extends Controller
 {
 
-    /** @var BicepsRepository */
+    /** @var BackRepository */
     protected $repository;
 
-    /** @var BicepsService */
+    /** @var BackService */
     protected $service;
 
     /**
-     * BicepsController constructor.
+     * BackController constructor.
      *
-     * @param BicepsRepository $repository
-     * @param BicepsService    $service
+     * @param BackRepository $repository
+     * @param BackService $service
      */
     public function __construct(BackRepository $repository, BackService $service)
     {

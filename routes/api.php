@@ -18,11 +18,12 @@ Route::middleware('auth:api')->group(function (){
     Route::get('biceps/{client_id}', 'BicepsController@exerciseByClient');
     Route::get('triceps/{client_id}', 'TricepsController@exerciseByClient');
     Route::get('back/{client_id}', 'BackController@exerciseByClient');
+    Route::get('breast/{client_id}', 'BreastController@exerciseByClient');
+    Route::get('lower-member/{client_id}', 'LowerMemberController@exerciseByClient');
+    Route::get('shoulder/{client_id}', 'LowerMemberController@exerciseByClient');
 });
 
-Route::get('breast/{client_id}', 'BreastController@exerciseByClient');
-Route::get('lower-member/{client_id}', 'LowerMemberController@exerciseByClient');
-Route::get('shoulder/{client_id}', 'LowerMemberController@exerciseByClient');
+
 
 
 

@@ -4,27 +4,23 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\BreastRepository;
-use App\Repositories\Contracts\TricepsRepository;
-use App\Services\BicepsService;
 use App\Services\BreastService;
-use App\Services\TricepsService;
 
 class BreastController extends Controller
 {
 
-    /** @var BicepsRepository */
+    /** @var BreastRepository */
     protected $repository;
 
-    /** @var BicepsService */
+    /** @var BreastService */
     protected $service;
 
     /**
-     * BicepsController constructor.
+     * BreastController constructor.
      *
-     * @param BicepsRepository $repository
-     * @param BicepsService    $service
+     * @param BreastRepository $repository
+     * @param BreastService $service
      */
     public function __construct(BreastRepository $repository, BreastService $service)
     {

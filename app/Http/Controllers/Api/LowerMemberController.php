@@ -4,27 +4,23 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Contracts\BicepsRepository;
 use App\Repositories\Contracts\LowerMemberRepository;
-use App\Repositories\Contracts\TricepsRepository;
-use App\Services\BicepsService;
 use App\Services\LowerMemberService;
-use App\Services\TricepsService;
 
 class LowerMemberController extends Controller
 {
 
-    /** @var BicepsRepository */
+    /** @var LowerMemberRepository */
     protected $repository;
 
-    /** @var BicepsService */
+    /** @var LowerMemberService */
     protected $service;
 
     /**
-     * BicepsController constructor.
+     * LowerMemberController constructor.
      *
-     * @param BicepsRepository $repository
-     * @param BicepsService    $service
+     * @param LowerMemberRepository $repository
+     * @param LowerMemberService $service
      */
     public function __construct(LowerMemberRepository $repository, LowerMemberService $service)
     {
