@@ -34,7 +34,7 @@ class ClientCreateRequest extends FormRequest
             'street' => 'required|string|max:191',
             'neighborhood' => 'required|string|max:191',
             'number' => 'required|integer|max:999999',
-            'complement' => 'required|string|max:191',
+            'complement' => 'max:191',
             'zipcode' => 'required|string|max:20',
             'city_id' => 'required|integer|exists:cities,id',
             'company_id' => 'required|string|exists:companies,id',

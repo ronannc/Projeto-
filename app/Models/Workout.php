@@ -22,7 +22,9 @@ class Workout extends Model implements AuditableContract
         'start',
         'next_workout',
         'interval',
-        'goal_id',
+        'goal',
+        'method',
+        'obs',
         'frequency',
         'client_id',
     ];
@@ -37,31 +39,8 @@ class Workout extends Model implements AuditableContract
         return $this->belongsTo(Goal::class);
     }
 
-    public function biceps(){
-        return $this->belongsToMany(Biceps::class, 'biceps_workouts', 'workout_id', 'biceps_id');
-    }
-
-    public function triceps(){
-        return $this->belongsToMany(Triceps::class, 'triceps_workouts', 'workout_id', 'triceps_id');
-    }
-
-    public function back(){
-        return $this->belongsToMany(Back::class, 'back_workouts', 'workout_id', 'back_id');
-    }
-
-    public function breast(){
-        return $this->belongsToMany(Breast::class, 'breast_workouts', 'workout_id', 'breast_id');
-    }
-
-    public function lowerMember(){
-        return $this->belongsToMany(LowerMember::class, 'lower_member_workouts', 'workout_id', 'lower_member_id');
-    }
-
-    public function shoulder(){
-        return $this->belongsToMany(Shoulder::class, 'shoulder_workouts', 'workout_id', 'shoulder_id');
-    }
-
-    public function exercises(){
+    public function exercises()
+    {
         $this['biceps'] = $this->biceps()->get();
         $this['triceps'] = $this->triceps()->get();
         $this['lower_member'] = $this->lowerMember()->get();
@@ -69,5 +48,35 @@ class Workout extends Model implements AuditableContract
         $this['shoulder'] = $this->shoulder()->get();
         $this['back'] = $this->back()->get();
         return $this;
+    }
+
+    public function biceps()
+    {
+        return $this->belongsToMany(Biceps::class, 'biceps_workouts', 'workout_id', 'biceps_id');
+    }
+
+    public function triceps()
+    {
+        return $this->belongsToMany(Triceps::class, 'triceps_workouts', 'workout_id', 'triceps_id');
+    }
+
+    public function lowerMember()
+    {
+        return $this->belongsToMany(LowerMember::class, 'lower_member_workouts', 'workout_id', 'lower_member_id');
+    }
+
+    public function breast()
+    {
+        return $this->belongsToMany(Breast::class, 'breast_workouts', 'workout_id', 'breast_id');
+    }
+
+    public function shoulder()
+    {
+        return $this->belongsToMany(Shoulder::class, 'shoulder_workouts', 'workout_id', 'shoulder_id');
+    }
+
+    public function back()
+    {
+        return $this->belongsToMany(Back::class, 'back_workouts', 'workout_id', 'back_id');
     }
 }

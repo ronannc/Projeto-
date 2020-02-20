@@ -267,39 +267,6 @@ return [
             ],
         ],
 
-        [
-            'text' => 'Métodos de Treino',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'can' => 'list_workout_modes',
-                    'route' => 'workout-modes.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'can' => 'add_workout_modes',
-                    'route' => 'workout-modes.create',
-                ],
-            ],
-        ],
-
-        [
-            'text' => 'Objetivos de Treino',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'can' => 'list_goals',
-                    'route' => 'goals.index',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'can' => 'add_goals',
-                    'route' => 'goals.create',
-                ],
-            ],
-        ],
-
-
         // MENU DE ADMINISTRADORES
 
         [

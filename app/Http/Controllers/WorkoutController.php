@@ -120,7 +120,6 @@ class WorkoutController extends Controller
         }
 
         foreach ($data['lower_member'] as $lower_member) {
-//            dd($lower_member);
             $this->repository->save_lower_member_workout([
                 'workout_id'      => $response['id'],
                 'lower_member_id' => $lower_member,
@@ -171,7 +170,6 @@ class WorkoutController extends Controller
         $data = $request->all();
 
         $process_data = $this->service->process_data($data);
-
 
         foreach ($process_data['triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;

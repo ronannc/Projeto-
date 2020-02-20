@@ -20,8 +20,10 @@
                 @include('components.input_start', ['extraData' => $data])
                 @include('components.input_next_workout', ['extraData' => $data])
                 @include('components.input_interval', ['extraData' => $data])
-                @include('components.select_goal', ['extraData' => $extraData])
                 @include('components.input_frequency', ['extraData' => $data])
+                @include('components.input_goal', ['extraData' => $data])
+                @include('components.input_method', ['extraData' => $data])
+                @include('components.input_obs', ['extraData' => $data])
                 @include('components.select_client')
 
                 <div class="row">
