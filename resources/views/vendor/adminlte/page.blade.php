@@ -128,7 +128,7 @@
 
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Versão</b> @version
+                @version
             </div>
             <strong>Copyright © <?= date('Y') ?> <?= config('app.name') ?>.</strong> Todos direitos reservados.
         </footer>
