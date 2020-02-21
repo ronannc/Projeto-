@@ -128,9 +128,9 @@
 
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Versão</b> 1.0.0
+                <b>Versão</b> @version
             </div>
-            <strong>Copyright © 2019 Virtual Training.</strong> Todos direitos reservados.
+            <strong>Copyright © <?= date('Y') ?> <?= config('app.name') ?>.</strong> Todos direitos reservados.
         </footer>
     </div>
     <!-- ./wrapper -->
