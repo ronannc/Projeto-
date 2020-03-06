@@ -15,9 +15,9 @@ return [
     |
     */
 
-    'title' => 'Virtual Training',
+    'title' => 'SUAT',
 
-    'title_prefix' => 'VT',
+    'title_prefix' => '',
 
     'title_postfix' => '',
 
@@ -32,9 +32,9 @@ return [
     |
     */
 
-    'logo' => '<b>Virtual</b> Training',
+    'logo' => 'SU<b>AT</b>',
 
-    'logo_mini' => '<b>V</b> T',
+    'logo_mini' => 'SU<b>AT</b>',
 
     /*
     |--------------------------------------------------------------------------

@@ -72,16 +72,19 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registrar</a>
-                        @endif
+{{--                        @if (Route::has('register'))--}}
+{{--                            <a href="{{ route('register') }}">Registrar</a>--}}
+{{--                        @endif--}}
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Virtual Training
+                    SUAT
+                </div>
+                <div class="sub">
+                    Sistema Unificado de Avaliação e Treino
                 </div>
                 @include('components.status')
 
