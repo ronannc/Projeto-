@@ -95,9 +95,10 @@ class ClientController extends Controller
      */
     public function show(Client $client, WorkoutDataTable $dataTable)
     {
-        $workout = $client->workout();
-        return $dataTable->with('data', $workout)->render('layouts.clients.show', compact('workout'),
-            compact('client'));
+        $data['client'] = $client;
+        $data['workout'] = $client->workout();
+        $data['physicalAssessments'] = $client->physicalAssessment()->last();
+        return $dataTable->with('data', $data['workout'])->render('layouts.clients.show', compact('data'));
     }
 
     /**

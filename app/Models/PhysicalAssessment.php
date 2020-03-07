@@ -36,6 +36,8 @@ class PhysicalAssessment extends Model implements AuditableContract
         'weight',
         'height',
         'blood_pressure',
+        'imc',
+        'date',
         'client_id'
     ];
 

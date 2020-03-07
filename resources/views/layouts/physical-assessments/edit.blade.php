@@ -16,6 +16,7 @@
             @csrf
             {{ method_field('PUT') }}
             <div class="box-body">
+                @include('components.input_date')
                 @include('components.input_neck', ['data' => $data])
                 @include('components.input_shoulder', ['data' => $data])
                 @include('components.input_chest', ['data' => $data])

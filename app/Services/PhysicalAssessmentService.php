@@ -24,6 +24,7 @@ class PhysicalAssessmentService
     public function store(array $data)
     {
         try {
+            $data['imc'] = $data['weight'] / ($data['height'] * $data['height']) ;
             return $this->repository->store($data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
@@ -40,6 +41,7 @@ class PhysicalAssessmentService
         $model = $this->repository->findOneById($id);
 
         try {
+            $data['imc'] = $data['weight'] / ($data['height'] * $data['height']) ;
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
