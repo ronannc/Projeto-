@@ -42,6 +42,7 @@
 
     </div>
 
+    @if(isset($physicalAssessments['date']))
     <div class="box box-info">
         <div class="box-header">
             <h3 class="box-title">Avaliação Física</h3>
@@ -68,7 +69,7 @@
             </div>
         </div>
     </div>
-
+    @endif
     <div class="box box-info">
         <div class="box-header">
             <h3 class="box-title">Listagem de Treinos</h3>
