@@ -29,7 +29,6 @@ class WorkoutCreateRequest extends FormRequest
             'next_workout' => 'required|date',
             'interval' => 'required|string|max:191',
             'frequency' => 'required|string|max:191',
-            'goal_id' => 'required|string|exists:goals,id',
             'client_id' => 'required|string|exists:clients,id',
             'triceps' => 'required|array|min:1',
             'biceps'  => 'required|array|min:1',
