@@ -1,5 +1,6 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
+@section('content')
+    <p>You are logged in!</p>
+@stop
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')

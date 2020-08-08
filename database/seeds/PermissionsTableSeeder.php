@@ -12,8 +12,6 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        app('cache')->forget('spatie.permission.cache');
-
         # Users
         Permission::create(['name' => 'add_users']);
         Permission::create(['name' => 'edit_users']);

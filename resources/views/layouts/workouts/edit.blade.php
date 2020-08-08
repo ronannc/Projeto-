@@ -256,6 +256,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4">
+
+                    @include('components.checkbox_workout')
+                    @include('components.input_porcentagem')
+                    </div>
                 </div>
             </div>
             <!-- /.box-body -->

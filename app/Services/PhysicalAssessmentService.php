@@ -25,6 +25,8 @@ class PhysicalAssessmentService
     {
         try {
             $data['imc'] = $data['weight'] / ($data['height'] * $data['height']) ;
+            $data['height'] = $data['height'] / 100;
+            $data['weight'] = $data['weight'] / 100;
             return $this->repository->store($data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
@@ -42,6 +44,8 @@ class PhysicalAssessmentService
 
         try {
             $data['imc'] = $data['weight'] / ($data['height'] * $data['height']) ;
+            $data['height'] = $data['height'] / 100;
+            $data['weight'] = $data['weight'] / 100;
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));

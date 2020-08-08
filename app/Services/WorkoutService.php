@@ -73,7 +73,7 @@ class WorkoutService
         try {
             return $model->delete();
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+
             Log::error(Notify::log($exception));
 
             return [
@@ -83,10 +83,16 @@ class WorkoutService
         }
     }
 
-    public function process_data($data, $formula_workout = false)
+    public function process_data($data)
     {
-        if ($formula_workout) {
-            $cliente = Client::find($data['formula_workout']['client_ide']);
+        $physical_assessments = collect();
+        if (isset($data['formula'])) {
+            $physical_assessments = Client::find($data['client_id'])->physicalAssessment;
+            if($physical_assessments->count() > 0){
+                $physical_assessments = $physical_assessments->last();
+            }else{
+                session()->flash('warning', 'Para calculo de carga ideal, é necessario cadastrar uma avaliação fisica');
+            }
         }
         //tem que receber o peso do client para calcular a carga segundo a formula
         $collect = array();
@@ -94,12 +100,12 @@ class WorkoutService
             $aux_key = explode('_', $key);
             if (count($aux_key) == 3) {
                 $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
-                if ($formula_workout) {
+                if (isset($data['formula']) && $physical_assessments->count() > 0) {
                     if ($aux_key[0] == "load") {
                         $rep = $collect[$aux_key[1]][$aux_key[2]]['repetition'];
                         $kg = $collect[$aux_key[1]][$aux_key[2]]['load'];
-                        $collect[$aux_key[1]][$aux_key[2]]['load'] = $this->formula($kg, $rep, $cliente['peso'],
-                            $data['formula_workout']['porcentagem']);
+                        $collect[$aux_key[1]][$aux_key[2]]['load'] = $this->formula($kg, $rep, $physical_assessments['weight'],
+                            $data['porcentagem']);
                     }
                 }
             }

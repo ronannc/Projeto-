@@ -27,7 +27,7 @@ class ClientCreateRequest extends FormRequest
         return [
             'name' => 'string|required|max:191',
             'cpf' => 'string|required|max:191',
-            'sex' => 'string|required|max:1',
+            'sex' => 'string|required',
             'blood_type' =>'required|in:A+,B+,O+,A-,B-,O-,AB+,AB-',
             'phone' =>'required|string|max:191',
             'birthday' => 'required|date',

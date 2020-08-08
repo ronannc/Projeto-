@@ -80,7 +80,7 @@ class Client extends Model implements AuditableContract
 
     public function physicalAssessment()
     {
-        return PhysicalAssessment::where('client_id', $this->id)->with('client')->get();
+        return $this->hasMany(PhysicalAssessment::class);
     }
 
     public function city()

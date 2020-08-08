@@ -20,7 +20,9 @@
                     <li>Início <span class="pull-right">{{date('d/m/Y', strtotime($data['start']))}}</span></li>
                     <li>Próxima Ficha <span class="pull-right">{{date('d/m/Y', strtotime($data['next_workout']))}}</span></li>
                     <li>Intervalo<span class="pull-right">{{$data['interval']}}</span></li>
-                    <li>Método<span class="pull-right">{{$data->goal->description}}</span></li>
+                    <li>Objetivo<span class="pull-right">{{$data['goal']}}</span></li>
+                    <li>Metodo<span class="pull-right">{{$data['method']}}</span></li>
+                    <li>Observações<span class="pull-right">{{$data['obs']}}</span></li>
                     <li>Frequência<span class="pull-right">{{$data['frequency']}}</span></li>
                     <li>Cliente<span class="pull-right">{{$data->client->name}}</span></li>
                 </ul>

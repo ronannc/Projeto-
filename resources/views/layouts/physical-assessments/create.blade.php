@@ -13,7 +13,7 @@
         <form action="{{route('physical-assessments.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('components.input_date)
+                @include('components.input_date')
                 @include('components.input_neck')
                 @include('components.input_shoulder')
                 @include('components.input_chest')

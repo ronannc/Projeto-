@@ -102,6 +102,8 @@ class PhysicalAssessmentController extends Controller
     public function edit($id)
     {
         $model = $this->repository->findOneById($id);
+        $model['height'] = $model['height'] * 100;
+        $model['weight'] = $model['weight'] * 100;
         $extraData = $this->repository->getExtraData();
 
         return view('layouts.physical-assessments.edit', compact('model'), compact('extraData'));

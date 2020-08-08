@@ -13,6 +13,7 @@ use App\Models\TricepsWorkout;
 use App\Models\Workout;
 use App\Repositories\Contracts\ClientRepository;
 use App\Support\BloodType;
+use App\Support\Sex;
 use Illuminate\Support\Facades\Auth;
 
 class EloquentClientRepository extends AbstractEloquentRepository implements ClientRepository
@@ -27,6 +28,7 @@ class EloquentClientRepository extends AbstractEloquentRepository implements Cli
         }
         $extraData['city'] = City::all();
         $extraData['blood_type'] = BloodType::NAMES;
+        $extraData['sex'] = Sex::NAMES;
 
         return $extraData;
     }

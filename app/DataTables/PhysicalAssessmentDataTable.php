@@ -19,6 +19,12 @@ class PhysicalAssessmentDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
+            ->editColumn('height', function(PhysicalAssessment $model){
+                return $model['height'] * 100;
+            })
+            ->editColumn('weight', function(PhysicalAssessment $model){
+                return $model['weight'] * 100;
+            })
             ->editColumn('actions', function (PhysicalAssessment $model) {
 
                 return '<a title="Editar"  style="color: #000000" href="' . route('physical-assessments.edit',

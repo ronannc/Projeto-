@@ -43,7 +43,6 @@ class HomeController extends Controller
     public function dashboard(){
 
         $user = Auth::user();
-
         if($user->isManager()){
             $extraData['company'] = $user->company;
             $extraData['users'] = $extraData['company']->managers;

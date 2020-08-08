@@ -97,7 +97,7 @@ class ClientController extends Controller
     {
         $data['client'] = $client;
         $data['workout'] = $client->workout();
-        $data['physicalAssessments'] = $client->physicalAssessment()->last();
+        $data['physicalAssessments'] = $client->physicalAssessment->last();
         return $dataTable->with('data', $data['workout'])->render('layouts.clients.show', compact('data'));
     }
 

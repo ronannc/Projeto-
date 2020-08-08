@@ -16,30 +16,30 @@ class WorkoutDataTable extends DataTable
      *
      * @return DataTableAbstract
      */
-    public function dataTable($query)
+    public function dataTable( $query )
     {
-        return datatables($query)
-            ->editColumn('start', function (Workout $model) {
-                return date('d/m/Y', strtotime($model['start']));
-            })
-            ->editColumn('next_workout', function (Workout $model) {
-                return date('d/m/Y', strtotime($model['next_workout']));
-            })
-            ->editColumn('actions', function (Workout $model) {
+        return datatables( $query )
+            ->editColumn( 'start', function ( Workout $model ) {
+                return date( 'd/m/Y', strtotime( $model[ 'start' ] ) );
+            } )
+            ->editColumn( 'next_workout', function ( Workout $model ) {
+                return date( 'd/m/Y', strtotime( $model[ 'next_workout' ] ) );
+            } )
+            ->editColumn( 'actions', function ( Workout $model ) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route('workouts.show',
-                        $model) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route('workouts.edit',
-                        $model) . '"><i class="fa fa-edit"></i></a>' .
+                return '<a title="Visualizar"  style="color: #000000" href="' . route( 'workouts.show',
+                        $model ) . '"><i class="fa fa-eye"></i></a>' .
+                    '<a title="Editar"  style="color: #000000" href="' . route( 'workouts.edit',
+                        $model ) . '"><i class="fa fa-edit"></i></a>' .
                     '<a title="Deletar" href=""
-           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model['id'] . '\').submit();}">Excluir</a>
-        <form id="form-delete' . $model['id'] . '" style="display:none" action="' . route('workouts.destroy',
-                        $model) . '" method="post">' .
+           onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model[ 'id' ] . '\').submit();}">Excluir</a>
+        <form id="form-delete' . $model[ 'id' ] . '" style="display:none" action="' . route( 'workouts.destroy',
+                        $model ) . '" method="post">' .
                     csrf_field() .
-                    method_field('DELETE') . '
+                    method_field( 'DELETE' ) . '
         </form>';
 
-            })->escapeColumns([0]);
+            } )->escapeColumns( [ 0 ] );
     }
 
     /**
@@ -49,20 +49,19 @@ class WorkoutDataTable extends DataTable
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Workout $model)
+    public function query( Workout $model )
     {
         $data = $this->data;
-        if(isset($data)){
+        if ( isset( $data ) ) {
             return $data;
         }
         return $model
             ->newQuery()
-            ->has('client')
-            ->with([
-                'client',
-                'goal'
-            ])
-            ->orderByDesc('created_at');
+            ->has( 'client' )
+            ->with( [
+                'client'
+            ] )
+            ->orderByDesc( 'created_at' );
     }
 
     /**
@@ -73,18 +72,18 @@ class WorkoutDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->columns($this->getColumns())
-            ->setTableAttributes([
+            ->columns( $this->getColumns() )
+            ->setTableAttributes( [
                 'class' => 'table table-responsive table-full-width table-bordered table-striped table-hover nowrap',
                 'style' => 'width: 100%'
-            ])
-            ->parameters($this->getBuilderParameters())->parameters([
+            ] )
+            ->parameters( $this->getBuilderParameters() )->parameters( [
                 'dom'        => '<"row" <"col-sm-6" l> <"col-sm-6" f>> <"row" <"col-sm-12" t>> r <"row" <"col-sm-6" i> <"col-sm-6" p>>',
                 'pageLength' => 10,
                 'responsive' => true,
-                'scrollX' => true,
-                'language'   => ['url' => '/datatable/portuguese-brasil.json'],
-            ]);
+                'scrollX'    => true,
+                'language'   => [ 'url' => '/datatable/portuguese-brasil.json' ],
+            ] );
     }
 
     /**
@@ -95,13 +94,13 @@ class WorkoutDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'start'            => ['title' => 'Início'],
-            'next_workout'     => ['title' => 'Próximo Treino'],
-            'goal.description' => ['title' => 'Objetivo'],
-            'interval'         => ['title' => 'Intervalo'],
-            'frequency'        => ['title' => 'Frequência'],
-            'client.name'      => ['title' => 'Cliente'],
-            'actions'          => [
+            'start'        => [ 'title' => 'Início' ],
+            'next_workout' => [ 'title' => 'Próximo Treino' ],
+            'goal'         => [ 'title' => 'Objetivo' ],
+            'interval'     => [ 'title' => 'Intervalo' ],
+            'frequency'    => [ 'title' => 'Frequência' ],
+            'client.name'  => [ 'title' => 'Cliente' ],
+            'actions'      => [
                 'title'      => 'Ações',
                 'orderable'  => false,
                 'searchable' => false,
@@ -118,6 +117,6 @@ class WorkoutDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Workout_' . date('YmdHis');
+        return 'Workout_' . date( 'YmdHis' );
     }
 }

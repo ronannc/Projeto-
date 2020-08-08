@@ -39,7 +39,7 @@ class PhysicalAssessmentCreateRequest extends FormRequest
             'left_thigh' => 'integer|required|min:1|max:9999999',
             'right_calf' => 'integer|required|min:1|max:9999999',
             'left_calf' => 'integer|required|min:1|max:9999999',
-            'height' => 'numeric|required|min:1|max:5',
+            'height' => 'numeric|required|min:1|max:300',
             'weight' => 'numeric|required|min:1|max:500',
             'blood_pressure' => 'string|required'
         ];
