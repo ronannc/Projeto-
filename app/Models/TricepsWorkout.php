@@ -28,4 +28,8 @@ class TricepsWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function triceps(){
+        return $this->hasOne(Triceps::class, 'id', 'triceps_id');
+    }
 }

@@ -28,4 +28,8 @@ class ShoulderWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function shoulder(){
+        return $this->hasOne(Shoulder::class, 'id', 'shoulder_id');
+    }
 }

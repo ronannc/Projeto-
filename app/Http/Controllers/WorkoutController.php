@@ -171,37 +171,37 @@ class WorkoutController extends Controller
 
         $process_data = $this->service->process_data($data);
 
-        foreach ($process_data['triceps'] as $key => $triceps) {
+        foreach ($process_data['Triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;
             $triceps['workout_id'] = $workout['id'];
             $this->repository->update_triceps_Workout($triceps);
         }
 
-        foreach ($process_data['biceps'] as $key => $biceps) {
+        foreach ($process_data['Biceps'] as $key => $biceps) {
             $biceps['biceps_id'] = $key;
             $biceps['workout_id'] = $workout['id'];
             $this->repository->update_biceps_Workout($biceps);
         }
 
-        foreach ($process_data['back'] as $key => $back) {
+        foreach ($process_data['Costas'] as $key => $back) {
             $back['back_id'] = $key;
             $back['workout_id'] = $workout['id'];
             $this->repository->update_back_Workout($back);
         }
 
-        foreach ($process_data['breast'] as $key => $breast) {
+        foreach ($process_data['Peito'] as $key => $breast) {
             $breast['breast_id'] = $key;
             $breast['workout_id'] = $workout['id'];
             $this->repository->update_breast_Workout($breast);
         }
 
-        foreach ($process_data['shoulder'] as $key => $shoulder) {
+        foreach ($process_data['Ombros'] as $key => $shoulder) {
             $shoulder['shoulder_id'] = $key;
             $shoulder['workout_id'] = $workout['id'];
             $this->repository->update_shoulder_Workout($shoulder);
         }
 
-        foreach ($process_data['inferior'] as $key => $inferior) {
+        foreach ($process_data['Membros-Inferiores'] as $key => $inferior) {
             $inferior['lower_member_id'] = $key;
             $inferior['workout_id'] = $workout['id'];
             $this->repository->update_lower_member_Workout($inferior);

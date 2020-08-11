@@ -28,4 +28,8 @@ class LowerMemberWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function lowerMember(){
+        return $this->hasOne(LowerMember::class, 'id', 'lower_member_id');
+    }
 }

@@ -26,249 +26,70 @@
                 @include('components.input_obs', ['extraData' => $data])
                 @include('components.select_client')
 
-                <div class="row">
-                    <div class="col-sm-4">
+                @foreach($data['workout'] as $group => $groupWorkout)
+                    <div class="col-12">
                         <div class="box box-primary">
                             <div class="box-header">
-                                <h3 class="box-title">Triceps</h3>
+                                <h3 class="box-title">Agrupamento {{$group}}</h3>
                             </div>
                             <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['triceps_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_triceps_{{$exercicioTreino['triceps_id']}}"
-                                                       type="text" value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\Triceps::find($exercicioTreino['triceps_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_triceps_{{$exercicioTreino['triceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_triceps_{{$exercicioTreino['triceps_id']}}"
-                                                       type="text" value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_triceps_{{$exercicioTreino['triceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
+                                <div class="row">
+                                    @foreach($groupWorkout->groupBy('type') as $type => $exercicios)
+                                        <div class="col-md-6">
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">{{$type}}</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                        <tr>
+                                                            <th>Grupo</th>
+                                                            <th>Exercício</th>
+                                                            <th>Serie</th>
+                                                            <th>Rep</th>
+                                                            <th>Kg</th>
+                                                        </tr>
+                                                        @foreach($exercicios as $exercicioTreino)
+                                                            <tr>
+                                                            <tr>
+                                                                <td><input class="form-control"
+                                                                           name="group_{{$type}}_{{$exercicioTreino['id']}}"
+                                                                           type="text" value="{{$exercicioTreino['group'] ?? ''}}"></td>
+                                                                <td style="width: 180px">{{$exercicioTreino['description'] ?? ''}}</td>
+                                                                <td><input class="form-control"
+                                                                           name="repetition_{{$type}}_{{$exercicioTreino['id']}}" type="text"
+                                                                           value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
+                                                                <td><input class="form-control"
+                                                                           name="series_{{$type}}_{{$exercicioTreino['id']}}"
+                                                                           type="text" value="{{$exercicioTreino['series'] ?? ''}}"></td>
+                                                                <td><input class="form-control"
+                                                                           name="load_{{$type}}_{{$exercicioTreino['id']}}" type="text"
+                                                                           value="{{$exercicioTreino['load'] ?? ''}}"></td>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
-                                    </tbody>
-                                </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+                @endforeach
 
-                    <div class="col-sm-4">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Biceps</h3>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['biceps_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_biceps_{{$exercicioTreino['biceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\Biceps::find($exercicioTreino['biceps_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_biceps_{{$exercicioTreino['biceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_biceps_{{$exercicioTreino['biceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_biceps_{{$exercicioTreino['biceps_id']}}" type="text"
-                                                       value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-4">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Peitoral</h3>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['breast_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_breast_{{$exercicioTreino['breast_id']}}" type="text"
-                                                       value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\Breast::find($exercicioTreino['breast_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_breast_{{$exercicioTreino['breast_id']}}" type="text"
-                                                       value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_breast_{{$exercicioTreino['breast_id']}}" type="text"
-                                                       value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_breast_{{$exercicioTreino['breast_id']}}" type="text"
-                                                       value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+                <div class="col-sm-4">
 
-                    <div class="col-sm-4">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Costa</h3>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['back_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_back_{{$exercicioTreino['back_id']}}" type="text"
-                                                       value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\Back::find($exercicioTreino['back_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_back_{{$exercicioTreino['back_id']}}" type="text"
-                                                       value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_back_{{$exercicioTreino['back_id']}}" type="text"
-                                                       value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_back_{{$exercicioTreino['back_id']}}" type="text"
-                                                       value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Ombro</h3>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['shoulder_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_shoulder_{{$exercicioTreino['shoulder_id']}}"
-                                                       type="text" value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\Shoulder::find($exercicioTreino['shoulder_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_shoulder_{{$exercicioTreino['shoulder_id']}}"
-                                                       type="text" value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_shoulder_{{$exercicioTreino['shoulder_id']}}"
-                                                       type="text" value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_shoulder_{{$exercicioTreino['shoulder_id']}}"
-                                                       type="text" value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <h3 class="box-title">Membro Inferior</h3>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Exercício</th>
-                                        <th>Rep</th>
-                                        <th>Serie</th>
-                                        <th>Kg</th>
-                                    </tr>
-                                    @foreach($data['lower_member_workout'] as $exercicioTreino)
-                                        <tr>
-                                            <td><input class="form-control"
-                                                       name="group_inferior_{{$exercicioTreino['lower_member_id']}}"
-                                                       type="text" value="{{$exercicioTreino['group'] ?? ''}}"></td>
-                                            <td style="width: 180px">{{ \App\Models\LowerMember::find($exercicioTreino['lower_member_id'])['exercise']}}</td>
-                                            <td><input class="form-control"
-                                                       name="repetition_inferior_{{$exercicioTreino['lower_member_id']}}"
-                                                       type="text" value="{{$exercicioTreino['repetition'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="series_inferior_{{$exercicioTreino['lower_member_id']}}"
-                                                       type="text" value="{{$exercicioTreino['series'] ?? ''}}"></td>
-                                            <td><input class="form-control"
-                                                       name="load_inferior_{{$exercicioTreino['lower_member_id']}}"
-                                                       type="text" value="{{$exercicioTreino['load'] ?? ''}}"></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-
-                    @include('components.checkbox_workout')
-                    @include('components.input_porcentagem')
-                    </div>
+                @include('components.checkbox_workout')
+                @include('components.input_porcentagem')
                 </div>
             </div>
-            <!-- /.box-body -->
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>
                 <button type="submit" class="btn btn-info pull-right">Editar</button>
             </div>
-            <!-- /.box-footer -->
         </form>
     </div>
 @stop

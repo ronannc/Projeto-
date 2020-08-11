@@ -28,4 +28,8 @@ class BackWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function back(){
+        return $this->hasOne(Back::class, 'id', 'back_id');
+    }
 }

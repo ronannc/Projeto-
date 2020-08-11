@@ -28,4 +28,8 @@ class BreastWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function breast(){
+        return $this->hasOne(Breast::class, 'id', 'breast_id');
+    }
 }

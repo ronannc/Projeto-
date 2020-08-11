@@ -28,4 +28,8 @@ class BicepsWorkout extends Model implements AuditableContract
         'repetition',
         'group'
     ];
+
+    public function biceps(){
+        return $this->hasOne(Biceps::class, 'id', 'biceps_id');
+    }
 }

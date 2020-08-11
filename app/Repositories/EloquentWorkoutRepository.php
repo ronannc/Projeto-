@@ -24,12 +24,44 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     public function getExerciciosTreino($id)
     {
         $data = $this->with([])->findOneById($id);
-        $data['triceps_workout'] = TricepsWorkout::with([])->where('workout_id', $data['id'])->get();
-        $data['biceps_workout'] = BicepsWorkout::with([])->where('workout_id', $data['id'])->get();
-        $data['back_workout'] = BackWorkout::with([])->where('workout_id', $data['id'])->get();
-        $data['shoulder_workout'] = ShoulderWorkout::with([])->where('workout_id', $data['id'])->get();
-        $data['breast_workout'] = BreastWorkout::with([])->where('workout_id', $data['id'])->get();
-        $data['lower_member_workout'] = LowerMemberWorkout::with([])->where('workout_id', $data['id'])->get();
+        $data['workout'] = collect();
+        foreach (TricepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Triceps';
+            $exercicio['description'] = $exercicio->triceps['exercise'];
+            $exercicio['id'] = $exercicio['triceps_id'];
+            $data['workout']->push($exercicio);
+        }
+        foreach (BicepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Biceps';
+            $exercicio['description'] = $exercicio->biceps['exercise'];
+            $exercicio['id'] = $exercicio['biceps_id'];
+            $data['workout']->push($exercicio);
+        }
+        foreach (BackWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Costas';
+            $exercicio['description'] = $exercicio->back['exercise'];
+            $exercicio['id'] = $exercicio['back_id'];
+            $data['workout']->push($exercicio);
+        }
+        foreach (ShoulderWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Ombros';
+            $exercicio['description'] = $exercicio->shoulder['exercise'];
+            $exercicio['id'] = $exercicio['shoulder_id'];
+            $data['workout']->push($exercicio);
+        }
+        foreach (BreastWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Peito';
+            $exercicio['description'] = $exercicio->breast['exercise'];
+            $exercicio['id'] = $exercicio['breast_id'];
+            $data['workout']->push($exercicio);
+        }
+        foreach (LowerMemberWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+            $exercicio['type'] = 'Membros-Inferiores';
+            $exercicio['description'] = $exercicio->lowerMember['exercise'];
+            $exercicio['id'] = $exercicio['lower_member_id'];
+            $data['workout']->push($exercicio);
+        }
+        $data['workout'] = $data['workout']->groupBy('group');
         return $data;
     }
 
