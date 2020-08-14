@@ -35,39 +35,26 @@
                     <h3 class="box-title">Agrupamento {{$group}}</h3>
                 </div>
                 <div class="box-body">
-                    <div class="row">
-                        @foreach($groupWorkout->groupBy('type') as $type => $exercicios)
-                            <div class="col-md-6">
-                                <div class="box box-primary">
-                                    <div class="box-header">
-                                        <h3 class="box-title">{{$type}}</h3>
-                                    </div>
-                                    <div class="box-body">
-                                        <table class="table table-striped">
-                                            <tbody>
-                                            <tr>
-                                                <th>Grupo</th>
-                                                <th>Exercício</th>
-                                                <th>Serie</th>
-                                                <th>Rep</th>
-                                                <th>Kg</th>
-                                            </tr>
-                                            @foreach($exercicios as $exercicioTreino)
-                                                <tr>
-                                                    <td>{{$exercicioTreino['group'] ?? ''}}</td>
-                                                    <td style="width: 150px">{{$exercicioTreino['description'] ?? ''}}</td>
-                                                    <td>{{$exercicioTreino['series'] ?? ''}}</td>
-                                                    <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
-                                                    <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Grupo</th>
+                                <th>Exercício</th>
+                                <th>Serie</th>
+                                <th>Rep</th>
+                                <th>Kg</th>
+                            </tr>
+                            @foreach($groupWorkout as $exercicioTreino)
+                                <tr>
+                                    <td>{{$exercicioTreino['group'] ?? ''}}</td>
+                                    <td style="width: 150px">{{$exercicioTreino['description'] ?? ''}}</td>
+                                    <td>{{$exercicioTreino['series'] ?? ''}}</td>
+                                    <td>{{$exercicioTreino['repetition'] ?? ''}}</td>
+                                    <td>{{number_format($exercicioTreino['load'] ?? 0, 0)}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

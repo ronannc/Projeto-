@@ -170,7 +170,6 @@ class WorkoutController extends Controller
         $data = $request->all();
 
         $process_data = $this->service->process_data($data);
-
         foreach ($process_data['Triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;
             $triceps['workout_id'] = $workout['id'];
