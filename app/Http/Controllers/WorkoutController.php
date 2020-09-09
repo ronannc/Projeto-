@@ -7,9 +7,9 @@ use App\Http\Requests\WorkoutCreateRequest;
 use App\Http\Requests\WorkoutUpdateRequest;
 use App\Models\User;
 use App\Models\Workout;
-use App\Models\WorkoutMode;
 use App\Repositories\Contracts\WorkoutRepository;
 use App\Services\WorkoutService;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class WorkoutController extends Controller
@@ -70,64 +70,15 @@ class WorkoutController extends Controller
      */
     public function store(WorkoutCreateRequest $request)
     {
-        $data = $request->all();
-
-        $response = $this->service->store($data);
+        $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
         }
 
-        foreach ($data['triceps'] as $triceps) {
-            $this->repository->save_triceps_workout([
-                'workout_id'      => $response['id'],
-                'triceps_id'      => $triceps,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
-
-        foreach ($data['biceps'] as $biceps) {
-            $this->repository->save_biceps_workout([
-                'workout_id'      => $response['id'],
-                'biceps_id'       => $biceps,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
-
-        foreach ($data['back'] as $back) {
-            $this->repository->save_back_workout([
-                'workout_id'      => $response['id'],
-                'back_id'         => $back,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
-
-        foreach ($data['shoulder'] as $shoulder) {
-            $this->repository->save_shoulder_workout([
-                'workout_id'      => $response['id'],
-                'shoulder_id'     => $shoulder,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
-
-        foreach ($data['breast'] as $breast) {
-            $this->repository->save_breast_workout([
-                'workout_id'      => $response['id'],
-                'breast_id'       => $breast,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
-
-        foreach ($data['lower_member'] as $lower_member) {
-            $this->repository->save_lower_member_workout([
-                'workout_id'      => $response['id'],
-                'lower_member_id' => $lower_member,
-                'workout_mode_id' => WorkoutMode::query()->first()['id']
-            ]);
-        }
         session()->flash('status', 'Adicionado com sucesso !');
-        return redirect(route('workouts.edit', $response));
+        return redirect(route('workouts.index'));
     }
 
     /**
@@ -168,7 +119,6 @@ class WorkoutController extends Controller
     public function update(WorkoutUpdateRequest $request, Workout $workout)
     {
         $data = $request->all();
-
         $process_data = $this->service->process_data($data);
         foreach ($process_data['Triceps'] as $key => $triceps) {
             $triceps['triceps_id'] = $key;
@@ -206,9 +156,7 @@ class WorkoutController extends Controller
             $this->repository->update_lower_member_Workout($inferior);
         }
 
-
         $response = $this->service->update($data, $workout->id);
-
         if (!empty($response['error'])) {
             session()->flash('error', $response['message']);
             return back()->withInput();
@@ -216,6 +164,17 @@ class WorkoutController extends Controller
         session()->flash('success', 'Atualizado com sucesso!');
 
         return redirect()->route('workouts.index');
+    }
+
+    public function editExercicio($workout_id){
+        $extraData = $this->repository->getExtraData();
+        $workout = $this->repository->findOneById($workout_id)->exercises();
+        return view('layouts.workouts.editExercicio', compact('workout'), compact('extraData'));
+    }
+
+    public function editExercicioStore(Request $request, $id){
+        $this->service->syncExcercrio($request->all(), $id);
+        return redirect(route('workouts.index'));
     }
 
     /**

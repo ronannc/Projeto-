@@ -18,20 +18,25 @@ use Illuminate\Support\Facades\Log;
 class WorkoutService
 {
     protected $repository;
+    protected $utils;
 
     /**
-     * StationService constructor.
+     * WorkoutService constructor.
      *
-     * @param $repository
+     * @param WorkoutRepository $repository
+     * @param UtilsService $utils
      */
-    public function __construct(WorkoutRepository $repository)
+    public function __construct(WorkoutRepository $repository, UtilsService $utils)
     {
         $this->repository = $repository;
+        $this->utils = $utils;
     }
 
     public function store(array $data)
     {
         try {
+            $data['start'] = $this->utils->formatDateYMD($data['start']);
+            $data['next_workout'] = $this->utils->formatDateYMD($data['next_workout']);
             return $this->repository->store($data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
@@ -50,7 +55,6 @@ class WorkoutService
             return $this->repository->update($model, $data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));
-
 
             return [
                 'error'   => true,
@@ -127,6 +131,16 @@ class WorkoutService
     public function workouts($client_id)
     {
         return $this->repository->workouts($client_id);
+    }
+
+    public function syncExcercrio($data, $id){
+        $workout = $this->repository->findOneById($id);
+        $workout->biceps()->sync($data['biceps']);
+        $workout->triceps()->sync($data['triceps']);
+        $workout->lowerMember()->sync($data['lower_member']);
+        $workout->back()->sync($data['back']);
+        $workout->shoulder()->sync($data['shoulder']);
+        $workout->breast()->sync($data['breast']);
     }
 
 }

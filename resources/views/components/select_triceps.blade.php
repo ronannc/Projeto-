@@ -8,11 +8,19 @@
 ?>
 
 <div class="form-group">
-    <label for="select_triceps">Triceps</label>
-    <select class="multiple" data-placeholder="Selecione os exercícios de Triceps" name="triceps[]" multiple="multiple"
+    <label for="triceps">Triceps</label>
+    <select class="multiple" data-placeholder="Selecione os exercícios de Triceps" name="triceps[]" id="triceps" multiple="multiple"
             style="width: 100%">
         @foreach($extraData['triceps'] as $triceps)
-            <option value="{{$triceps['id']}}">{{$triceps['exercise']}}</option>
+            @if(isset($data['triceps']))
+                @if($data['triceps']->contains($triceps['id']))
+                    <option value="{{$triceps['id']}}" selected>{{$triceps['exercise']}}</option>
+                @else
+                    <option value="{{$triceps['id']}}">{{$triceps['exercise']}}</option>
+                @endif
+            @else
+                <option value="{{$triceps['id']}}">{{$triceps['exercise']}}</option>
+            @endif
         @endforeach
     </select>
 </div>

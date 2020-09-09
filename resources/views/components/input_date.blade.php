@@ -9,3 +9,4 @@
            value ="{{ old('date') ?? $data['date'] ?? null }}"
     >
 </div>
+

@@ -12,7 +12,15 @@
     <select class="multiple" data-placeholder="Selecione os exercícios de costas" name="back[]" multiple="multiple"
             style="width: 100%">
         @foreach($extraData['back'] as $back)
-            <option value="{{$back['id']}}">{{$back['exercise']}}</option>
+            @if(isset($data['back']))
+                @if($data['back']->contains($back['id']))
+                    <option value="{{$back['id']}}" selected>{{$back['exercise']}}</option>
+                @else
+                    <option value="{{$back['id']}}">{{$back['exercise']}}</option>
+                @endif
+            @else
+                <option value="{{$back['id']}}">{{$back['exercise']}}</option>
+            @endif
         @endforeach
     </select>
 </div>

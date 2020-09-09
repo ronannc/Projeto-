@@ -68,10 +68,6 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-sm-4">
-                    @include('components.checkbox_workout')
-                    @include('components.input_porcentagem')
-                </div>
             </div>
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>

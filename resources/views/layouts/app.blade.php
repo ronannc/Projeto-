@@ -79,7 +79,7 @@
             @yield('content')
         </main>
     </div>
-
+    <script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     @yield('js')
 
 </body>

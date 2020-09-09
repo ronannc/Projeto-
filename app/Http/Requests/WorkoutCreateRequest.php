@@ -25,17 +25,11 @@ class WorkoutCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'start' => 'required|date',
-            'next_workout' => 'required|date',
+            'start' => 'required',
+            'next_workout' => 'required',
             'interval' => 'required|string|max:191',
             'frequency' => 'required|string|max:191',
             'client_id' => 'required|string|exists:clients,id',
-            'triceps' => 'required|array|min:1',
-            'biceps'  => 'required|array|min:1',
-            'back' => 'required|array|min:1',
-            'shoulder' => 'required|array|min:1',
-            'breast'=> 'required|array|min:1',
-            'lower_member' => 'required|array|min:1',
         ];
     }
 }

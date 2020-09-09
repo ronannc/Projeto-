@@ -27,11 +27,13 @@ class WorkoutDataTable extends DataTable
             } )
             ->editColumn( 'actions', function ( Workout $model ) {
 
-                return '<a title="Visualizar"  style="color: #000000" href="' . route( 'workouts.show',
-                        $model ) . '"><i class="fa fa-eye"></i></a>' .
-                    '<a title="Editar"  style="color: #000000" href="' . route( 'workouts.edit',
-                        $model ) . '"><i class="fa fa-edit"></i></a>' .
-                    '<a title="Deletar" href=""
+                return '<a class="btn btn-info" role="button" title="Visualizar" href="' . route( 'workouts.show',
+                        $model ) . '"><i class="fa fa-eye"></i>Visualizar</a>' .
+                    '<a class="btn btn-primary" title="Editar" href="' . route( 'workouts.edit',
+                        $model ) . '"><i class="fa fa-edit">Editar</i></a>' .
+                    '<a class="btn btn-primary" title="Editar Exercicio"  href="' . route( 'editExercicio',
+                        $model ) . '"><i class="fa fa-edit"></i>Editar Exercicio</a>'.
+                    '<a class="btn btn-danger" title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model[ 'id' ] . '\').submit();}">Excluir</a>
         <form id="form-delete' . $model[ 'id' ] . '" style="display:none" action="' . route( 'workouts.destroy',
                         $model ) . '" method="post">' .

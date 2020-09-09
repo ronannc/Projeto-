@@ -14,7 +14,6 @@ class CreateShoulderWorkoutsTable extends Migration
     public function up()
     {
         Schema::create('shoulder_workouts', function (Blueprint $table) {
-            $table->uuid('id')->primary();
             $table->string('load')->nullable();
             $table->string('series')->nullable();
             $table->time('rest_time')->nullable();
@@ -27,8 +26,6 @@ class CreateShoulderWorkoutsTable extends Migration
             $table->uuid('workout_id');
             $table->foreign('workout_id')->references('id')->on('workouts');
 
-            $table->uuid('workout_mode_id');
-            $table->foreign('workout_mode_id')->references('id')->on('workout_modes');
 
             $table->timestamps();
         });

@@ -13,20 +13,30 @@
         <form action="{{route('workouts.store')}}" method="post">
             @csrf
             <div class="box-body">
-                @include('components.input_start')
-                @include('components.input_next_workout')
-                @include('components.input_interval')
-                @include('components.input_frequency')
-                @include('components.input_goal')
-                @include('components.input_method')
-                @include('components.input_obs')
-                @include('components.select_client')
-                @include('components.select_triceps')
-                @include('components.select_biceps')
-                @include('components.select_back')
-                @include('components.select_shoulder')
-                @include('components.select_breast')
-                @include('components.select_lower_member')
+                <div class="col-md-6">
+                    @include('components.input_start')
+                </div>
+                <div class="col-md-6">
+                    @include('components.input_next_workout')
+                </div>
+                <div class="col-md-6">
+                    @include('components.input_interval')
+                </div>
+                <div class="col-md-6">
+                    @include('components.input_frequency')
+                </div>
+                <div class="col-md-6">
+                    @include('components.input_goal')
+                </div>
+                <div class="col-md-6">
+                    @include('components.input_method')
+                </div>
+                <div class="col-md-12 ">
+                    @include('components.input_obs')
+                </div>
+                <div class="col-md-12">
+                    @include('components.select_client')
+                </div>
             </div>
             <div class="box-footer">
                 <button  class="btn btn-default">Cancelar</button>

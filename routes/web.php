@@ -37,6 +37,8 @@ Route::group([
         Route::resource('backs', 'BackController');
         Route::resource('shoulders', 'ShoulderController');
         Route::resource('workouts', 'WorkoutController');
+        Route::get('workouts/{id}/editExercicio', 'WorkoutController@editExercicio')->name('editExercicio');
+        Route::post('workouts/{id}/editExercicio/store', 'WorkoutController@editExercicioStore')->name('editExercicio.store');
         Route::resource('clients', 'ClientController');
         Route::resource('workout-modes', 'WorkoutModeController');
         Route::resource('companies', 'CompanyController');
