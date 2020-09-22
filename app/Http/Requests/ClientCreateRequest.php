@@ -30,7 +30,7 @@ class ClientCreateRequest extends FormRequest
             'sex' => 'string|required',
             'blood_type' =>'required|in:A+,B+,O+,A-,B-,O-,AB+,AB-',
             'phone' =>'required|string|max:191',
-            'birthday' => 'required|date',
+            'birthday' => 'required',
             'street' => 'required|string|max:191',
             'neighborhood' => 'required|string|max:191',
             'number' => 'required|integer|max:999999',

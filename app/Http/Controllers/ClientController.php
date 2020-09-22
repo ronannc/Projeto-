@@ -73,6 +73,7 @@ class ClientController extends Controller
      */
     public function store(ClientCreateRequest $request)
     {
+
         $response = $this->service->store($request->all());
 
         if (!empty($response['error'])) {

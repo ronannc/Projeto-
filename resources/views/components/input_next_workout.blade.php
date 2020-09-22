@@ -9,6 +9,7 @@
                type="text"
                class="form-control pull-right datepicker"
                placeholder="Próximo Treino"
+               autocomplete="off"
                value ="{{ old('next_workout') ?? $data['next_workout'] ?? null }}">
     </div>
     <!-- /.input group -->

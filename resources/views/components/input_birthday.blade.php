@@ -17,6 +17,7 @@
 @section('js')
     <script>$('.datepicker').datepicker({
             format: 'dd/mm/yyyy',
-            language: "pt-BR"
+            language: "pt-BR",
+            todayHighlight: true
         });</script>
 @endsection

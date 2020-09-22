@@ -87,24 +87,24 @@ class WorkoutService
         }
     }
 
-    public function process_data($data)
-    {
-        $physical_assessments = collect();
-        if (isset($data['formula'])) {
-            $physical_assessments = Client::find($data['client_id'])->physicalAssessment;
-            if($physical_assessments->count() > 0){
-                $physical_assessments = $physical_assessments->last();
-            }else{
-                session()->flash('warning', 'Para calculo de carga ideal, é necessario cadastrar uma avaliação fisica');
-            }
+    public function calcIdealWeight($data, $workout_id){
+
+        $workout = $this->repository->findOneById($workout_id);
+        $physical_assessments = Client::find($workout['client_id'])->physicalAssessment;
+
+        if($physical_assessments->count() > 0){
+            $physical_assessments = $physical_assessments->last();
+        }else{
+            session()->flash('warning', 'Para calculo de carga ideal, é necessario cadastrar uma avaliação fisica');
         }
+
         //tem que receber o peso do client para calcular a carga segundo a formula
         $collect = array();
         foreach ($data as $key => $aux) {
             $aux_key = explode('_', $key);
             if (count($aux_key) == 3) {
                 $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
-                if (isset($data['formula']) && $physical_assessments->count() > 0) {
+                if ($physical_assessments->count() > 0) {
                     if ($aux_key[0] == "load") {
                         $rep = $collect[$aux_key[1]][$aux_key[2]]['repetition'];
                         $kg = $collect[$aux_key[1]][$aux_key[2]]['load'];
@@ -112,6 +112,19 @@ class WorkoutService
                             $data['porcentagem']);
                     }
                 }
+            }
+        }
+
+        return $collect;
+    }
+
+    public function process_data($data)
+    {
+        $collect = array();
+        foreach ($data as $key => $aux) {
+            $aux_key = explode('_', $key);
+            if (count($aux_key) == 3) {
+                $collect[$aux_key[1]][$aux_key[2]][$aux_key[0]] = $aux;
             }
         }
 

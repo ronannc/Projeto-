@@ -35,3 +35,11 @@
         </form>
     </div>
 @stop
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('.multiple').select2();
+        });
+    </script>
+@stop

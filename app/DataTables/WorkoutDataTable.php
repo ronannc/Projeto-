@@ -33,6 +33,8 @@ class WorkoutDataTable extends DataTable
                         $model ) . '"><i class="fa fa-edit">Editar</i></a>' .
                     '<a class="btn btn-primary" title="Editar Exercicio"  href="' . route( 'editExercicio',
                         $model ) . '"><i class="fa fa-edit"></i>Editar Exercicio</a>'.
+                    '<a class="btn btn-primary" title="Calcular Carga Ideal"  href="' . route( 'calcIdealWeight',
+                        $model ) . '"><i class="fa fa-edit"></i>Calcular Carga Ideal</a>'.
                     '<a class="btn btn-danger" title="Deletar" href=""
            onclick="event.preventDefault();if(confirm(\'Deseja realmente excluir este Exercício ?\')){document.getElementById(\'form-delete' . $model[ 'id' ] . '\').submit();}">Excluir</a>
         <form id="form-delete' . $model[ 'id' ] . '" style="display:none" action="' . route( 'workouts.destroy',

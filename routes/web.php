@@ -39,6 +39,8 @@ Route::group([
         Route::resource('workouts', 'WorkoutController');
         Route::get('workouts/{id}/editExercicio', 'WorkoutController@editExercicio')->name('editExercicio');
         Route::post('workouts/{id}/editExercicio/store', 'WorkoutController@editExercicioStore')->name('editExercicio.store');
+        Route::get('workouts/{id}/calcIdealWeight', 'WorkoutController@calcIdealWeight')->name('calcIdealWeight');
+        Route::put('workouts/{id}/calcIdealWeight/store', 'WorkoutController@calcIdealWeightStore')->name('calcIdealWeight.store');
         Route::resource('clients', 'ClientController');
         Route::resource('workout-modes', 'WorkoutModeController');
         Route::resource('companies', 'CompanyController');

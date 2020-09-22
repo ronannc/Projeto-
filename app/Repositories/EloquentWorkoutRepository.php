@@ -25,37 +25,37 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         $data = $this->with([])->findOneById($id);
         $data['workout'] = collect();
-        foreach (TricepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (TricepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Triceps';
             $exercicio['description'] = $exercicio->triceps['exercise'];
             $exercicio['id'] = $exercicio['triceps_id'];
             $data['workout']->push($exercicio);
         }
-        foreach (BicepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (BicepsWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Biceps';
             $exercicio['description'] = $exercicio->biceps['exercise'];
             $exercicio['id'] = $exercicio['biceps_id'];
             $data['workout']->push($exercicio);
         }
-        foreach (BackWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (BackWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Costas';
             $exercicio['description'] = $exercicio->back['exercise'];
             $exercicio['id'] = $exercicio['back_id'];
             $data['workout']->push($exercicio);
         }
-        foreach (ShoulderWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (ShoulderWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Ombros';
             $exercicio['description'] = $exercicio->shoulder['exercise'];
             $exercicio['id'] = $exercicio['shoulder_id'];
             $data['workout']->push($exercicio);
         }
-        foreach (BreastWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (BreastWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Peito';
             $exercicio['description'] = $exercicio->breast['exercise'];
             $exercicio['id'] = $exercicio['breast_id'];
             $data['workout']->push($exercicio);
         }
-        foreach (LowerMemberWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio){
+        foreach (LowerMemberWorkout::where('workout_id', $data['id'])->get() as $key => $exercicio) {
             $exercicio['type'] = 'Membros-Inferiores';
             $exercicio['description'] = $exercicio->lowerMember['exercise'];
             $exercicio['id'] = $exercicio['lower_member_id'];
@@ -68,13 +68,13 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     public function getExtraData()
     {
         return [
-            'goal'         => Goal::all(),
-            'client'       => Client::all(),
-            'biceps'       => Biceps::all(),
-            'triceps'      => Triceps::all(),
-            'back'         => Back::all(),
-            'breast'       => Breast::all(),
-            'shoulder'     => Shoulder::all(),
+            'goal' => Goal::all(),
+            'client' => Client::all(),
+            'biceps' => Biceps::all(),
+            'triceps' => Triceps::all(),
+            'back' => Back::all(),
+            'breast' => Breast::all(),
+            'shoulder' => Shoulder::all(),
             'lower_member' => LowerMember::all(),
         ];
     }
@@ -82,8 +82,8 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     public function save_triceps_workout($data)
     {
         TricepsWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
-            'triceps_id'      => $data['triceps_id'],
+            'workout_id' => $data['workout_id'],
+            'triceps_id' => $data['triceps_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
     }
@@ -93,19 +93,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         TricepsWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('triceps_id', $data['triceps_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
     public function save_biceps_workout($data)
     {
         BicepsWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
-            'biceps_id'       => $data['biceps_id'],
+            'workout_id' => $data['workout_id'],
+            'biceps_id' => $data['biceps_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
     }
@@ -116,19 +111,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         BicepsWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('biceps_id', $data['biceps_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
     public function save_back_workout($data)
     {
         BackWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
-            'back_id'         => $data['back_id'],
+            'workout_id' => $data['workout_id'],
+            'back_id' => $data['back_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
     }
@@ -138,19 +128,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         BackWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('back_id', $data['back_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
     public function save_breast_workout($data)
     {
         BreastWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
-            'breast_id'       => $data['breast_id'],
+            'workout_id' => $data['workout_id'],
+            'breast_id' => $data['breast_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
     }
@@ -160,19 +145,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         BreastWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('breast_id', $data['breast_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
     public function save_shoulder_workout($data)
     {
         ShoulderWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
-            'shoulder_id'     => $data['shoulder_id'],
+            'workout_id' => $data['workout_id'],
+            'shoulder_id' => $data['shoulder_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
     }
@@ -182,19 +162,14 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         ShoulderWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('shoulder_id', $data['shoulder_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
     public function save_lower_member_workout($data)
     {
 
         LowerMemberWorkout::with([])->create([
-            'workout_id'      => $data['workout_id'],
+            'workout_id' => $data['workout_id'],
             'lower_member_id' => $data['lower_member_id'],
             'workout_mode_id' => $data['workout_mode_id']
         ]);
@@ -205,12 +180,7 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
         LowerMemberWorkout::with([])
             ->where('workout_id', $data['workout_id'])
             ->where('lower_member_id', $data['lower_member_id'])
-            ->update([
-                'load'       => $data['load'],
-                'series'     => $data['series'],
-                'repetition' => $data['repetition'],
-                'group'      => $data['group']
-            ]);
+            ->update($data);
     }
 
 
@@ -225,7 +195,7 @@ class EloquentWorkoutRepository extends AbstractEloquentRepository implements Wo
     {
         $client = Client::find($client_id);
         $workouts = $client->workout();
-        foreach ($workouts as $workout){
+        foreach ($workouts as $workout) {
             $workout->exercises();
         }
         return $workouts;

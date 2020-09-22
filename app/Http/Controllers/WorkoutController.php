@@ -198,6 +198,61 @@ class WorkoutController extends Controller
         return back();
     }
 
+    public function calcIdealWeight($workout_id){
+        $extraData = $this->repository->getExtraData();
+        $model = $this->repository->getExerciciosTreino($workout_id);
+        return view('layouts.workouts.idealWeight', compact('model'), compact('extraData'));
+    }
+
+    public function calcIdealWeightStore(Request $request, $workout_id){
+        $data = $request->all();
+        $process_data = $this->service->calcIdealWeight($data, $workout_id);
+
+        foreach ($process_data['Triceps'] as $key => $triceps) {
+            $triceps['triceps_id'] = $key;
+            $triceps['workout_id'] = $workout_id;
+            $this->repository->update_triceps_Workout($triceps);
+        }
+
+        foreach ($process_data['Biceps'] as $key => $biceps) {
+            $biceps['biceps_id'] = $key;
+            $biceps['workout_id'] = $workout_id;
+            $this->repository->update_biceps_Workout($biceps);
+        }
+
+        foreach ($process_data['Costas'] as $key => $back) {
+            $back['back_id'] = $key;
+            $back['workout_id'] = $workout_id;
+            $this->repository->update_back_Workout($back);
+        }
+
+        foreach ($process_data['Peito'] as $key => $breast) {
+            $breast['breast_id'] = $key;
+            $breast['workout_id'] = $workout_id;
+            $this->repository->update_breast_Workout($breast);
+        }
+
+        foreach ($process_data['Ombros'] as $key => $shoulder) {
+            $shoulder['shoulder_id'] = $key;
+            $shoulder['workout_id'] = $workout_id;
+            $this->repository->update_shoulder_Workout($shoulder);
+        }
+
+        foreach ($process_data['Membros-Inferiores'] as $key => $inferior) {
+            $inferior['lower_member_id'] = $key;
+            $inferior['workout_id'] = $workout_id;
+            $this->repository->update_lower_member_Workout($inferior);
+        }
+
+        if (!empty($response['error'])) {
+            session()->flash('error', $response['message']);
+            return back()->withInput();
+        }
+        session()->flash('success', 'Atualizado com sucesso!');
+
+        return redirect()->route('workouts.index');
+    }
+
     public function myCurrentTraining()
     {
         $cliente = User::cliente()->first();

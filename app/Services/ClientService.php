@@ -10,20 +10,23 @@ use Illuminate\Support\Facades\Log;
 class ClientService
 {
     protected $repository;
+    protected $utilsService;
 
     /**
      * StationService constructor.
      *
      * @param $repository
      */
-    public function __construct(ClientRepository $repository)
+    public function __construct(ClientRepository $repository, UtilsService $utilsService)
     {
         $this->repository = $repository;
+        $this->utilsService = $utilsService;
     }
 
     public function store(array $data)
     {
         try {
+            $data['birthday'] = $this->utilsService->formatDateYMD($data['birthday']);
             return $this->repository->store($data);
         } catch (\Exception $exception) {
             Log::error(Notify::log($exception));

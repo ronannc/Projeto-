@@ -9,6 +9,7 @@
                type="text"
                class="form-control pull-right datepicker"
                placeholder="Início"
+               autocomplete="off"
                value ="{{ old('start') ?? $data['start'] ?? null }}">
     </div>
     <!-- /.input group -->

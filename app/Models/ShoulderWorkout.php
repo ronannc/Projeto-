@@ -26,7 +26,9 @@ class ShoulderWorkout extends Model implements AuditableContract
         'series',
         'rest_time',
         'repetition',
-        'group'
+        'group',
+        'sub_group',
+        'ideal_weight'
     ];
 
     public function shoulder(){
